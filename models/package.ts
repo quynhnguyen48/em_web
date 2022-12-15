@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export class PackagesApi {
   async getAll() {
-    var v = await axios.get("http://localhost:1337" + '/api/packages');
+    var v = await axios.get("http://54.91.167.122:1337" + '/api/packages');
     var blogs = v.data.data;
     const result = blogs.map( (d:any) => {
       let v = new Package();
@@ -14,7 +14,7 @@ export class PackagesApi {
   }
 
   async findOne(slug: string) {
-    var v = await axios.get("http://localhost:1337" + '/api/package/findOne/' + slug);
+    var v = await axios.get("http://54.91.167.122:1337" + '/api/package/findOne/' + slug);
     console.log('v', v)
     var blogs = v.data.package;
     var result = new Package();

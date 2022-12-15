@@ -15,7 +15,7 @@ import { useRouter } from 'next/router'
 import { PackagesApi } from '../../models/package';
 import Accordion from '../../components/Accordion';
 
-const api_endpoint = "http://localhost:1337";
+const api_endpoint = "http://54.91.167.122:1337";
 
 const tranlsate = (s: string, locale: string | undefined) => {
   switch (s) {
@@ -120,7 +120,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
       {props.sub_packages?.map((sp: any) =>
         // <div>
         //   <h1>{sp.label}</h1>
-        //   <img src={"http://localhost:1337" + sp.image.url} />
+        //   <img src={"http://54.91.167.122:1337" + sp.image.url} />
         //   {sp.services.map((sv: any) => <h1>{sv.label}</h1>)}
         // </div>)}
 
