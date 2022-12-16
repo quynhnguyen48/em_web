@@ -175,8 +175,8 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
       //   </div>
       // </div>
       )}
-      <Portfolio />
-      <Packages />
+      {/* <Portfolio /> */}
+      {/* <Packages /> */}
       <Contact />
     </>
   );

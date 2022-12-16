@@ -8,6 +8,29 @@ import Portfolio from "../components/Portfolio/Portfolio";
 import Contact from "../components/Contact/Contact";
 import Packages from "../components/Packages/Packages";
 import { useRouter } from 'next/router';
+import Link from "next/link";
+
+const tranlsate = (term: string, locale: string) => {
+  if (locale === "en") {
+    switch (term) {
+      case "what_we_offer":
+        return "What we offer";
+      case "become_a_member":
+        return "Become a member";
+      case "gifting":
+        return "Gifting";
+    }
+  } else {
+    switch (term) {
+      case "what_we_offer":
+        return "Chúng tôi mang lại gì?";
+      case "become_a_member":
+        return "Trở Thành Thành Viên";
+      case "gifting":
+        return "Quà tặng";
+    }
+  }
+}
 
 const Home: NextPage = () => {
   let { locale } = useRouter();
@@ -42,12 +65,18 @@ const Home: NextPage = () => {
           </svg>
         </div>
         <div className="w-full mx-auto text-center p-6 bg-emgreen relative" style={{ backgroundColor: "#ECF5ED" }}>
-          <p className="text-2xl text-black text-3xl mb-5">
-            {locale === "en" ? "What we offer?" : "Chúng tôi mang lại gì?"}</p>
-          <p className="pb-4 text-black text-lg">
+          <p className="text-2xl text-black text-3xl mb-5 font-bold">
+            {tranlsate("what_we_offer", locale)}</p>
+          <p className="pb-4 text-black text-lg  mb-8">
             {locale === "en" ? "Members receive on-demand access to a full spectrum of concierge medical services, as convenient as having a team of doctors, pharmacists, and wellness care experts with you 24/7." 
             : "Các thành viên của ECHO MEDI sẽ luôn được tiếp cận tất cả dịch vụ y tế và trợ giúp đặc biệt theo nhu cầu. Đồng nghĩa với việc luôn có một đội ngũ bác sĩ, dược sĩ và chuyên gia chăm sóc sức khỏe đồng hành với bạn 24/7"}
           </p>
+          <div className="p-3 inline border-2 border-lime-600 rounded-2xl mr-8">
+            <Link className="p-5" href="/packages/thanh-vien">{tranlsate("become_a_member", locale)}</Link>
+          </div>
+          <div className="p-3 inline bg-lime-600 rounded-2xl text-white">
+            <Link className="p-5" href="/packages/thanh-vien">{tranlsate("gifting", locale)}</Link>
+          </div>
         </div>
       </div>
       <div id="" className="max-w-[1240px] mx-auto py-16 text-center">
@@ -99,8 +128,8 @@ const Home: NextPage = () => {
           </a>
         </div>
       </div>
-      <Portfolio />
-      <Packages />
+      {/* <Portfolio /> */}
+      {/* <Packages /> */}
       <Contact />
     </>
   );

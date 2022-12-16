@@ -18,6 +18,77 @@ const NavBar = () => {
     setNav(!nav);
   };
 
+  const tranlsate = (term: string, locale: string) => {
+    if (locale === "en") {
+      switch (term) {
+        case "in_clinic_service": 
+          return "In-Clinic Services";
+        case "preventive_care":
+          return "Preventive care";
+        case "primary_care":
+          return "Primary Care";
+        case "on_going_care":
+          return "On-Going Care";
+        case "wellness":
+          return "Wellness";
+        case "home_service":
+          return "Home Service";
+        case "home_visits":
+          return "Home Visits";
+        case "telemedicine": 
+          return "Telemedicine";
+        case "services":
+          return "Services";
+        case "health_plans":
+          return "Health Plans";
+        case "preventive_care_packages":
+          return "Preventive Care Packages";
+        case "primary_care_packages":
+          return "Primary Care Packages";
+        case "on_going_care_packages":
+          return "On-Going Care Packages";
+        case "wellness_packages":
+          return "Wellness Packages";
+        case "gene_examination_packages":
+          return "Gene Examination Packages";
+      }
+    } else {
+      switch (term) {
+        case "in_clinic_service": 
+          return "Dịch Vụ Tại Phòng Khám";
+        case "preventive_care":
+          return "Chăm Sóc Phòng Ngừa";
+        case "primary_care":
+          return "Điều Trị Ban Đầu";
+        case "on_going_care":
+          return "Quản Lý Bệnh Mạn Tính";
+        case "wellness":
+          return "Sức Khoẻ Toàn Diện";
+        case "home_service":
+          return "Dịch Vụ Tại Nhà";
+        case "home_visits":
+          return "Chăm Sóc Tại Nhà";
+        case "telemedicine": 
+          return "Chăm Sóc Từ Xa";
+        case "services":
+          return "Các Dịch Vụ";
+        case "health_plans":
+          return "Gói chăm sóc";
+        case "preventive_care_packages":
+          return "Gói Chăm Sóc Phòng Ngừa";
+        case "primary_care_packages":
+          return "Gói Điều Trị Ban Đầu";
+        case "on_going_care_packages":
+          return "Gói Quản Lý Bệnh Mạn Tính";
+        case "wellness_packages":
+          return "Gói Sức Khoẻ Toàn Diện";
+        case "gene_examination_packages":
+          return "Gói Xét Nghiệm Di Truyền";
+      }
+    }
+    return term;
+  }
+
   useEffect(() => {
     setColor("#ffffff");
         setTextColor("#000000");
@@ -49,20 +120,132 @@ const NavBar = () => {
           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
-          <li className="p-4">
-            <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI" }</Link>
+          <li className="p-4 flex">
+            <div className="m-auto font-semibold">
+              <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI" }</Link>
+            </div>
           </li>
-          <li className="p-4">
-            <Link href="#services">{locale ==="en" ? "Services" :"Các Dịch Vụ"}</Link>
+          <li className="py-4">
+            {/* <Link href="#services">{locale ==="en" ? "Services" :"Các Dịch Vụ"}</Link> */}
+            <div className="flex">
+              {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
+              <div className="relative group ">
+                <button className="hover:bg-gray-200 text-black h-full flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                  <span className="mr-2">{tranlsate("services", locale)}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "500px" }}>
+                  <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg text-white">
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-2 p-5 text-base">
+                      <div>
+                        <p className="text-lg underline font-semibold underline-offset-8 mb-4">
+                          {tranlsate("in_clinic_service", locale ? locale : "")}
+                        </p>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+                            {tranlsate("preventive_care", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
+                            {tranlsate("primary_care", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                            {tranlsate("on_going_care", locale)}
+                        </Link>
+                        </div>
+                        <div className="mb-2">
+                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                            {tranlsate("wellness", locale)}
+                        </Link>
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-xl underline font-semibold underline-offset-8 mb-4">
+                          {tranlsate("home_service", locale)}
+                        </p>
+                        <div className="mb-2">
+                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tai-nha"}>
+                            {tranlsate("home_visits", locale)}
+                        </Link>
+                        </div>
+                        <div className="mb-2">
+                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tu-xa"}>
+                            {tranlsate("telemedicine", locale)}
+                        </Link>
+                        </div>
+                        {/* <p>
+                          {tranlsate("vn_resident", locale)}
+                        </p>
+                        <p>
+                          {tranlsate("non_vn_resident", locale)}
+                        </p> */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
-          <li className="p-4">
-            <Link href="#packages">{locale ==="en" ? "Health Plans" :"Gói chăm sóc"}</Link>
+          <li className="py-4 flex">
+          <div className="flex">
+              {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
+              <div className="relative group ">
+                <button className="hover:bg-gray-200 text-black h-full flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                  <span className="mr-2">{tranlsate("health_plans", locale)}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "300px" }}>
+                  <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg text-white">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-1 p-5 text-base">
+                      <div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+                            {tranlsate("preventive_care_packages", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+                            {tranlsate("primary_care_packages", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
+                            {tranlsate("on_going_care_packages", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                            {tranlsate("wellness_packages", locale)}
+                        </Link>
+                        </div>
+                        <div className="mb-2">
+                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                            {tranlsate("gene_examination_packages", locale)}
+                        </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
-          <li className="p-4">
-            <Link href="/#contact">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
+          <li className="p-4 flex">
+            <div className="m-auto font-semibold">
+              <Link href="/#contact">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
+            </div>
           </li>
-          <li className="p-4">
-            <Link href="/#contact">{locale ==="en" ? "Member" :"Thành viên"}</Link>
+          <li className="p-4 flex">
+          <div className="m-auto font-semibold">
+            <Link href="/packages/thanh-vien">{locale ==="en" ? "Member" :"Thành viên"}</Link>
+            </div>
           </li>
           <div className="m-auto">
             <div>

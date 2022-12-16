@@ -76,8 +76,8 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       </div>
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      <Portfolio />
-      <Packages />
+      {/* <Portfolio /> */}
+      {/* <Packages /> */}
       <Contact />
     </>
   );
