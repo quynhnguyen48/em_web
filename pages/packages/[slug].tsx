@@ -102,7 +102,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Head>
-        <title>Keep moving</title>
+        <title>{props.label}</title>
         <meta
           name="description"
           content="Created as template for future work"

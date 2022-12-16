@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export class ServiceApi {
   async getAll() {
-    var v = await axios.get("localhost:1337" + '/api/services');
+    var v = await axios.get("http://54.91.167.122:1337" + '/api/services');
     var blogs = v.data.data;
     const result = blogs.map( (d:any) => {
       let v = new Service();
@@ -14,7 +14,7 @@ export class ServiceApi {
   }
 
   async findOne(slug: string) {
-    var v = await axios.get("localhost:1337" + '/api/service/findOne/' + slug);
+    var v = await axios.get("http://54.91.167.122:1337" + '/api/service/findOne/' + slug);
     var blogs = v.data.service;
     var result = new Service();
     if (blogs) {
