@@ -14,6 +14,7 @@ import Contact from "../../components/Contact/Contact";
 import Packages from "../../components/Packages/Packages";
 import { useRouter } from 'next/router'
 import { PackagesApi } from '../../models/package';
+import ReactMarkdown from "react-markdown";
 
 type IBlogUrl = {
   slug: string;
@@ -64,9 +65,10 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero heading="CHO CUỘC SỐNG TRỌN VẸN" message="ECHO MEDI mang đến cho các thành viên dịch vụ chăm sóc sức khoẻ đồng bộ và toàn diện mọi lúc, mọi nơi.
-
-Các thành viên của ECHO MEDI được theo sát và thiết kế dịch vụ chăm sóc sức khoẻ tổng quát tối ưu bởi đội ngũ tư vấn sức khoẻ cùng các chuyên gia y tế. Chính vì thế, bạn có thể yên tâm uỷ thác sức khoẻ của mình cho chúng tôi." />
+      <Hero heading={props.label} message={props.desc} />
+      <div className="max-w-[1240px] mx-auto py-16 text-left">
+          <ReactMarkdown children={props.detail} />
+      </div>
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       <Portfolio />
