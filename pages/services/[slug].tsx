@@ -36,8 +36,13 @@ export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
 
 export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   params,
+  locale,
 }) => {
-  const data = await new ServiceApi().findOne(params!.slug);
+  let slug = params!.slug;
+  if (locale == "en") {
+    slug = slug + "-en";
+  }
+  const data = await new ServiceApi().findOne(slug);
   return {
     props: data ? {
       slug: data.slug,
