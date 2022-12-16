@@ -14,6 +14,7 @@ import Packages from "../../components/Packages/Packages";
 import { useRouter } from 'next/router'
 import { PackagesApi } from '../../models/package';
 import Accordion from '../../components/Accordion';
+import Link from "next/link";
 
 const api_endpoint = "http://54.91.167.122:1337";
 
@@ -142,7 +143,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
            <div className='columns-3'>
            {sv.price && <p className='font-bold p-5'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
            {sv.show_buy_btn && <div className='p-5'><button>{tranlsate("buy_now", locale)}</button></div>}
-           {sv.show_learn_more && <div className='p-5'><a href={"/services/" + sv.slug}>{tranlsate("learn_more", locale)}</a></div>}
+           {sv.show_learn_more && <div className='p-5'><Link href={locale == "en" ? "/en/services/" + sv.slug.substr(0, sv.slug.length - 3) : "/services/" + sv.slug}>{tranlsate("learn_more", locale)}</Link></div>}
            </div>
            </div>
            } />)}
