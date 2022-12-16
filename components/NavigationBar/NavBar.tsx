@@ -19,16 +19,20 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor("#ffffff");
+    setColor("#ffffff");
         setTextColor("#000000");
-      } else {
-        setColor("transparent");
-        setTextColor("#ffffff");
-      }
-    };
-    window.addEventListener("scroll", changeColor);
+    // const changeColor = () => {
+    //   setColor("#ffffff");
+    //     setTextColor("#000000");
+    //   // if (window.scrollY >= 90) {
+    //   //   setColor("#ffffff");
+    //   //   setTextColor("#000000");
+    //   // } else {
+    //   //   setColor("transparent");
+    //   //   setTextColor("#ffffff");
+    //   // }
+    // };
+    // window.addEventListener("scroll", changeColor);
   }, []);
 
   return (
@@ -38,9 +42,10 @@ const NavBar = () => {
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
-          <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
+          {/* <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
             EC<span style={{ color: "#77b17d" }}>HO ME</span>DI
-          </h1>
+          </h1> */}
+          <img width={200} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
@@ -48,7 +53,7 @@ const NavBar = () => {
             <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI" }</Link>
           </li>
           <li className="p-4">
-            <Link href="#gallery">{locale ==="en" ? "Services" :"Các Dịch Vụ"}</Link>
+            <Link href="#services">{locale ==="en" ? "Services" :"Các Dịch Vụ"}</Link>
           </li>
           <li className="p-4">
             <Link href="#packages">{locale ==="en" ? "Health Plans" :"Gói chăm sóc"}</Link>

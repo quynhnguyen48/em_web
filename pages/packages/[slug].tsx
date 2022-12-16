@@ -110,7 +110,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero heading={props.label} message={props.desc} />
+      <Hero heading={props.label} message={props.desc} image_url={api_endpoint + props.image_url}/>
       {/* <div className="pb-8 relative h-96">
         <img src={api_endpoint +  props.image_url} alt="me" className='object-cover w-full h-full h-48 relative'/>
       </div> */}

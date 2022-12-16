@@ -1,13 +1,17 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { SliderData } from "./SliderData";
-import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { useRouter } from 'next/router';
 
 interface Props {
   slides: any;
 }
 
 const Slider = ({ slides }: Props) => {
+  let { locale } = useRouter();
+  locale = locale ?? "";
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
@@ -23,39 +27,27 @@ const Slider = ({ slides }: Props) => {
   }
 
   return (
-    <div id="gallery" className="max-w-[1240px] mx-auto">
-      <h1 className="text-2xl font-bold text-center p-4 py-0">Gallery</h1>
-      <div className="relative flex justify-center p-4">
-        {SliderData.map((slide, index) => {
-          return (
-            <div
-              key={index}
-              className={
-                index === current ? "opacity-[1] ease-in" : "opacity-0"
-              }
-            >
-              <FaArrowCircleLeft
-                onClick={prevSlide}
-                className="absolute top-[50%] left-[30px] text-white/70 cursor-pointer select-none z-[2]"
-                size={50}
-              />
-              {index === current && (
-                <Image
-                  src={slide.image}
-                  alt="/"
-                  width="1440"
-                  height="600"
-                  objectFit="cover"
-                />
-              )}
-              <FaArrowCircleRight
-                onClick={nextSlide}
-                className="absolute top-[50%] right-[30px] text-white/70 cursor-pointer select-none z-[2]"
-                size={50}
-              />
+    <div id="gallery" className="w-full mx-auto">
+      <div className="relative flex justify-center h-[350px] md:h-[750px]">
+        <Swiper className="mySwiper">
+          <SwiperSlide>
+            <p className="font-semibold z-10 text-white text-[30px] md:text-[50px]">
+              {locale === "en" ? "LIVE A FULL LIFE" : "CHO CUỘC SỐNG TRỌN VẸN"}</p>
+            <img src={"https://echomedi.com/wp-content/uploads/2022/07/98ade86315dfd6818fce.jpg"} className="w-full absolute" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="z-10">
+            <p className="font-semibold z-10 text-white text-[50px]">
+            {locale === "en" ? "ENTRUST YOUR WELLBEING TO US" : "TRAO GỬI NIỀM TIN"}</p>
+            <p className="font-semibold z-10 text-white text-[50px]">{locale === "en" ? "HEALTHCARE EVOLVED" : "CHO MỘT SỨC KHOẺ TOÀN DIỆN"}</p>
             </div>
-          );
-        })}
+            <img src={"https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-07-17T073820.899.jpg"} className="w-full absolute" />
+          </SwiperSlide>
+          <SwiperSlide>
+          <p className="font-semibold z-10 text-white text-[50px]">NÂNG TẦM SỨC KHOẺ</p>
+            <img src={"https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-07-17T073935.707.jpg"} className="w-full absolute" />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
