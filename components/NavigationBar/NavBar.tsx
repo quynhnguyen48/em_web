@@ -60,8 +60,7 @@ const NavBar = () => {
             <Link href="/#contact">{locale ==="en" ? "Member" :"Thành viên"}</Link>
           </li>
           <div className="m-auto">
-            <div
-            >
+            <div>
             </div>
             <ul className="flex">
               <li className="inline mr-2 cursor-pointer relative" onClick={() => {
@@ -108,47 +107,57 @@ const NavBar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/">Về ECHO MEDI</Link>
+              <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI" }</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#gallery">Các dịch vụ</Link>
+              <Link href="/#gallery">{locale ==="en" ? "Services" :"Các Dịch Vụ"}</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#packages">Gói chăm sóc</Link>
+              <Link href="/#packages">{locale ==="en" ? "Health Plans" :"Gói chăm sóc"}</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#portfolio">My roads</Link>
+              <Link href="/#portfolio">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#contact">Contact</Link>
+              <Link href="/#contact">{locale ==="en" ? "Member" :"Thành viên"}</Link>
             </li>
-            <div className="lang">
-              <div
-              >
-              </div>
-              <ul className="flex">
-                <li className="inline mr-2 cursor-pointer" onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: "en" });
-                }}>          <img src="/uk.png" width={25} height={25} alt="me" className="ml-2" />
-                </li>
-                <li className="inline cursor-pointer" onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: "vi" })
-                }}>  <img src="/vietnam.png" width={25} height={25} alt="me" className="mr-2 inline align-top	" />
-                </li>
-              </ul>
+            <div className="m-auto">
+            <div>
             </div>
+            <ul className="flex">
+              <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+                router.push(router.asPath, router.asPath, { locale: "en" });
+              }}>          <Image
+                  src={IgImg3}
+                  alt="/"
+                  width={25}
+                  height={25}
+                />
+              </li>
+              <li className="inline cursor-pointer" onClick={() => {
+                router.push(router.asPath, router.asPath, { locale: "vi" })
+              }}> 
+              <Image
+                  src={IgImg4}
+                  alt="/"
+                  width={25}
+                  height={25}
+                />
+              </li>
+            </ul>
+          </div>
           </ul>
         </div>
       </div>
