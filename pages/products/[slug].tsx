@@ -84,7 +84,7 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <img className='m-auto' width={400} src={"http://54.91.167.122:1337" + m.image.url} />
           </div>
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
+          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col justify-center">
             <p className='font-bold text-xl mb-2'>{m.label}</p>
             <p>{m.desc}</p>
           </div>
