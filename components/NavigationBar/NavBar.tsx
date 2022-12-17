@@ -96,6 +96,20 @@ const NavBar = () => {
           return "Hair & Nails Treatment";
         case "pregnancy_care":
           return "Pregnancy Care";
+        case "men_sexual_health":
+          return "Men Sexual Health";
+        case "women_sexual_health":
+          return "Women Sexual Health";
+        case "heart_blood_circulation":
+          return "Heart & Blood Circulation";
+        case "digestive_system":
+          return "Digestive System";
+        case "bone_joint_health":
+          return "Bone & Joint Health";
+        case "immune_system":
+          return "Immune System";
+        case "brain_health":
+          return "Brain Health";
       }
     } else {
       switch (term) {
@@ -159,6 +173,20 @@ const NavBar = () => {
           return "Chăm Sóc Tóc & Móng";
         case "pregnancy_care":
           return "Mang Thai";
+        case "men_sexual_health":
+          return "Sinh Lý Nam";
+        case "women_sexual_health":
+          return "Sinh Lý Nữ";
+        case "heart_blood_circulation":
+          return "Tim Mạch";
+        case "digestive_system":
+          return "Tiêu Hóa";
+        case "bone_joint_health":
+          return "Xương Khớp";
+        case "immune_system":
+          return "Đề Kháng Và Miễn Dịch";
+        case "brain_health":
+          return "Tinh Thần & Trí Não";
       }
     }
     return term;
@@ -325,9 +353,9 @@ const NavBar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>
                 </button>
-                <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "600px", marginLeft: "-200px" }}>
+                <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "800px", marginLeft: "-200px" }}>
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
-                    <div className="grid grid-cols-2 gap-4 md:grid-cols-2 p-5 text-base">
+                    <div className="grid grid-cols-3 gap-4 md:grid-cols-3 p-5 text-base">
                       <div>
                         <p className="text-lg underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("monthly_packages", locale ? locale : "")}
@@ -395,6 +423,41 @@ const NavBar = () => {
                         <div className="mb-2 text-sm">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"}>
                             {tranlsate("pregnancy_care", locale)}
+                          </Link>
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-xl underline font-semibold underline-offset-8 mb-4 text-sm">
+                          ___________________________
+                        </p>
+                        <div className="mb-2 text-sm">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-giac-ngu"}>
+                            {tranlsate("men_sexual_health", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2 text-sm">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-cai-thuoc-la"}>
+                            {tranlsate("women_sexual_health", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2 text-sm">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-giam-can"}>
+                            {tranlsate("heart_blood_circulation", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2 text-sm">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"}>
+                            {tranlsate("digestive_system", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2 text-sm">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"}>
+                            {tranlsate("bone_joint_health", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2 text-sm">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"}>
+                            {tranlsate("immune_system", locale)}
                           </Link>
                         </div>
                       </div>

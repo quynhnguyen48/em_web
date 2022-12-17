@@ -26,44 +26,6 @@ type IBlogUrl = {
   price: any;
 };
 
-// export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
-//   const json = await new PackagesApi().getAll();
-//   const blogs = json;
-//   return {
-//     paths: blogs.map((v: any) => ({
-//       params: { slug: v.slug, label: v ? v.label : "" },
-//     })),
-//     fallback: true,
-//   };
-// };
-
-// export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
-//   params,
-//   locale,
-// }) => {
-//   let slug = params!.slug;
-//   if (locale == "en") {
-//     slug = slug + "-en";
-//   }
-//   const data = await new ProductApi().findOne(slug);
-//   return {
-//     props: data ? {
-//       slug: data.slug,
-//       label: data.label,
-//       desc: data.desc,
-//       image_url: data.image_url,
-//       medicines: data.medicines,
-//     } :
-//     {
-//       slug: "",
-//       label: "",
-//       desc: "",
-//       image_url: "",
-//       medicines: [],
-//     },
-//   };
-// };
-
 export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   params,
   locale,
@@ -94,6 +56,8 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
 }
 
 const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
+  let { locale } = useRouter();
+  locale = locale ?? "";
   return (
     <>
       <Head>
@@ -104,10 +68,14 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero heading={props.label} message={props.desc} image_url={"http://54.91.167.122:1337" + props.image_url} />
-      <div className="max-w-[1240px] mx-auto py-16 text-left">
-      <p className='text-3xl text-right'>{numberWithCommas(props.price)}đ</p>
-      </div>
+      <Hero 
+        heading={props.label} 
+        message={props.desc}
+        sub_message={props.medicines.map((m: any) => m.label)}
+        image_url={"http://54.91.167.122:1337" + props.image_url} />
+      <div className="max-w-[1048px] mx-auto py-16 text-left">
+      <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
+      <button><div className='inline bg-green-400 p-4 rounded-full ml-5 font-semibold'>{locale === "en" ? "BUY NOW" : "MUA NGAY"}</div></button>
       {
           props.medicines?.map((m:any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
@@ -119,6 +87,7 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
           </div>
         </div>)
         }
+        </div>
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       {/* <Portfolio /> */}
