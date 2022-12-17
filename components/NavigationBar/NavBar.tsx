@@ -271,22 +271,22 @@ const NavBar = () => {
                           </Link>
                         </div>
                         <div className="mb-2">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
                             {tranlsate("primary_care_packages", locale)}
                           </Link>
                         </div>
                         <div className="mb-2">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/quan-ly-benh-man-tinh"}>
                             {tranlsate("on_going_care_packages", locale)}
                           </Link>
                         </div>
                         <div className="mb-2">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
                             {tranlsate("wellness_packages", locale)}
                           </Link>
                         </div>
                         <div className="mb-2">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-xet-nghiem-di-truyen"}>
                             {tranlsate("gene_examination_packages", locale)}
                           </Link>
                         </div>
