@@ -23,7 +23,7 @@ type IBlogUrl = {
   desc: string;
   image_url: string;
   medicines: any;
-  price: number;
+  price: any;
 };
 
 // export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
@@ -88,6 +88,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       desc: "",
       image_url: "",
       medicines: [],
+      price: 0,
     },
   };
 }
