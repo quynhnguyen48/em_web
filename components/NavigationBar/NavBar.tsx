@@ -21,7 +21,7 @@ const NavBar = () => {
   const tranlsate = (term: string, locale: string) => {
     if (locale === "en") {
       switch (term) {
-        case "in_clinic_service": 
+        case "in_clinic_service":
           return "In-Clinic Services";
         case "preventive_care":
           return "Preventive care";
@@ -35,7 +35,7 @@ const NavBar = () => {
           return "Home Service";
         case "home_visits":
           return "Home Visits";
-        case "telemedicine": 
+        case "telemedicine":
           return "Telemedicine";
         case "services":
           return "Services";
@@ -51,10 +51,40 @@ const NavBar = () => {
           return "Wellness Packages";
         case "gene_examination_packages":
           return "Gene Examination Packages";
+        case "pharmacy":
+          return "Pharmacy";
+        case "monthly_packages":
+          return "Monthly Packages";
+        case "elderly":
+          return "Elderly (60+)"
+        case "middle_aged_man":
+          return "Middle-aged Man (45+)";
+        case "middle_aged_woman":
+          return "Middle-aged Woman (45+)";
+        case "adult":
+          return "Adult (18-45)";
+        case "teenager":
+          return "Teenager (13-19)";
+        case "child":
+          return "Child (6 - 12)";
+        case "health_concern":
+          return "Health Concern";
+        case "sleep":
+          return "Sleep";
+        case "smoking_cessation":
+          return "Smoking Cessation";
+        case "weight_loss":
+          return "Weight Loss";
+        case "skin_care_anti_aging":
+          return "Skin Care & Anti-aging";
+        case "hair_nails_treatment":
+          return "Hair & Nails Treatment";
+        case "pregnancy_care":
+          return "Pregnancy Care";
       }
     } else {
       switch (term) {
-        case "in_clinic_service": 
+        case "in_clinic_service":
           return "Dịch Vụ Tại Phòng Khám";
         case "preventive_care":
           return "Chăm Sóc Phòng Ngừa";
@@ -68,7 +98,7 @@ const NavBar = () => {
           return "Dịch Vụ Tại Nhà";
         case "home_visits":
           return "Chăm Sóc Tại Nhà";
-        case "telemedicine": 
+        case "telemedicine":
           return "Chăm Sóc Từ Xa";
         case "services":
           return "Các Dịch Vụ";
@@ -84,6 +114,36 @@ const NavBar = () => {
           return "Gói Sức Khoẻ Toàn Diện";
         case "gene_examination_packages":
           return "Gói Xét Nghiệm Di Truyền";
+        case "pharmacy":
+          return "Nhà thuốc";
+        case "monthly_packages":
+          return "Gói Chăm Sóc Tháng";
+        case "elderly":
+          return "Người Lớn Tuổi (Trên 60 Tuổi)"
+        case "middle_aged_man":
+          return "Nam Trung Niên (Trên 45 tuổi)";
+        case "middle_aged_woman":
+          return "Nữ Trung Niên (Trên 45 Tuổi)";
+        case "adult":
+          return "Người Trưởng Thành (18 - 45 Tuổi)";
+        case "teenager":
+          return "Thanh Thiếu Niên (13 - 19 Tuổi)";
+        case "child":
+          return "Trẻ Em (6 - 12 Tuổi)";
+        case "health_concern":
+          return "Vấn Đề Sức Khoẻ";
+        case "sleep":
+          return "Ngủ ngon";
+        case "smoking_cessation":
+          return "Cai thuốc lá";
+        case "weight_loss":
+          return "Giảm cân";
+        case "skin_care_anti_aging":
+          return "Chăm Sóc Da";
+        case "hair_nails_treatment":
+          return "Chăm Sóc Tóc & Móng";
+        case "pregnancy_care":
+          return "Mang Thai";
       }
     }
     return term;
@@ -91,7 +151,7 @@ const NavBar = () => {
 
   useEffect(() => {
     setColor("#ffffff");
-        setTextColor("#000000");
+    setTextColor("#000000");
     // const changeColor = () => {
     //   setColor("#ffffff");
     //     setTextColor("#000000");
@@ -122,7 +182,7 @@ const NavBar = () => {
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
           <li className="p-4 flex">
             <div className="m-auto font-semibold">
-              <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI" }</Link>
+              <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</Link>
             </div>
           </li>
           <li className="py-4">
@@ -154,14 +214,14 @@ const NavBar = () => {
                           </Link>
                         </div>
                         <div className="mb-2">
-                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
                             {tranlsate("on_going_care", locale)}
-                        </Link>
+                          </Link>
                         </div>
                         <div className="mb-2">
-                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
                             {tranlsate("wellness", locale)}
-                        </Link>
+                          </Link>
                         </div>
                       </div>
                       <div>
@@ -169,14 +229,14 @@ const NavBar = () => {
                           {tranlsate("home_service", locale)}
                         </p>
                         <div className="mb-2">
-                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tai-nha"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tai-nha"}>
                             {tranlsate("home_visits", locale)}
-                        </Link>
+                          </Link>
                         </div>
                         <div className="mb-2">
-                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tu-xa"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tu-xa"}>
                             {tranlsate("telemedicine", locale)}
-                        </Link>
+                          </Link>
                         </div>
                         {/* <p>
                           {tranlsate("vn_resident", locale)}
@@ -192,7 +252,7 @@ const NavBar = () => {
             </div>
           </li>
           <li className="py-4 flex">
-          <div className="flex">
+            <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
                 <button className="hover:bg-gray-200 text-black h-full flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
@@ -221,15 +281,113 @@ const NavBar = () => {
                           </Link>
                         </div>
                         <div className="mb-2">
-                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
                             {tranlsate("wellness_packages", locale)}
-                        </Link>
+                          </Link>
                         </div>
                         <div className="mb-2">
-                        <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
                             {tranlsate("gene_examination_packages", locale)}
-                        </Link>
+                          </Link>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li className="py-4 flex">
+            {/* <div className="m-auto font-semibold">
+              <Link href="/#contact">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
+            </div> */}
+            <div className="flex">
+              {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
+              <div className="relative group ">
+                <button className="hover:bg-gray-200 text-black h-full flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                  <span className="mr-2">{tranlsate("pharmacy", locale)}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "600px", marginLeft: "-200px" }}>
+                  <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg text-white">
+                    <div className="grid grid-cols-2 gap-4 md:grid-cols-2 p-5 text-base">
+                      <div>
+                        <p className="text-lg underline font-semibold underline-offset-8 mb-4">
+                          {tranlsate("monthly_packages", locale ? locale : "")}
+                        </p>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60"}>
+                            {tranlsate("elderly", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"}>
+                            {tranlsate("middle_aged_man", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45"}>
+                            {tranlsate("middle_aged_woman", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45"}>
+                            {tranlsate("adult", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19"}>
+                            {tranlsate("teenager", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12"}>
+                            {tranlsate("child", locale)}
+                          </Link>
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-xl underline font-semibold underline-offset-8 mb-4">
+                          {tranlsate("health_concern", locale)}
+                        </p>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-giac-ngu"}>
+                            {tranlsate("sleep", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-cai-thuoc-la"}>
+                            {tranlsate("smoking_cessation", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-giam-can"}>
+                            {tranlsate("weight_loss", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"}>
+                            {tranlsate("skin_care_anti_aging", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"}>
+                            {tranlsate("hair_nails_treatment", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"}>
+                            {tranlsate("pregnancy_care", locale)}
+                          </Link>
+                        </div>
+                        {/* <p>
+                          {tranlsate("vn_resident", locale)}
+                        </p>
+                        <p>
+                          {tranlsate("non_vn_resident", locale)}
+                        </p> */}
                       </div>
                     </div>
                   </div>
@@ -239,12 +397,7 @@ const NavBar = () => {
           </li>
           <li className="p-4 flex">
             <div className="m-auto font-semibold">
-              <Link href="/#contact">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
-            </div>
-          </li>
-          <li className="p-4 flex">
-          <div className="m-auto font-semibold">
-            <Link href="/packages/thanh-vien">{locale ==="en" ? "Member" :"Thành viên"}</Link>
+              <Link href="/packages/thanh-vien">{locale === "en" ? "Member" : "Thành viên"}</Link>
             </div>
           </li>
           <div className="m-auto">
@@ -262,8 +415,8 @@ const NavBar = () => {
               </li>
               <li className="inline cursor-pointer" onClick={() => {
                 router.push(router.asPath, router.asPath, { locale: "vi" })
-              }}> 
-              <Image
+              }}>
+                <Image
                   src={IgImg4}
                   alt="/"
                   width={25}
@@ -295,57 +448,57 @@ const NavBar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI" }</Link>
+              <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#gallery">{locale ==="en" ? "Services" :"Các Dịch Vụ"}</Link>
+              <Link href="/#gallery">{locale === "en" ? "Services" : "Các Dịch Vụ"}</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#packages">{locale ==="en" ? "Health Plans" :"Gói chăm sóc"}</Link>
+              <Link href="/#packages">{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#portfolio">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
+              <Link href="/#portfolio">{locale === "en" ? "Pharmacy" : "Nhà thuốc"}</Link>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#contact">{locale ==="en" ? "Member" :"Thành viên"}</Link>
+              <Link href="/#contact">{locale === "en" ? "Member" : "Thành viên"}</Link>
             </li>
             <div className="m-auto">
-            <div>
+              <div>
+              </div>
+              <ul className="flex">
+                <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: "en" });
+                }}>          <Image
+                    src={IgImg3}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  />
+                </li>
+                <li className="inline cursor-pointer" onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: "vi" })
+                }}>
+                  <Image
+                    src={IgImg4}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  />
+                </li>
+              </ul>
             </div>
-            <ul className="flex">
-              <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-                router.push(router.asPath, router.asPath, { locale: "en" });
-              }}>          <Image
-                  src={IgImg3}
-                  alt="/"
-                  width={25}
-                  height={25}
-                />
-              </li>
-              <li className="inline cursor-pointer" onClick={() => {
-                router.push(router.asPath, router.asPath, { locale: "vi" })
-              }}> 
-              <Image
-                  src={IgImg4}
-                  alt="/"
-                  width={25}
-                  height={25}
-                />
-              </li>
-            </ul>
-          </div>
           </ul>
         </div>
       </div>

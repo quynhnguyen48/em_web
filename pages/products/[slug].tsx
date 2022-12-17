@@ -23,6 +23,7 @@ type IBlogUrl = {
   desc: string;
   image_url: string;
   medicines: any;
+  price: number;
 };
 
 // export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
@@ -79,6 +80,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       desc: data.desc,
       image_url: data.image_url,
       medicines: data.medicines,
+      price: data.price,
     } :
     {
       slug: "",
@@ -103,20 +105,15 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
       </Head>
       <Hero heading={props.label} message={props.desc} image_url={"http://54.91.167.122:1337" + props.image_url} />
       <div className="max-w-[1240px] mx-auto py-16 text-left">
-        {
-          props.medicines?.map((m:any) => <p>- {m.label}</p>)
-        }
-          <p>{props.label}</p>
-          <p>{props.desc}</p>
-          
+      <p className='text-3xl text-right'>{numberWithCommas(props.price)}đ</p>
       </div>
       {
           props.medicines?.map((m:any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <img src={"http://54.91.167.122:1337" + m.image.url} />
+            <img className='m-auto' width={400} src={"http://54.91.167.122:1337" + m.image.url} />
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <p>{m.label}</p>
+            <p className='font-bold text-xl mb-2'>{m.label}</p>
             <p>{m.desc}</p>
           </div>
         </div>)
@@ -129,5 +126,10 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
     </>
   );
 };
+
+function numberWithCommas(x: number) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
 export default Product;
