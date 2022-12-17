@@ -16,7 +16,7 @@ const Accordion = ({ title, content }:{title: any, content: any}) => {
 </svg>
 }</span><span className='ml-3'>{title}</span></div>
       </div>
-      {isActive && <div className="accordion-content p-5 -mt-0.5 border-solid border-2 border-black text-sm">{content}</div>}
+      {isActive && <div className="accordion-content text-left p-5 -mt-0.5 border-solid border-2 border-black text-sm">{content}</div>}
     </div>
   );
 };
