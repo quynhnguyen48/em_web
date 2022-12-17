@@ -40,8 +40,8 @@ const Home: NextPage = () => {
       <Head>
         <title>ECHO MEDI</title>
         <meta
-          name="description"
-          content="Created as template for future work"
+          name="ECHO MEDI"
+          content="ECHO MEDI"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

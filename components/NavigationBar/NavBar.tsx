@@ -179,7 +179,7 @@ const NavBar = () => {
           <img width={200} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
         </Link>
-        <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
+        <ul style={{ color: `${textColor}` }} className="hidden sm:flex ml-20">
           <li className="p-4 flex">
             <div className="m-auto font-semibold">
               <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</Link>
@@ -225,7 +225,7 @@ const NavBar = () => {
                         </div>
                       </div>
                       <div>
-                        <p className="text-xl underline font-semibold underline-offset-8 mb-4">
+                        <p className="text-lg underline font-semibold underline-offset-8 mb-4">
                           {tranlsate("home_service", locale)}
                         </p>
                         <div className="mb-2">
@@ -382,12 +382,6 @@ const NavBar = () => {
                             {tranlsate("pregnancy_care", locale)}
                           </Link>
                         </div>
-                        {/* <p>
-                          {tranlsate("vn_resident", locale)}
-                        </p>
-                        <p>
-                          {tranlsate("non_vn_resident", locale)}
-                        </p> */}
                       </div>
                     </div>
                   </div>
@@ -400,7 +394,8 @@ const NavBar = () => {
               <Link href="/packages/thanh-vien">{locale === "en" ? "Member" : "Thành viên"}</Link>
             </div>
           </li>
-          <div className="m-auto">
+        </ul>
+        <div className="m-auto">
             <div>
             </div>
             <ul className="flex">
@@ -425,8 +420,6 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-        </ul>
-
         {/* Mobile Button */}
         <div onClick={handleNav} className="block sm:hidden z-10">
           {nav ? (

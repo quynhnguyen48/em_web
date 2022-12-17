@@ -66,7 +66,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <title>{props.label}</title>
         <meta
           name="description"
-          content="Created as template for future work"
+          content="ECHO MEDI"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
