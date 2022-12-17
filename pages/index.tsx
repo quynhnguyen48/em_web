@@ -73,7 +73,7 @@ const Home: NextPage = () => {
               : "Các thành viên của ECHO MEDI sẽ luôn được tiếp cận tất cả dịch vụ y tế và trợ giúp đặc biệt theo nhu cầu. Đồng nghĩa với việc luôn có một đội ngũ bác sĩ, dược sĩ và chuyên gia chăm sóc sức khỏe đồng hành với bạn 24/7"}
           </p>
           </div>
-          <div className="p-3 inline border-2 border-lime-600 rounded-2xl mr-8">
+          <div className="px-8 py-2 inline border border-lime-600 rounded-full mr-8">
             <Link className="p-5" href="/packages/thanh-vien">{tranlsate("become_a_member", locale)}</Link>
           </div>
           <div className="p-3 inline bg-lime-600 rounded-2xl text-white">

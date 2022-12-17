@@ -35,7 +35,7 @@ const Slider = ({ slides }: Props) => {
           <SwiperSlide>
             <p className="font-semibold z-10 text-white text-[30px] md:text-[50px]">
               {locale === "en" ? "LIVE A FULL LIFE" : "CHO CUỘC SỐNG TRỌN VẸN"}</p>
-            <img src={"https://echomedi.com/wp-content/uploads/2022/07/98ade86315dfd6818fce.jpg"} className="w-full absolute" />
+            <img src={"https://echomedi.com/wp-content/uploads/2022/07/98ade86315dfd6818fce.jpg"} className="w-full absolute darkened-image" />
           </SwiperSlide>
           <SwiperSlide>
             <div className="z-10">
@@ -43,11 +43,11 @@ const Slider = ({ slides }: Props) => {
             {locale === "en" ? "ENTRUST YOUR WELLBEING TO US" : "TRAO GỬI NIỀM TIN"}</p>
             <p className="font-semibold z-10 text-white text-[50px]">{locale === "en" ? "HEALTHCARE EVOLVED" : "CHO MỘT SỨC KHOẺ TOÀN DIỆN"}</p>
             </div>
-            <img src={"https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-07-17T073820.899.jpg"} className="w-full absolute" />
+            <img src={"https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-07-17T073820.899.jpg"} className="w-full absolute darkened-image" />
           </SwiperSlide>
           <SwiperSlide>
           <p className="font-semibold z-10 text-white text-[50px]">NÂNG TẦM SỨC KHOẺ</p>
-            <img src={"https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-07-17T073935.707.jpg"} className="w-full absolute" />
+            <img src={"https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-07-17T073935.707.jpg"} className="w-full absolute  darkened-image" />
           </SwiperSlide>
         </Swiper>
       </div>

@@ -10,7 +10,12 @@ html {
 .custom-img {
     background-image: url("../assets/hero.jpg");
 }
+.darkened-image {
+  filter: brightness(80%);
 
+  height: 94px;
+  width: 120px;
+}
 
 .swiper {
     width: 100%;

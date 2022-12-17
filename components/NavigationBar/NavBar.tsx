@@ -233,7 +233,7 @@ const NavBar = () => {
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-gray-200 text-black h-full flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("services", locale)}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -298,7 +298,7 @@ const NavBar = () => {
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-gray-200 text-black h-full flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("health_plans", locale)}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -347,7 +347,7 @@ const NavBar = () => {
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-gray-200 text-black h-full flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("pharmacy", locale)}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
