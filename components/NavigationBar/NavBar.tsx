@@ -474,29 +474,50 @@ const NavBar = () => {
           </li>
         </ul>
         <div className="m-auto">
-          <div>
+        <div className="relative group ">
+          <button className="text-black h-full flex flex-row items-center w-full text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+            {locale === "en" ? <div
+            className="flex"><Image
+              src={IgImg3}
+              alt="/"
+              width={25}
+              height={25}
+            /><span className="ml-2">EN</span></div> : 
+            <div
+            className="flex"><Image
+              src={IgImg4}
+              alt="/"
+              width={25}
+              height={25}
+            /><span className="ml-2">VI</span></div>
+            }
+          </button>
+          <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen">
+            <div className="bg-regal-blue text-black bg-white font-semibold" style={{width: "100px"}}>
+              <div className="flex">
+
+                <button onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: locale === "en" ? "vi" : "en" });
+                }}>
+                {locale === "en" ? <div
+            className="flex"><Image
+              src={IgImg4}
+              alt="/"
+              width={25}
+              height={25}
+            /><span className="ml-2">VI</span></div> : 
+            <div
+            className="flex"><Image
+              src={IgImg3}
+              alt="/"
+              width={25}
+              height={25}
+            /><span className="ml-2">EN</span></div>}
+                </button>
+              </div>
+            </div>
           </div>
-          <ul className="flex">
-            <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-              router.push(router.asPath, router.asPath, { locale: "en" });
-            }}>          <Image
-                src={IgImg3}
-                alt="/"
-                width={25}
-                height={25}
-              />
-            </li>
-            <li className="inline cursor-pointer" onClick={() => {
-              router.push(router.asPath, router.asPath, { locale: "vi" })
-            }}>
-              <Image
-                src={IgImg4}
-                alt="/"
-                width={25}
-                height={25}
-              />
-            </li>
-          </ul>
+        </div>
         </div>
         {/* Mobile Button */}
         <div onClick={handleNav} className="block sm:hidden z-10">

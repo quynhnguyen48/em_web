@@ -73,9 +73,12 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
         message={props.desc}
         sub_message={props.medicines.map((m: any) => m.label)}
         image_url={"http://54.91.167.122:1337" + props.image_url} />
+        
       <div className="max-w-[1048px] mx-auto py-16 text-left">
-      <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
-      <button><div className='inline bg-green-400 p-4 rounded-full ml-5 font-semibold'>{locale === "en" ? "BUY NOW" : "MUA NGAY"}</div></button>
+        <div className='flex justify-center mb-4'>
+          <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
+          <button><div className='inline bg-green-400 p-4 rounded-full ml-5 font-semibold'>{locale === "en" ? "BUY NOW" : "MUA NGAY"}</div></button>
+        </div>  
       {
           props.medicines?.map((m:any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
