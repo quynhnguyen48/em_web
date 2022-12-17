@@ -431,33 +431,38 @@ const NavBar = () => {
                           ___________________________
                         </p>
                         <div className="mb-2 text-sm">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-giac-ngu"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-suc-khoe-sinh-ly-nam"}>
                             {tranlsate("men_sexual_health", locale)}
                           </Link>
                         </div>
                         <div className="mb-2 text-sm">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-cai-thuoc-la"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-suc-khoe-sinh-ly-nu"}>
                             {tranlsate("women_sexual_health", locale)}
                           </Link>
                         </div>
                         <div className="mb-2 text-sm">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-giam-can"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-suc-khoe-tim-mach"}>
                             {tranlsate("heart_blood_circulation", locale)}
                           </Link>
                         </div>
                         <div className="mb-2 text-sm">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-ho-tro-tieu-hoa"}>
                             {tranlsate("digestive_system", locale)}
                           </Link>
                         </div>
                         <div className="mb-2 text-sm">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-phong-ngua-benh-xuong-khop"}>
                             {tranlsate("bone_joint_health", locale)}
                           </Link>
                         </div>
                         <div className="mb-2 text-sm">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-tang-suc-de-khoang-va-mien-dich"}>
                             {tranlsate("immune_system", locale)}
+                          </Link>
+                        </div>
+                        <div className="mb-2 text-sm">
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cai-thien-tri-nao"}>
+                            {tranlsate("brain_health", locale)}
                           </Link>
                         </div>
                       </div>

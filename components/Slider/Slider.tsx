@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { SliderData } from "./SliderData";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/css';
 import { useRouter } from 'next/router';
 
@@ -25,11 +26,12 @@ const Slider = ({ slides }: Props) => {
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
   }
+  SwiperCore.use([Autoplay]);
 
   return (
     <div id="gallery" className="w-full mx-auto">
       <div className="relative flex justify-center h-[350px] md:h-[750px]">
-        <Swiper className="mySwiper">
+        <Swiper className="mySwiper" autoplay={true}>
           <SwiperSlide>
             <p className="font-semibold z-10 text-white text-[30px] md:text-[50px]">
               {locale === "en" ? "LIVE A FULL LIFE" : "CHO CUỘC SỐNG TRỌN VẸN"}</p>
