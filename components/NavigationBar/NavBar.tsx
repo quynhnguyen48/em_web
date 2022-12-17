@@ -246,22 +246,22 @@ const NavBar = () => {
                         <p className="text-sm underline font-semibold underline-offset-8 mb-4">
                           {tranlsate("in_clinic_service", locale ? locale : "")}
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-phong-ngua"}>
                             {tranlsate("preventive_care", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/dieu-tri-ban-dau"}>
                             {tranlsate("primary_care", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
                             {tranlsate("on_going_care", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
                             {tranlsate("wellness", locale)}
                           </Link>
@@ -271,12 +271,12 @@ const NavBar = () => {
                         <p className="text-lg underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("home_service", locale)}
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tai-nha"}>
                             {tranlsate("home_visits", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tu-xa"}>
                             {tranlsate("telemedicine", locale)}
                           </Link>
@@ -308,27 +308,27 @@ const NavBar = () => {
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-1 p-5 text-base">
                       <div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
                             {tranlsate("preventive_care_packages", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
                             {tranlsate("primary_care_packages", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/quan-ly-benh-man-tinh"}>
                             {tranlsate("on_going_care_packages", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
                             {tranlsate("wellness_packages", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-xet-nghiem-di-truyen"}>
                             {tranlsate("gene_examination_packages", locale)}
                           </Link>
@@ -360,32 +360,32 @@ const NavBar = () => {
                         <p className="text-lg underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("monthly_packages", locale ? locale : "")}
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60"}>
                             {tranlsate("elderly", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"}>
                             {tranlsate("middle_aged_man", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45"}>
                             {tranlsate("middle_aged_woman", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45"}>
                             {tranlsate("adult", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19"}>
                             {tranlsate("teenager", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12"}>
                             {tranlsate("child", locale)}
                           </Link>
@@ -395,32 +395,32 @@ const NavBar = () => {
                         <p className="text-xl underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("health_concern", locale)}
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-giac-ngu"}>
                             {tranlsate("sleep", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-cai-thuoc-la"}>
                             {tranlsate("smoking_cessation", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-giam-can"}>
                             {tranlsate("weight_loss", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"}>
                             {tranlsate("skin_care_anti_aging", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"}>
                             {tranlsate("hair_nails_treatment", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"}>
                             {tranlsate("pregnancy_care", locale)}
                           </Link>
@@ -430,37 +430,37 @@ const NavBar = () => {
                         <p className="text-xl underline font-semibold underline-offset-8 mb-4 text-sm">
                           ___________________________
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-suc-khoe-sinh-ly-nam"}>
                             {tranlsate("men_sexual_health", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-suc-khoe-sinh-ly-nu"}>
                             {tranlsate("women_sexual_health", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-suc-khoe-tim-mach"}>
                             {tranlsate("heart_blood_circulation", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-tieu-hoa"}>
                             {tranlsate("digestive_system", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-phong-ngua-benh-xuong-khop"}>
                             {tranlsate("bone_joint_health", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-tang-suc-de-khoang-va-mien-dich"}>
                             {tranlsate("immune_system", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-cai-thien-tri-nao"}>
                             {tranlsate("brain_health", locale)}
                           </Link>

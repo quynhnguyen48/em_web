@@ -6,7 +6,7 @@ const Packages = () => {
   let { locale } = useRouter();
   locale = locale ?? "";
   return (
-    <div id="packages" className="max-w-[1240px] mx-auto py-16 text-center">
+    <div id="packages" className="max-w-[1240px] mx-auto text-center">
       <h1 className="font-bold text-5xl p-4 underline">{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</h1>
       <div className="grid grid-rows-none md:grid-cols-1 p-4 gap-4">
         <div className="w-full h-full col-span-1 md:col-span-1 row-span-2">
