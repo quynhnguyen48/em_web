@@ -11,11 +11,26 @@ const NavBar = () => {
   let { locale } = useRouter();
   locale = locale ?? "";
   const [nav, setNav] = useState(false);
+  const [nav1, setNav1] = useState(false);
+  const [nav2, setNav2] = useState(false);
+  const [nav3, setNav3] = useState(false);
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
 
   const handleNav = () => {
     setNav(!nav);
+  };
+
+  const handleNav1 = () => {
+    setNav1(!nav1);
+  };
+
+  const handleNav2 = () => {
+    setNav2(!nav2);
+  };
+
+  const handleNav3 = () => {
+    setNav3(!nav3);
   };
 
   const tranlsate = (term: string, locale: string) => {
@@ -396,30 +411,30 @@ const NavBar = () => {
           </li>
         </ul>
         <div className="m-auto">
-            <div>
-            </div>
-            <ul className="flex">
-              <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-                router.push(router.asPath, router.asPath, { locale: "en" });
-              }}>          <Image
-                  src={IgImg3}
-                  alt="/"
-                  width={25}
-                  height={25}
-                />
-              </li>
-              <li className="inline cursor-pointer" onClick={() => {
-                router.push(router.asPath, router.asPath, { locale: "vi" })
-              }}>
-                <Image
-                  src={IgImg4}
-                  alt="/"
-                  width={25}
-                  height={25}
-                />
-              </li>
-            </ul>
+          <div>
           </div>
+          <ul className="flex">
+            <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+              router.push(router.asPath, router.asPath, { locale: "en" });
+            }}>          <Image
+                src={IgImg3}
+                alt="/"
+                width={25}
+                height={25}
+              />
+            </li>
+            <li className="inline cursor-pointer" onClick={() => {
+              router.push(router.asPath, router.asPath, { locale: "vi" })
+            }}>
+              <Image
+                src={IgImg4}
+                alt="/"
+                width={25}
+                height={25}
+              />
+            </li>
+          </ul>
+        </div>
         {/* Mobile Button */}
         <div onClick={handleNav} className="block sm:hidden z-10">
           {nav ? (
@@ -444,13 +459,19 @@ const NavBar = () => {
               <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</Link>
             </li>
             <li
-              onClick={handleNav}
+              onClick={() => {
+                handleNav();
+                handleNav1();
+              }}
               className="p-4 text-4xl hover:text-gray-500"
             >
               <Link href="/#gallery">{locale === "en" ? "Services" : "Các Dịch Vụ"}</Link>
             </li>
             <li
-              onClick={handleNav}
+              onClick={() => {
+                handleNav();
+                handleNav2();
+              }}
               className="p-4 text-4xl hover:text-gray-500"
             >
               <Link href="/#packages">{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</Link>
@@ -467,6 +488,133 @@ const NavBar = () => {
             >
               <Link href="/#contact">{locale === "en" ? "Member" : "Thành viên"}</Link>
             </li>
+            <div className="m-auto">
+              <div>
+              </div>
+              <ul className="flex">
+                <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: "en" });
+                }}>          <Image
+                    src={IgImg3}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  />
+                </li>
+                <li className="inline cursor-pointer" onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: "vi" })
+                }}>
+                  <Image
+                    src={IgImg4}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  />
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+        <div
+          className={
+            nav1
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+          }
+        >
+          <ul>
+            <p className="text-2xl">{tranlsate("in_clinic_service", locale)}</p>
+            <div className="mb-2">
+              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+                {tranlsate("preventive_care", locale)}
+              </Link>
+            </div>
+            <div className="mb-2">
+              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
+                {tranlsate("primary_care", locale)}
+              </Link>
+            </div>
+            <div className="mb-2">
+              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                {tranlsate("on_going_care", locale)}
+              </Link>
+            </div>
+            <div className="mb-2">
+              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                {tranlsate("wellness", locale)}
+              </Link>
+            </div>
+            <p className="text-2xl mt-10">{tranlsate("home_service", locale)}</p>
+            <div className="mb-2">
+              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-tai-nha"}>
+                {tranlsate("home_visits", locale)}
+              </Link>
+            </div>
+            <div className="mb-2">
+              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-tu-xa"}>
+                {tranlsate("telemedicine", locale)}
+              </Link>
+            </div>
+            <div className="m-auto">
+              <div>
+              </div>
+              <ul className="flex">
+                <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: "en" });
+                }}>          <Image
+                    src={IgImg3}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  />
+                </li>
+                <li className="inline cursor-pointer" onClick={() => {
+                  router.push(router.asPath, router.asPath, { locale: "vi" })
+                }}>
+                  <Image
+                    src={IgImg4}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  />
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+        <div
+          className={
+            nav2
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+          }
+        >
+          <ul>
+            <div className="mb-2">
+              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+                {tranlsate("preventive_care_packages", locale)}
+              </Link>
+            </div>
+            <div className="mb-2">
+              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
+                {tranlsate("primary_care_packages", locale)}
+              </Link>
+            </div>
+            <div className="mb-2">
+              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                {tranlsate("on_going_care_packages", locale)}
+              </Link>
+            </div>
+            <div className="mb-2">
+              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                {tranlsate("wellness_packages", locale)}
+              </Link>
+            </div>
+            <div className="mb-2">
+              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/goi-xet-nghiem-di-truyen"}>
+                {tranlsate("gene_examination_packages", locale)}
+              </Link>
+            </div>
             <div className="m-auto">
               <div>
               </div>

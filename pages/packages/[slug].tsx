@@ -128,15 +128,15 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
 <div className="max-w-[1240px] mx-auto py-16 text-center">
       <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
         <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-             <p className='text-center text-2xl font-semibold'>{sp.label}</p>
+             <p className='text-center text-2xl font-semibold mb-2'>{sp.label}</p>
            {sp.image && <img
-             className='p-10'
+            //  className='p-10'
              src={api_endpoint + sp.image?.url}
              sizes="(max-width: 768px) 100vw,
                (max-width: 1200px) 50vw,
                33vw" alt='me' />}
         </div>
-        <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
+        <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
            {sp.services.map((sv: any) => <Accordion title={sv.label} content={
            <div>
            <p>{sv.desc}</p>
