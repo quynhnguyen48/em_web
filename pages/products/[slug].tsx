@@ -25,18 +25,45 @@ type IBlogUrl = {
   medicines: any;
 };
 
-export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
-  const json = await new PackagesApi().getAll();
-  const blogs = json;
-  return {
-    paths: blogs.map((v: any) => ({
-      params: { slug: v.slug, label: v ? v.label : "" },
-    })),
-    fallback: true,
-  };
-};
+// export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
+//   const json = await new PackagesApi().getAll();
+//   const blogs = json;
+//   return {
+//     paths: blogs.map((v: any) => ({
+//       params: { slug: v.slug, label: v ? v.label : "" },
+//     })),
+//     fallback: true,
+//   };
+// };
 
-export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
+// export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
+//   params,
+//   locale,
+// }) => {
+//   let slug = params!.slug;
+//   if (locale == "en") {
+//     slug = slug + "-en";
+//   }
+//   const data = await new ProductApi().findOne(slug);
+//   return {
+//     props: data ? {
+//       slug: data.slug,
+//       label: data.label,
+//       desc: data.desc,
+//       image_url: data.image_url,
+//       medicines: data.medicines,
+//     } :
+//     {
+//       slug: "",
+//       label: "",
+//       desc: "",
+//       image_url: "",
+//       medicines: [],
+//     },
+//   };
+// };
+
+export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   params,
   locale,
 }) => {
@@ -61,10 +88,9 @@ export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       medicines: [],
     },
   };
-};
+}
 
-const Product = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log('image', props.image_url)
+const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Head>
