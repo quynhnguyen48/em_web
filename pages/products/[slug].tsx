@@ -66,7 +66,7 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
           name="description"
           content="ECHO MEDI"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon1.png" />
       </Head>
       <Hero 
         heading={props.label} 

@@ -68,7 +68,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
           name="description"
           content="ECHO MEDI"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon1.png" />
       </Head>
       <Hero heading={props.label} message={props.desc} />
       <div className="max-w-[1240px] mx-auto py-16 text-left">

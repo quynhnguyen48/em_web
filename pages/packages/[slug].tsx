@@ -73,7 +73,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
           name="description"
           content="ECHO MEDI"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon1.png" />
       </Head>
       <Hero heading={props.label} message={props.desc} image_url={api_endpoint + props.image_url} />
       <div className="max-w-[1048px] mx-auto text-left">

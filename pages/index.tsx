@@ -43,7 +43,7 @@ const Home: NextPage = () => {
           name="ECHO MEDI"
           content="ECHO MEDI"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon1.png" />
       </Head>
 
       <Slider slides={SliderData} />
