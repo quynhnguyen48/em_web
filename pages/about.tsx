@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      <Hero heading={locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"} message={""} sub_message={[]}/>
+      <Hero heading={locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"} image_url="https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg" message={""} sub_message={[]}/>
       <div className="max-w-[1240px] mx-auto p-4 text-left">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
