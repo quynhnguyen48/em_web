@@ -77,7 +77,7 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
       <div className="max-w-[1048px] mx-auto py-16 text-left">
         <div className='flex justify-center mb-4'>
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
-          <button><div className='inline bg-green-400 p-4 rounded-full ml-5 font-semibold'>{locale === "en" ? "BUY NOW" : "MUA NGAY"}</div></button>
+          <button><div className='inline bg-green-400 p-4 rounded-full ml-5 font-semibold text-white'>{locale === "en" ? "BUY NOW" : "MUA NGAY"}</div></button>
         </div>  
       {
           props.medicines?.map((m:any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
