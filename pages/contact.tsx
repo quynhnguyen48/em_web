@@ -10,6 +10,7 @@ import Packages from "../components/Packages/Packages";
 import { useRouter } from 'next/router';
 import Link from "next/link";
 import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 const tranlsate = (term: string, locale: string) => {
   if (locale === "en") {
@@ -34,15 +35,19 @@ const tranlsate = (term: string, locale: string) => {
 }
 
 const Home: NextPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone_number, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
   let { locale } = useRouter();
   locale = locale ?? "";
 
   const contact = () => {
     axios.post('http://54.91.167.122:1337' + '/api/packages/contact', {
-      "name": "name",
-      "email": "email",
-      "phone_number": "phone_number",
-      "message": "message"
+      "name": name,
+      "email": email,
+      "phone_number": phone_number,
+      "message": message
   })
     .then(function (response) {
       console.log(response);
@@ -103,6 +108,7 @@ const Home: NextPage = () => {
                   "
                   id="exampleFormControlInput1"
                   placeholder="Your name"
+                  onChange={(e) => {setName(e.target.value)}}
                 />
                 <input
                   type="text"
@@ -126,6 +132,7 @@ const Home: NextPage = () => {
                   "
                   id="exampleFormControlInput1"
                   placeholder="Email"
+                  onChange={(e) => {setEmail(e.target.value)}}
                 />
                 <input
                   type="text"
@@ -149,6 +156,7 @@ const Home: NextPage = () => {
                   "
                   id="exampleFormControlInput1"
                   placeholder="Phone Number"
+                  onChange={(e) => {setPhoneNumber(e.target.value)}}
                 />
                 <input
                   type="text"
@@ -171,6 +179,7 @@ const Home: NextPage = () => {
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
                   id="exampleFormControlInput1"
+                  onChange={(e) => {setMessage(e.target.value)}}
                   placeholder="Your number"
                 />
                 <div className="flex space-x-2 justify-center">
