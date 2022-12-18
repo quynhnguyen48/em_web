@@ -9,6 +9,7 @@ import Contact from "../components/Contact/Contact";
 import Packages from "../components/Packages/Packages";
 import { useRouter } from 'next/router';
 import Link from "next/link";
+import axios from 'axios';
 
 const tranlsate = (term: string, locale: string) => {
   if (locale === "en") {
@@ -35,6 +36,22 @@ const tranlsate = (term: string, locale: string) => {
 const Home: NextPage = () => {
   let { locale } = useRouter();
   locale = locale ?? "";
+
+  const contact = () => {
+    axios.post('http://54.91.167.122:1337' + '/api/packages/contact', {
+      "name": "name",
+      "email": "email",
+      "phone_number": "phone_number",
+      "message": "message"
+  })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   return (
     <>
       <Head>
@@ -157,7 +174,9 @@ const Home: NextPage = () => {
                   placeholder="Your number"
                 />
                 <div className="flex space-x-2 justify-center">
-                  <button type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">Gởi</button>
+                  <button 
+                    onClick={contact}
+                  type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">Gởi</button>
                 </div>
               </div>
             </div>
