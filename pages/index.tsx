@@ -76,7 +76,7 @@ const Home: NextPage = () => {
           <div className="px-8 py-2 inline border border-lime-600 rounded-full mr-8">
             <Link className="p-5" href="/packages/thanh-vien">{tranlsate("become_a_member", locale)}</Link>
           </div>
-          <div className="p-3 inline bg-lime-600 rounded-2xl text-white">
+          <div className="px-8 py-2 inline bg-lime-600 rounded-2xl text-white">
             <Link className="p-5" href="/packages/thanh-vien">{tranlsate("gifting", locale)}</Link>
           </div>
         </div>
