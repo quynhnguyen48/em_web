@@ -48,11 +48,11 @@ const Home: NextPage = () => {
 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      <Hero heading={locale === "en" ? "Contact" : "Liên hệ"} message={""} sub_message={[]}/>
+      <Hero heading={locale === "en" ? "Contact" : "Liên hệ"} message={""} sub_message={[]} />
       <div className="max-w-[1240px] mx-auto p-4 text-left">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <p className="text-3xl font-bold mb-4">{tranlsate("contact_info",locale)}</p>
+            <p className="text-3xl font-bold mb-4">{tranlsate("contact_info", locale)}</p>
             <p className="mb-4">{locale === "en" ? "You can contact ECHO MEDI in the following ways:" : "Bạn có thể liên hệ ECHO MEDI qua những hình thức sau:"}</p>
             <p><span className="font-bold">Email:</span> contact@echomedi.com</p>
             <p className="font-bold">{locale === "en" ? "Text message:" : "Nhắn Tin:"}</p>
@@ -157,8 +157,8 @@ const Home: NextPage = () => {
                   placeholder="Your number"
                 />
                 <div className="flex space-x-2 justify-center">
-  <button type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">Gởi</button>
-</div>
+                  <button type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">Gởi</button>
+                </div>
               </div>
             </div>
           </div>
