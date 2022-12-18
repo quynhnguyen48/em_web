@@ -11,6 +11,10 @@ import { useRouter } from 'next/router';
 import Link from "next/link";
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+const notify = () => {
+  toast.success('Thành công');
+}
 
 const tranlsate = (term: string, locale: string) => {
   if (locale === "en") {
@@ -50,9 +54,11 @@ const Home: NextPage = () => {
       "message": message
   })
     .then(function (response) {
-      console.log(response);
+      console.log('success');
+      toast.success('Thành công');
     })
     .catch(function (error) {
+      console.log('failed');
       console.log(error);
     });
   }
@@ -107,7 +113,7 @@ const Home: NextPage = () => {
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
                   id="exampleFormControlInput1"
-                  placeholder="Your name"
+                  placeholder={locale === "en" ? "Your name" : "Tên của bạn"}
                   onChange={(e) => {setName(e.target.value)}}
                 />
                 <input
@@ -155,11 +161,10 @@ const Home: NextPage = () => {
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
                   id="exampleFormControlInput1"
-                  placeholder="Phone Number"
+                  placeholder={locale === "en" ? "Phone number" : "Số điện thoại"}
                   onChange={(e) => {setPhoneNumber(e.target.value)}}
                 />
-                <input
-                  type="text"
+                <textarea
                   className="
                     form-control
                     mb-3
@@ -180,12 +185,13 @@ const Home: NextPage = () => {
                   "
                   id="exampleFormControlInput1"
                   onChange={(e) => {setMessage(e.target.value)}}
-                  placeholder="Your number"
+                  placeholder={locale === "en" ? "Message" : "Lời nhắn"}
                 />
                 <div className="flex space-x-2 justify-center">
                   <button 
                     onClick={contact}
-                  type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">Gởi</button>
+                  type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xl leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
+                    {locale === "en" ? "SEND" : "Gởi"}</button>
                 </div>
               </div>
             </div>
@@ -195,6 +201,9 @@ const Home: NextPage = () => {
       {/* <Portfolio /> */}
       {/* <Packages /> */}
       <Contact />
+      <Toaster 
+        position="bottom-center"
+      />
     </>
   );
 };
