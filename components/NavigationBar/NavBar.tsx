@@ -225,7 +225,7 @@ const NavBar = () => {
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex ml-20">
           <li className="p-4 flex">
             <div className="m-auto text-sm font-semibold">
-              <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</Link>
+              <Link href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</Link>
             </div>
           </li>
           <li className="py-4">
