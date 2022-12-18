@@ -16,12 +16,14 @@ import { useRouter } from 'next/router'
 import { PackagesApi } from '../../models/package';
 import ReactMarkdown from "react-markdown";
 import { ProductApi } from '../../models/blog';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 type IBlogUrl = {
   slug: string;
   label: string;
   desc: string;
   image_url: string;
+  image_placeholder_url: string;
   medicines: any;
   price: any;
 };
@@ -43,6 +45,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       image_url: data.image_url,
       medicines: data.medicines,
       price: data.price,
+      image_placeholder_url: data.image_placeholder_url,
     } :
     {
       slug: "",
@@ -51,6 +54,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       image_url: "",
       medicines: [],
       price: 0,
+      image_placeholder_url: "",
     },
   };
 }
@@ -72,7 +76,9 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
         heading={props.label} 
         message={props.desc}
         sub_message={props.medicines.map((m: any) => m.label)}
-        image_url={"http://54.91.167.122:1337" + props.image_url} />
+        image_url={"http://54.91.167.122:1337" + props.image_url} 
+        image_placeholder_url={"http://54.91.167.122:1337" + props.image_placeholder_url} 
+        />
         
       <div className="max-w-[1048px] mx-auto py-16 text-left">
         <div className='flex justify-center mb-4'>
@@ -81,8 +87,12 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
         </div>  
       {
           props.medicines?.map((m:any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <img className='m-auto' width={400} src={"http://54.91.167.122:1337" + m.image.url} />
+          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 m-auto">
+            {/* <img className='m-auto' width={400} src={"http://54.91.167.122:1337" + m.image.url} /> */}
+            <LazyLoadImage
+              src={"http://54.91.167.122:1337" + m.image.url} // use normal <img> attributes as props
+              placeholderSrc={"http://54.91.167.122:1337" + m.image.formats.thumbnail.url}
+              width={400} />
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col justify-center">
             <p className='font-bold text-xl mb-2'>{m.label}</p>

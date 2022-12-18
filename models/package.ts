@@ -15,14 +15,14 @@ export class PackagesApi {
 
   async findOne(slug: string) {
     var v = await axios.get("http://54.91.167.122:1337" + '/api/package/findOne/' + slug);
-    console.log('v', v)
     var blogs = v.data.package;
+    console.log('image', blogs.hero_img)
     var result = new Package();
     result.label = blogs.label;
     result.slug = blogs.slug;
     result.sub_packages = blogs.sub_packages;
     result.desc = blogs.desc;
-    result.image_url = blogs.hero_img ? blogs.hero_img.url : '';
+    result.image_url = blogs.hero_img ? blogs.hero_img.formats.medium.url : '';
     return result;
   }
 }
