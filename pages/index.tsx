@@ -104,7 +104,7 @@ const Home: NextPage = () => {
 
         </div>
       </div>
-      <div className="grid grid-rows-none md:grid-cols-4 p-4 gap-4">
+      <div className="grid grid-rows-none md:grid-cols-4 p-4 gap-4 mb-8">
         <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col	items-center">
           <Link href={"/packages/cham-soc-phong-ngua/"}>
             <div className="cursor-pointer flex flex-col items-center">
