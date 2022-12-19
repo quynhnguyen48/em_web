@@ -219,7 +219,7 @@ const NavBar = () => {
           {/* <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
             EC<span style={{ color: "#77b17d" }}>HO ME</span>DI
           </h1> */}
-          <img width={200} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+          <img className="w-48 sm:28" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex ml-20">
@@ -479,12 +479,12 @@ const NavBar = () => {
           </li>
         </ul>
         <div className="flex space-x-2 justify-center">
-                  <a href={(locale === "en" ? "/en" : "") + "/contact"} type="button" className="font-semibold ml-10 inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
+                  <a href={(locale === "en" ? "/en" : "") + "/contact"} type="button" className="font-semibold ml-5 sm:ml-10 inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
                     {locale === "en" ? "Contact" : "Liên hệ"}
                   </a>
                 </div>
         <div className="m-auto">
-        <div className="relative group ">
+        <div className="relative group hidden sm:block">
           <button className="text-black h-full flex flex-row items-center w-full text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
             {locale === "en" ? <div
             className="flex"><Image

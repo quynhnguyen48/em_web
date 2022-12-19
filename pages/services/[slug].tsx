@@ -21,6 +21,8 @@ type IBlogUrl = {
   label: string;
   desc: string;
   detail: string;
+  image_url: string;
+  placeholder_image_url: string;
 };
 
 export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
@@ -49,12 +51,16 @@ export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       label: data.label,
       desc: data.desc,
       detail: data.detail,
+      image_url: data.image_url,
+      placeholder_image_url: data.placeholder_image_url
     } :
     {
       slug: "",
       label: "",
       desc: "",
       detail: "",
+      image_url: "",
+      placeholder_image_url: "",
     },
   };
 };
@@ -70,7 +76,9 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         />
         <link rel="icon" href="/favicon1.png" />
       </Head>
-      <Hero heading={props.label} message={props.desc} />
+      <Hero heading={props.label} message={props.desc} 
+        image_url={"http://54.91.167.122:1337" + props.image_url} 
+        image_placeholder_url={"http://54.91.167.122:1337" + props.placeholder_image_url} />
       <div className="max-w-[1240px] mx-auto py-16 text-left">
           <ReactMarkdown children={props.detail} />
       </div>

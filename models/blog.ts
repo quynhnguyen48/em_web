@@ -25,7 +25,6 @@ export class ProductApi {
     result.image_url = product.image ? product.image.url : '';
     result.image_placeholder_url = product.image ? product.image.formats.thumbnail.url : "";
     result.medicines = product.medicines;
-    console.log('result', result)
     return result;
   }
 }

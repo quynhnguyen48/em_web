@@ -22,11 +22,15 @@ export class ServiceApi {
       result.slug = blogs.slug;
       result.desc = blogs.desc;
       result.detail = blogs.detail;
+      result.image_url = blogs.image ? blogs.image.url : '';
+      result.placeholder_image_url = blogs.image ? blogs.image.formats.small.url : '';
     } else {
       result.label = "";
       result.slug = "";
       result.desc = "";
       result.detail = "";
+      result.image_url = "";
+      result.placeholder_image_url = "";
     }
     return result;
   }
@@ -38,4 +42,6 @@ class Service {
   desc!: string;
   price!: string;
   detail!: string;
+  image_url!: string;
+  placeholder_image_url!: string;
 }
