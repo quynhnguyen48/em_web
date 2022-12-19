@@ -191,7 +191,7 @@ const Home: NextPage = () => {
                 <div className="flex space-x-2 justify-center">
                   <button 
                     onClick={contact}
-                  type="button" className="inline-block px-6 py-2.5 text-white font-medium text-xl leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
+                  type="button" className="inline-block px-6 py-2.5 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
                     {locale === "en" ? "SEND" : "Gởi"}</button>
                 </div>
               </div>

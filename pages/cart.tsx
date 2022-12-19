@@ -189,7 +189,7 @@ const Home: NextPage = () => {
             <span>{locale === "en" ? "TOTAL COST" : "TỔNG CỘNG"}</span>
             <span>{numberWithCommas(totalPrice)}đ</span>
           </div>
-          <button className="bg-green-500 font-semibold hover:bg-green-600 py-3 text-sm text-white uppercase w-full">Đặt hàng</button>
+          <button className="bg-green-200 font-semibold hover:bg-green-300 py-3 text-sm text-black uppercase w-full rounded-full">Đặt hàng</button>
         </div>
       </div>
 

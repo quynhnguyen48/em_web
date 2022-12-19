@@ -507,11 +507,6 @@ const NavBar = () => {
             </div>
           </li>}
         </ul>
-        <div className="flex space-x-2 justify-center">
-          <a href={(locale === "en" ? "/en" : "") + "/contact"} type="button" className="font-semibold ml-5 sm:ml-2 inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
-            {locale === "en" ? "Contact" : "Liên hệ"}
-          </a>
-        </div>
         {logged && <div className="flex space-x-2 justify-center">
           <a href={(locale === "en" ? "/en" : "") + "/cart"} type="button" className="flex text-green-800 ml-5">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -520,6 +515,11 @@ const NavBar = () => {
             <span className="ml-2" id="num-of-item">{numOfItem}</span>
           </a>
         </div>}
+        <div className="flex space-x-2 justify-center">
+          <a href={(locale === "en" ? "/en" : "") + "/contact"} type="button" className="font-semibold ml-5 inline-block px-6 py-2.5 text-black font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+            {locale === "en" ? "Contact" : "Liên hệ"}
+          </a>
+        </div>
         <div className="m-auto">
           <div className="relative group hidden sm:block">
             <button className="text-black h-full flex flex-row items-center w-full text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">

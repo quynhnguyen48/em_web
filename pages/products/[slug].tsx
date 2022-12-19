@@ -131,7 +131,7 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
           <button
             onClick={() => {addToCart(parseInt(props.id))}}
-          ><div className='inline bg-green-400 p-4 rounded-full ml-5 font-semibold text-white'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
+          ><div className='inline bg-green-200 p-4 rounded-full ml-5 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
         </div>  
       {
           props.medicines?.map((m:any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
