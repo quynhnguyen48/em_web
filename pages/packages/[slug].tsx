@@ -15,6 +15,7 @@ import { useRouter } from 'next/router'
 import { PackagesApi } from '../../models/package';
 import Accordion from '../../components/Accordion';
 import Link from "next/link";
+import toast, { Toaster } from 'react-hot-toast';
 
 const api_endpoint = "http://54.91.167.122:1337";
 
@@ -46,6 +47,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   params,
   locale,
 }) => {
+  const toastId = toast.loading('Loading...');
   let slug = params!.slug;
   if (locale == "en") {
     slug = slug + "-en";
@@ -60,6 +62,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       image_url: data.image_url,
     },
   };
+  toast.dismiss(toastId);
 }
 
 const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
