@@ -79,6 +79,7 @@ const Home: NextPage = () => {
     if (email == "" || password == "") {
       toast.error("Thông tin không phù hợp")
     } else {
+      const toastId = toast.loading('Loading...');
       axios
         .post('http://54.91.167.122:1337/api/auth/local', {
           identifier: email,
@@ -97,7 +98,10 @@ const Home: NextPage = () => {
           // Handle error.
           console.log('An error occurred:', error.response);
           toast.error("Không thể đăng nhập. Vui lòng kiểm tra lại tên đăng nhập, mật khẩu")
-        });
+        })
+        .finally(() => {
+          toast.dismiss(toastId);
+        });;
       }
   }
 
