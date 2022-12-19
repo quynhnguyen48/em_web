@@ -300,11 +300,11 @@ const NavBar = () => {
                             {tranlsate("home_visits", locale)}
                           </Link>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
+                        {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tu-xa"}>
                             {tranlsate("telemedicine", locale)}
                           </Link>
-                        </div>
+                        </div> */}
                         {/* <p>
                           {tranlsate("vn_resident", locale)}
                         </p>

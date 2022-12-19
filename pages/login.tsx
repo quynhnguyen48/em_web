@@ -65,7 +65,7 @@ const Home: NextPage = () => {
       })
         .then(function (response) {
           console.log('success');
-          toast.success('Thành công');
+          toast.success('Đăng ký thành công');
         })
         .catch(function (error) {
           console.log('failed');
