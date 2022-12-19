@@ -4,14 +4,17 @@ import NavBar from "../components/NavigationBar/NavBar";
 import Router from "next/router";
 import toast, { Toaster } from 'react-hot-toast';
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  let { locale } = useRouter();
+  locale = locale ?? "";
   const [showChild, setShowChild] = useState(false)
 
   React.useEffect(() => {
     let toastId: string;
     const start = () => {
-      toast.loading('Loading...');
+      toast.loading(locale == "en" ? 'Loading...' : "Đang tải...");
     };
     const end = () => {
       toast.dismiss(toastId);
