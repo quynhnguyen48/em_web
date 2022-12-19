@@ -21,8 +21,14 @@ const NavBar = () => {
   const [logged, setLogged] = useState(false);
   const [numOfItem, setNumOfItem] = useState(0);
 
+  useEffect(()=>{
+    /*
+    Query logic
+    */
+    console.log('i fire once');
+},[]);
+
   useEffect(() => {
-    console.log('localStorage.getItem', localStorage.getItem('token'));
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       setLogged(true);
@@ -33,8 +39,6 @@ const NavBar = () => {
           }
         })
         .then(function (response) {
-          console.log('success');
-          // toast.success('Thành công');
           setNumOfItem(response.data.user.cart_lines?.length);
         })
         .catch(function (error) {

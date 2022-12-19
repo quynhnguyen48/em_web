@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 
 const tranlsate = (term: string, locale: string) => {
   if (locale === "en") {
@@ -45,7 +46,8 @@ const Home: NextPage = () => {
   locale = locale ?? "";
 
   useEffect(() => {
-    console.log('localStorage.getItem', localStorage.getItem('token'));
+    const toastId = toast.loading('Loading...');
+
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       axios.get('http://54.91.167.122:1337/api/product/getCart',
@@ -65,9 +67,12 @@ const Home: NextPage = () => {
         })
         .catch(function (error) {
           console.log(error);
+        })
+        .finally(() => {
+          toast.dismiss(toastId);
         });
     }
-  }, [totalPrice]);
+  }, []);
 
   return (
     <>
