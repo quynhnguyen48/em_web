@@ -147,7 +147,6 @@ const Home: NextPage = () => {
                   onChange={(e) => { setEmail(e.target.value) }}
                 />
                 <input
-                  type="text"
                   className="
                     form-control
                     mb-3
@@ -209,7 +208,6 @@ const Home: NextPage = () => {
                   onChange={(e) => { setEmail(e.target.value) }}
                 />
                 <input
-                  type="text"
                   className="
                     form-control
                     mb-3
@@ -234,7 +232,6 @@ const Home: NextPage = () => {
                   onChange={(e) => { setPassword(e.target.value) }}
                 />
                 <input
-                  type="text"
                   className="
                     form-control
                     mb-3
