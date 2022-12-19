@@ -41,6 +41,7 @@ function numberWithCommas(x: number) {
 const Home: NextPage = () => {
   let { locale } = useRouter();
   const [lines, setCartLines] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
   locale = locale ?? "";
 
   useEffect(() => {
@@ -54,18 +55,19 @@ const Home: NextPage = () => {
           }
         })
         .then(function (response) {
-          console.log('success', response);
-          // toast.success('Thành công');
-          setCartLines(response.data.user.cart_lines ?? []);
+          let total = 0;
+          let lines = response.data.user.cart_lines ?? [];
+          lines.forEach((l:any) => {
+            total += l.product.price;
+          })
+          setTotalPrice(total);
+          setCartLines(lines);
         })
         .catch(function (error) {
           console.log(error);
-          // toast.error("Đăng ký thất bại")
         });
     }
-  }, []);
-
-  console.log('lines', lines)
+  }, [totalPrice]);
 
   return (
     <>
@@ -179,7 +181,7 @@ const Home: NextPage = () => {
         <div className="border-t mt-8">
           <div className="flex font-semibold justify-between py-6 text-sm uppercase">
             <span>{locale === "en" ? "TOTAL COST" : "TỔNG CỘNG"}</span>
-            <span>3,564,000đ</span>
+            <span>{numberWithCommas(totalPrice)}đ</span>
           </div>
           <button className="bg-green-500 font-semibold hover:bg-green-600 py-3 text-sm text-white uppercase w-full">Đặt hàng</button>
         </div>
