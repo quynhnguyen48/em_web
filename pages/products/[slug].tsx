@@ -83,6 +83,10 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
           console.log('success');
           toast.success('Thành công');
           router.push("/cart", "/cart", { locale: locale === "en" ? "vi" : "en" });
+          let el = document.getElementById('num-of-item');
+          if (el) {
+            el.innerText = (parseInt(el.innerText) + 1).toString();;
+          }
         })
         .catch(function (error) {
           console.log('failed');
