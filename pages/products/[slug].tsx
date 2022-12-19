@@ -19,6 +19,7 @@ import { ProductApi } from '../../models/blog';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import React, { useEffect, useState } from "react";
 
 type IBlogUrl = {
   id: string;
@@ -68,31 +69,43 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
   let { locale } = useRouter();
   locale = locale ?? "";
   const router = useRouter();
+  const [logged, setLogged] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      const token = localStorage.getItem('token');
+      setLogged(true);
+    }
+  }, []);
 
   const addToCart = (id: number) => {
-
-    const token = localStorage.getItem('token');
-    axios.post('http://54.91.167.122:1337/api/product/addProductToCart', {
-        "product_id": id,
-      }, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      })
-        .then(function (response) {
-          console.log('success');
-          toast.success('Thành công');
-          router.push("/cart", "/cart", { locale });
-          let el = document.getElementById('num-of-item');
-          if (el) {
-            el.innerText = (parseInt(el.innerText) + 1).toString();;
+    if (logged) {
+      const token = localStorage.getItem('token');
+      axios.post('http://54.91.167.122:1337/api/product/addProductToCart', {
+          "product_id": id,
+        }, {
+          headers: {
+            'Authorization': `Bearer ${token}`
           }
         })
-        .catch(function (error) {
-          console.log('failed');
-          console.log(error);
-          toast.error("Đăng ký thất bại")
-        });
+          .then(function (response) {
+            console.log('success');
+            toast.success('Thành công');
+            router.push("/cart", "/cart", { locale });
+            let el = document.getElementById('num-of-item');
+            if (el) {
+              el.innerText = (parseInt(el.innerText) + 1).toString();;
+            }
+          })
+          .catch(function (error) {
+            console.log('failed');
+            console.log(error);
+            toast.error("Đăng ký thất bại")
+          });
+        } else {
+          toast.success('Vui lòng đăng nhập.');
+          router.push("/login", "/login", { locale });
+        }
   }
 
   return (
