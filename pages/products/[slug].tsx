@@ -90,7 +90,7 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
         })
           .then(function (response) {
             console.log('success');
-            toast.success('Thành công');
+            toast.success('Thêm vào giỏ hàng thành công');
             router.push("/cart", "/cart", { locale });
             let el = document.getElementById('num-of-item');
             if (el) {
@@ -100,7 +100,7 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
           .catch(function (error) {
             console.log('failed');
             console.log(error);
-            toast.error("Đăng ký thất bại")
+            toast.error("Thêm vào giỏ hàng thất bại")
           });
         } else {
           toast.success('Vui lòng đăng nhập.');
