@@ -219,7 +219,7 @@ const NavBar = () => {
           {/* <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
             EC<span style={{ color: "#77b17d" }}>HO ME</span>DI
           </h1> */}
-          <img className="w-48 sm:28" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+          <img className="w-32 sm:28" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex ml-20">
@@ -475,6 +475,11 @@ const NavBar = () => {
           <li className="p-4 flex">
             <div className="m-auto font-semibold text-sm">
               <Link href="/packages/thanh-vien">{locale === "en" ? "Member" : "Thành viên"}</Link>
+            </div>
+          </li>
+          <li className="p-4 flex">
+            <div className="m-auto font-semibold text-sm">
+              <Link href="/login">{locale === "en" ? "Member login" : "Tài khoản"}</Link>
             </div>
           </li>
         </ul>
