@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import IgImg3 from "../../assets/uk.png";
 import IgImg4 from "../../assets/vietnam.png";
 import Image from "next/image";
+import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 
 const NavBar = () => {
   const router = useRouter();
@@ -16,6 +18,29 @@ const NavBar = () => {
   const [nav3, setNav3] = useState(false);
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
+  const [logged, setLogged] = useState(false);
+
+  useEffect(() => {
+    console.log('localStorage.getItem', localStorage.getItem('token'));
+    if (localStorage.getItem('token')) {
+      const token = localStorage.getItem('token');
+      setLogged(true);
+      axios.get('http://54.91.167.122:1337/api/product/getCart',
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+        .then(function (response) {
+          console.log('success');
+          // toast.success('Thành công');
+        })
+        .catch(function (error) {
+          console.log(error);
+          // toast.error("Đăng ký thất bại")
+        });
+    }
+  }, []);
 
   const handleNav = () => {
     setNav(!nav);
@@ -477,11 +502,11 @@ const NavBar = () => {
               <Link href="/packages/thanh-vien">{locale === "en" ? "Member" : "Thành viên"}</Link>
             </div>
           </li>
-          <li className="p-4 flex">
+          {!logged && <li className="p-4 flex">
             <div className="m-auto font-semibold text-sm">
               <Link href="/login">{locale === "en" ? "Member login" : "Tài khoản"}</Link>
             </div>
-          </li>
+          </li>}
         </ul>
         <div className="flex space-x-2 justify-center">
           <a href={(locale === "en" ? "/en" : "") + "/contact"} type="button" className="font-semibold ml-5 sm:ml-2 inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
@@ -750,6 +775,9 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
+      <Toaster
+        position="bottom-center"
+      />
     </div>
   );
 };

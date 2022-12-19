@@ -17,8 +17,11 @@ import { PackagesApi } from '../../models/package';
 import ReactMarkdown from "react-markdown";
 import { ProductApi } from '../../models/blog';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 
 type IBlogUrl = {
+  id: string;
   slug: string;
   label: string;
   desc: string;
@@ -39,6 +42,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   const data = await new ProductApi().findOne(slug);
   return {
     props: data ? {
+      id: data.id,
       slug: data.slug,
       label: data.label,
       desc: data.desc,
@@ -48,6 +52,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       image_placeholder_url: data.image_placeholder_url,
     } :
     {
+      id: "",
       slug: "",
       label: "",
       desc: "",
@@ -62,6 +67,30 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
 const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
   let { locale } = useRouter();
   locale = locale ?? "";
+  const router = useRouter();
+
+  const addToCart = (id: number) => {
+
+    const token = localStorage.getItem('token');
+    axios.post('http://54.91.167.122:1337/api/product/addProductToCart', {
+        "product_id": id,
+      }, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+        .then(function (response) {
+          console.log('success');
+          toast.success('Thành công');
+          router.push("/cart", "/cart", { locale: locale === "en" ? "vi" : "en" });
+        })
+        .catch(function (error) {
+          console.log('failed');
+          console.log(error);
+          toast.error("Đăng ký thất bại")
+        });
+  }
+
   return (
     <>
       <Head>
@@ -83,7 +112,9 @@ const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
       <div className="max-w-[1048px] mx-auto py-16 text-left">
         <div className='flex justify-center mb-4'>
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
-          <button><div className='inline bg-green-400 p-4 rounded-full ml-5 font-semibold text-white'>{locale === "en" ? "BUY NOW" : "MUA NGAY"}</div></button>
+          <button
+            onClick={() => {addToCart(parseInt(props.id))}}
+          ><div className='inline bg-green-400 p-4 rounded-full ml-5 font-semibold text-white'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
         </div>  
       {
           props.medicines?.map((m:any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">

@@ -25,11 +25,13 @@ export class ProductApi {
     result.image_url = product.image ? product.image.url : '';
     result.image_placeholder_url = product.image ? product.image.formats.thumbnail.url : "";
     result.medicines = product.medicines;
+    result.id = product.id;
     return result;
   }
 }
 
 class Product {
+  id!: string;
   label!: string;
   slug!: string;
   desc!: string;

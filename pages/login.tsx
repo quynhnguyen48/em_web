@@ -40,28 +40,65 @@ const tranlsate = (term: string, locale: string) => {
 }
 
 const Home: NextPage = () => {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [password, setPassword] = useState("");
+  const [lines, setCartLines] = useState([]);
+  const [confirmPassword, setConfirmPassword] = useState("");
   let { locale } = useRouter();
   locale = locale ?? "";
 
-  const contact = () => {
-    axios.post('http://54.91.167.122:1337' + '/api/packages/contact', {
-      "name": name,
-      "email": email,
-      "phone_number": phone_number,
-      "message": message
-  })
-    .then(function (response) {
-      console.log('success');
-      toast.success('Thành công');
-    })
-    .catch(function (error) {
-      console.log('failed');
-      console.log(error);
-    });
+  const register = () => {
+    if (email == "") {
+      toast.error("Thông tin không phù hợp")
+    } else
+    if (password != confirmPassword) {
+      toast.error("Mật khẩu và xác nhận mật khẩu không trùng nhau")
+    } else {
+      axios.post('http://54.91.167.122:1337/api/auth/local/register', {
+        "username": email,
+        "email": email,
+        "password": password,
+      })
+        .then(function (response) {
+          console.log('success');
+          toast.success('Thành công');
+        })
+        .catch(function (error) {
+          console.log('failed');
+          console.log(error);
+          toast.error("Đăng ký thất bại")
+        });
+    }
+  }
+
+  const login = () => {
+    if (email == "" || password == "") {
+      toast.error("Thông tin không phù hợp")
+    } else {
+      axios
+        .post('http://54.91.167.122:1337/api/auth/local', {
+          identifier: email,
+          password: password,
+        })
+        .then(response => {
+          // Handle success.
+          toast.success('Đăng nhập thành công');
+          console.log('Well done!');
+          console.log('User profile', response.data.user);
+          console.log('User token', response.data.jwt);
+          localStorage.setItem('token', response.data.jwt);
+          router.push("/", "/", { locale: locale === "en" ? "vi" : "en" });
+        })
+        .catch(error => {
+          // Handle error.
+          console.log('An error occurred:', error.response);
+          toast.error("Không thể đăng nhập. Vui lòng kiểm tra lại tên đăng nhập, mật khẩu")
+        });
+      }
   }
 
   return (
@@ -78,10 +115,10 @@ const Home: NextPage = () => {
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       {/* <Hero heading={locale === "en" ? "Login" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"}/> */}
-      <SmallHero heading={locale === "en" ? "Login" : "Đăng nhập"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"}/>
+      <SmallHero heading={locale === "en" ? "Login" : "Đăng nhập"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"} />
       <div className="max-w-[1240px] mx-auto p-4 text-left mt-4">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
-        <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
+          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className="text-2xl font-bold mb-4">{locale == "vi" ? "Đăng nhập" : "Login"}</p>
             <div className="flex justify-center">
               <div className="mb-3 w-full">
@@ -107,7 +144,7 @@ const Home: NextPage = () => {
                   "
                   id="exampleFormControlInput1"
                   placeholder={locale === "en" ? "Email" : "Email"}
-                  onChange={(e) => {setName(e.target.value)}}
+                  onChange={(e) => { setEmail(e.target.value) }}
                 />
                 <input
                   type="text"
@@ -129,14 +166,15 @@ const Home: NextPage = () => {
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
+                  type="password"
                   id="exampleFormControlInput1"
                   placeholder="Password"
-                  onChange={(e) => {setEmail(e.target.value)}}
+                  onChange={(e) => { setPassword(e.target.value) }}
                 />
                 <div className="flex space-x-2 justify-center mt-8">
-                  <button 
-                    onClick={contact}
-                  type="button" className="inline-block px-6 py-2.5 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
+                  <button
+                    onClick={login}
+                    type="button" className="inline-block px-6 py-2.5 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
                     {locale === "en" ? "Login" : "Đăng nhập"}</button>
                 </div>
               </div>
@@ -168,7 +206,7 @@ const Home: NextPage = () => {
                   "
                   id="exampleFormControlInput1"
                   placeholder={locale === "en" ? "Email" : "Email"}
-                  onChange={(e) => {setName(e.target.value)}}
+                  onChange={(e) => { setEmail(e.target.value) }}
                 />
                 <input
                   type="text"
@@ -190,9 +228,10 @@ const Home: NextPage = () => {
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
+                  type="password"
                   id="exampleFormControlInput1"
                   placeholder="Password"
-                  onChange={(e) => {setEmail(e.target.value)}}
+                  onChange={(e) => { setPassword(e.target.value) }}
                 />
                 <input
                   type="text"
@@ -214,19 +253,20 @@ const Home: NextPage = () => {
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
+                  type="password"
                   id="exampleFormControlInput1"
                   placeholder={locale === "en" ? "Confirm password" : "Confirm password"}
-                  onChange={(e) => {setPhoneNumber(e.target.value)}}
+                  onChange={(e) => { setConfirmPassword(e.target.value) }}
                 />
                 <p>{
-                  locale === "en" ? 
-                  "Your personal information will be used to enhance your experience of using the website, to manage access to your account, and for other specific purposes described in our privacy policy." :
-                  "Thông tin cá nhân của bạn sẽ được sử dụng để tăng cường trải nghiệm sử dụng website, để quản lý truy cập vào tài khoản của bạn, và cho các mục đích cụ thể khác được mô tả trong privacy policy của chúng tôi."}
+                  locale === "en" ?
+                    "Your personal information will be used to enhance your experience of using the website, to manage access to your account, and for other specific purposes described in our privacy policy." :
+                    "Thông tin cá nhân của bạn sẽ được sử dụng để tăng cường trải nghiệm sử dụng website, để quản lý truy cập vào tài khoản của bạn, và cho các mục đích cụ thể khác được mô tả trong privacy policy của chúng tôi."}
                 </p>
                 <div className="flex space-x-2 justify-center mt-8">
-                  <button 
-                    onClick={contact}
-                  type="button" className="inline-block px-6 py-2.5 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
+                  <button
+                    onClick={register}
+                    type="button" className="inline-block px-6 py-2.5 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
                     {locale === "en" ? "REGISTER" : "Đăng ký"}</button>
                 </div>
               </div>
@@ -237,7 +277,7 @@ const Home: NextPage = () => {
       {/* <Portfolio /> */}
       {/* <Packages /> */}
       <Contact />
-      <Toaster 
+      <Toaster
         position="bottom-center"
       />
     </>
