@@ -77,11 +77,11 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
       </Head>
       <Hero heading={props.label} message={props.desc} image_url={api_endpoint + props.image_url} />
       <div className="max-w-[1048px] mx-auto text-left">
-      {props.sub_packages?.map((sp: any) =>
+      {props.sub_packages?.map((sp: any, id: any) =>
         <div className="max-w-[1240px] mx-auto p-4 text-center">
           <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-              <p className='text-center text-2xl font-semibold mb-2'>{sp.label}</p>
+              <p className='text-center text-2xl font-semibold mb-4'>{sp.label}</p>
               {sp.image && <img
                 src={api_endpoint + sp.image?.url}
                 sizes="(max-width: 768px) 100vw,
@@ -101,7 +101,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
               } />)}
             </div>
           </div>
-          <div className="w-full border-b border-gray-300 mt-10"></div>
+          {id != props.sub_packages.length - 1 && <div className="w-full border-b border-green-700 mt-10"></div>}
         </div>
       )}
       </div>

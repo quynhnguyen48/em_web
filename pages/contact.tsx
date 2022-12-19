@@ -12,6 +12,7 @@ import Link from "next/link";
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import SmallHero from "../components/Hero/SmallHero";
 const notify = () => {
   toast.success('Thành công');
 }
@@ -76,7 +77,7 @@ const Home: NextPage = () => {
 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      <Hero heading={locale === "en" ? "Contact" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"}/>
+      <SmallHero heading={locale === "en" ? "Contact" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"}/>
       <div className="max-w-[1240px] mx-auto p-4 text-left">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">

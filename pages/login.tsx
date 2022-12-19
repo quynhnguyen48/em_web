@@ -12,6 +12,7 @@ import Link from "next/link";
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import SmallHero from "../components/Hero/SmallHero";
 const notify = () => {
   toast.success('Thành công');
 }
@@ -77,9 +78,10 @@ const Home: NextPage = () => {
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       {/* <Hero heading={locale === "en" ? "Login" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"}/> */}
-      <div className="max-w-[1240px] mx-auto p-4 text-left mt-20">
+      <SmallHero heading={locale === "en" ? "Login" : "Đăng nhập"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"}/>
+      <div className="max-w-[1240px] mx-auto p-4 text-left mt-4">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
-        <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 p-10">
+        <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className="text-2xl font-bold mb-4">{locale == "vi" ? "Đăng nhập" : "Login"}</p>
             <div className="flex justify-center">
               <div className="mb-3 w-full">
@@ -140,7 +142,7 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
+          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className="text-2xl font-bold mb-4">{locale === "en" ? "Register" : "Đăng ký"}</p>
             <div className="flex justify-center">
               <div className="mb-3 w-full">
