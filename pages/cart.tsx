@@ -12,6 +12,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
+import SmallHero from "../components/Hero/SmallHero";
 
 const tranlsate = (term: string, locale: string) => {
   if (locale === "en") {
@@ -87,7 +88,7 @@ const Home: NextPage = () => {
 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      {/* <Hero heading={locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"} image_url="https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg" message={""} sub_message={[]}/> */}
+      <SmallHero heading={locale === "en" ? "Cart" : "Giỏ hàng"} image_url="https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg" message={""} sub_message={[]}/>
       <div className="container mx-auto mt-10">
     <div className="flex shadow-md my-10">
       <div className="w-3/4 bg-white px-10 py-10">
