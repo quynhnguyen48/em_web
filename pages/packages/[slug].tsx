@@ -97,7 +97,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
                   <p>{sv.desc}</p>
                   <div className='columns-3'>
                     {sv.price && <p className='font-bold p-5'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
-                    {sv.show_buy_btn && <div className='p-5 text-white'><button>{tranlsate("buy_now", locale)}</button></div>}
+                    {sv.show_buy_btn && <div className='p-5 text-black'><button>{tranlsate("buy_now", locale)}</button></div>}
                     {sv.show_learn_more && <div className='p-5'><Link href={locale == "en" ? "/en/services/" + sv.slug.substr(0, sv.slug.length - 3) : "/services/" + sv.slug}>{tranlsate("learn_more", locale)}</Link></div>}
                   </div>
                 </div>

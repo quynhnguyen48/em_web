@@ -30,7 +30,7 @@ const contact = () => {
       <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
         <p className="font-bold">{locale === "en" ? "POLICY" : "CHÍNH SÁCH"}</p>
         <p><Link href="/services/chinh-sach-bao-mat">{locale === "en" ? "Privacy Policy" : "Chính Sách Bảo Mật"}</Link></p>
-        <p className="font-bold"><Link href="/contact">{locale === "en" ? "CONTACT" : "LIÊN HỆ"}</Link></p>
+        <p className="font-bold mt-4"><Link href="/contact">{locale === "en" ? "CONTACT" : "LIÊN HỆ"}</Link></p>
         <p>{locale === "en" ? "Hotline: 1900 638 408" : "Hotline: 1900 638 408"}</p>
         <p>Email: contact@echomedi.com</p>
         <p className="font-bold mt-4">{locale === "en" ? "CLINIC HOURS" : "THỜI GIAN HOẠT ĐỘNG"}</p>
