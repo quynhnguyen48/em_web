@@ -271,22 +271,22 @@ const NavBar = () => {
                           {tranlsate("in_clinic_service", locale ? locale : "")}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-phong-ngua"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-cham-soc-phong-ngua"}>
                             {tranlsate("preventive_care", locale)}
                           </Link>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/dieu-tri-ban-dau"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-dieu-tri-ban-dau"}>
                             {tranlsate("primary_care", locale)}
                           </Link>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-quan-ly-benh-man-tinh"}>
                             {tranlsate("on_going_care", locale)}
                           </Link>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-suc-khoe-toan-dien"}>
                             {tranlsate("wellness", locale)}
                           </Link>
                         </div>
