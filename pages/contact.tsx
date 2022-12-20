@@ -78,7 +78,7 @@ const Home: NextPage = () => {
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       <SmallHero heading={locale === "en" ? "Contact" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"}/>
-      <div className="max-w-[1240px] mx-auto p-4 text-left">
+      <div className="max-w-[1048px] mx-auto p-4 text-left">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className="text-3xl font-bold mb-4">{tranlsate("contact_info", locale)}</p>

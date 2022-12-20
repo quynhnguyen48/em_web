@@ -126,7 +126,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         image_url={"http://54.91.167.122:1337" + props.image_url} 
         image_placeholder_url={"http://54.91.167.122:1337" + props.placeholder_image_url} />
       <div className="max-w-[1048px] mx-auto py-16 text-left">
-      <div className='flex justify-center mb-4'>
+      <div className='flex justify-center mb-10'>
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
           <button
             onClick={() => {addToCart(parseInt(props.id))}}
@@ -144,7 +144,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 };
 
 function numberWithCommas(x: number) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 export default Blog;

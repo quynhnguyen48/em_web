@@ -49,3 +49,98 @@ html {
     object-fit: cover;
   }
   
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    overflow: hidden;
+  }
+  table td,
+  table th {
+    border-top: 1px solid #ecf0f1;
+    padding: 10px;
+  }
+  table td {
+    border-left: 1px solid #ecf0f1;
+    border-right: 1px solid #ecf0f1;
+  }
+  table th {
+    background-color: #bbf7d0;
+  }
+  table tr:nth-of-type(even) td {
+    background-color: #e3ffdf;
+  }
+  table .total th {
+    background-color: white;
+  }
+  table .total td {
+    text-align: right;
+    font-weight: 700;
+  }
+  
+  .mobile-header {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 760px) {
+    p {
+      display: block;
+      font-weight: bold;
+    }
+  
+    table tr td:not(:first-child),
+  table tr th:not(:first-child),
+  table tr td:not(.total-val) {
+      display: none;
+    }
+    table tr:nth-of-type(even) td:first-child {
+      background-color: #d9f4f2;
+    }
+    table tr:nth-of-type(odd) td:first-child {
+      background-color: white;
+    }
+    table tr:nth-of-type(even) td:not(:first-child) {
+      background-color: white;
+    }
+    table tr th:first-child {
+      width: 100%;
+      display: block;
+    }
+    table tr th:not(:first-child) {
+      width: 40%;
+      transition: transform 0.4s ease-out;
+      transform: translateY(-9999px);
+      position: relative;
+      z-index: -1;
+    }
+    table tr td:not(:first-child) {
+      transition: transform 0.4s ease-out;
+      transform: translateY(-9999px);
+      width: 60%;
+      position: relative;
+      z-index: -1;
+    }
+    table tr td:first-child {
+      display: block;
+      cursor: pointer;
+    }
+    table tr.total th {
+      width: 25%;
+      display: inline-block;
+    }
+    table tr td.total-val {
+      display: inline-block;
+      transform: translateY(0);
+      width: 75%;
+    }
+  }
+  @media only screen and (max-width: 300px) {
+    table tr th:not(:first-child) {
+      width: 50%;
+      font-size: 14px;
+    }
+    table tr td:not(:first-child) {
+      width: 50%;
+      font-size: 14px;
+    }
+  }
