@@ -515,8 +515,8 @@ const NavBar = () => {
             <span className="ml-2" id="num-of-item">{numOfItem}</span>
           </a>
         </div>}
-        <div className="flex space-x-2 justify-center">
-          <a href={(locale === "en" ? "/en" : "") + "/contact"} type="button" className="font-semibold ml-5 inline-block px-6 py-2.5 text-black font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+        <div className="flex space-x-2 justify-center font-bold">
+          <a href={(locale === "en" ? "/en" : "") + "/contact"} type="button" className="font-bold ml-5 inline-block px-6 py-2.5 text-black font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
             {locale === "en" ? "Contact" : "Liên hệ"}
           </a>
         </div>
@@ -617,7 +617,7 @@ const NavBar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#contact">{locale === "en" ? "Member" : "Thành viên"}</Link>
+              <Link href="/contact">{locale === "en" ? "Member" : "Thành viên"}</Link>
             </li>
             <div className="m-auto">
               <div>
