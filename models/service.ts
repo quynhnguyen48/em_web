@@ -49,4 +49,5 @@ class Service {
   detail!: string;
   image_url!: string;
   placeholder_image_url!: string;
+  show_buy_btn: any;
 }

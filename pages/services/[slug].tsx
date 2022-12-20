@@ -30,6 +30,7 @@ type IBlogUrl = {
   image_url: string;
   placeholder_image_url: string;
   price: any;
+  show_buy_btn: any;
 };
 
 export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
@@ -62,6 +63,7 @@ export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       image_url: data.image_url,
       placeholder_image_url: data.placeholder_image_url,
       price: data.price,
+      show_buy_btn: data.show_buy_btn ?? false,
     } :
     {
       id: "",
@@ -72,6 +74,7 @@ export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
       image_url: "",
       placeholder_image_url: "",
       price: "",
+      show_buy_btn: false,
     },
   };
 };
@@ -126,12 +129,12 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         image_url={"http://54.91.167.122:1337" + props.image_url} 
         image_placeholder_url={"http://54.91.167.122:1337" + props.placeholder_image_url} />
       <div className="max-w-[1048px] mx-auto py-16 text-left">
-      <div className='flex justify-center mb-10'>
+      {props.show_buy_btn && <div className='flex justify-center mb-10'>
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
           <button
             onClick={() => {addToCart(parseInt(props.id))}}
           ><div className='inline bg-green-200 p-4 rounded-full ml-5 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
-        </div>  
+        </div>  }
           <ReactMarkdown children={props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } />
       </div>
       {/* <Slider slides={SliderData} />

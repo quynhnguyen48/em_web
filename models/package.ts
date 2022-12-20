@@ -31,4 +31,5 @@ class Package {
   sub_packages: any;
   desc!: string;
   image_url!: string;
+  show_buy_btn: any;
 }
