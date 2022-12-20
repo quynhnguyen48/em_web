@@ -1,6 +1,7 @@
 import type {
   GetStaticProps,
   InferGetStaticPropsType,
+  GetStaticPaths,
 } from 'next';
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -43,7 +44,20 @@ type IBlogUrl = {
   image_url: string;
 };
 
-export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
+
+export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
+  const json = await new PackagesApi().getAll();
+  const blogs = json;
+  return {
+    paths: blogs.map((v: any) => ({
+      params: { slug: v.slug, label: v ? v.label : "" },
+    })),
+    fallback: true,
+  };
+};
+
+
+export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   params,
   locale,
 }) => {
@@ -65,7 +79,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   toast.dismiss(toastId);
 }
 
-const Blog = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
+const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   let { locale } = useRouter();
   locale = locale ?? "";
   return (
