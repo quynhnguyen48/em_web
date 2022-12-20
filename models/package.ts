@@ -7,7 +7,6 @@ export class PackagesApi {
     const result = blogs.map( (d:any) => {
       let v = new Package();
       v.slug = d.attributes.slug;
-      v.label = d.attributes.label;
       return v;
     })
     return result;
