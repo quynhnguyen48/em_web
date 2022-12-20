@@ -111,8 +111,10 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                   <p>{sv.desc}</p>
                   <div className='columns-3'>
                     {sv.price && <p className='font-bold p-5'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
-                    {sv.show_buy_btn && <div className='p-5 text-black'><button>{tranlsate("buy_now", locale)}</button></div>}
-                    {sv.show_learn_more && <div className='p-5'><Link href={locale == "en" ? "/en/services/" + sv.slug.substr(0, sv.slug.length - 3) : "/services/" + sv.slug}>{tranlsate("learn_more", locale)}</Link></div>}
+                    {sv.show_buy_btn && <div className='pt-3 text-black'><button
+                      className='font-bold inline-block px-5 py-2 text-black font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
+                    >{tranlsate("buy_now", locale)}</button></div>}
+                    {sv.show_learn_more && <div className='p-5 hover:underline'><Link href={locale == "en" ? "/en/services/" + sv.slug.substr(0, sv.slug.length - 3) : "/services/" + sv.slug}>{tranlsate("learn_more", locale)}</Link></div>}
                   </div>
                 </div>
               } />)}
