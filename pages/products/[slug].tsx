@@ -32,7 +32,52 @@ type IBlogUrl = {
   price: any;
 };
 
-export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
+export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
+  const json = await new ProductApi().getAll();
+  const blogs = json;
+  return {
+    paths: blogs.map((v: any) => ({
+      params: { slug: v.slug, label: v ? v.label : "" },
+    })),
+    fallback: true,
+  };
+};
+
+
+// export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
+//   params,
+//   locale,
+// }) => {
+//   let slug = params!.slug;
+//   if (locale == "en") {
+//     slug = slug + "-en";
+//   }
+//   const data = await new ProductApi().findOne(slug);
+//   return {
+//     props: data ? {
+//       id: data.id,
+//       slug: data.slug,
+//       label: data.label,
+//       desc: data.desc,
+//       image_url: data.image_url,
+//       medicines: data.medicines,
+//       price: data.price,
+//       image_placeholder_url: data.image_placeholder_url,
+//     } :
+//     {
+//       id: "",
+//       slug: "",
+//       label: "",
+//       desc: "",
+//       image_url: "",
+//       medicines: [],
+//       price: 0,
+//       image_placeholder_url: "",
+//     },
+//   };
+// }
+
+export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   params,
   locale,
 }) => {
@@ -65,7 +110,7 @@ export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
   };
 }
 
-const Product = (props: InferGetStaticPropsType<typeof getServerSideProps>) => {
+const Product = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   let { locale } = useRouter();
   locale = locale ?? "";
   const router = useRouter();
