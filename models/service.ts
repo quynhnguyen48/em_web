@@ -17,7 +17,6 @@ export class ServiceApi {
     var v = await axios.get("http://54.91.167.122:1337" + '/api/service/findOne/' + slug);
     var blogs = v.data.service;
     var result = new Service();
-    console.log('vv ', blogs.image)
     if (blogs) {
       result.id = blogs.id;
       result.label = blogs.label;
