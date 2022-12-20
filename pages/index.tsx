@@ -64,16 +64,16 @@ const Home: NextPage = () => {
 	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
           </svg>
         </div>
-        <div className="w-full mx-auto text-center p-6 bg-emgreen relative" style={{ backgroundColor: "#ECF5ED" }}>
-          <div className="max-w-[1048px] m-auto">
-            <p className="text-2xl text-black text-3xl mb-5 font-semibold">
+        <div className="w-full mx-auto text-center p-2 bg-emgreen relative" style={{ backgroundColor: "#ECF5ED" }}>
+          <div className="max-w-[768px] m-auto">
+            <p className="text-2xl text-green-900 text-3xl font-semibold mb-4 mt-4">
               {tranlsate("what_we_offer", locale)}</p>
-            <p className="pb-4 text-black text-lg  mb-8">
+            <p className="pb-4 text-green-900 text-lg">
               {locale === "en" ? "Members receive on-demand access to a full spectrum of concierge medical services, as convenient as having a team of doctors, pharmacists, and wellness care experts with you 24/7."
                 : "Các thành viên của ECHO MEDI sẽ luôn được tiếp cận tất cả dịch vụ y tế và trợ giúp đặc biệt theo nhu cầu. Đồng nghĩa với việc luôn có một đội ngũ bác sĩ, dược sĩ và chuyên gia chăm sóc sức khỏe đồng hành với bạn 24/7"}
             </p>
           </div>
-          <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 text-white p-10">
+          <div className="grid grid-rows-none md:grid-cols-2 gap-4 text-white p-4">
             
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex sm:justify-end justify-start">
               <div className="w-56 px-8 py-2 inline border border-lime-600 rounded-full text-black">
@@ -81,7 +81,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex">
-                <div className="w-56 px-8 py-2 inline bg-lime-600 rounded-2xl text-white">
+                <div className="w-56 px-8 py-2 inline bg-green-900 rounded-2xl text-white">
                   <Link className="p-5" href="/packages/thanh-vien">{tranlsate("gifting", locale)}</Link>
                 </div>
             </div>

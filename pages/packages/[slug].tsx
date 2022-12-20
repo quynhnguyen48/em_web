@@ -98,7 +98,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <div className="max-w-[1240px] mx-auto p-4 text-center">
           <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-              <p className='text-center text-2xl font-semibold mb-4'>{sp.label}</p>
+              <p className='text-center text-2xl font-medium mb-4'>{sp.label}</p>
               {sp.image && <img
                 src={api_endpoint + sp.image?.url}
                 sizes="(max-width: 768px) 100vw,
@@ -108,11 +108,11 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
               {sp.services.map((sv: any) => <Accordion title={sv.label} content={
                 <div>
-                  <p>{sv.desc}</p>
+                  <p className='font-medium' >{sv.desc}</p>
                   <div className='columns-3'>
-                    {sv.price && <p className='font-bold p-5'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
+                    {sv.price && <p className='font-semibold p-5'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
                     {sv.show_buy_btn && <div className='pt-3 text-black'><button
-                      className='font-bold inline-block px-5 py-2 text-black font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
+                      className='font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
                     >{tranlsate("buy_now", locale)}</button></div>}
                     {sv.show_learn_more && <div className='p-5 hover:underline'><Link href={locale == "en" ? "/en/services/" + sv.slug.substr(0, sv.slug.length - 3) : "/services/" + sv.slug}>{tranlsate("learn_more", locale)}</Link></div>}
                   </div>

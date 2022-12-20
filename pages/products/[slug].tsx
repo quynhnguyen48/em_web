@@ -166,7 +166,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Hero 
         heading={props.label} 
         message={props.desc}
-        sub_message={props.medicines.map((m: any) => m.label)}
+        sub_message={props.medicines?.map((m: any) => m.label)}
         image_url={"http://54.91.167.122:1337" + props.image_url} 
         image_placeholder_url={"http://54.91.167.122:1337" + props.image_placeholder_url} 
         />
@@ -204,7 +204,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 };
 
 function numberWithCommas(x: number) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 
