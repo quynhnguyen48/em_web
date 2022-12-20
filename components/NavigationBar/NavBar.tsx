@@ -353,7 +353,7 @@ const NavBar = () => {
                           </Link>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-goi-xet-nghiem-di-truyen"}>
+                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-xet-nghiem-di-truyen"}>
                             {tranlsate("gene_examination_packages", locale)}
                           </Link>
                         </div>

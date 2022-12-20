@@ -18,29 +18,34 @@ export class ServiceApi {
     var blogs = v.data.service;
     var result = new Service();
     if (blogs) {
+      result.id = blogs.id;
       result.label = blogs.label;
       result.slug = blogs.slug;
       result.desc = blogs.desc;
       result.detail = blogs.detail;
       result.image_url = blogs.image ? blogs.image.url : '';
       result.placeholder_image_url = blogs.image ? blogs.image.formats.small.url : '';
+      result.price = blogs.price ?? 0;
     } else {
+      result.id = "";
       result.label = "";
       result.slug = "";
       result.desc = "";
       result.detail = "";
       result.image_url = "";
       result.placeholder_image_url = "";
+      result.price = "";
     }
     return result;
   }
 }
 
 class Service {
+  id!: string;
   label!: string;
   slug!: string;
   desc!: string;
-  price!: string;
+  price!: any;
   detail!: string;
   image_url!: string;
   placeholder_image_url!: string;
