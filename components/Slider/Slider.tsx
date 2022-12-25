@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { useState } from "react";
 import { SliderData } from "./SliderData";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,8 +10,8 @@ interface Props {
 }
 
 const Slider = ({ slides }: Props) => {
-  let { locale } = useRouter();
-  locale = locale ?? "";
+  const router = useRouter()
+  const locale = router.query.locale as string || 'en';
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 

@@ -2,8 +2,9 @@ import React from "react";
 import { useRouter } from 'next/router';
 
 const Instagram = () => {
-  let { locale } = useRouter();
-  locale = locale ?? "";
+  const router = useRouter()
+  const locale = router.query.locale as string || 'en';
+
   return (
     <div className="w-full mx-auto text-center p-6 bg-emgreen ">
       <div className="max-w-[1240px] mx-auto text-center">

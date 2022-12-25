@@ -4,14 +4,11 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from 'next/router';
 import IgImg3 from "../../assets/uk.png";
 import IgImg4 from "../../assets/vietnam.png";
-import Image from "next/image";
-import axios from "axios";
+// import Image from "next/image";
 import toast, { Toaster } from 'react-hot-toast';
+import LinkComponent from "../Link";
 
 const NavBar = () => {
-  const router = useRouter();
-  let { locale } = useRouter();
-  locale = locale ?? "";
   const [nav, setNav] = useState(false);
   const [nav1, setNav1] = useState(false);
   const [nav2, setNav2] = useState(false);
@@ -21,18 +18,23 @@ const NavBar = () => {
   const [logged, setLogged] = useState(false);
   const [numOfItem, setNumOfItem] = useState(0);
 
+  const router = useRouter()
+  const locale = router.query.locale as string || 'en';
+
   useEffect(() => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       setLogged(true);
-      axios.get('http://54.91.167.122:1337/api/product/getCart',
+      fetch('http://3.89.245.84:1337/api/product/getCart',
         {
           headers: {
             'Authorization': `Bearer ${token}`
           }
         })
+        .then((response) => response.json())
         .then(function (response) {
-          setNumOfItem(response.data.user.cart_lines?.length);
+          console.log('response', response)
+          setNumOfItem(response.user.cart_lines?.length);
         })
         .catch(function (error) {
           console.log(error);
@@ -239,17 +241,17 @@ const NavBar = () => {
       className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center px-4 text-white">
-        <Link href="/">
+        <LinkComponent href={"/"} locale={""} skipLocaleHandling={false}>
           {/* <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
             EC<span style={{ color: "#77b17d" }}>HO ME</span>DI
           </h1> */}
           <img className="w-32 sm:28" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
-        </Link>
+        </LinkComponent>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex ml-20">
           <li className="py-4 flex">
-          <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded-full">
-              <Link href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</Link>
+            <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded-full">
+              <LinkComponent locale={""} skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
             </div>
           </li>
           <li className="py-4">
@@ -271,34 +273,34 @@ const NavBar = () => {
                           {tranlsate("in_clinic_service", locale ? locale : "")}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-phong-ngua"}>
+                          <LinkComponent href={"/packages/cham-soc-phong-ngua"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("preventive_care", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/dieu-tri-ban-dau"}>
+                          <LinkComponent href={"/packages/dieu-tri-ban-dau"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("primary_care", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+                          <LinkComponent href={"/packages/quan-ly-benh-man-tinh"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("on_going_care", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+                          <LinkComponent href={"/packages/suc-khoe-toan-dien"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("wellness", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                       </div>
                       <div>
-                      <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
+                        <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("home_service", locale)}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tai-nha"}>
+                          <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("home_visits", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tu-xa"}>
@@ -333,29 +335,29 @@ const NavBar = () => {
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-1 p-5 text-base">
                       <div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/goi-cham-soc-phong-ngua"}>
+                          <LinkComponent href={"/packages/goi-cham-soc-phong-ngua"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("preventive_care_packages", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/goi-dieu-tri-ban-dau"}>
+                          <LinkComponent href={"/packages/goi-dieu-tri-ban-dau"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("primary_care_packages", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/packages/goi-quan-ly-benh-man-tinh"}>
+                          <LinkComponent href={"/packages/goi-quan-ly-benh-man-tinh"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("on_going_care_packages", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-suc-khoe-toan-dien"}>
+                          <LinkComponent href={"/packages/goi-suc-khoe-toan-dien"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("wellness_packages", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/goi-xet-nghiem-di-truyen"}>
+                          <LinkComponent href={"/packages/goi-xet-nghiem-di-truyen"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("gene_examination_packages", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                       </div>
                     </div>
@@ -385,34 +387,34 @@ const NavBar = () => {
                           {tranlsate("monthly_packages", locale ? locale : "")}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60"}>
+                          <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("elderly", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold block" href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"}>
+                          <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("middle_aged_man", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45"}>
+                          <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("middle_aged_woman", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45"}>
+                          <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("adult", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19"}>
+                          <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("teenager", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12"}>
+                          <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("child", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                       </div>
                       <div>
@@ -420,74 +422,74 @@ const NavBar = () => {
                           {tranlsate("health_concern", locale)}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-giac-ngu"}>
+                          <LinkComponent href={"/products/goi-ho-tro-giac-ngu"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("sleep", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-cai-thuoc-la"}>
+                          <LinkComponent href={"/products/goi-ho-tro-cai-thuoc-la"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("smoking_cessation", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-giam-can"}>
+                          <LinkComponent href={"/products/goi-ho-tro-giam-can"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("weight_loss", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"}>
+                          <LinkComponent href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("skin_care_anti_aging", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"}>
+                          <LinkComponent href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("hair_nails_treatment", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"}>
+                          <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("pregnancy_care", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                       </div>
                       <div>
                         <p className="text-xl underline font-semibold underline-offset-8 mb-4 text-sm">
-                          ___________________________
+                          _________________
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-suc-khoe-sinh-ly-nam"}>
+                          <LinkComponent href={"/products/goi-suc-khoe-sinh-ly-nam"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("men_sexual_health", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-suc-khoe-sinh-ly-nu"}>
+                          <LinkComponent href={"/products/goi-suc-khoe-sinh-ly-nu"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("women_sexual_health", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-suc-khoe-tim-mach"}>
+                          <LinkComponent href={"/products/goi-ho-tro-suc-khoe-tim-mach"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("heart_blood_circulation", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-ho-tro-tieu-hoa"}>
+                          <LinkComponent href={"/products/goi-ho-tro-tieu-hoa"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("digestive_system", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-phong-ngua-benh-xuong-khop"}>
+                          <LinkComponent href={"/products/goi-phong-ngua-benh-xuong-khop"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("bone_joint_health", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-tang-suc-de-khoang-va-mien-dich"}>
+                          <LinkComponent href={"/products/goi-tang-suc-de-khoang-va-mien-dich"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("immune_system", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 hover:underline font-semibold" href={"/products/goi-cai-thien-tri-nao"}>
+                          <LinkComponent href={"/products/goi-cai-thien-tri-nao"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("brain_health", locale)}
-                          </Link>
+                          </LinkComponent>
                         </div>
                       </div>
                     </div>
@@ -498,45 +500,60 @@ const NavBar = () => {
           </li>
           <li className="py-4 flex">
             <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded-full">
-              <Link href="/packages/thanh-vien">{locale === "en" ? "Member" : "Thành viên"}</Link>
+              <LinkComponent href="/packages/thanh-vien" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
             </div>
           </li>
           {!logged && <li className="p-4 flex">
             <div className="m-auto font-semibold text-sm">
-              <Link href="/login">{locale === "en" ? "Member login" : "Tài khoản"}</Link>
+              <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Tài khoản"}</LinkComponent>
             </div>
           </li>}
         </ul>
         {logged && <div className="flex space-x-2 justify-center">
-          <a href={(locale === "en" ? "/en" : "") + "/cart"} type="button" className="flex text-green-800 ml-5">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-            </svg>
+          <LinkComponent href={"/cart"} skipLocaleHandling={false} locale={""}>
+            <div className="flex text-green-800 ml-5 mt-5">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+              </svg>
+            </div>
             <span className="ml-2 font-bold" id="num-of-item">{numOfItem == 0 ? '' : numOfItem}</span>
-          </a>
+          </LinkComponent>
         </div>}
         <div className="flex space-x-2 justify-center font-bold">
-          <a href={(locale === "en" ? "/en" : "") + "/contact"} type="button" className="font-bold ml-5 inline-block px-6 py-2.5 text-black font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
-            {locale === "en" ? "Contact" : "Liên hệ"}
-          </a>
+          <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
+            <div className="font-bold ml-5 inline-block px-6 py-2.5 text-black font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+              {locale === "en" ? "Contact" : "Liên hệ"}
+            </div>
+          </LinkComponent>
         </div>
         <div className="m-auto">
           <div className="relative group hidden sm:block">
             <button className="text-black h-full flex flex-row items-center w-full text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
-              {locale === "en" ? <div
-                className="flex"><Image
-                  src={IgImg3}
-                  alt="/"
-                  width={25}
-                  height={25}
-                /><span className="ml-2">EN</span></div> :
+              {locale === "vi" ? <div
+                className="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20" version="1.1">
+                  <rect width="30" height="20" fill="#da251d" />
+                  <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
+                </svg>
+              </div> :
                 <div
-                  className="flex"><Image
-                    src={IgImg4}
-                    alt="/"
-                    width={25}
-                    height={25}
-                  /><span className="ml-2">VI</span></div>
+                  className="flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30" height="20">
+                    <clipPath id="s">
+                      <path d="M0,0 v30 h60 v-30 z" />
+                    </clipPath>
+                    <clipPath id="t">
+                      <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                    </clipPath>
+                    <g clip-path="url(#s)">
+                      <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                      <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
+                      <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                    </g>
+                  </svg>
+                </div>
               }
             </button>
             <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen">
@@ -544,22 +561,45 @@ const NavBar = () => {
                 <div className="flex">
 
                   <button onClick={() => {
-                    router.push(router.asPath, router.asPath, { locale: locale === "en" ? "vi" : "en" });
+                    let href = router.asPath;
+                    let pName = router.pathname;
+                    Object.keys(router.query).forEach((k) => {
+                      if (k === 'locale') {
+                        pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
+                        console.log('pName ', pName)
+                        return
+                      }
+                      pName = pName.replace(`[${k}]`, router.query[k] as string);
+                      console.log('pName ', pName)
+                    })
+
+                    location.href = pName;
                   }}>
-                    {locale === "en" ? <div
-                      className="flex"><Image
-                        src={IgImg4}
-                        alt="/"
-                        width={25}
-                        height={25}
-                      /><span className="ml-2">VI</span></div> :
+                    {locale === "vi" ? <div
+                      className="flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30" height="20">
+                        <clipPath id="s">
+                          <path d="M0,0 v30 h60 v-30 z" />
+                        </clipPath>
+                        <clipPath id="t">
+                          <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                        </clipPath>
+                        <g clip-path="url(#s)">
+                          <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                          <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
+                          <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                        </g>
+                      </svg>
+                    </div> :
                       <div
-                        className="flex"><Image
-                          src={IgImg3}
-                          alt="/"
-                          width={25}
-                          height={25}
-                        /><span className="ml-2">EN</span></div>}
+                        className="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20" version="1.1">
+                          <rect width="30" height="20" fill="#da251d" />
+                          <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
+                        </svg>
+                      </div>}
                   </button>
                 </div>
               </div>
@@ -624,23 +664,34 @@ const NavBar = () => {
               </div>
               <ul className="flex">
                 <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: "en" });
-                }}>          <Image
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
                     src={IgImg3}
                     alt="/"
                     width={25}
                     height={25}
-                  />
+                  /> */}
                 </li>
                 <li className="inline cursor-pointer" onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: "vi" })
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
                 }}>
-                  <Image
+                  {/* <Image
                     src={IgImg4}
                     alt="/"
                     width={25}
                     height={25}
-                  />
+                  /> */}
                 </li>
               </ul>
             </div>
@@ -691,23 +742,34 @@ const NavBar = () => {
               </div>
               <ul className="flex">
                 <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: "en" });
-                }}>          <Image
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
                     src={IgImg3}
                     alt="/"
                     width={25}
                     height={25}
-                  />
+                  /> */}
                 </li>
                 <li className="inline cursor-pointer" onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: "vi" })
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
                 }}>
-                  <Image
+                  {/* <Image
                     src={IgImg4}
                     alt="/"
                     width={25}
                     height={25}
-                  />
+                  /> */}
                 </li>
               </ul>
             </div>
@@ -751,23 +813,34 @@ const NavBar = () => {
               </div>
               <ul className="flex">
                 <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: "en" });
-                }}>          <Image
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
                     src={IgImg3}
                     alt="/"
                     width={25}
                     height={25}
-                  />
+                  /> */}
                 </li>
                 <li className="inline cursor-pointer" onClick={() => {
-                  router.push(router.asPath, router.asPath, { locale: "vi" })
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
                 }}>
-                  <Image
+                  {/* <Image
                     src={IgImg4}
                     alt="/"
                     width={25}
                     height={25}
-                  />
+                  /> */}
                 </li>
               </ul>
             </div>

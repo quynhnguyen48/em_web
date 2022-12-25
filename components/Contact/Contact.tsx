@@ -1,10 +1,11 @@
 import React from "react";
 import { useRouter } from 'next/router';
 import Link from "next/link";
+import LinkComponent from "../Link";
 
 const contact = () => {
-  let { locale } = useRouter();
-  locale = locale ?? "";
+  const router = useRouter()
+  const locale = router.query.locale as string || 'en';
   return (
     <div className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 bg-emgreen text-white p-10">
       <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col items-center">
@@ -29,8 +30,8 @@ const contact = () => {
       </div>
       <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
         <p className="font-bold">{locale === "en" ? "POLICY" : "CHÍNH SÁCH"}</p>
-        <p><Link href="/services/chinh-sach-bao-mat">{locale === "en" ? "Privacy Policy" : "Chính Sách Bảo Mật"}</Link></p>
-        <p className="font-bold mt-4"><Link href="/contact">{locale === "en" ? "CONTACT" : "LIÊN HỆ"}</Link></p>
+        <p><LinkComponent locale={""} skipLocaleHandling={false} href="/services/chinh-sach-bao-mat">{locale === "en" ? "Privacy Policy" : "Chính Sách Bảo Mật"}</LinkComponent></p>
+        <p className="font-bold mt-4"><LinkComponent locale={""} skipLocaleHandling={false}  href="/contact">{locale === "en" ? "CONTACT" : "LIÊN HỆ"}</LinkComponent></p>
         <p>{locale === "en" ? "Hotline: 1900 638 408" : "Hotline: 1900 638 408"}</p>
         <p>Email: contact@echomedi.com</p>
         <p className="font-bold mt-4">{locale === "en" ? "CLINIC HOURS" : "THỜI GIAN HOẠT ĐỘNG"}</p>

@@ -7,8 +7,9 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  let { locale } = useRouter();
-  locale = locale ?? "";
+  const router = useRouter()
+  const locale = router.query.locale as string || 'en';
+
   const [showChild, setShowChild] = useState(false)
 
   React.useEffect(() => {

@@ -1,10 +1,11 @@
-import axios from 'axios';
-
 export class ProductApi {
   async getAll() {
 
-    var v = await axios.get('http://54.91.167.122:1337/api/products');
-    var blogs = v.data.data;
+    // var v = await axios.get('http://3.89.245.84:1337/api/products');
+    var v = await fetch('http://3.89.245.84:1337/api/products?pagination[page]=1&pagination[pageSize]=10000')
+        .then((response) => response.json());
+
+    var blogs = v.data;
 
     const result = blogs.map( (d:any) => {
       let v = new Product();
@@ -15,12 +16,16 @@ export class ProductApi {
   }
 
   async findOne(slug: string) {
-    var v = await axios.get("http://54.91.167.122:1337" + '/api/product/findOne/' + slug);
-    var product = v.data.product;
+    var v = await fetch("http://3.89.245.84:1337" + '/api/product/findOne/' + slug)
+        .then((response) => response.json());
+    // var v2 = await axios.get("http://3.89.245.84:1337" + '/api/product/findOne/' + slug);
+    var product = v.product;
     var result = new Product();
     result.label = product.label;
+    result.en_label = product.en_label;
     result.slug = product.slug;
     result.desc = product.desc;
+    result.en_desc = product.en_desc;
     result.price = product.price;
     result.image_url = product.image ? product.image.url : '';
     result.image_placeholder_url = product.image ? product.image.formats.thumbnail.url : "";
@@ -33,8 +38,10 @@ export class ProductApi {
 class Product {
   id!: string;
   label!: string;
+  en_label!: string;
   slug!: string;
   desc!: string;
+  en_desc!: string;
   image_url!: string;
   image_placeholder_url!: string;
   price!: number;
