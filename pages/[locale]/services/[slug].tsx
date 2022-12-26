@@ -22,6 +22,7 @@ import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks';
 
 import { makeStaticProps, getStaticPathsServices, getStaticPropsService } from '../../../lib/getStatic';
+import SmallHero from '../../../components/Hero/SmallHero';
 
 // const getStaticProps = makeStaticProps(['common', 'footer']);
 export { getStaticPathsServices as getStaticPaths, getStaticPropsService as getStaticProps };
@@ -132,7 +133,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
         />
         <link rel="icon" href="/favicon1.png" />
       </Head>
-      <Hero heading={locale === "en" ? props.en_label : props.label} message={locale === "en" ? props.en_desc : props.desc} 
+      <SmallHero heading={locale === "en" ? props.en_label : props.label} message={locale === "en" ? props.en_desc : props.desc} 
         image_url={"http://3.89.245.84:1337" + props.image_url} 
         image_placeholder_url={"http://3.89.245.84:1337" + props.placeholder_image_url} />
       <div className="max-w-[1048px] mx-auto py-16 text-left">
