@@ -500,7 +500,7 @@ const NavBar = () => {
           </li>
           <li className="py-4 flex">
             <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded-full">
-              <LinkComponent href="/packages/thanh-vien" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
+              <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
             </div>
           </li>
           {!logged && <li className="p-4 flex">
@@ -659,7 +659,7 @@ const NavBar = () => {
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <LinkComponent href={"/packages/thanh-vien"} locale="" skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
+              <LinkComponent href={"/membership"} locale="" skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
             </li>
             <div className="m-auto">
               <div>

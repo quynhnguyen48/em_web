@@ -16,6 +16,7 @@ import { PackagesApi } from '../../../models/package';
 import Accordion from '../../../components/Accordion';
 import Link from "next/link";
 import toast, { Toaster } from 'react-hot-toast';
+import { useState } from 'react';
 
 import { makeStaticProps, getStaticPathsPackages, getStaticPropsPackage } from '../../../lib/getStatic';
 import { useTranslation } from 'next-i18next'
@@ -88,7 +89,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
   // let { locale } = useRouter();
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
-  console.log('props', props)
+  const [active, setActive] = useState(-1);
   return (
     <>
       <Head>
@@ -113,15 +114,15 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                33vw" alt='me' />}
             </div>
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-12">
-              {sp.services.map((sv: any) => <Accordion title={locale === "en" ? sv.en_label : sv.label} content={
+              {sp.services.map((sv: any) => <Accordion id={sv.id} active={active} setActive={setActive} title={locale === "en" ? sv.en_label : sv.label} content={
                 <div>
                   <p className='font-medium' >{locale === "en" ? sv.en_desc : sv.desc}</p>
                   <div className='columns-1 sm:columns-3'>
-                    {sv.price && <p className='font-semibold p-5'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
-                    {sv.show_buy_btn && <div className='pt-3 text-black'><button
+                    {sv.price && <p className='font-semibold p-5 text-center'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
+                    {sv.show_buy_btn && <div className='pt-3 text-black text-center'><button
                       className='font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
                     >{tranlsate("buy_now", locale)}</button></div>}
-                    {sv.show_learn_more && <div className='p-5 hover:underline'>
+                    {sv.show_learn_more && <div className='p-5 hover:underline text-center'>
                       <LinkComponent href={"/services/" + sv.slug} skipLocaleHandling={false} locale={""}>{tranlsate("learn_more", locale)}</LinkComponent></div>}
                   </div>
                 </div>
