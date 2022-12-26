@@ -248,7 +248,7 @@ const NavBar = () => {
           <img className="w-32 sm:28" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
         </LinkComponent>
-        <ul style={{ color: `${textColor}` }} className="hidden sm:flex ml-20">
+        <ul style={{ color: `${textColor}` }} className="hidden md:flex ml-20">
           <li className="py-4 flex">
             <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded-full">
               <LinkComponent locale={""} skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
@@ -527,7 +527,7 @@ const NavBar = () => {
           </LinkComponent>
         </div>
         <div className="m-auto">
-          <div className="relative group hidden sm:block">
+          <div className="relative group hidden md:block">
             <button className="text-black h-full flex flex-row items-center w-full text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
               {locale === "vi" ? <div
                 className="flex">
