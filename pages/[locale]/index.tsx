@@ -119,7 +119,7 @@ const Home: NextPage = () => {
         <p className="text-lg mb-4">
           {locale === "en" ? "Expert Professionals - Intimate Environment - Tailored Treatments" : "Chuyên gia ưu tú – Môi trường thân thiện – Chăm sóc riêng biệt"}</p>
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
+          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 p-8">
             <img src={"https://echomedi.com/wp-content/uploads/2022/07/pexels-karolina-grabowska-4386467-scaled.jpg"} />
 
           </div>
