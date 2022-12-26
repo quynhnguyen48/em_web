@@ -383,7 +383,7 @@ const NavBar = () => {
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                     <div className="grid grid-cols-3 gap-4 md:grid-cols-3 p-5 text-base">
                       <div>
-                        <p className="text-lg underline font-semibold underline-offset-8 mb-4 text-sm">
+                        <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("monthly_packages", locale ? locale : "")}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
@@ -418,7 +418,7 @@ const NavBar = () => {
                         </div>
                       </div>
                       <div>
-                        <p className="text-xl underline font-semibold underline-offset-8 mb-4 text-sm">
+                        <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("health_concern", locale)}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
