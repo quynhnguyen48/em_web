@@ -34,7 +34,7 @@ const NavBar = () => {
         .then((response) => response.json())
         .then(function (response) {
           console.log('response', response)
-          setNumOfItem(response.user.cart_lines?.length);
+          setNumOfItem(response.user?.cart_lines?.length);
         })
         .catch(function (error) {
           console.log(error);
@@ -607,27 +607,29 @@ const NavBar = () => {
           </div>
         </div>
         {/* Mobile Button */}
-        <div onClick={handleNav} className="block sm:hidden z-10">
+        <div onClick={handleNav} className="block sm:hidden z-10 text-black">
           {nav ? (
-            <AiOutlineClose size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineClose size={20}/>
           ) : (
-            <AiOutlineMenu size={20} style={{ color: `${textColor}` }} />
+            <AiOutlineMenu size={20}/>
           )}
+          
         </div>
         {/* Mobile Menu */}
         <div
           className={
             nav
-              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center text-black ease-in duration-300"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center text-black ease-in duration-300"
           }
         >
+          
           <ul>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</Link>
+              <LinkComponent locale="" skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
             </li>
             <li
               onClick={() => {
@@ -636,7 +638,7 @@ const NavBar = () => {
               }}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#gallery">{locale === "en" ? "Services" : "Các Dịch Vụ"}</Link>
+              <button>{locale === "en" ? "Services" : "Các Dịch Vụ"}</button>
             </li>
             <li
               onClick={() => {
@@ -645,19 +647,19 @@ const NavBar = () => {
               }}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#packages">{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</Link>
+              <button>{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</button>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/#portfolio">{locale === "en" ? "Pharmacy" : "Nhà thuốc"}</Link>
+              <button>{locale === "en" ? "Pharmacy" : "Nhà thuốc"}</button>
             </li>
             <li
               onClick={handleNav}
               className="p-4 text-4xl hover:text-gray-500"
             >
-              <Link href="/contact">{locale === "en" ? "Member" : "Thành viên"}</Link>
+              <LinkComponent href={"/packages/thanh-vien"} locale="" skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
             </li>
             <div className="m-auto">
               <div>
@@ -695,47 +697,88 @@ const NavBar = () => {
                 </li>
               </ul>
             </div>
+            <button onClick={() => {
+                    let href = router.asPath;
+                    let pName = router.pathname;
+                    Object.keys(router.query).forEach((k) => {
+                      if (k === 'locale') {
+                        pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
+                        console.log('pName ', pName)
+                        return
+                      }
+                      pName = pName.replace(`[${k}]`, router.query[k] as string);
+                      console.log('pName ', pName)
+                    })
+
+                    location.href = pName;
+                  }}>
+                    {locale === "vi" ? <div
+                      className="flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30" height="20">
+                        <clipPath id="s">
+                          <path d="M0,0 v30 h60 v-30 z" />
+                        </clipPath>
+                        <clipPath id="t">
+                          <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                        </clipPath>
+                        <g clip-path="url(#s)">
+                          <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                          <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
+                          <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                        </g>
+                      </svg>
+                    </div> :
+                      <div
+                        className="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20" version="1.1">
+                          <rect width="30" height="20" fill="#da251d" />
+                          <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
+                        </svg>
+                      </div>}
+                  </button>
           </ul>
         </div>
         <div
           className={
             nav1
-              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
           }
         >
           <ul>
             <p className="text-2xl">{tranlsate("in_clinic_service", locale)}</p>
             <div className="mb-2">
-              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+              <LinkComponent onClick={handleNav1} locale="" legacyBehavior={false} className="p-2  hover:text-slate-200 font-semibold block text-black" href={"/packages/cham-soc-phong-ngua"}>
                 {tranlsate("preventive_care", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="mb-2">
-              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
+              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2  hover:text-slate-200 font-semibold block text-black" href={"/packages/dieu-tri-ban-dau"}>
                 {tranlsate("primary_care", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="mb-2">
-              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
                 {tranlsate("on_going_care", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="mb-2">
-              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
                 {tranlsate("wellness", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <p className="text-2xl mt-10">{tranlsate("home_service", locale)}</p>
             <div className="mb-2">
-              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-tai-nha"}>
+              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-tai-nha"}>
                 {tranlsate("home_visits", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="mb-2">
-              <Link onClick={handleNav1} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-tu-xa"}>
+              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-tu-xa"}>
                 {tranlsate("telemedicine", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="m-auto">
               <div>
@@ -778,35 +821,35 @@ const NavBar = () => {
         <div
           className={
             nav2
-              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
-              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300"
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
           }
         >
           <ul>
             <div className="mb-2">
-              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
                 {tranlsate("preventive_care_packages", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="mb-2">
-              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
+              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
                 {tranlsate("primary_care_packages", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="mb-2">
-              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
                 {tranlsate("on_going_care_packages", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="mb-2">
-              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
                 {tranlsate("wellness_packages", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="mb-2">
-              <Link onClick={handleNav2} legacyBehavior={false} className="p-2 text-white hover:text-slate-200 font-semibold block" href={"/packages/goi-xet-nghiem-di-truyen"}>
+              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/goi-xet-nghiem-di-truyen"}>
                 {tranlsate("gene_examination_packages", locale)}
-              </Link>
+              </LinkComponent>
             </div>
             <div className="m-auto">
               <div>
