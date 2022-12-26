@@ -137,17 +137,15 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
         image_placeholder_url={"http://3.89.245.84:1337" + props.placeholder_image_url} />
       <div className="max-w-[1048px] mx-auto py-16 text-left">
       {props.show_buy_btn && <div className='flex justify-center mb-10'>
+      <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
           <button
             onClick={() => {addToCart(parseInt(props.id))}}
           ><div className='inline bg-green-200 p-4 rounded-full ml-5 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
+          </div>
         </div>  }
           <ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } />
       </div>
-      {/* <Slider slides={SliderData} />
-      <Instagram /> */}
-      {/* <Portfolio /> */}
-      {/* <Packages /> */}
       <Contact />
     </>
   );
