@@ -749,34 +749,34 @@ const NavBar = () => {
         >
           <ul>
             <p className="text-2xl">{tranlsate("in_clinic_service", locale)}</p>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav1} locale="" legacyBehavior={false} className="p-2  hover:text-slate-200 font-semibold block text-black" href={"/packages/cham-soc-phong-ngua"}>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" href={"/packages/cham-soc-phong-ngua"} skipLocaleHandling={false}>
                 {tranlsate("preventive_care", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2  hover:text-slate-200 font-semibold block text-black" href={"/packages/dieu-tri-ban-dau"}>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/dieu-tri-ban-dau"}>
                 {tranlsate("primary_care", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/quan-ly-benh-man-tinh"}>
                 {tranlsate("on_going_care", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/suc-khoe-toan-dien"}>
                 {tranlsate("wellness", locale)}
               </LinkComponent>
             </div>
             <p className="text-2xl mt-10">{tranlsate("home_service", locale)}</p>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-tai-nha"}>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tai-nha"}>
                 {tranlsate("home_visits", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav1} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-tu-xa"}>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tu-xa"}>
                 {tranlsate("telemedicine", locale)}
               </LinkComponent>
             </div>
@@ -826,28 +826,28 @@ const NavBar = () => {
           }
         >
           <ul>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/cham-soc-phong-ngua"}>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/cham-soc-phong-ngua"}>
                 {tranlsate("preventive_care_packages", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/dieu-tri-ban-dau"}>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/dieu-tri-ban-dau"}>
                 {tranlsate("primary_care_packages", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold" href={"/packages/quan-ly-benh-man-tinh"}>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/quan-ly-benh-man-tinh"}>
                 {tranlsate("on_going_care_packages", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold" href={"/packages/suc-khoe-toan-dien"}>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/suc-khoe-toan-dien"}>
                 {tranlsate("wellness_packages", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2">
-              <LinkComponent onClick={handleNav2} legacyBehavior={false} className="p-2 hover:text-slate-200 font-semibold block" href={"/packages/goi-xet-nghiem-di-truyen"}>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-xet-nghiem-di-truyen"}>
                 {tranlsate("gene_examination_packages", locale)}
               </LinkComponent>
             </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const LinkComponent = ({ children, skipLocaleHandling, ...rest } : { children: any | undefined, skipLocaleHandling: any | undefined, locale: any | undefined, href: any }) => {
+const LinkComponent = ({ children, skipLocaleHandling, ...rest } : {  children: any | undefined, skipLocaleHandling: any | undefined, locale: any | undefined, href: any }) => {
   const router = useRouter()
   const locale = rest.locale || router.query.locale || ''
   let href = rest.href || router.asPath

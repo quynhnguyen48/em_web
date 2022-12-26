@@ -112,7 +112,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                (max-width: 1200px) 50vw,
                33vw" alt='me' />}
             </div>
-            <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
+            <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-12">
               {sp.services.map((sv: any) => <Accordion title={locale === "en" ? sv.en_label : sv.label} content={
                 <div>
                   <p className='font-medium' >{locale === "en" ? sv.en_desc : sv.desc}</p>
