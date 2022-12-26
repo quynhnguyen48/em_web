@@ -120,7 +120,7 @@ const Home: NextPage = () => {
                 <div className="pt-3 text-black text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
                   {locale == "en" ? "Buy now" : "Mua ngay"}
                 </button></div>
-                <div className="p-5 hover:underline text-center text-center"><LinkComponent skipLocaleHandling={false} href="/services/tam-soat-ung-thu-tong-quat" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="p-5 hover:underline text-center text-center"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bac" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -130,7 +130,7 @@ const Home: NextPage = () => {
                 <div className='columns-1 sm:columns-3'>
                 <p className="font-semibold p-5 text-center">12,000,000/năm<span className="underline"></span></p>
                 <div className="pt-3 text-black text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="p-5 hover:underline text-center text-center"><LinkComponent skipLocaleHandling={false} href="/services/tam-soat-ung-thu-tong-quat" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="p-5 hover:underline text-center text-center"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-vang" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -142,7 +142,7 @@ const Home: NextPage = () => {
                 <div className='columns-1 sm:columns-3'>
                 <p className="font-semibold p-5 text-center">18,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                 <div className="pt-3 text-black text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="p-5 hover:underline text-center text-center"><LinkComponent skipLocaleHandling={false} href="/services/tam-soat-ung-thu-tong-quat" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="p-5 hover:underline text-center text-center"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bach-kim" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -152,7 +152,7 @@ const Home: NextPage = () => {
 
 </p>
                 <div className='columns-1 sm:columns-3'>
-                <div className="p-5 hover:underline text-center"><LinkComponent skipLocaleHandling={false} href="/services/tam-soat-ung-thu-tong-quat" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="p-5 hover:underline text-center"><LinkComponent skipLocaleHandling={false} href="/services/goi-gia-dinh" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -162,7 +162,7 @@ const Home: NextPage = () => {
 
 </p>
                 <div className='columns-1 sm:columns-3'>
-                <div className="p-5 hover:underline text-center"><LinkComponent skipLocaleHandling={false} href="/services/tam-soat-ung-thu-tong-quat" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="p-5 hover:underline text-center"><LinkComponent skipLocaleHandling={false} href="/services/goi-doanh-nghiep" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -174,7 +174,7 @@ const Home: NextPage = () => {
                 <div className='columns-1 sm:columns-3'>
                 <p className="font-semibold p-5 text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                 <div className="pt-3 text-black  text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="p-5 hover:underline  text-center"><LinkComponent skipLocaleHandling={false} href="/services/tam-soat-ung-thu-tong-quat" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="p-5 hover:underline  text-center"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
                 </div>
               </div>
             } />
