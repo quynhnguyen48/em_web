@@ -8,6 +8,7 @@ import IgImg4 from "../../assets/vietnam.png";
 import toast, { Toaster } from 'react-hot-toast';
 import LinkComponent from "../Link";
 
+
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [nav1, setNav1] = useState(false);
@@ -20,6 +21,41 @@ const NavBar = () => {
 
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
+
+
+const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#000000" height="10px" width="10px" version="1.1" id="Layer_1" viewBox="0 0 330.002 330.002" xmlSpace="preserve">
+<path id="XMLID_23_" d="M329.155,100.036c-2.108-6.011-7.784-10.035-14.154-10.035h-300c-6.371,0-12.046,4.024-14.154,10.035  c-2.109,6.011-0.19,12.699,4.784,16.678l150.004,120c2.739,2.191,6.055,3.287,9.37,3.287c3.316,0,6.631-1.096,9.371-3.287  l149.996-120C329.346,112.734,331.264,106.047,329.155,100.036z"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>;
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
@@ -261,9 +297,7 @@ const NavBar = () => {
               <div className="relative group ">
                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-full md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("services", locale)}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
+                  <Icon />
                 </button>
                 <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "500px" }}>
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg text-black bg-white border border-black">
@@ -326,9 +360,7 @@ const NavBar = () => {
               <div className="relative group ">
                 <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-full md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("health_plans", locale)}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
+                  <Icon />
                 </button>
                 <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "300px" }}>
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
@@ -375,9 +407,7 @@ const NavBar = () => {
               <div className="relative group ">
                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-full md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("pharmacy", locale)}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 inline">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
+                  <Icon />
                 </button>
                 <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "800px", marginLeft: "-200px" }}>
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
