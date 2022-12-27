@@ -278,7 +278,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
   </div>
 
   <input className="menu-btn hidden" type="checkbox" id="menu-btn"/>
-  <label className="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+  <label className="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" htmlFor="menu-btn">
     <span className="navicon bg-grey-darkest flex items-center relative"></span>
   </label>
 
