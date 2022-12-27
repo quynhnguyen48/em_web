@@ -21,6 +21,7 @@ import { useState } from 'react';
 import { makeStaticProps, getStaticPathsPackages, getStaticPropsPackage } from '../../../lib/getStatic';
 import { useTranslation } from 'next-i18next'
 import LinkComponent from '../../../components/Link';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // const getStaticProps = makeStaticProps(['common', 'footer']);
 export { getStaticPathsPackages as getStaticPaths, getStaticPropsPackage as getStaticProps };
@@ -101,7 +102,17 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
         />
         <link rel="icon" href="/favicon1.png" />
       </Head>
-      <Hero heading={locale === "en" ? props.en_label : props.label} message={locale === "en" ? props.en_desc : props.desc} image_url={api_endpoint + props.image_url} />
+      {/* <Hero heading={locale === "en" ? props.en_label : props.label} message={locale === "en" ? props.en_desc : props.desc} image_url={api_endpoint + props.image_url} /> */}
+                <img 
+                  style={{
+                    height: "300px",
+                    width: "100%",
+                    marginTop: "100px",
+                    objectFit: "cover",
+                  }}
+                src={"http://3.89.245.84:1337" + props.image_url}
+                />
+                <p className='text-center text-3xl mt-10 mb-5'>{locale === "en" ? props.en_label : props.label}</p>
       <div className="max-w-[1048px] mx-auto text-left">
       {props.sub_packages?.map((sp: any, id: any) =>
         <div className="max-w-[1240px] mx-auto p-4 text-center">
@@ -119,20 +130,20 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                 <div>
                   <p className='font-medium text-justify' >{locale === "en" ? sv.en_desc : sv.desc}</p>
                   <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                    {sv.price && <p className='text-center m-auto font-semibold text-justify'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
-                    {sv.show_buy_btn && <div className='text-black text-center'><button
+                    {sv.price && <p className='text-center m-auto'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
+                    {sv.show_buy_btn && <div className='mt-2 sm:mt-0 text-black text-center'><button
                     style={{
                       backgroundColor: "#416045",
                       color: "white",
                     }}
-                      className='w-32 m-auto font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
+                      className='w-32 m-auto inline-block px-5 py-2 text-black  text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
                     >{tranlsate("buy_now", locale)}</button></div>}
                     {sv.show_learn_more && 
-                    <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-1 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center mt-5">
+                    <div className="w-48 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen hover:text-white py-1 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center mt-5">
                       <LinkComponent href={"/services/" + sv.slug} skipLocaleHandling={false} locale={""}>{tranlsate("learn_more", locale)}</LinkComponent></div>}
                   </div>
                   {sv.show_additional_fee && <p className='text-center italic text-xs	'>(Bao gồm phụ phí điều dưỡng và bác sĩ đến nhà)</p>}
-                  {sv.show_additional_fee && <p className='text-center font-bold text-xs	'>1,000,000 đ</p>}
+                  {sv.show_additional_fee && <p className='text-center text-xs	'>1,000,000 đ</p>}
                 </div>
               } />)}
             </div>

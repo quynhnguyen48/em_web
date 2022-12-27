@@ -174,7 +174,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         image_url={"http://3.89.245.84:1337" + props.image_url} 
         image_placeholder_url={"http://3.89.245.84:1337" + props.image_placeholder_url} 
         /> */}
-      <div className="mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-48 gap-4">
+      <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-48 gap-4">
         <div>
           <p className='text-3xl text-left inline'>{props.label}</p>
           <img className='p-10 pl-0' src={"http://3.89.245.84:1337" + props.image_url}/>
@@ -186,7 +186,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
               props.medicines?.map((m: any) => <li className=''>{locale === "en" ? m.en_label : m.label}</li>)
             }
           </ul>
-          <p className='mt-5'>{props.desc}</p>
+          <p className='mt-5 text-justify'>{props.desc}</p>
           <p className='mt-10 font-semibold'>{numberWithCommas(props.price)}đ</p>
           <button
             
@@ -204,13 +204,8 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
           ><div className='inline bg-green-200 p-4 rounded-full sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button> */}
       </div>
 
-      {/* <div className="max-w-[1048px] mx-auto py-16 text-left">
-        <div className='flex justify-center mb-4'>
-          <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
-          <button
-            onClick={() => { addToCart(parseInt(props.id)) }}
-          ><div className='inline bg-green-200 p-4 rounded-full ml-5 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
-        </div>
+<div className="max-w-[1048px] mx-auto py-16 text-left">
+        
         {
           props.medicines?.map((m: any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 m-auto">
@@ -221,11 +216,11 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
             </div>
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col justify-center">
               <p className='font-bold text-xl mb-2'>{locale === "en" ? m.en_label : m.label}</p>
-              <p>{locale === "en" ? m.en_desc : m.desc}</p>
+              <p className='text-justify'>{locale === "en" ? m.en_desc : m.desc}</p>
             </div>
           </div>)
         }
-      </div> */}
+      </div> 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       {/* <Portfolio /> */}

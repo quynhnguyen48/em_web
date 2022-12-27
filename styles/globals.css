@@ -168,4 +168,50 @@ html {
 
 .accordion-content {
   transition: all .5s ease;
+  opacity: 0;
+  transition: all .5s;
+  display: none;
+}
+
+
+.accordion-content.active {
+  height: auto;
+  opacity: 1;
+  padding: 20px;
+  display: block;
+  transition: all .5s ease;
+}
+
+.accordion {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10%;
+  overflow-y: auto;
+}
+
+.fold {
+  /* border-bottom: 1px solid rgba(34, 36, 38, 0.35); */
+  margin-top: -1px;
+}
+.fold .fold_trigger {
+  text-align: start;
+  width: 100%;
+  cursor: pointer;
+  /* border-bottom: 1px solid rgba(34, 36, 38, 0.35); */
+}
+
+.fold .fold_trigger.open:before {
+  transform: rotateZ(-180deg);
+}
+.fold .fold_content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms ease;
+}
+.fold .fold_content.open {
+  max-height: 400px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
