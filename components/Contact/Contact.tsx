@@ -11,7 +11,7 @@ const contact = () => {
     style={{
       backgroundColor: "#9EA99A"
     }}
-    className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 bg-emgreen text-white p-10">
+    className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 text-white p-10">
 
       <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col items-left max-w-[200px]">
         <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2">
@@ -49,7 +49,7 @@ const contact = () => {
                 backgroundColor: "#416045",
                 color: "white",
               }}
-            className="w-48 text-center mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-emgreen text-black rounded">
+            className="w-48 text-center mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out  text-black rounded">
           <LinkComponent href={"/insight"} locale="" skipLocaleHandling={false}>
             {locale == "en" ? "Subscribe" : "Đăng ký"}</LinkComponent>
         </div>
@@ -58,13 +58,13 @@ const contact = () => {
             backgroundColor: "#416045",
             color: "white",
           }}
-        className="w-48 text-center mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-emgreen text-black rounded">
+        className="w-48 text-center mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out  text-black rounded">
           <LinkComponent href={"/insight"} locale="" skipLocaleHandling={false}>
             {locale == "en" ? "Insight" : "Tổng quan"}</LinkComponent>
         </div>
         <p className="font-semibold mb-4 text-lg">{locale === "en" ? "Download Apps" : "Tải Ứng Dụng Ngay"}</p>
         <img width={150} height={100} src="https://echomedi.com/wp-content/uploads/2022/07/google-play-store-icon-download-28.png" />
-        <div className="mt-8 flex flex-row w-40 grid grid-cols-3 md:grid-cols-3 bg-emgreen text-white">
+        <div className="mt-8 flex flex-row w-40 grid grid-cols-3 md:grid-cols-3  text-white">
           <a target={"_blank"} href="https://www.facebook.com/ECHO-MEDI-104159875780641?gidzl=VhMH36yZUJrohfK8RJvuENoibGDxQYauCFp53YbcVMXXeP0FV6SkRM6bobTyD25jO_N5MZ4fezq3PY9vE0">
           <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
           </a>
