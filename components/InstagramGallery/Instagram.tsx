@@ -6,7 +6,11 @@ const Instagram = () => {
   const locale = router.query.locale as string || 'en';
 
   return (
-    <div className="w-full mx-auto text-center p-6 bg-emgreen ">
+    <div 
+      style={{
+        backgroundColor: "#9EA99A",
+      }}
+    className="w-full mx-auto text-center p-6">
       <div className="max-w-[1240px] mx-auto text-center">
       <p className="text-xl text-white mb-5 text-justify">
         {locale === "en" ? "ECHO MEDI provides its members with a first-class, on-demand, comprehensive healthcare and wellbeing experience, anytime, anywhere.": 

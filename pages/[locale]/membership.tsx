@@ -111,15 +111,13 @@ const Home: NextPage = () => {
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <Accordion active={active} setActive={setActive} id={1} title={locale == "en" ? "Silver Membership" : "Thành viên bạc"} content={
               <div>
-                <p className='font-medium text-center' >{
+                <p className='font-medium text-justify' >{
                 locale == "en" ? "Silver membership is a basic health care package for members that includes benefits such as free unlimited online consultations 24/7, free medical examinations at clinic and telemedicine once a month, and discounts while utilizing clinic services and purchasing medications. Join as a Silver member for a low, set yearly price." :
                 "Gói thành viên bạc là gói chăm sóc sức khỏe cơ bản cho thành viên với các đặc quyền như: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh tại phòng khám và khám bệnh từ xa mỗi tháng, và nhận được các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên bạc với mức chi phí tiết kiệm và cố định hằng năm."
                 }</p>
                 <div className='columns-1 sm:columns-3 sm:flex block justify-around items-center mt-5'>
-                <p className="font-semibold p-5 text-center">6,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                <div 
-                  
-                className="sm:mt-0 mt-5  text-black text-center"><button 
+                <p className="w-32 m-auto font-semibold text-center">6,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
+                <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button 
                 style={{
                   backgroundColor: "#416045",
                   color: "white",
@@ -127,7 +125,7 @@ const Home: NextPage = () => {
                 className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
                   {locale == "en" ? "Buy now" : "Mua ngay"}
                 </button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen">
+                <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
                     <LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bac" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
@@ -139,15 +137,17 @@ const Home: NextPage = () => {
                   "Gold membership is an enhanced health care package for members that includes benefits such as free unlimited online consultations 24/7, free clinic check-ups and telemedicine examinations twice a month, and discounts while utilizing clinic services and purchasing medications. Join as a Gold member for a low, set yearly price.		" :
                   "Gói thành viên vàng là gói chăm sóc sức khỏe nâng cao cho thành viên với các đặc quyền như: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh tại phòng khám và khám bệnh từ xa 2 lần mỗi tháng, và nhận được các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên vàng với mức chi phí tiết kiệm và cố định hằng năm."}</p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                <p className="font-semibold p-5 text-center">12,000,000/năm<span className="underline"></span></p>
-                <div className="sm:mt-0 mt-5  text-black text-center">
-                  <button 
-                  style={{
-                    backgroundColor: "#416045",
-                    color: "white",
-                  }}
-                  className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen">
+                <p className="font-semibold text-center">12,000,000/năm<span className="underline"></span></p>
+                <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button 
+                style={{
+                  backgroundColor: "#416045",
+                  color: "white",
+                }}
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                  {locale == "en" ? "Buy now" : "Mua ngay"}
+                </button></div>
+                <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
+
                   <LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-vang" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
@@ -161,27 +161,31 @@ const Home: NextPage = () => {
 
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                <p className="font-semibold p-5 text-center">18,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                <div className="sm:mt-0 mt-5  text-black text-center"><button 
+                <p className="font-semibold text-center">18,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
+                <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button 
                 style={{
                   backgroundColor: "#416045",
                   color: "white",
                 }}
-                className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bach-kim" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                  {locale == "en" ? "Buy now" : "Mua ngay"}
+                </button></div>
+                <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
+
+                  <LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bach-kim" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
             <Accordion active={active} setActive={setActive} id={4} title={locale == "en" ? "Family Package Deal" : "Gói gia đình"} content={
               <div>
-                <p className='font-medium text-center' >{
+                <p className='font-medium text-justify' >{
                 locale === "en" ? 
                 "Additional 10% discount on membership fee for a minimum of 3 members from the same family." :
                 "Nhận được thêm 10% ưu đãi khi đăng ký gói thành viên cho ít nhất 3 thành viên trong gia đình"}
 
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen"><LinkComponent skipLocaleHandling={false} href="/services/goi-gia-dinh" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
+                <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center"><LinkComponent skipLocaleHandling={false} href="/services/goi-gia-dinh" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -195,7 +199,7 @@ const Home: NextPage = () => {
 
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen"><LinkComponent skipLocaleHandling={false} href="/services/goi-doanh-nghiep" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
+                <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center"><LinkComponent skipLocaleHandling={false} href="/services/goi-doanh-nghiep" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -210,19 +214,19 @@ const Home: NextPage = () => {
 
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                <p className="font-semibold text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
+                <p className="w-32 m-auto font-semibold text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                 <div className="sm:mt-0 mt-5 text-black  text-center"><button style={{
                     backgroundColor: "#416045",
                     color: "white",
                   }}
                   className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
+                <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
             <Accordion active={active} setActive={setActive} id={7} title={locale == "en" ? "Foreigner short term (2-week) membership" : "Thành viên ngoại kiều ngắn hạn (2 tuần)"} content={
               <div>
-                <p className='font-medium text-center' >{
+                <p className='font-medium text-justify' >{
                   locale === "en" ? 
                   "Foreigner short term membership is a 2-week health care and monitoring package for foreigners including Overseas Vietnamese visiting Viet Nam. Customers who purchase the membership will receive the following benefits: free unlimited consultation 24/7, free telemedicine or clinic examination once a week, free Covid-19 fast test, free general health examination, and other additional incentives when using clinic services." :
                 "Thành viên Ngoại Kiều ngắn hạn là gói chăm sóc và theo dõi sức khỏe trong 2 tuần dành cho các Việt Kiều khi trở về nước.  Khi tham gia gói, khách hàng sẽ nhận được các đặc quyền: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh từ xa hoặc khám tại phòng khám 1 lần/tuần, miễn phí test nhanh Covid-19, miễn phí khám sức khỏe tổng quát, và ưu đãi khác khi sử dụng dịch vụ tại phòng khám."
@@ -230,13 +234,17 @@ const Home: NextPage = () => {
 
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                <p className="font-semibold text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                <div className="sm:mt-0 mt-5 text-black  text-center"><button style={{
-                    backgroundColor: "#416045",
-                    color: "white",
-                  }}
-                  className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen">
+                <p className="w-32 m-auto font-semibold text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
+                <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button 
+                style={{
+                  backgroundColor: "#416045",
+                  color: "white",
+                }}
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                  {locale == "en" ? "Buy now" : "Mua ngay"}
+                </button></div>
+                <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
+
                   <LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>

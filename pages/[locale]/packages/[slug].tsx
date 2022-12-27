@@ -117,17 +117,18 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-12">
               {sp.services.map((sv: any) => <Accordion id={sv.id} active={active} setActive={setActive} title={locale === "en" ? sv.en_label : sv.label} content={
                 <div>
-                  <p className='font-medium' >{locale === "en" ? sv.en_desc : sv.desc}</p>
-                  <div className='columns-1 sm:columns-3'>
-                    {sv.price && <p className='font-semibold p-5 text-justify'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
-                    {sv.show_buy_btn && <div className='pt-3 text-black text-center'><button
+                  <p className='font-medium text-justify' >{locale === "en" ? sv.en_desc : sv.desc}</p>
+                  <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
+                    {sv.price && <p className='text-center m-auto font-semibold text-justify'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
+                    {sv.show_buy_btn && <div className='text-black text-center'><button
                     style={{
                       backgroundColor: "#416045",
                       color: "white",
                     }}
-                      className='font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
+                      className='w-32 m-auto font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
                     >{tranlsate("buy_now", locale)}</button></div>}
-                    {sv.show_learn_more && <div className='p-5 hover:underline text-center'>
+                    {sv.show_learn_more && 
+                    <div className="w-32 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center mt-5">
                       <LinkComponent href={"/services/" + sv.slug} skipLocaleHandling={false} locale={""}>{tranlsate("learn_more", locale)}</LinkComponent></div>}
                   </div>
                   {sv.show_additional_fee && <p className='text-center italic text-xs	'>(Bao gồm phụ phí điều dưỡng và bác sĩ đến nhà)</p>}

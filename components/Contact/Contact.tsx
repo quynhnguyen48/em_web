@@ -7,7 +7,11 @@ const contact = () => {
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
   return (
-    <div className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 bg-emgreen text-white p-10">
+    <div 
+    style={{
+      backgroundColor: "#9EA99A"
+    }}
+    className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 bg-emgreen text-white p-10">
 
       <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col items-left max-w-[200px]">
         <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2">
