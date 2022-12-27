@@ -286,7 +286,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
         </LinkComponent>
         <ul style={{ color: `${textColor}` }} className="hidden md:flex sm:ml-20 ml-0">
           <li className="py-4 flex">
-            <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+            <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
               <LinkComponent locale={""} skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
             </div>
           </li>
@@ -295,7 +295,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("services", locale)}</span>
                   <Icon />
                 </button>
@@ -303,7 +303,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg text-black bg-white border border-black">
                     <div className="grid grid-cols-2 gap-4 md:grid-cols-2 p-5 text-base">
                       <div>
-                        <p className="text-sm underline font-semibold underline-offset-8 mb-4">
+                        <p className="text-sm underline  underline-offset-8 mb-4">
                           {tranlsate("in_clinic_service", locale ? locale : "")}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
@@ -328,7 +328,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
+                        <p className="text-sm underline  underline-offset-8 mb-4 text-sm">
                           {tranlsate("home_service", locale)}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
@@ -358,7 +358,7 @@ For Non-Residents (Overseas Vietnamese)
                           </LinkComponent>
                         </div>
                         {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                          <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tu-xa"}>
+                          <Link className="p-5 text-white hover:text-slate-200 " href={"/packages/cham-soc-tu-xa"}>
                             {tranlsate("telemedicine", locale)}
                           </Link>
                         </div> */}
@@ -379,7 +379,7 @@ For Non-Residents (Overseas Vietnamese)
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("health_plans", locale)}</span>
                   <Icon />
                 </button>
@@ -420,13 +420,13 @@ For Non-Residents (Overseas Vietnamese)
             </div>
           </li>
           <li className="py-4 flex">
-            {/* <div className="m-auto font-semibold">
+            {/* <div className="m-auto ">
               <Link href="/#contact">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
             </div> */}
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("pharmacy", locale)}</span>
                   <Icon />
                 </button>
@@ -434,7 +434,7 @@ For Non-Residents (Overseas Vietnamese)
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                     <div className="grid grid-cols-3 gap-4 md:grid-cols-3 p-5 text-base">
                       <div>
-                        <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
+                        <p className="text-sm underline  underline-offset-8 mb-4 text-sm">
                           {tranlsate("monthly_packages", locale ? locale : "")}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
@@ -469,7 +469,7 @@ For Non-Residents (Overseas Vietnamese)
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
+                        <p className="text-sm underline  underline-offset-8 mb-4 text-sm">
                           {tranlsate("health_concern", locale)}
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
@@ -504,7 +504,7 @@ For Non-Residents (Overseas Vietnamese)
                         </div>
                       </div>
                       <div>
-                        <p className="text-xl underline font-semibold underline-offset-8 mb-4 text-sm">
+                        <p className="text-xl underline  underline-offset-8 mb-4 text-sm">
                           
                         </p>
                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
@@ -550,12 +550,12 @@ For Non-Residents (Overseas Vietnamese)
             </div>
           </li>
           <li className="py-4 flex">
-            <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+            <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
               <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
             </div>
           </li>
           {!logged && <li className="p-4 flex">
-            <div className="m-auto font-semibold text-sm">
+            <div className="m-auto  text-sm">
               <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Tài khoản"}</LinkComponent>
             </div>
           </li>}
@@ -570,21 +570,21 @@ For Non-Residents (Overseas Vietnamese)
             <span className="ml-2 font-bold" id="num-of-item">{numOfItem == 0 ? '' : numOfItem}</span>
           </LinkComponent>
         </div>} */}
-        <div className="flex space-x-2 justify-center font-bold m-auto">
+        <div className="flex space-x-2 justify-center m-auto">
           <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
             <div 
               style={{
                 backgroundColor: "#416045",
                 color: "white",
               }}
-            className="font-bold ml-5 inline-block px-6 py-2.5 text-black font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+            className=" ml-5 inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
               {locale === "en" ? "Contact" : "Liên hệ"}
             </div>
           </LinkComponent>
         </div>
         <div className="m-auto">
           <div className="relative group hidden md:block">
-            <button className="text-black h-full flex flex-row items-center w-full text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+            <button className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
               {locale === "vi" ? <div
                 className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
@@ -613,7 +613,7 @@ For Non-Residents (Overseas Vietnamese)
               }
             </button>
             <div className="absolute z-10 hidden bg-transparent group-hover:block bg-transparent">
-              <div className="text-black bg-transparent font-semibold" style={{ width: "100px" }}>
+              <div className="text-black bg-transparent " style={{ width: "100px" }}>
                 <div className="flex">
 
                   <button onClick={() => {
