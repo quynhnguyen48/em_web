@@ -102,7 +102,7 @@ const Home: NextPage = () => {
             
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex sm:justify-end sm:justify-start justify-center">
               <div className="w-60 py-2 px-8 inline border border-lime-600 rounded-full text-black">
-                <LinkComponent locale={""} skipLocaleHandling={false} href="/packages/thanh-vien">{tranlsate("become_a_member", locale)}</LinkComponent>
+                <LinkComponent locale={""} skipLocaleHandling={false} href="/membership">{tranlsate("become_a_member", locale)}</LinkComponent>
               </div>
             </div>
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex sm:justify-start justify-center">

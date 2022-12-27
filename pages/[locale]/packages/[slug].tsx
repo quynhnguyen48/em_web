@@ -130,7 +130,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                 <div>
                   <p className='font-medium text-justify' >{locale === "en" ? sv.en_desc : sv.desc}</p>
                   <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                    {sv.price && <p className='text-center m-auto'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
+                    {sv.price && <p className='text-center m-auto font-semibold'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
                     {sv.show_buy_btn && <div className='mt-2 sm:mt-0 text-black text-center'><button
                     style={{
                       backgroundColor: "#416045",

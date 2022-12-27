@@ -149,7 +149,7 @@ const Home: NextPage = () => {
                   placeholder={locale === "en" ? "Your Email" : "Email của bạn"}
                   onChange={(e) => {setName(e.target.value)}}
                 />
-                <div className="mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
+                <div className="mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-emgreen hover:shadow-lg focus:bg-emgreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-emgreen active:shadow-lg transition duration-150 ease-in-out bg-emgreen text-white rounded-full">
           <LinkComponent href={"/insight"} locale="" skipLocaleHandling={false}>
             {locale == "en" ? "Subscribe" : "Đăng ký"}</LinkComponent>
         </div>

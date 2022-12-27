@@ -25,18 +25,21 @@ const SmallHero = ({ heading, message, image_url, sub_message, image_placeholder
   const loaded = useProgressiveImage(image_url)
 
   return (
-    <div className="flex items-center justify-center bg-fixed bg-center bg-cover"
+    <div className=""
       // style={{backgroundImage: "url(" + image_url + ")"}}
-      style={{backgroundImage: `url(${loaded ||  image_placeholder_url})`}}
+      // style={{backgroundImage: `url(${loaded ||  image_placeholder_url})`}}
     >
-      {/* <LazyLoadImage
-        wrapperClassName="absolute w-full"
-        className="w-full"
-              src={image_url} // use normal <img> attributes as props
-              placeholderSrc={image_url}
-               /> */}
-        
-      <div className="p-5 text-white z-[2] max-w-[1048px]">
+      <img 
+                  style={{
+                    height: "200px",
+                    width: "100%",
+                    // marginTop: "100px",
+                    objectFit: "cover",
+                    objectPosition: "top"
+                  }}
+                src={image_url}
+                />
+      <div className="p-5 text-black z-[2] max-w-[1048px] text-center m-auto">
         <h2 className="text-5xl ">{heading}</h2>
         <p className="py-5 text-xl sm:text-lg">{message}</p>
         {sub_message && sub_message.map((s => <p>- {s}</p>))}

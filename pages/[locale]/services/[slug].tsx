@@ -137,10 +137,15 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
       {/* <Hero heading={locale === "en" ? props.en_label : props.label} message={locale === "en" ? props.en_desc : props.desc} 
         image_url={"http://3.89.245.84:1337" + props.image_url} 
         image_placeholder_url={"http://3.89.245.84:1337" + props.placeholder_image_url} /> */}
-      <LazyLoadImage
-                src={"http://3.89.245.84:1337" + props.image_url} // use normal <img> attributes as props
-                placeholderSrc={"http://3.89.245.84:1337" + props.placeholder_image_url}
-                width={400} />
+      {/* <img 
+                  style={{
+                    height: "300px",
+                    width: "100%",
+                    // marginTop: "100px",
+                    objectFit: "cover",
+                  }}
+                src={"http://3.89.245.84:1337" + props.image_url}
+                /> */}
       <div className="max-w-[1048px] mx-auto py-16 text-justify">
       {props.show_buy_btn && <div className='flex justify-center mb-10'>
       <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">

@@ -549,7 +549,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
            </li>
            <li className="py-4 flex">
              <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
-               <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
+               <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Membership" : "Thành viên"}</LinkComponent>
              </div>
            </li>
            </ul>
@@ -573,8 +573,24 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
              </div>
            </li>}
            <div className="m-auto">
-          <div className="relative group hidden md:block ml-10">
-            <button className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+          <div className="relative group md:block ml-10">
+            <button 
+            onClick={() => {
+              let href = router.asPath;
+              let pName = router.pathname;
+              Object.keys(router.query).forEach((k) => {
+                if (k === 'locale') {
+                  pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
+                  console.log('pName ', pName)
+                  return
+                }
+                pName = pName.replace(`[${k}]`, router.query[k] as string);
+                console.log('pName ', pName)
+              })
+
+              location.href = pName;
+            }}
+            className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
               {locale === "vi" ? <div
                 className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
@@ -653,7 +669,109 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
           </div>
           </div>
         </div>
-         
+        {/* Mobile Button */}
+        <div onClick={handleNav} className="block sm:hidden z-10 text-black">
+           {nav ? (
+             <AiOutlineClose size={20}/>
+           ) : (
+             <AiOutlineMenu size={20}/>
+           )}
+          
+         </div>
+        <div
+          style={{
+            background: "white",
+            zIndex: 999,
+            position: "fixed"
+          }}
+          className={
+            nav
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center text-black ease-in duration-300"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center text-black ease-in duration-300"
+          }
+        >
+          <button 
+            style={{
+              right: "20px",
+              top: "20px",
+              position: "absolute",
+            }}
+          onClick={handleNav}><AiOutlineClose size={20}/> </button>
+          <ul>
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-gray-500"
+            >
+              <LinkComponent locale="" skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
+            </li>
+            <li
+              onClick={() => {
+                handleNav();
+                handleNav1();
+              }}
+              className="p-4 text-4xl hover:text-gray-500"
+            >
+              <button>{locale === "en" ? "Services" : "Các Dịch Vụ"}</button>
+            </li>
+            <li
+              onClick={() => {
+                handleNav();
+                handleNav2();
+              }}
+              className="p-4 text-4xl hover:text-gray-500"
+            >
+              <button>{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</button>
+            </li>
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-gray-500"
+            >
+              <button>{locale === "en" ? "Pharmacy" : "Nhà thuốc"}</button>
+            </li>
+            <li
+              onClick={handleNav}
+              className="p-4 text-4xl hover:text-gray-500"
+            >
+              <LinkComponent href={"/membership"} locale="" skipLocaleHandling={false}>{locale === "en" ? "Membership" : "Thành viên"}</LinkComponent>
+            </li>
+            <div className="m-auto">
+              <div>
+              </div>
+              <ul className="flex">
+                <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
+                    src={IgImg3}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  /> */}
+                </li>
+                <li className="inline cursor-pointer" onClick={() => {
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
+                    src={IgImg4}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  /> */}
+                </li>
+              </ul>
+            </div>
+            </ul>
+            </div>
 </nav>
 //     <div
 //       style={{ backgroundColor: `${color}` }}

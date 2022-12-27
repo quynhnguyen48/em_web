@@ -81,6 +81,7 @@ const Home: NextPage = () => {
                 src={"https://echomedi.com/wp-content/uploads/2022/07/riccardo-pelati-_-Cg7vTw3bs-unsplash.jpg"}
                 />
       <div className="max-w-[1240px] mx-auto p-4 text-left">
+        <p className="text-3xl text-center mt-4">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</p>
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10 text-justify">
             <p className="mb-4">
