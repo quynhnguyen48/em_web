@@ -552,12 +552,108 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
              </div>
            </li>
+           </ul>
+                   
+         <div className="flex m-auto lg:m-0">
+         <div className="flex space-x-2 justify-center m-auto">
+           <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
+             <div 
+               style={{
+                 backgroundColor: "#416045",
+                 color: "white",
+               }}
+             className=" ml-5 inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+               {locale === "en" ? "Contact" : "Liên hệ"}
+             </div>
+           </LinkComponent>
+         </div>
            {!logged && <li className="p-4 flex">
              <div className="m-auto  text-sm">
                <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Tài khoản"}</LinkComponent>
              </div>
            </li>}
-         </ul>
+           <div className="m-auto">
+          <div className="relative group hidden md:block ml-10">
+            <button className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+              {locale === "vi" ? <div
+                className="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
+                  <rect width="30" height="20" fill="#da251d" />
+                  <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
+                </svg>
+              </div> :
+                <div
+                  className="flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
+                    <clipPath id="s">
+                      <path d="M0,0 v30 h60 v-30 z" />
+                    </clipPath>
+                    <clipPath id="t">
+                      <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                    </clipPath>
+                    <g clip-path="url(#s)">
+                      <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                      <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
+                      <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                    </g>
+                  </svg>
+                </div>
+              }
+            </button>
+            <div className="absolute z-10 hidden bg-transparent group-hover:block bg-transparent">
+              <div className="text-black bg-transparent " style={{ width: "100px" }}>
+                <div className="flex">
+
+                  <button onClick={() => {
+                    let href = router.asPath;
+                    let pName = router.pathname;
+                    Object.keys(router.query).forEach((k) => {
+                      if (k === 'locale') {
+                        pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
+                        console.log('pName ', pName)
+                        return
+                      }
+                      pName = pName.replace(`[${k}]`, router.query[k] as string);
+                      console.log('pName ', pName)
+                    })
+
+                    location.href = pName;
+                  }}>
+                    {locale === "vi" ? <div
+                      className="flex">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
+                        <clipPath id="s">
+                          <path d="M0,0 v30 h60 v-30 z" />
+                        </clipPath>
+                        <clipPath id="t">
+                          <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                        </clipPath>
+                        <g clip-path="url(#s)">
+                          <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                          <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
+                          <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                        </g>
+                      </svg>
+                    </div> :
+                      <div
+                        className="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
+                          <rect width="30" height="20" fill="#da251d" />
+                          <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
+                        </svg>
+                      </div>}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+         
 </nav>
 //     <div
 //       style={{ backgroundColor: `${color}` }}
