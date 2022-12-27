@@ -772,6 +772,190 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             </div>
             </ul>
             </div>
+                     <div
+                     style={{
+                      background: "white",
+                      zIndex: 999,
+                      position: "fixed"
+                    }}
+          className={
+            nav1
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
+          }
+        >
+          <button 
+            style={{
+              right: "20px",
+              top: "20px",
+              position: "absolute",
+            }}
+          onClick={handleNav1}><AiOutlineClose size={20}/> </button>
+          <ul>
+            <p className="text-xl underline">{tranlsate("in_clinic_service", locale)}</p>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" href={"/packages/cham-soc-phong-ngua"} skipLocaleHandling={false}>
+                {tranlsate("preventive_care", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/goi-dieu-tri-ban-dau"}>
+                {tranlsate("primary_care", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/goi-quan-ly-benh-man-tinh"}>
+                {tranlsate("on_going_care", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/goi-suc-khoe-toan-dien"}>
+                {tranlsate("wellness", locale)}
+              </LinkComponent>
+            </div>
+            <p className="text-lg underline mt-10">{tranlsate("home_service", locale)}</p>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tai-nha"}>
+                {tranlsate("home_visits", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tu-xa"}>
+                {tranlsate("telemedicine", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tu-xa"}>
+              For Residents in Vietnam
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav1}>
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tu-xa"}>
+              For Non-Residents (Overseas Vietnamese)
+
+              </LinkComponent>
+            </div>
+            <div className="m-auto">
+              <div>
+              </div>
+              <ul className="flex">
+                <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
+                    src={IgImg3}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  /> */}
+                </li>
+                <li className="inline cursor-pointer" onClick={() => {
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
+                    src={IgImg4}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  /> */}
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+        <div
+        style={{
+          background: "white",
+          zIndex: 999,
+          position: "fixed"
+        }}
+          className={
+            nav2
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
+          }
+        >
+          <button 
+            style={{
+              right: "20px",
+              top: "20px",
+              position: "absolute",
+            }}
+          onClick={handleNav2}><AiOutlineClose size={20}/> </button>
+          <ul>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-cham-soc-phong-ngua"}>
+                {tranlsate("preventive_care_packages", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-dieu-tri-ban-dau"}>
+                {tranlsate("primary_care_packages", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-quan-ly-benh-man-tinh"}>
+                {tranlsate("on_going_care_packages", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-suc-khoe-toan-dien"}>
+                {tranlsate("wellness_packages", locale)}
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav2} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-xet-nghiem-di-truyen"}>
+                {tranlsate("gene_examination_packages", locale)}
+              </LinkComponent>
+            </div>
+            <div className="m-auto">
+              <div>
+              </div>
+              <ul className="flex">
+                <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
+                    src={IgImg3}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  /> */}
+                </li>
+                <li className="inline cursor-pointer" onClick={() => {
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
+                    src={IgImg4}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  /> */}
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
 </nav>
 //     <div
 //       style={{ backgroundColor: `${color}` }}
