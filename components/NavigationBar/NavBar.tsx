@@ -682,7 +682,8 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
           style={{
             background: "white",
             zIndex: 999,
-            position: "fixed"
+            position: "fixed",
+            height: "100%",
           }}
           className={
             nav
@@ -723,7 +724,10 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
               <button>{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</button>
             </li>
             <li
-              onClick={handleNav}
+              onClick={() => {
+                handleNav();
+                handleNav3();
+              }}
               className="p-4 text-4xl hover:text-gray-500"
             >
               <button>{locale === "en" ? "Pharmacy" : "Nhà thuốc"}</button>
@@ -776,7 +780,8 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                      style={{
                       background: "white",
                       zIndex: 999,
-                      position: "fixed"
+                      position: "fixed",
+                      height: "100%",
                     }}
           className={
             nav1
@@ -877,7 +882,8 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
         style={{
           background: "white",
           zIndex: 999,
-          position: "fixed"
+          position: "fixed",
+          height: "100%",
         }}
           className={
             nav2
@@ -954,6 +960,160 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                 </li>
               </ul>
             </div>
+            
+          </ul>
+        </div>
+        <div
+        style={{
+          background: "white",
+          zIndex: 999,
+          position: "fixed",
+          textAlign: "left",
+          height: "100%",
+        }}
+          className={
+            nav3
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-white text-center ease-in duration-300 text-black"
+          }
+        >
+          <button 
+            style={{
+              right: "20px",
+              top: "20px",
+              position: "absolute",
+            }}
+          onClick={handleNav3}><AiOutlineClose size={20}/> </button>
+          <ul>
+            <p className="underline text-xl my-5">Gói Chăm Sóc Tháng</p>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60/"}>
+              Người Lớn Tuổi (Trên 60 Tuổi)
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"}>
+              Nam Trung Niên (Trên 45 tuổi)
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45/"}>
+              Nữ Trung Niên (Trên 45 Tuổi)
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45/"}>
+              Người Trưởng Thành (18 - 45 Tuổi)
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19/"}>
+              Thanh Thiếu Niên (13 - 19 Tuổi)
+              </LinkComponent>
+            </div>
+            <p className="underline text-xl my-5">Vấn Đề Sức Khoẻ</p>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-giac-ngu/"}>
+              Ngủ Ngon
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-cai-thuoc-la/"}>
+              Cai Thuốc Lá
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-giam-can/"}>
+              Giảm Cân
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa/"}>
+              Chăm Sóc Da
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong/"}>
+              Chăm Sóc Tóc & Móng
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai/"}>
+              Mang Thai
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-suc-khoe-sinh-ly-nam/"}>
+              Sinh Lý Nam
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-suc-khoe-sinh-ly-nu/"}>
+              Sinh Lý Nữ
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-suc-khoe-tim-mach/"}>
+              Tim Mạch
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-tieu-hoa/"}>
+              Tiêu Hóa
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-phong-ngua-benh-xuong-khop/"}>
+              Xương Khớp
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-tang-suc-de-khoang-va-mien-dich/"}>
+              Đề Kháng Và Miễn Dịch
+              </LinkComponent>
+            </div>
+            <div className="mb-2" onClick={handleNav3} >
+              <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cai-thien-tri-nao/"}>
+              Tinh Thần & Trí Não
+              </LinkComponent>
+            </div>
+            <div className="m-auto">
+              <div>
+              </div>
+              <ul className="flex">
+                <li className="inline mr-2 cursor-pointer relative" onClick={() => {
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
+                    src={IgImg3}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  /> */}
+                </li>
+                <li className="inline cursor-pointer" onClick={() => {
+                  const router = useRouter()
+
+                  let href = router.asPath
+                  let pName = router.pathname
+
+                  console.log('href pName', href, pName)
+                }}>
+                  {/* <Image
+                    src={IgImg4}
+                    alt="/"
+                    width={25}
+                    height={25}
+                  /> */}
+                </li>
+              </ul>
+            </div>
+            
           </ul>
         </div>
 </nav>
