@@ -131,30 +131,30 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
     if (logged) {
       const token = localStorage.getItem('token');
       axios.post('http://3.89.245.84:1337/api/product/addProductToCart', {
-          "product_id": id,
-        }, {
-          headers: {
-            'Authorization': `Bearer ${token}`
+        "product_id": id,
+      }, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+        .then(function (response) {
+          console.log('success');
+          toast.success('Thêm vào giỏ hàng thành công');
+          router.push("/cart", "/cart", { locale });
+          let el = document.getElementById('num-of-item');
+          if (el) {
+            el.innerText = (parseInt(el.innerText) + 1).toString();;
           }
         })
-          .then(function (response) {
-            console.log('success');
-            toast.success('Thêm vào giỏ hàng thành công');
-            router.push("/cart", "/cart", { locale });
-            let el = document.getElementById('num-of-item');
-            if (el) {
-              el.innerText = (parseInt(el.innerText) + 1).toString();;
-            }
-          })
-          .catch(function (error) {
-            console.log('failed');
-            console.log(error);
-            toast.error("Thêm vào giỏ hàng thất bại")
-          });
-        } else {
-          toast.success('Vui lòng đăng nhập.');
-          router.push("/login", "/login", { locale });
-        }
+        .catch(function (error) {
+          console.log('failed');
+          console.log(error);
+          toast.error("Thêm vào giỏ hàng thất bại")
+        });
+    } else {
+      toast.success('Vui lòng đăng nhập.');
+      router.push("/login", "/login", { locale });
+    }
   }
 
   return (
@@ -167,37 +167,65 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         />
         <link rel="icon" href="/favicon1.png" />
       </Head>
-      <Hero 
+      {/* <Hero 
         heading={locale === "en" ? props.en_label : props.label} 
         message={locale === "en" ? props.en_desc: props.desc}
         sub_message={props.medicines?.map((m: any) => locale === "en" ? m.en_label: m.label)}
         image_url={"http://3.89.245.84:1337" + props.image_url} 
         image_placeholder_url={"http://3.89.245.84:1337" + props.image_placeholder_url} 
-        />
-        
-      <div className="max-w-[1048px] mx-auto py-16 text-left">
+        /> */}
+      <div className="mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-48 gap-4">
+        <div>
+          <p className='text-3xl text-left inline'>{props.label}</p>
+          <img className='p-10 pl-0' src={"http://3.89.245.84:1337" + props.image_url}/>
+          
+        </div>
+        <div className='mb-20'>
+          <ul className='list-disc ml-5 mt-20'>
+            {
+              props.medicines?.map((m: any) => <li className=''>{locale === "en" ? m.en_label : m.label}</li>)
+            }
+          </ul>
+          <p className='mt-5'>{props.desc}</p>
+          <p className='mt-10 font-semibold'>{numberWithCommas(props.price)}đ</p>
+          <button
+            
+            className='mt-10'
+            onClick={() => { addToCart(parseInt(props.id)) }}
+          ><div 
+          style={{
+            backgroundColor: "#416045",
+            color: "white",
+          }}
+          className='mt-10 inline bg-green-200 p-4 rounded mt-20 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
+        </div>
+        {/* <button
+            onClick={() => {addToCart(parseInt(props.id))}}
+          ><div className='inline bg-green-200 p-4 rounded-full sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button> */}
+      </div>
+
+      {/* <div className="max-w-[1048px] mx-auto py-16 text-left">
         <div className='flex justify-center mb-4'>
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
           <button
-            onClick={() => {addToCart(parseInt(props.id))}}
+            onClick={() => { addToCart(parseInt(props.id)) }}
           ><div className='inline bg-green-200 p-4 rounded-full ml-5 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
-        </div>  
-      {
-          props.medicines?.map((m:any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 m-auto">
-            {/* <img className='m-auto' width={400} src={"http://3.89.245.84:1337" + m.image.url} /> */}
-            <LazyLoadImage
-              src={"http://3.89.245.84:1337" + m.image?.url} // use normal <img> attributes as props
-              placeholderSrc={"http://3.89.245.84:1337" + m.image?.formats.thumbnail.url}
-              width={400} />
-          </div>
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col justify-center">
-            <p className='font-bold text-xl mb-2'>{locale === "en" ? m.en_label : m.label}</p>
-            <p>{locale === "en" ? m.en_desc : m.desc}</p>
-          </div>
-        </div>)
-        }
         </div>
+        {
+          props.medicines?.map((m: any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
+            <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 m-auto">
+              <LazyLoadImage
+                src={"http://3.89.245.84:1337" + m.image?.url} // use normal <img> attributes as props
+                placeholderSrc={"http://3.89.245.84:1337" + m.image?.formats.thumbnail.url}
+                width={400} />
+            </div>
+            <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col justify-center">
+              <p className='font-bold text-xl mb-2'>{locale === "en" ? m.en_label : m.label}</p>
+              <p>{locale === "en" ? m.en_desc : m.desc}</p>
+            </div>
+          </div>)
+        }
+      </div> */}
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       {/* <Portfolio /> */}

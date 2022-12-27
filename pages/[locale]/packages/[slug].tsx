@@ -50,6 +50,7 @@ type IBlogUrl = {
   sub_packages: any;
   desc: string;
   image_url: string;
+  show_additional_fee: any;
 };
 
 
@@ -118,13 +119,19 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                 <div>
                   <p className='font-medium' >{locale === "en" ? sv.en_desc : sv.desc}</p>
                   <div className='columns-1 sm:columns-3'>
-                    {sv.price && <p className='font-semibold p-5 text-center'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
+                    {sv.price && <p className='font-semibold p-5 text-justify'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
                     {sv.show_buy_btn && <div className='pt-3 text-black text-center'><button
-                      className='font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
+                    style={{
+                      backgroundColor: "#416045",
+                      color: "white",
+                    }}
+                      className='font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
                     >{tranlsate("buy_now", locale)}</button></div>}
                     {sv.show_learn_more && <div className='p-5 hover:underline text-center'>
                       <LinkComponent href={"/services/" + sv.slug} skipLocaleHandling={false} locale={""}>{tranlsate("learn_more", locale)}</LinkComponent></div>}
                   </div>
+                  {sv.show_additional_fee && <p className='text-center italic text-xs	'>(Bao gồm phụ phí điều dưỡng và bác sĩ đến nhà)</p>}
+                  {sv.show_additional_fee && <p className='text-center font-bold text-xs	'>1,000,000 đ</p>}
                 </div>
               } />)}
             </div>

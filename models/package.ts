@@ -23,6 +23,8 @@ export class PackagesApi {
     result.desc = blogs.desc;
     result.en_desc = blogs.en_desc;
     result.image_url = blogs.hero_img ? blogs.hero_img.formats.medium.url : '';
+    result.show_additional_fee = blogs.show_additional_fee;
+    result.show_inquiry_form = blogs.show_inquiry_form;
     return result;
   }
 }
@@ -36,4 +38,6 @@ class Package {
   en_desc!: string;
   image_url!: string;
   show_buy_btn: any;
+  show_additional_fee: any;
+  show_inquiry_form: any;
 }

@@ -117,10 +117,21 @@ const Home: NextPage = () => {
                 }</p>
                 <div className='columns-1 sm:columns-3 sm:flex block justify-around items-center mt-5'>
                 <p className="font-semibold p-5 text-center">6,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                <div className="sm:mt-0 mt-5  text-black text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+                <div 
+                  
+                className="sm:mt-0 mt-5  text-black text-center"><button 
+                style={{
+                  backgroundColor: "#416045",
+                  color: "white",
+                }}
+                className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
                   {locale == "en" ? "Buy now" : "Mua ngay"}
                 </button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bac" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div 
+                  style={{
+                    color: "#9EA99A",
+                  }}
+                  className="w-40 text-center sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-emgreen hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bac" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -132,8 +143,14 @@ const Home: NextPage = () => {
                   "Gói thành viên vàng là gói chăm sóc sức khỏe nâng cao cho thành viên với các đặc quyền như: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh tại phòng khám và khám bệnh từ xa 2 lần mỗi tháng, và nhận được các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên vàng với mức chi phí tiết kiệm và cố định hằng năm."}</p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                 <p className="font-semibold p-5 text-center">12,000,000/năm<span className="underline"></span></p>
-                <div className="sm:mt-0 mt-5  text-black text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-vang" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="sm:mt-0 mt-5  text-black text-center">
+                  <button 
+                  style={{
+                    backgroundColor: "#416045",
+                    color: "white",
+                  }}
+                  className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
+                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-vang" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -147,8 +164,13 @@ const Home: NextPage = () => {
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                 <p className="font-semibold p-5 text-center">18,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                <div className="sm:mt-0 mt-5  text-black text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bach-kim" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="sm:mt-0 mt-5  text-black text-center"><button 
+                style={{
+                  backgroundColor: "#416045",
+                  color: "white",
+                }}
+                className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
+                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-bach-kim" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -161,7 +183,7 @@ const Home: NextPage = () => {
 
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/goi-gia-dinh" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/goi-gia-dinh" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -175,7 +197,7 @@ const Home: NextPage = () => {
 
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/goi-doanh-nghiep" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/goi-doanh-nghiep" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -191,8 +213,12 @@ const Home: NextPage = () => {
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                 <p className="font-semibold text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                <div className="sm:mt-0 mt-5 text-black  text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="sm:mt-0 mt-5 text-black  text-center"><button style={{
+                    backgroundColor: "#416045",
+                    color: "white",
+                  }}
+                  className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
+                <div className="sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-green-500 text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -207,8 +233,16 @@ const Home: NextPage = () => {
 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                 <p className="font-semibold text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                <div className="sm:mt-0 mt-5 text-black  text-center"><button className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
-                <div className="sm:mt-0 mt-5 hover:underline text-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu"}</LinkComponent></div>
+                <div className="sm:mt-0 mt-5 text-black  text-center"><button style={{
+                    backgroundColor: "#416045",
+                    color: "white",
+                  }}
+                  className="font-semibold inline-block px-5 py-2 text-black font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
+                <div 
+                  style={{
+                    border: "red",
+                  }}
+                className="sm:mt-0 mt-5 hover:underline text-center bg-transparent hover:bg-emgreen text-emgreen font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
@@ -317,9 +351,13 @@ const Home: NextPage = () => {
                 />
                 <div className="flex space-x-2 justify-center">
                   <button 
+                  style={{
+                    backgroundColor: "#416045",
+                    color: "white",
+                  }}
                     onClick={contact}
                   type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
-                    {locale === "en" ? "SEND" : "Gởi"}</button>
+                    {locale === "en" ? "SEND" : "Gửi"}</button>
                 </div>
               </div>
             </div>

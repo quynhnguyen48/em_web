@@ -27,7 +27,7 @@ const Hero = ({ heading, message, image_url, sub_message, image_placeholder_url 
   return (
     <div className="flex items-center justify-center h-screen bg-fixed bg-center bg-cover"
       // style={{backgroundImage: "url(" + image_url + ")"}}
-      style={{backgroundImage: `url(${loaded || image_placeholder_url})`}}
+      style={{backgroundImage: `url(${loaded || image_placeholder_url})`, opacity: 0.9}}
     >
       {/* <LazyLoadImage
         wrapperClassName="absolute w-full"

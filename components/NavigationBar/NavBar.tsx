@@ -286,7 +286,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
         </LinkComponent>
         <ul style={{ color: `${textColor}` }} className="hidden md:flex sm:ml-20 ml-0">
           <li className="py-4 flex">
-            <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded-full">
+            <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
               <LinkComponent locale={""} skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
             </div>
           </li>
@@ -295,7 +295,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-full md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("services", locale)}</span>
                   <Icon />
                 </button>
@@ -306,22 +306,22 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                         <p className="text-sm underline font-semibold underline-offset-8 mb-4">
                           {tranlsate("in_clinic_service", locale ? locale : "")}
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                           <LinkComponent href={"/packages/cham-soc-phong-ngua"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("preventive_care", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                           <LinkComponent href={"/packages/dieu-tri-ban-dau"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("primary_care", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                           <LinkComponent href={"/packages/quan-ly-benh-man-tinh"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("on_going_care", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                           <LinkComponent href={"/packages/suc-khoe-toan-dien"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("wellness", locale)}
                           </LinkComponent>
@@ -331,12 +331,33 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                         <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("home_service", locale)}
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                           <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("home_visits", locale)}
                           </LinkComponent>
                         </div>
-                        {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1 px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                          <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
+                            {tranlsate("telemedicine", locale)}
+                          </LinkComponent>
+                        </div>
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                          <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
+                            {/* {tranlsate("telemedicine", locale)} */}
+
+For Residents in Vietnam
+
+                          </LinkComponent>
+                        </div>
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                          <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
+                            {/* {tranlsate("telemedicine", locale)} */}
+
+For Non-Residents (Overseas Vietnamese)
+
+                          </LinkComponent>
+                        </div>
+                        {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                           <Link className="p-5 text-white hover:text-slate-200 font-semibold" href={"/packages/cham-soc-tu-xa"}>
                             {tranlsate("telemedicine", locale)}
                           </Link>
@@ -358,7 +379,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-full md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("health_plans", locale)}</span>
                   <Icon />
                 </button>
@@ -366,27 +387,27 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                     <div className="grid grid-cols-1 gap-4 md:grid-cols-1 p-5 text-base">
                       <div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/packages/goi-cham-soc-phong-ngua"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("preventive_care_packages", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/packages/goi-dieu-tri-ban-dau"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("primary_care_packages", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/packages/goi-quan-ly-benh-man-tinh"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("on_going_care_packages", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/packages/goi-suc-khoe-toan-dien"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("wellness_packages", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/packages/goi-xet-nghiem-di-truyen"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("gene_examination_packages", locale)}
                           </LinkComponent>
@@ -405,7 +426,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             <div className="flex">
               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
               <div className="relative group ">
-                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded-full md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base font-semibold text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                   <span className="mr-2 text-sm">{tranlsate("pharmacy", locale)}</span>
                   <Icon />
                 </button>
@@ -416,32 +437,32 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                         <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("monthly_packages", locale ? locale : "")}
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("elderly", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("middle_aged_man", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("middle_aged_woman", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("adult", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("teenager", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("child", locale)}
                           </LinkComponent>
@@ -451,32 +472,32 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                         <p className="text-sm underline font-semibold underline-offset-8 mb-4 text-sm">
                           {tranlsate("health_concern", locale)}
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-ho-tro-giac-ngu"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("sleep", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-ho-tro-cai-thuoc-la"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("smoking_cessation", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-ho-tro-giam-can"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("weight_loss", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("skin_care_anti_aging", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("hair_nails_treatment", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("pregnancy_care", locale)}
                           </LinkComponent>
@@ -484,39 +505,39 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                       </div>
                       <div>
                         <p className="text-xl underline font-semibold underline-offset-8 mb-4 text-sm">
-                          _________________
+                          
                         </p>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-suc-khoe-sinh-ly-nam"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("men_sexual_health", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-suc-khoe-sinh-ly-nu"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("women_sexual_health", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-ho-tro-suc-khoe-tim-mach"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("heart_blood_circulation", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-ho-tro-tieu-hoa"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("digestive_system", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-phong-ngua-benh-xuong-khop"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("bone_joint_health", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-tang-suc-de-khoang-va-mien-dich"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("immune_system", locale)}
                           </LinkComponent>
                         </div>
-                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded-full px-2 py-1">
+                        <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                           <LinkComponent href={"/products/goi-cai-thien-tri-nao"} locale={""} skipLocaleHandling={false}>
                             {tranlsate("brain_health", locale)}
                           </LinkComponent>
@@ -529,7 +550,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             </div>
           </li>
           <li className="py-4 flex">
-            <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded-full">
+            <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
               <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member" : "Thành viên"}</LinkComponent>
             </div>
           </li>
@@ -539,7 +560,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             </div>
           </li>}
         </ul>
-        {logged && <div className="flex space-x-2 justify-center">
+        {/* {logged && <div className="flex space-x-2 justify-center">
           <LinkComponent href={"/cart"} skipLocaleHandling={false} locale={""}>
             <div className="flex text-green-800 ml-5 mt-5">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -548,10 +569,15 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             </div>
             <span className="ml-2 font-bold" id="num-of-item">{numOfItem == 0 ? '' : numOfItem}</span>
           </LinkComponent>
-        </div>}
-        <div className="flex space-x-2 justify-center font-bold">
+        </div>} */}
+        <div className="flex space-x-2 justify-center font-bold m-auto">
           <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
-            <div className="font-bold ml-5 inline-block px-6 py-2.5 text-black font-bold text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+            <div 
+              style={{
+                backgroundColor: "#416045",
+                color: "white",
+              }}
+            className="font-bold ml-5 inline-block px-6 py-2.5 text-black font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
               {locale === "en" ? "Contact" : "Liên hệ"}
             </div>
           </LinkComponent>

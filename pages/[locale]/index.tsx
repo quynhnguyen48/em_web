@@ -63,10 +63,10 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ECHO MEDI</title>
+        <title>ECHO MEDI - Healthcare Evolved</title>
         <meta
-          name="ECHO MEDI"
-          content="ECHO MEDI"
+          name="ECHO MEDI - Healthcare Evolved"
+          content="ECHO MEDI - Healthcare Evolved"
         />
         <link rel="icon" href="/favicon1.png" />
       </Head>
@@ -124,13 +124,13 @@ const Home: NextPage = () => {
 
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <p className="text-lg p-5 text-left">
+            <p className="text-lg p-5 text-justify">
               {locale === "en" ? "To date the approach to healthcare has been driven by the urgent need to treat illness and injuries. The healthcare delivery has been substantially centered on institutional infrastructure. It has been based on “crisis care”. The focus must shift to wellness. Healthcare must devolve into the community and into the home. Better connected healthcare will evolve at a lower cost." : "Hiện nay, chúng ta chỉ nghĩ tới các dịch vụ chăm sóc sức khỏe khi cần điều trị bệnh hoặc phục hồi chấn thương. Phần lớn các dịch vụ này đang được cung cấp bởi những cơ sở y tế truyền thống. Nói cách khác, chúng ta đang chỉ chú tâm vào “chăm sóc khủng hoảng” – chữa bệnh thay vì phòng bệnh. Tư duy này cần phải được thay đổi. Trọng tâm nên là sức khỏe toàn diện, tức sức khỏe cả về thể chất lẫn tinh thần. Việc chăm sóc sức khỏe nên bắt đầu từ cộng đồng, với nền tảng là mỗi gia đình. Đây chính là tiền đề để xây dựng một hệ thống chăm sóc sức khỏe được kết nối chặt chẽ, bệnh viện kết nối với cộng đồng, cộng đồng kết nối với cá nhân. Qua đó, ta sẽ giảm đi gánh nặng của chi phí điều trị lâu dài."}</p>
-            <p className="text-lg p-5 text-left">
+            <p className="text-lg p-5 text-justify">
               {locale === "en" ? "This reactive response must change. We must develop a thorough understanding of our health. This will allow us to monitor and maintain our wellness. It will allow us to develop preventive strategies to keep us healthy. Patients must be more thoroughly informed about their health and treatment. This will allow them to be directly involved in their own care." : "Cách tiếp cận của chúng ta đối với vấn đề chăm sóc sức khỏe đã cũ và cần phải thay đổi. Mỗi người cần trang bị kiến thức vững chắc nhằm tự theo dõi và duy trì sức khỏe của bản thân. Người bệnh phải được thông báo chi tiết hơn về tình trạng sức khỏe và kế hoạch điều trị để họ có thể theo sát quá trình điều trị của mình. Từ đó có thể xây dựng các biện pháp phòng ngừa và giữ cho cơ thể luôn khỏe mạnh."}</p>
-            <p className="text-lg p-5 text-left">
+            <p className="text-lg p-5 text-justify">
               {locale === "en" ? "The quality of our living is significantly determined by the state of our health. We must be vigilant in the responsive maintenance of all facets of our health." : "Sức khỏe chính là chìa khóa quyết định chất lượng cuộc sống của mỗi người. Chúng ta nên chú trọng việc chăm sóc và duy trì một cơ thể khỏe mạnh toàn diện."}</p>
-            <p className="text-lg p-5 text-left">
+            <p className="text-lg p-5 text-justify">
               {locale === "en" ? "ECHO MEDI seeks to be an active part of this crucial realignment." : "ECHO MEDI thấu hiểu và hướng tới việc trở thành một nhân tố tích cực trong hành trình định nghĩa lại cách tiếp cận vấn đề sức khỏe này."}</p>
           </div>
 

@@ -101,7 +101,7 @@ const Home: NextPage = () => {
 
             {/* <Slider slides={SliderData} />
       <Instagram /> */}
-            <SmallHero heading={locale === "en" ? "Gifting" : "Gởi quà"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"} />
+            <SmallHero heading={locale === "en" ? "Gifting" : "Gửi quà"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"} />
             <div className="max-w-[1240px] mx-auto p-4 text-center">
                 <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 pt-12">
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
@@ -110,9 +110,13 @@ const Home: NextPage = () => {
                         <p className='text-center text-xl font-medium mb-4'>{locale === "en" ? "Members receive on-demand access to a full spectrum of concierge medical services" : "Thành viên được tiếp cận đầy đủ các dịch vụ trợ giúp y tế đặc biệt, phù hợp với yêu cầu từng cá nhân"}</p>
                         <div className="flex space-x-2 justify-center">
                             <button
+                            style={{
+                                backgroundColor: "#416045",
+                                color: "white",
+                              }}
                                 onClick={contact}
                                 type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
-                                {locale === "en" ? "Send gift" : "Gởi quà"}</button>
+                                {locale === "en" ? "Send gift" : "Gửi quà"}</button>
                         </div>
                     </div>
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
@@ -306,7 +310,7 @@ const Home: NextPage = () => {
                                     </div>
                                     <div className="mt-10 mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
                                         <LinkComponent href={"/insight"} locale="" skipLocaleHandling={false}>
-                                            {locale == "en" ? "Send gift" : "Gởi quà"}</LinkComponent>
+                                            {locale == "en" ? "Send gift" : "Gửi quà"}</LinkComponent>
                                     </div>
                                 </div>
                             </div></div></div>

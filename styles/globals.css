@@ -4,15 +4,15 @@
 
 @font-face {
   font-family: "BeVietnamPro";
-  src: url('../fonts/BeVietnamPro-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-  
-@font-face {
-  font-family: "BeVietnamPro";
   src: url('../fonts/BeVietnamPro-Bold.ttf');
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BeVietnamPro";
+  src: url('../fonts/BeVietnamPro-Regular.ttf');
+  font-weight: normal;
   font-style: normal;
 }
   
@@ -165,3 +165,7 @@ html {
       font-size: 14px;
     }
   } */
+
+.accordion-content {
+  transition: all .5s ease;
+}
