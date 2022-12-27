@@ -284,7 +284,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
           <img className="w-32 sm:28" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
         </LinkComponent>
-        <ul style={{ color: `${textColor}` }} className="hidden md:flex ml-20">
+        <ul style={{ color: `${textColor}` }} className="hidden md:flex sm:ml-0 ml-20">
           <li className="py-4 flex">
             <div className="m-auto font-semibold text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded-full">
               <LinkComponent locale={""} skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
@@ -561,14 +561,14 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             <button className="text-black h-full flex flex-row items-center w-full text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
               {locale === "vi" ? <div
                 className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20" version="1.1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 30 20" version="1.1">
                   <rect width="30" height="20" fill="#da251d" />
                   <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
                 </svg>
               </div> :
                 <div
                   className="flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30" height="20">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="50" height="40">
                     <clipPath id="s">
                       <path d="M0,0 v30 h60 v-30 z" />
                     </clipPath>
@@ -586,8 +586,8 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                 </div>
               }
             </button>
-            <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen">
-              <div className="bg-regal-blue text-black bg-white font-semibold" style={{ width: "100px" }}>
+            <div className="absolute z-10 hidden bg-transparent group-hover:block bg-transparent">
+              <div className="text-black bg-transparent font-semibold" style={{ width: "100px" }}>
                 <div className="flex">
 
                   <button onClick={() => {
@@ -607,7 +607,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   }}>
                     {locale === "vi" ? <div
                       className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30" height="20">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="50" height="40">
                         <clipPath id="s">
                           <path d="M0,0 v30 h60 v-30 z" />
                         </clipPath>
@@ -625,7 +625,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                     </div> :
                       <div
                         className="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20" version="1.1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 30 20" version="1.1">
                           <rect width="30" height="20" fill="#da251d" />
                           <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
                         </svg>
