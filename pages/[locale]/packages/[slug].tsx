@@ -107,7 +107,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                   style={{
                     height: "300px",
                     width: "100%",
-                    marginTop: "100px",
+                    // marginTop: "100px",
                     objectFit: "cover",
                   }}
                 src={"http://3.89.245.84:1337" + props.image_url}
@@ -142,7 +142,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                     <div className="w-48 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen hover:text-white py-1 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center mt-5">
                       <LinkComponent href={"/services/" + sv.slug} skipLocaleHandling={false} locale={""}>{tranlsate("learn_more", locale)}</LinkComponent></div>}
                   </div>
-                  {sv.show_additional_fee && <p className='text-center italic text-xs	'>(Bao gồm phụ phí điều dưỡng và bác sĩ đến nhà)</p>}
+                  {sv.show_additional_fee && <p className='text-center italic text-xs	mt-5'>(Bao gồm phụ phí điều dưỡng và bác sĩ đến nhà)</p>}
                   {sv.show_additional_fee && <p className='text-center text-xs	'>1,000,000 đ</p>}
                 </div>
               } />)}

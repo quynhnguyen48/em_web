@@ -25,7 +25,7 @@ const SmallHero = ({ heading, message, image_url, sub_message, image_placeholder
   const loaded = useProgressiveImage(image_url)
 
   return (
-    <div className="flex items-center justify-center h-[300px] mt-[100px] bg-fixed bg-center bg-cover"
+    <div className="flex items-center justify-center bg-fixed bg-center bg-cover"
       // style={{backgroundImage: "url(" + image_url + ")"}}
       style={{backgroundImage: `url(${loaded ||  image_placeholder_url})`}}
     >
@@ -36,7 +36,6 @@ const SmallHero = ({ heading, message, image_url, sub_message, image_placeholder
               placeholderSrc={image_url}
                /> */}
         
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2] h-[300px] mt-[100px]" />
       <div className="p-5 text-white z-[2] max-w-[1048px]">
         <h2 className="text-5xl ">{heading}</h2>
         <p className="py-5 text-xl sm:text-lg">{message}</p>
