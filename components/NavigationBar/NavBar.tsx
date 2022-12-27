@@ -561,14 +561,14 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             <button className="text-black h-full flex flex-row items-center w-full text-base font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
               {locale === "vi" ? <div
                 className="flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 30 20" version="1.1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
                   <rect width="30" height="20" fill="#da251d" />
                   <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
                 </svg>
               </div> :
                 <div
                   className="flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="50" height="40">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
                     <clipPath id="s">
                       <path d="M0,0 v30 h60 v-30 z" />
                     </clipPath>
@@ -607,7 +607,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   }}>
                     {locale === "vi" ? <div
                       className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="50" height="40">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
                         <clipPath id="s">
                           <path d="M0,0 v30 h60 v-30 z" />
                         </clipPath>
@@ -625,7 +625,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                     </div> :
                       <div
                         className="flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 30 20" version="1.1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
                           <rect width="30" height="20" fill="#da251d" />
                           <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
                         </svg>

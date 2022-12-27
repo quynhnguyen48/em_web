@@ -142,7 +142,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
           <button
             onClick={() => {addToCart(parseInt(props.id))}}
-          ><div className='inline bg-green-200 p-4 rounded-full ml-5 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
+          ><div className='inline bg-green-200 p-4 rounded-full sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
           </div>
         </div>  }
           <ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } />

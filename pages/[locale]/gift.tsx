@@ -103,59 +103,23 @@ const Home: NextPage = () => {
       <Instagram /> */}
       <SmallHero heading={locale === "en" ? "Insight" : "Tổng quan"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"} />
       <div className="max-w-[1240px] mx-auto p-4 text-center">
-        <div className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 pt-12">
+        <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 pt-12">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "ECHO MEDI News" : "Tin tức ECHO MEDI"}</p>
-            {/* <p>{locale === "en" ? "ECHO MEDI offers a variety of memberships designed to fit the unique requirements of our members. Our team works hand-in-hand with you to identify the optimal membership for your health needs." : "ECHO MEDI cung cấp những gói thành viên khác nhau, được tạo ra nhằm đáp ứng nhu cầu đặc biệt của mỗi cá nhân. Đội ngũ của chúng tôi sẽ sát cánh với bạn trong việc chọn lựa gói thành viên thích hợp với tình trạng sức khỏe."}</p> */}
-            <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-rodnae-productions-8401909-1024x683.jpg" />
+            <p className='text-center text-green-800 text-3xl font-bold mb-4'>{locale === "en" ? "Trao Yêu Thương" : "Trao Yêu Thương"}</p>
+            <p className='text-center text-green-800 text-2xl font-medium mb-4'>{locale === "en" ? "Tặng Sức Khỏe" : "Tặng Sức Khỏe"}</p>
+            <p className='text-center text-xl font-medium mb-4'>{locale === "en" ? "Thành viên được tiếp cận đầy đủ các dịch vụ trợ giúp y tế đặc biệt, phù hợp với yêu cầu từng cá nhân" : "Thành viên được tiếp cận đầy đủ các dịch vụ trợ giúp y tế đặc biệt, phù hợp với yêu cầu từng cá nhân"}</p>
+            <div className="flex space-x-2 justify-center">
+                  <button 
+                    onClick={contact}
+                  type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
+                    {locale === "en" ? "Send gift" : "Gởi quà"}</button>
+                </div>
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-          <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Video" : "Video"}</p>
-          <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-pixabay-219932-1024x685.jpg" />
+          <img src="https://echomedi.com/wp-content/uploads/2022/08/Untitled-design-2022-08-08T073025.967-scaled.jpg" />
 
           </div>
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-          <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Knowledge" : "Kiến thức y khoa"}</p>
-          <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-lisa-1662145-1024x683.jpg" />
-
-            </div>
         </div>
-        <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
-          </div>
-          <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
-            <div className="flex justify-center">
-              <div className="mb-3 w-full">
-                <p>{locale === "en" ? "Newsletter" : "Đăng Ký Nhận Thông Tin"}</p>
-                <input
-                  type="text"
-                  className="
-                    form-control
-                    mt-3
-                    mb-3
-                    block
-                    w-full
-                    px-3
-                    py-1.5
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                  "
-                  id="exampleFormControlInput1"
-                  placeholder={locale === "en" ? "Your Email" : "Email của bạn"}
-                  onChange={(e) => {setName(e.target.value)}}
-                />
-                <div className="mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
-          <LinkComponent href={"/insight"} locale="" skipLocaleHandling={false}>
-            {locale == "en" ? "Subscribe" : "Đăng ký"}</LinkComponent>
-        </div>
-                </div></div></div>
       </div>
       {/* <Portfolio /> */}
       {/* <Packages /> */}
