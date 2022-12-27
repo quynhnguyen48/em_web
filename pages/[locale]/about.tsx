@@ -70,10 +70,19 @@ const Home: NextPage = () => {
 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      <SmallHero heading={locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"} image_url="https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg" message={""} sub_message={[]}/>
+      {/* <SmallHero heading={locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"} image_url="https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg" message={""} sub_message={[]}/> */}
+      <img 
+                  style={{
+                    height: "300px",
+                    width: "100%",
+                    // marginTop: "100px",
+                    objectFit: "cover",
+                  }}
+                src={"https://echomedi.com/wp-content/uploads/2022/07/riccardo-pelati-_-Cg7vTw3bs-unsplash.jpg"}
+                />
       <div className="max-w-[1240px] mx-auto p-4 text-left">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
+          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10 text-justify">
             <p className="mb-4">
               {locale === "en" ? "ECHO MEDI’s healthcare system supplements to the current healthcare crisis management." : "Hệ thống y tế ECHO MEDI bổ sung cho những phương pháp chăm sóc sức khoẻ truyền thống hiện nay thông qua bốn nền tảng: chăm sóc phòng ngừa, điều trị ban đầu, quản lý bệnh mạn tính và sức khoẻ toàn diện."}</p>
             <p className="mb-4">
