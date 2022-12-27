@@ -136,7 +136,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
       <Hero heading={locale === "en" ? props.en_label : props.label} message={locale === "en" ? props.en_desc : props.desc} 
         image_url={"http://3.89.245.84:1337" + props.image_url} 
         image_placeholder_url={"http://3.89.245.84:1337" + props.placeholder_image_url} />
-      <div className="max-w-[1048px] mx-auto py-16 text-left">
+      <div className="max-w-[1048px] mx-auto py-16 text-justify">
       {props.show_buy_btn && <div className='flex justify-center mb-10'>
       <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
