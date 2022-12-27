@@ -132,7 +132,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={2} title={locale == "en" ? "Gold Membership" : "Thành viên vàng"} content={
               <div>
-                <p className='font-medium text-center'>
+                <p className='font-medium text-justify'>
                   {locale === "en" ? 
                   "Gold membership is an enhanced health care package for members that includes benefits such as free unlimited online consultations 24/7, free clinic check-ups and telemedicine examinations twice a month, and discounts while utilizing clinic services and purchasing medications. Join as a Gold member for a low, set yearly price.		" :
                   "Gói thành viên vàng là gói chăm sóc sức khỏe nâng cao cho thành viên với các đặc quyền như: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh tại phòng khám và khám bệnh từ xa 2 lần mỗi tháng, và nhận được các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên vàng với mức chi phí tiết kiệm và cố định hằng năm."}</p>
@@ -154,7 +154,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={3} title={locale == "en" ? "Platinum Membership" : "Thành viên bạch kim"} content={
               <div>
-                <p className='font-medium text-center' >
+                <p className='font-medium text-justify' >
                   {locale ==="en" ? 
                   "Platinum membership is a comprehensive health care package that includes the following benefits: free unlimited online consultation, free unlimited clinic and telemedicine examination, free general health check every 6 months, and discounts for using the service and purchasing medicine at the clinic. Join as a Platinum member for a low, set yearly price.		" :
                   "Gói thành viên bạch kim là gói chăm sóc sức khỏe toàn diện với các đặc quyền: Miễn phí không giới hạn tư vấn online, miễn phí không giới hạn khám tại phòng khám và khám bệnh từ xa, miễn phí kiểm tra sức khỏe tổng quát 6 tháng/lần, kèm các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên bạch kim với chi phí tiết kiệm và cố định hàng năm."}
@@ -191,7 +191,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={5} title={locale == "en" ? "Corporate Package Deal" : "Gói doanh nghiệp"} content={
               <div>
-                <p className='font-medium text-center' >
+                <p className='font-medium text-justify' >
                   { 
                   locale === "en" ? 
                   "Package for the corporate members will change depending on the needs of each company. Please contact us directly for more information to purchase the most suitable offer for your company." :
@@ -205,7 +205,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={6} title={locale == "en" ? "Non-Resident (Vietnamese abroad) Membership" : "Thành viên ngoại kiều"} content={
               <div>
-                <p className='font-medium text-center' >
+                <p className='font-medium text-justify' >
                   {
                     locale === "en" ?
                     "Echo Medi offers membership for non resident including Overseas Vietnamese and Vietnamese living and working abroad. By becoming a member of Echo Medi, customers can enjoy benefits such as free and unlimited consultation with medical personnel, free telemedicine once a week, and free unlimited Covid-19 Rapid test upon returning to Vietnam.":
@@ -359,7 +359,7 @@ const Home: NextPage = () => {
                     color: "white",
                   }}
                     onClick={contact}
-                  type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
+                  type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
                     {locale === "en" ? "SEND" : "Gửi"}</button>
                 </div>
               </div>
