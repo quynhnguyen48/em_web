@@ -120,8 +120,6 @@ const Home: NextPage = () => {
 
             </div>
         </div>
-        <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
-          </div>
           <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
             <div className="flex justify-center">
               <div className="mb-3 w-full">
