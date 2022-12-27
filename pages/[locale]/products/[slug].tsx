@@ -174,7 +174,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         image_url={"http://3.89.245.84:1337" + props.image_url} 
         image_placeholder_url={"http://3.89.245.84:1337" + props.image_placeholder_url} 
         /> */}
-      <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-48 gap-4">
+      <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-32 gap-4">
         <div>
           <p className='text-3xl text-left inline'>{props.label}</p>
           <img className='p-10 pl-0' src={"http://3.89.245.84:1337" + props.image_url}/>

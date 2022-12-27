@@ -215,3 +215,7 @@ html {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.cart {
+  box-shadow: 1px 1px #888888;
+}
