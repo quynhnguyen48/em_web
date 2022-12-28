@@ -110,7 +110,7 @@ const Home: NextPage = () => {
           console.log('User profile', response.data.user);
           console.log('User token', response.data.jwt);
           localStorage.setItem('token', response.data.jwt);
-          router.push("/", "/", { locale });
+          location.reload();
         })
         .catch(error => {
           // Handle error.
@@ -119,6 +119,7 @@ const Home: NextPage = () => {
         })
         .finally(() => {
           toast.dismiss(toastId);
+          location.href = "/";
         });;
       }
   }
