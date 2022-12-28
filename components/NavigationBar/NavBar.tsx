@@ -996,7 +996,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
               position: "absolute",
             }}
           onClick={handleNav3}><AiOutlineClose size={20}/> </button>
-          <ul className="h-full p-5">
+          <ul className="h-full p-5 overflow-auto">
           <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
 
             <p className="underline text-xl my-5">{tranlsate("monthly_packages", locale ? locale : "")}</p>
