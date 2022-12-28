@@ -134,7 +134,7 @@ const Home: NextPage = () => {
                     </div>
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
                         <img src="https://echomedi.com/wp-content/uploads/2022/09/Untitled-design-10.jpg" />
-
+                        
                     </div>
                 </div>
                 <div className="pt-10">
@@ -291,11 +291,11 @@ const Home: NextPage = () => {
                 }}
                 className="px-3 w-full
                     py-1.5">
-                  <option value={1}>For Dad/ Grandpa</option>
-                  <option value={2}>For Mom/ Grandma</option>
-                  <option value={3}>For Siblings/ Relatives</option>
-                  <option value={4}>For Corporate/ Employees</option>
-                  <option value={5}>For Membership</option>
+                  <option value={1}>{locale == "en" ? "For Dad/ Grandpa" : "Dành Tặng Bố/ Ông"}</option>
+                  <option value={2}>{locale == "en" ? "For Mom/ Grandma" : "Dành Tặng Mẹ/ Bà"}</option>
+                  <option value={3}>{locale == "en" ? "For Siblings/ Relatives" : "Dành Tặng Anh, Chị, Em / Họ Hàng"}</option>
+                  <option value={4}>{locale == "en" ? "For Corporate/ Employees" : "Dành Tặng Doanh Nghiệp/ Nhân Viên"}</option>
+                  <option value={5}>{locale == "en" ? "For Membership" : "Dành Tặng Thành Viên"}</option>
                 </select>
               </div>
                                     <p className="font-semibold">{locale == "en" ? "Choose your Gifting packages" : "Chọn gói khám muốn dành tặng"}</p>
