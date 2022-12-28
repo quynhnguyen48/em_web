@@ -143,7 +143,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                 src={"http://3.89.245.84:1337" + props.image_url}
                 /> */}
       <div className="max-w-[1048px] mx-auto text-justify p-5">
-        <p className='text-3xl'>{props.label}</p>
+        <p className='text-3xl'>{locale == "en" ? props.en_label : props.label}</p>
       {props.show_buy_btn && <div className='flex justify-center mb-10'>
       <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
