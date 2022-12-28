@@ -118,8 +118,8 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
             toast.error("Thêm vào giỏ hàng thất bại")
           });
         } else {
-          // toast.success('Vui lòng đăng nhập.');
-          // router.push("/login", "/login", { locale });
+          toast.success('Vui lòng đăng nhập.');
+          router.push("/login", "/login", { locale });
         }
   }
 
