@@ -141,7 +141,7 @@ const Home: NextPage = () => {
       <SmallHero heading={locale === "en" ? "Cart" : "Giỏ hàng"} image_url="https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg" message={""} sub_message={[]}/>
       <div className="container mx-auto mt-10">
     <div className="flex shadow-md my-10">
-      <div className="w-3/4 bg-white px-10 py-10">
+      <div className="w-4/4 sm:w-3/4 bg-white px-10 py-10">
         <div className="flex justify-between border-b pb-8">
           <h1 className="font-semibold text-2xl">{locale === "en" ? "Shopping Cart" : "Giỏ hàng"}</h1>
           {/* <h2 className="font-semibold text-2xl">3 Items</h2> */}

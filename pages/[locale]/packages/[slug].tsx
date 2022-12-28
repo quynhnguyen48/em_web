@@ -161,7 +161,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
               {sp.services.map((sv: any) => <Accordion id={sv.id} active={active} setActive={setActive} title={locale === "en" ? sv.en_label : sv.label} content={
                 <div>
                   <p className='font-medium text-justify' >{locale === "en" ? sv.en_desc : sv.desc}</p>
-                  <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
+                  <div className='columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
                     {sv.price && <p className='text-center m-auto font-semibold'>{numberWithCommas(sv.price)}<span className='underline'>đ</span></p>}
                     {sv.show_buy_btn && <div className='mt-2 sm:mt-0 text-black text-center'><button
                     style={{
