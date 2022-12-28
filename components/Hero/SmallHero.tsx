@@ -35,7 +35,7 @@ const SmallHero = ({ heading, message, image_url, sub_message, image_placeholder
                     width: "100%",
                     // marginTop: "100px",
                     objectFit: "cover",
-                    objectPosition: "top"
+                    objectPosition: "center"
                   }}
                 src={image_url}
                 />

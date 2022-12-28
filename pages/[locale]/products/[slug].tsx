@@ -180,8 +180,8 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
           <img className='p-10 pl-0' src={"http://3.89.245.84:1337" + props.image_url}/>
           
         </div>
-        <div className='mb-20'>
-          <ul className='list-disc ml-5 mt-20'>
+        <div className='mb-20 justify-center flex flex-col'>
+          <ul className='list-disc ml-5'>
             {
               props.medicines?.map((m: any) => <li className=''>{locale === "en" ? m.en_label : m.label}</li>)
             }
