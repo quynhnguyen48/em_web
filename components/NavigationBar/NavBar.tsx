@@ -985,96 +985,96 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             }}
           onClick={handleNav3}><AiOutlineClose size={20}/> </button>
           <ul>
-            <p className="underline text-xl my-5">Gói Chăm Sóc Tháng</p>
+            <p className="underline text-xl my-5">{tranlsate("monthly_packages", locale ? locale : "")}</p>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60/"}>
-              Người Lớn Tuổi (Trên 60 Tuổi)
+              {tranlsate("elderly", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"}>
-              Nam Trung Niên (Trên 45 tuổi)
+              {tranlsate("middle_aged_man", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45/"}>
-              Nữ Trung Niên (Trên 45 Tuổi)
+              {tranlsate("middle_aged_woman", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45/"}>
-              Người Trưởng Thành (18 - 45 Tuổi)
+              {tranlsate("adult", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19/"}>
-              Thanh Thiếu Niên (13 - 19 Tuổi)
+              {tranlsate("teenager", locale ? locale : "")}
               </LinkComponent>
             </div>
-            <p className="underline text-xl my-5">Vấn Đề Sức Khoẻ</p>
+            <p className="underline text-xl my-5">{tranlsate("health_concern", locale ? locale : "")}</p>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-giac-ngu/"}>
-              Ngủ Ngon
+              {tranlsate("sleep", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-cai-thuoc-la/"}>
-              Cai Thuốc Lá
+              {tranlsate("smoking_cessation", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-giam-can/"}>
-              Giảm Cân
+              {tranlsate("weight_loss", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa/"}>
-              Chăm Sóc Da
+              {tranlsate("skin_care_anti_aging", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong/"}>
-              Chăm Sóc Tóc & Móng
+              {tranlsate("hair_nails_treatment", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai/"}>
-              Mang Thai
+              {tranlsate("pregnancy_care", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-suc-khoe-sinh-ly-nam/"}>
-              Sinh Lý Nam
+              {tranlsate("men_sexual_health", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-suc-khoe-sinh-ly-nu/"}>
-              Sinh Lý Nữ
+              {tranlsate("women_sexual_health", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-suc-khoe-tim-mach/"}>
-              Tim Mạch
+              {tranlsate("heart_blood_circulation", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-tieu-hoa/"}>
-              Tiêu Hóa
+              {tranlsate("digestive_system", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-phong-ngua-benh-xuong-khop/"}>
-              Xương Khớp
+              {tranlsate("bone_joint_health", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-tang-suc-de-khoang-va-mien-dich/"}>
-              Đề Kháng Và Miễn Dịch
+              {tranlsate("immune_system", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cai-thien-tri-nao/"}>
-              Tinh Thần & Trí Não
+              {tranlsate("brain_health", locale ? locale : "")}
               </LinkComponent>
             </div>
             <div className="m-auto">
