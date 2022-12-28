@@ -334,11 +334,11 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                              {tranlsate("home_visits", locale)}
                            </LinkComponent>
                          </div>
-                         <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                         {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                            <LinkComponent href={"/services/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
                              {tranlsate("telemedicine", locale)}
                            </LinkComponent>
-                         </div>
+                         </div> */}
                          <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                            <LinkComponent href={"/services/kham-benh-tu-xa-khach-hang-tai-viet-nam"} locale={""} skipLocaleHandling={false}>
                              {/* {tranlsate("telemedicine", locale)} */}
@@ -838,20 +838,20 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                 {tranlsate("home_visits", locale)}
               </LinkComponent>
             </div>
-            <div className="mb-2" onClick={handleNav1}>
+            {/* <div className="mb-2" onClick={handleNav1}>
               <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tu-xa"}>
                 {tranlsate("telemedicine", locale)}
               </LinkComponent>
-            </div>
+            </div> */}
             <div className="mb-2" onClick={handleNav1}>
-              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tu-xa"}>
-              For Residents in Vietnam
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/services/kham-benh-tu-xa-khach-hang-tai-viet-nam/"}>
+              {locale == "en" ? "For Residents in Vietnam" : "Khách Hàng Tại Việt Nam"}
+
               </LinkComponent>
             </div>
             <div className="mb-2" onClick={handleNav1}>
-              <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tu-xa"}>
-              For Non-Residents (Overseas Vietnamese)
-
+              <LinkComponent locale="" skipLocaleHandling={false} href={"/services/kham-benh-tu-xa-viet-kieu-o-nuoc-ngoai/"}>
+              {locale == "en" ? " For Non-Residents (Overseas Vietnamese)" : "Việt Kiều Ở Nước Ngoài"}
               </LinkComponent>
             </div>
             <div className="m-auto">
