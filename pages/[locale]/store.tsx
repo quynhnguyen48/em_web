@@ -156,7 +156,10 @@ const Home: NextPage = () => {
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[300px]  flex justify-end flex-col">
-                                <div className="font-bold text-xl mb-2 text-white">Trẻ em</div>
+                                <div className="text-xl mb-2 text-white">
+                                    <p>{locale == "en" ? "Child" : "Trẻ em"}</p>
+                                    <p>(6 - 12)</p>
+                                </div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -168,7 +171,10 @@ const Home: NextPage = () => {
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[300px]  flex justify-end flex-col">
-                                <div className="font-bold text-xl mb-2 text-white">Thanh thiếu niên</div>
+                                <div className=" text-xl mb-2 text-white">
+                                    <p>{locale == "en" ? "Teenager" : "Thanh thiếu niên"}</p>
+                                    <p>(13 - 19)</p>
+                                </div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -180,7 +186,10 @@ const Home: NextPage = () => {
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[300px]  flex justify-end flex-col">
-                                <div className="font-bold text-xl mb-2 text-white">Người trưởng thành</div>
+                                <div className=" text-xl mb-2 text-white">
+                                    <p>{locale == "en" ? "Adult" : "Người trưởng thành"}</p>
+                                    <p>(18 - 45)</p>
+                                </div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -193,7 +202,10 @@ const Home: NextPage = () => {
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[300px]  flex justify-end flex-col">
-                                <div className="font-bold text-xl mb-2 text-white">Nữ trung niên</div>
+                                <div className=" text-xl mb-2 text-white">
+                                    <p>{locale == "en" ? "Middle-aged Woman" : "Nữ trung niên"}</p>
+                                    <p>(45+)</p>
+                                </div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -206,7 +218,10 @@ const Home: NextPage = () => {
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[300px]  flex justify-end flex-col">
-                                <div className="font-bold text-xl mb-2 text-white">Nam trung niên</div>
+                                <div className=" text-xl mb-2 text-white">
+                                    <p>{locale == "en" ? "Middle-aged Man" : "Nam trung niên"}</p>
+                                    <p>(45+)</p>
+                                </div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -219,7 +234,10 @@ const Home: NextPage = () => {
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[300px]  flex justify-end flex-col">
-                                <div className="font-bold text-xl mb-2 text-white">Người lớn tuổi</div>
+                                <div className=" text-xl mb-2 text-white">
+                                    <p>{locale == "en" ? "Elderly" : "Người lớn tuổi"}</p>
+                                    <p>(60+)</p>
+                                </div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -230,84 +248,85 @@ const Home: NextPage = () => {
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-ho-tro-giac-ngu/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/2022/07/pexels-anna-nekrashevich-6604845.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Ngủ ngon</div>
+                                <div className=" text-lg mb-2 text-white">
+                                {locale == "en" ? "Sleep" : "Ngủ ngon"}</div>
                             </div>
                         </div>
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-ho-tro-cai-thuoc-la/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/2022/07/pexels-victor-dompablo-5987483.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Cai thuốc lá</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Smoking Cessation" : "Cai thuốc lá"}</div>
                             </div>
                         </div>
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-ho-tro-giam-can/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/2022/07/pexels-andres-ayrton-6550832.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Giảm cân</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Weight Loss" : "Giảm cân"}</div>
                             </div>
                         </div>
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/elementor/thumbs/ChamSocDa-scaled-pvzpoq8eqktfhlxiwekhtmzaagt62r080r633b2fko.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Chăm sóc da</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Skin Care & Anti-aging" : "Chăm sóc da"}</div>
                             </div>
                         </div>
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/elementor/thumbs/ChamSocToc-scaled-pvzpopakjqs55zyw1w5v957tp2xsv1whomilm13tqw.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Chăm Sóc Tóc & Móng</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Hair & Nails Treatment" : "Chăm Sóc Tóc & Móng"}</div>
                             </div>
                         </div>
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/elementor/thumbs/TieuHoa-scaled-pvzpor68xeupt7w5qwz4e4qqvuojag3ycvtkkl11eg.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Mang thai</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Pregnancy Care" : "Mang thai"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -315,14 +334,14 @@ const Home: NextPage = () => {
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-suc-khoe-sinh-ly-nam/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Sinh lý nam</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Men Sexual Health" : "Sinh lý nam"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -330,14 +349,14 @@ const Home: NextPage = () => {
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-suc-khoe-sinh-ly-nu/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-3.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Sinh lý nữ</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Women Sexual Health" : "Sinh lý nữ"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -345,14 +364,14 @@ const Home: NextPage = () => {
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-ho-tro-suc-khoe-tim-mach/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-4.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Tim mạch</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Heart & Blood Circulation" : "Tim mạch"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -360,14 +379,14 @@ const Home: NextPage = () => {
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-suc-khoe-sinh-ly-nam/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/elementor/thumbs/TieuHoa-scaled-pvzpor68xeupt7w5qwz4e4qqvuojag3ycvtkkl11eg.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Tiêu hoá</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Digestive System" : "Tiêu hoá"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -375,14 +394,14 @@ const Home: NextPage = () => {
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-phong-ngua-benh-xuong-khop/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-5.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Xương khớp</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Bone & Joint Health" : "Xương khớp"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -390,14 +409,14 @@ const Home: NextPage = () => {
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-tang-suc-de-khoang-va-mien-dich/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-6.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Đề kháng và miễn dịch</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Immune System" : "Đề kháng và miễn dịch"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -405,14 +424,14 @@ const Home: NextPage = () => {
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
                         href={"/products/goi-cai-thien-tri-nao/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
-                            <img className="h-full absolute object-cover" 
+                            <img className="h-full w-full absolute object-cover" 
                             src="https://echomedi.com/wp-content/uploads/elementor/thumbs/ThanKinh-Nao-scaled-pvzpoq8eqktfhlxiwekhtmzaagt62r080r633b2fko.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className="font-bold text-lg mb-2 text-white">Thần Kinh - Não</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Brain Health" : "Thần Kinh - Não"}</div>
                             </div>
                         </div>
                     </LinkComponent>
