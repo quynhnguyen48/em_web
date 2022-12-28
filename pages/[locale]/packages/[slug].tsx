@@ -136,10 +136,10 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                       backgroundColor: "#416045",
                       color: "white",
                     }}
-                      className='w-32 m-auto inline-block px-5 py-2 text-black  text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
+                      className='w-auto m-auto inline-block px-5 py-2 text-black  text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
                     >{tranlsate("buy_now", locale)}</button></div>}
                     {sv.show_learn_more && 
-                    <div className="w-48 m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen hover:text-white py-1 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center mt-5">
+                    <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen hover:text-white py-1 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center mt-5">
                       <LinkComponent href={"/services/" + sv.slug} skipLocaleHandling={false} locale={""}>{tranlsate("learn_more", locale)}</LinkComponent></div>}
                   </div>
                   {sv.show_additional_fee && <p className='text-center italic text-xs	mt-5'>(Bao gồm phụ phí điều dưỡng và bác sĩ đến nhà)</p>}
