@@ -212,7 +212,8 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
               <LazyLoadImage
                 src={"http://3.89.245.84:1337" + m.image?.url} // use normal <img> attributes as props
                 placeholderSrc={"http://3.89.245.84:1337" + m.image?.formats.thumbnail.url}
-                width={400} />
+                // width={400} 
+                />
             </div>
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col justify-center">
               <p className='font-bold text-xl mb-2'>{locale === "en" ? m.en_label : m.label}</p>
