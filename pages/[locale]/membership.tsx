@@ -218,7 +218,9 @@ const Home: NextPage = () => {
 
                 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                  <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center"><LinkComponent skipLocaleHandling={false} href="/services/goi-gia-dinh" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
+                  <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
+                  <a href="#ask-more-form">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</a>
+                    </div>
                 </div>
               </div>
             } />
@@ -232,7 +234,10 @@ const Home: NextPage = () => {
 
                 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
-                  <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center"><LinkComponent skipLocaleHandling={false} href="/services/goi-doanh-nghiep" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
+                  <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
+                    {/* <LinkComponent skipLocaleHandling={false} href="/services/goi-doanh-nghiep" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent> */}
+                    <a href="#ask-more-form">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</a>
+                  </div>
                 </div>
               </div>
             } />
@@ -288,7 +293,7 @@ const Home: NextPage = () => {
           </div>
 
         </div>
-        <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
+        <div id="ask-more-form" className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
           <div className="flex justify-center">
             <div className="mb-3 w-full">
               <p>{locale === "en" ? "Inquiry" : "Hỏi Thêm"}</p>
