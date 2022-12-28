@@ -102,14 +102,14 @@ const Home: NextPage = () => {
       <div className="max-w-[1048px] mx-auto p-4 text-left">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <p className="text-3xl font-bold mb-4">{tranlsate("contact_info", locale)}</p>
+            <p className="text-2xl font-semibold mb-4">{tranlsate("contact_info", locale)}</p>
             <p className="mb-4">{locale === "en" ? "You can contact ECHO MEDI in the following ways:" : "Bạn có thể liên hệ ECHO MEDI qua những hình thức sau:"}</p>
-            <p><span className="font-bold">Email:</span> contact@echomedi.com</p>
-            <p className="font-bold">{locale === "en" ? "Text message:" : "Nhắn Tin:"}</p>
-            <p><span className="font-bold">{locale === "en" ? "Telephone:" : "Gọi Điện:"} </span> 1900 638 408</p>
-            <p><span className="font-bold">{locale === "en" ? "Virtual visit" : "Thăm Khám Trực Tuyến:"}</span></p>
-            <p><span className="font-bold">{locale === "en" ? "In home visit:" : "Thăm Khám Tại Nhà:"}</span></p>
-            <p><span className="font-bold">{locale === "en" ? "In person visit" : "Tại Phòng Khám"}: </span> 1026 Đường Nguyễn Văn Linh, Căn S15-1 Toà Nhà Sky Garden 1, Quận 7, Tp Hồ Chí Minh.</p>
+            <p><span className="font-semibold">Email:</span> contact@echomedi.com</p>
+            <p className="font-semibold">{locale === "en" ? "Text message:" : "Nhắn Tin:"}</p>
+            <p><span className="font-semibold">{locale === "en" ? "Telephone:" : "Gọi Điện:"} </span> 1900 638 408</p>
+            <p><span className="font-semibold">{locale === "en" ? "Virtual visit" : "Thăm Khám Trực Tuyến:"}</span></p>
+            <p><span className="font-semibold">{locale === "en" ? "In home visit:" : "Thăm Khám Tại Nhà:"}</span></p>
+            <p><span className="font-semibold">{locale === "en" ? "In person visit" : "Tại Phòng Khám"}: </span> 1026 Đường Nguyễn Văn Linh, Căn S15-1 Toà Nhà Sky Garden 1, Quận 7, Tp Hồ Chí Minh.</p>
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
             <div className="flex justify-center">

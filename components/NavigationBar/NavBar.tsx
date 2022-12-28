@@ -701,7 +701,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
           <ul>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-xl hover:text-gray-500"
             >
               <LinkComponent locale="" skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
             </li>
@@ -710,7 +710,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                 handleNav();
                 handleNav1();
               }}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-xl hover:text-gray-500"
             >
               <button>{locale === "en" ? "Services" : "Các Dịch Vụ"}</button>
             </li>
@@ -719,7 +719,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                 handleNav();
                 handleNav2();
               }}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-xl hover:text-gray-500"
             >
               <button>{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</button>
             </li>
@@ -728,13 +728,13 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                 handleNav();
                 handleNav3();
               }}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-xl hover:text-gray-500"
             >
               <button>{locale === "en" ? "Pharmacy" : "Nhà thuốc"}</button>
             </li>
             <li
               onClick={handleNav}
-              className="p-4 text-4xl hover:text-gray-500"
+              className="p-4 text-xl hover:text-gray-500"
             >
               <LinkComponent href={"/membership"} locale="" skipLocaleHandling={false}>{locale === "en" ? "Membership" : "Thành viên"}</LinkComponent>
             </li>
