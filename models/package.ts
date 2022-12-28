@@ -25,6 +25,7 @@ export class PackagesApi {
     result.image_url = blogs.hero_img ? blogs.hero_img.formats.medium.url : '';
     result.show_additional_fee = blogs.show_additional_fee;
     result.show_inquiry_form = blogs.show_inquiry_form;
+    result.show_booking_btn = blogs.show_booking_btn;
     return result;
   }
 }
@@ -40,4 +41,5 @@ class Package {
   show_buy_btn: any;
   show_additional_fee: any;
   show_inquiry_form: any;
+  show_booking_btn: any;
 }

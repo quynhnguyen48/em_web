@@ -335,23 +335,23 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                            </LinkComponent>
                          </div>
                          <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                           <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
+                           <LinkComponent href={"/services/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
                              {tranlsate("telemedicine", locale)}
                            </LinkComponent>
                          </div>
                          <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                           <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
+                           <LinkComponent href={"/services/kham-benh-tu-xa-khach-hang-tai-viet-nam"} locale={""} skipLocaleHandling={false}>
                              {/* {tranlsate("telemedicine", locale)} */}
 
- For Residents in Vietnam
+{locale == "en" ? "For Residents in Vietnam" : "Khách Hàng Tại Việt Nam"}
 
                            </LinkComponent>
                          </div>
                          <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                           <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
+                           <LinkComponent href={"/services/kham-benh-tu-xa-viet-kieu-o-nuoc-ngoai"} locale={""} skipLocaleHandling={false}>
                              {/* {tranlsate("telemedicine", locale)} */}
 
- For Non-Residents (Overseas Vietnamese)
+ {locale == "en" ? " For Non-Residents (Overseas Vietnamese)" : "Việt Kiều Ở Nước Ngoài"}
 
                            </LinkComponent>
                          </div>

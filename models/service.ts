@@ -34,6 +34,8 @@ export class ServiceApi {
       result.placeholder_image_url = blogs.image ? blogs.image.formats.thumbnail.url : '';
       result.price = blogs.price ?? 0;
       result.show_buy_btn = blogs.show_buy_btn;
+      result.show_inquiry_form = blogs.show_inquiry_form;
+      result.show_booking_btn = blogs.show_booking_btn;
     } else {
       result.id = "";
       result.label = "";
@@ -46,6 +48,8 @@ export class ServiceApi {
       result.image_url = "";
       result.placeholder_image_url = "";
       result.price = "";
+      result.show_booking_btn = "";
+      result.show_inquiry_form = "";
     }
     return result;
   }
@@ -64,4 +68,6 @@ class Service {
   image_url!: string;
   placeholder_image_url!: string;
   show_buy_btn: any;
+  show_booking_btn: any;
+  show_inquiry_form: any;
 }

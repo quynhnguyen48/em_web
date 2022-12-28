@@ -92,7 +92,6 @@ type IBlogUrl = {
 const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
-  const [logged, setLogged] = useState(false);
 
   const addToCart = (id: number) => {
     if (localStorage.getItem('token')) {
@@ -147,6 +146,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                 src={"http://3.89.245.84:1337" + props.image_url}
                 /> */}
       <div className="max-w-[1048px] mx-auto text-justify">
+        <p className='text-3xl'>{props.label}</p>
       {props.show_buy_btn && <div className='flex justify-center mb-10'>
       <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
@@ -160,11 +160,23 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
           className='inline bg-green-200 p-4 rounded sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
           </div>
         </div>  }
+        
           <div className='p-5 markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } /></div>
+
+          {props.show_booking_btn && <div className="flex space-x-2 justify-center mb-3">
+                  <button 
+                  style={{
+                    backgroundColor: "#416045",
+                    color: "white",
+                  }}
+                    // onClick={contact}
+                  type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
+                    {locale === "en" ? "Book Now" : "Đặt Lịch Hẹn"}</button>
+                </div>}
           {props.show_inquiry_form && <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
             <div className="flex justify-center">
               <div className="mb-3 w-full">
-                <p>{locale === "en" ? "Inquiry" : "Hỏi Thêm"}</p>
+                <p>{locale === "en" ? "Inquiry" : "Gửi"}</p>
                 <input
                   type="text"
                   className="
