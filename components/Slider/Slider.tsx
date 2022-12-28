@@ -29,7 +29,7 @@ const Slider = ({ slides }: Props) => {
 
   return (
     <div id="gallery" className="w-full mx-auto">
-      <div className="relative flex justify-center h-[350px] md:h-[750px]">
+      <div className="relative flex justify-center h-[350px] md:h-[450px]">
         <Swiper className="mySwiper" autoplay={true}>
           <SwiperSlide>
             <p className=" z-10 text-white text-[30px] md:text-[50px]">
