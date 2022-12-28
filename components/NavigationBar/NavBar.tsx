@@ -422,10 +422,13 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
              <div className="flex">
                {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
                <div className="relative group ">
-                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+               <LinkComponent href={"/store"} locale={""} skipLocaleHandling={false}>
+                 <button 
+                    className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
                    <span className="mr-2 text-sm">{tranlsate("pharmacy", locale)}</span>
                    <Icon />
                  </button>
+                 </LinkComponent>
                  <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "800px", marginLeft: "-600px" }}>
                    <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                      <div className="grid grid-cols-3 gap-4 md:grid-cols-3 p-5 text-base">
