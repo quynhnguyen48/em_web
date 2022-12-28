@@ -87,7 +87,6 @@ const Home: NextPage = () => {
           setCartLines(lines);
         })
         .catch(function (error) {
-          console.log(error);
         })
         .finally(() => {
           toast.dismiss(toastId);
@@ -98,7 +97,6 @@ const Home: NextPage = () => {
   const createOrder = () => {
     const toastId = toast.loading('Loading...');
     const token = localStorage.getItem('token');
-    console.log('token', token)
     if (token) {
       axios.post('http://3.89.245.84:1337/api/orders/createOrder', {},
         {
@@ -117,7 +115,6 @@ const Home: NextPage = () => {
           location.reload();
         })
         .catch(function (error) {
-          console.log(error);
         })
         .finally(() => {
           toast.dismiss(toastId);

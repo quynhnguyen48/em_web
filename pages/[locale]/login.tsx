@@ -82,12 +82,9 @@ const Home: NextPage = () => {
         "password": password,
       })
         .then(function (response) {
-          console.log('success');
           toast.success('Đăng ký thành công');
         })
         .catch(function (error) {
-          console.log('failed');
-          console.log(error);
           toast.error("Đăng ký thất bại")
         });
     }
@@ -106,15 +103,11 @@ const Home: NextPage = () => {
         .then(response => {
           // Handle success.
           toast.success('Đăng nhập thành công');
-          console.log('Well done!');
-          console.log('User profile', response.data.user);
-          console.log('User token', response.data.jwt);
           localStorage.setItem('token', response.data.jwt);
           location.reload();
         })
         .catch(error => {
           // Handle error.
-          console.log('An error occurred:', error.response);
           toast.error("Không thể đăng nhập. Vui lòng kiểm tra lại tên đăng nhập, mật khẩu")
         })
         .finally(() => {
@@ -196,7 +189,7 @@ const Home: NextPage = () => {
                 <div className="flex space-x-2 justify-center mt-8">
                   <button
                     onClick={login}
-                    type="button" className="inline-block px-6 py-2.5 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
+                    type="button" className="inline-block px-6 py-2.5 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-emgreen hover:shadow-lg focus:bg-emgreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-emgreen active:shadow-lg transition duration-150 ease-in-out bg-emgreen">
                     {locale === "en" ? "Login" : "Đăng nhập"}</button>
                 </div>
               </div>
@@ -286,7 +279,7 @@ const Home: NextPage = () => {
                 <div className="flex space-x-2 justify-center mt-8">
                   <button
                     onClick={register}
-                    type="button" className="inline-block px-6 py-2.5 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out bg-green-700">
+                    type="button" className="inline-block px-6 py-2.5 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-emgreen hover:shadow-lg focus:bg-emgreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-emgreen active:shadow-lg transition duration-150 ease-in-out bg-emgreen">
                     {locale === "en" ? "REGISTER" : "Đăng ký"}</button>
                 </div>
               </div>

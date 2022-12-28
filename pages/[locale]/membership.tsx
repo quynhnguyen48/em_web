@@ -79,12 +79,9 @@ const Home: NextPage = () => {
       "message": message
     })
       .then(function (response) {
-        console.log('success');
         toast.success('Thành công');
       })
       .catch(function (error) {
-        console.log('failed');
-        console.log(error);
       });
   }
 
@@ -99,7 +96,6 @@ const Home: NextPage = () => {
           }
         })
           .then(function (response) {
-            console.log('success');
             toast.success('Thêm vào giỏ hàng thành công');
             router.push("/cart", "/cart", { locale });
             let el = document.getElementById('num-of-item');
@@ -108,8 +104,6 @@ const Home: NextPage = () => {
             }
           })
           .catch(function (error) {
-            console.log('failed');
-            console.log(error);
             toast.error("Thêm vào giỏ hàng thất bại")
           });
         } else {

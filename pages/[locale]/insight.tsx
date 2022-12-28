@@ -79,12 +79,9 @@ const Home: NextPage = () => {
       "message": message
     })
       .then(function (response) {
-        console.log('success');
         toast.success('Thành công');
       })
       .catch(function (error) {
-        console.log('failed');
-        console.log(error);
       });
   }
 

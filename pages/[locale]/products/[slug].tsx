@@ -138,7 +138,6 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         }
       })
         .then(function (response) {
-          console.log('success');
           toast.success('Thêm vào giỏ hàng thành công');
           router.push("/cart", "/cart", { locale });
           let el = document.getElementById('num-of-item');
@@ -147,8 +146,6 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
           }
         })
         .catch(function (error) {
-          console.log('failed');
-          console.log(error);
           toast.error("Thêm vào giỏ hàng thất bại")
         });
     } else {

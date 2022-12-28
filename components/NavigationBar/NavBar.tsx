@@ -69,12 +69,10 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
         })
         .then((response) => response.json())
         .then(function (response) {
-          console.log('response', response)
           setNumOfItem(response.user?.cart_lines?.length);
         })
         .catch(function (error) {
-          console.log(error);
-          // toast.error("Đăng ký thất bại")
+          toast.error("Đăng ký thất bại")
         });
     }
   }, []);
@@ -586,11 +584,9 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
               Object.keys(router.query).forEach((k) => {
                 if (k === 'locale') {
                   pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
-                  console.log('pName ', pName)
                   return
                 }
                 pName = pName.replace(`[${k}]`, router.query[k] as string);
-                console.log('pName ', pName)
               })
 
               location.href = pName;
@@ -633,11 +629,9 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                     Object.keys(router.query).forEach((k) => {
                       if (k === 'locale') {
                         pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
-                        console.log('pName ', pName)
                         return
                       }
                       pName = pName.replace(`[${k}]`, router.query[k] as string);
-                      console.log('pName ', pName)
                     })
 
                     location.href = pName;
@@ -759,7 +753,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   let href = router.asPath
                   let pName = router.pathname
 
-                  console.log('href pName', href, pName)
                 }}>
                   {/* <Image
                     src={IgImg3}
@@ -774,7 +767,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   let href = router.asPath
                   let pName = router.pathname
 
-                  console.log('href pName', href, pName)
                 }}>
                   {/* <Image
                     src={IgImg4}
@@ -864,7 +856,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   let href = router.asPath
                   let pName = router.pathname
 
-                  console.log('href pName', href, pName)
                 }}>
                   {/* <Image
                     src={IgImg3}
@@ -879,7 +870,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   let href = router.asPath
                   let pName = router.pathname
 
-                  console.log('href pName', href, pName)
                 }}>
                   {/* <Image
                     src={IgImg4}
@@ -951,7 +941,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   let href = router.asPath
                   let pName = router.pathname
 
-                  console.log('href pName', href, pName)
                 }}>
                   {/* <Image
                     src={IgImg3}
@@ -966,7 +955,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   let href = router.asPath
                   let pName = router.pathname
 
-                  console.log('href pName', href, pName)
                 }}>
                   {/* <Image
                     src={IgImg4}
@@ -1106,7 +1094,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   let href = router.asPath
                   let pName = router.pathname
 
-                  console.log('href pName', href, pName)
                 }}>
                   {/* <Image
                     src={IgImg3}
@@ -1121,7 +1108,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   let href = router.asPath
                   let pName = router.pathname
 
-                  console.log('href pName', href, pName)
                 }}>
                   {/* <Image
                     src={IgImg4}
@@ -1541,11 +1527,9 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //                     Object.keys(router.query).forEach((k) => {
 //                       if (k === 'locale') {
 //                         pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
-//                         console.log('pName ', pName)
 //                         return
 //                       }
 //                       pName = pName.replace(`[${k}]`, router.query[k] as string);
-//                       console.log('pName ', pName)
 //                     })
 
 //                     location.href = pName;
@@ -1646,7 +1630,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //                   let href = router.asPath
 //                   let pName = router.pathname
 
-//                   console.log('href pName', href, pName)
 //                 }}>
 //                   {/* <Image
 //                     src={IgImg3}
@@ -1661,7 +1644,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //                   let href = router.asPath
 //                   let pName = router.pathname
 
-//                   console.log('href pName', href, pName)
 //                 }}>
 //                   {/* <Image
 //                     src={IgImg4}
@@ -1678,11 +1660,9 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //                     Object.keys(router.query).forEach((k) => {
 //                       if (k === 'locale') {
 //                         pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
-//                         console.log('pName ', pName)
 //                         return
 //                       }
 //                       pName = pName.replace(`[${k}]`, router.query[k] as string);
-//                       console.log('pName ', pName)
 //                     })
 
 //                     location.href = pName;
@@ -1765,7 +1745,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //                   let href = router.asPath
 //                   let pName = router.pathname
 
-//                   console.log('href pName', href, pName)
 //                 }}>
 //                   {/* <Image
 //                     src={IgImg3}
@@ -1780,7 +1759,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //                   let href = router.asPath
 //                   let pName = router.pathname
 
-//                   console.log('href pName', href, pName)
 //                 }}>
 //                   {/* <Image
 //                     src={IgImg4}
@@ -1836,7 +1814,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //                   let href = router.asPath
 //                   let pName = router.pathname
 
-//                   console.log('href pName', href, pName)
 //                 }}>
 //                   {/* <Image
 //                     src={IgImg3}
@@ -1851,7 +1828,6 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //                   let href = router.asPath
 //                   let pName = router.pathname
 
-//                   console.log('href pName', href, pName)
 //                 }}>
 //                   {/* <Image
 //                     src={IgImg4}
