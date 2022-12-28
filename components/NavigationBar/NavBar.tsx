@@ -291,7 +291,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
              <div className="flex">
                {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
                <div className="relative group ">
-                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                    <span className="mr-2 text-sm">{tranlsate("services", locale)}</span>
                    <Icon />
                  </button>
@@ -375,7 +375,9 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
              <div className="flex">
                {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
                <div className="relative group ">
-                 <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                 <button 
+                  style={{height: "40px"}}
+                 className="hover:bg-green-100 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                    <span className="mr-2 text-sm">{tranlsate("health_plans", locale)}</span>
                    <Icon />
                  </button>
@@ -424,7 +426,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                <div className="relative group ">
                <LinkComponent href={"/store"} locale={""} skipLocaleHandling={false}>
                  <button 
-                    className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+                    className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                    <span className="mr-2 text-sm">{tranlsate("pharmacy", locale)}</span>
                    <Icon />
                  </button>
@@ -594,7 +596,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 
               location.href = pName;
             }}
-            className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+            className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none">
               {locale === "vi" ? <div
                 className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
@@ -1203,7 +1205,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //             <div className="flex">
 //               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
 //               <div className="relative group ">
-//                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+//                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
 //                   <span className="mr-2 text-sm">{tranlsate("services", locale)}</span>
 //                   <Icon />
 //                 </button>
@@ -1287,7 +1289,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //             <div className="flex">
 //               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
 //               <div className="relative group ">
-//                 <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+//                 <button className="hover:bg-green-100	 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
 //                   <span className="mr-2 text-sm">{tranlsate("health_plans", locale)}</span>
 //                   <Icon />
 //                 </button>
@@ -1334,7 +1336,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //             <div className="flex">
 //               {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
 //               <div className="relative group ">
-//                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+//                 <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
 //                   <span className="mr-2 text-sm">{tranlsate("pharmacy", locale)}</span>
 //                   <Icon />
 //                 </button>
@@ -1492,7 +1494,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 //         </div>
 //         <div className="m-auto">
 //           <div className="relative group hidden md:block">
-//             <button className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none font-montserrat">
+//             <button className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none">
 //               {locale === "vi" ? <div
 //                 className="flex">
 //                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
