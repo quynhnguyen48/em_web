@@ -145,7 +145,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                   }}
                 src={"http://3.89.245.84:1337" + props.image_url}
                 /> */}
-      <div className="max-w-[1048px] mx-auto text-justify">
+      <div className="max-w-[1048px] mx-auto text-justify p-5">
         <p className='text-3xl'>{props.label}</p>
       {props.show_buy_btn && <div className='flex justify-center mb-10'>
       <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
@@ -161,9 +161,9 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
           </div>
         </div>  }
         
-          <div className='p-5 markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } /></div>
+          <div className='markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } /></div>
 
-          {props.show_booking_btn && <div className="flex space-x-2 justify-center mb-3">
+          {props.show_booking_btn && <div className="flex space-x-2 justify-center mb-3 mt-10">
                   <button 
                   style={{
                     backgroundColor: "#416045",
