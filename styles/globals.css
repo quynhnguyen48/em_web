@@ -219,3 +219,7 @@ html {
 .cart {
   box-shadow: 1px 1px #888888;
 }
+
+.markdown-container table {
+  margin-left: -18px;
+}

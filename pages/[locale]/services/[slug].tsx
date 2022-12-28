@@ -146,7 +146,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                   }}
                 src={"http://3.89.245.84:1337" + props.image_url}
                 /> */}
-      <div className="max-w-[1048px] mx-auto py-16 text-justify">
+      <div className="max-w-[1048px] mx-auto text-justify">
       {props.show_buy_btn && <div className='flex justify-center mb-10'>
       <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
@@ -160,7 +160,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
           className='inline bg-green-200 p-4 rounded sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
           </div>
         </div>  }
-          <div className='p-5'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } /></div>
+          <div className='p-5 markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } /></div>
           {props.show_inquiry_form && <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
             <div className="flex justify-center">
               <div className="mb-3 w-full">
