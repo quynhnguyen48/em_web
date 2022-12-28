@@ -559,7 +559,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
            </li>}
            </ul>
                    
-         <div className="flex m-auto lg:m-0">
+         <div className="flex m-auto xl:m-0">
          <div className="flex space-x-2 justify-center m-auto">
            <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
              <div 
