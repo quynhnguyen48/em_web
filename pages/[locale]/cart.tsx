@@ -227,7 +227,7 @@ const Home: NextPage = () => {
         </div> */}
       </div>
 
-      <div id="summary" className="w-1/4 px-8 py-10">
+      <div id="summary" className="w-1/4 px-8 py-10 hidden sm:block">
         <h1 className="font-semibold text-2xl border-b pb-8">{locale === "en" ? "Order Summary" : "Tóm tắt đơn hàng"}</h1>
         {/* <div className="py-10">
           <label for="promo" className="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
@@ -246,6 +246,23 @@ const Home: NextPage = () => {
       </div>
 
     </div>
+    <div id="summary" className="w-4/4 px-8 py-10 block sm:hidden">
+        <h1 className="font-semibold text-2xl border-b pb-8">{locale === "en" ? "Order Summary" : "Tóm tắt đơn hàng"}</h1>
+        {/* <div className="py-10">
+          <label for="promo" className="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
+          <input type="text" id="promo" placeholder="Enter your code" className="p-2 text-sm w-full"/>
+        </div>
+        <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button> */}
+        <div className="border-t mt-8">
+          <div className="flex font-semibold justify-between py-6 text-sm uppercase">
+            <span>{locale === "en" ? "TOTAL COST" : "TỔNG CỘNG"}</span>
+            <span>{numberWithCommas(totalPrice)}đ</span>
+          </div>
+          <button 
+            onClick={createOrder}
+            className="bg-green-200 font-semibold hover:bg-green-300 py-3 text-sm text-black uppercase w-full rounded-full">{locale == "en" ? "Create Order" : "Đặt hàng"}</button>
+        </div>
+      </div>
   </div>
       <Contact />
     </>
