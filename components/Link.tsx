@@ -16,7 +16,7 @@ const LinkComponent = ({ children, skipLocaleHandling, ...rest } : {  children: 
   return (
     <>
       <Link href={href}>
-        <a {...rest}>{children}</a>
+        <a className='w-full block' {...rest}>{children}</a>
       </Link>
     </>
   )
