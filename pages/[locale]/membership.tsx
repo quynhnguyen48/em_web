@@ -88,6 +88,36 @@ const Home: NextPage = () => {
       });
   }
 
+  const addToCart = (id: number) => {
+    if (localStorage.getItem('token')) {
+      const token = localStorage.getItem('token');
+      axios.post('http://3.89.245.84:1337/api/product/addServiceToCart', {
+          "service_id": id,
+        }, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+          .then(function (response) {
+            console.log('success');
+            toast.success('Thêm vào giỏ hàng thành công');
+            router.push("/cart", "/cart", { locale });
+            let el = document.getElementById('num-of-item');
+            if (el) {
+              el.innerText = (parseInt(el.innerText) + 1).toString();;
+            }
+          })
+          .catch(function (error) {
+            console.log('failed');
+            console.log(error);
+            toast.error("Thêm vào giỏ hàng thất bại")
+          });
+        } else {
+          // toast.success('Vui lòng đăng nhập.');
+          // router.push("/login", "/login", { locale });
+        }
+  }
+
   return (
     <>
       <Head>
@@ -118,6 +148,7 @@ const Home: NextPage = () => {
                 <div className='columns-1 sm:columns-3 sm:flex block justify-around items-center mt-5'>
                   <p className="w-32 m-auto  text-center">6,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                   <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button
+                    onClick={() => addToCart(739)}
                     style={{
                       backgroundColor: "#416045",
                       color: "white",
@@ -139,6 +170,7 @@ const Home: NextPage = () => {
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                   <p className="w-32 m-auto  text-center">12,000,000/năm<span className="underline"></span></p>
                   <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button
+                  onClick={() => addToCart(740)}
                     style={{
                       backgroundColor: "#416045",
                       color: "white",
@@ -163,6 +195,7 @@ const Home: NextPage = () => {
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                   <p className="w-32 m-auto  text-center">18,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                   <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button
+                    onClick={() => addToCart(741)}
                     style={{
                       backgroundColor: "#416045",
                       color: "white",
@@ -215,7 +248,9 @@ const Home: NextPage = () => {
                 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                   <p className="w-32 m-auto  text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                  <div className="sm:mt-0 mt-5 text-black  text-center"><button style={{
+                  <div className="sm:mt-0 mt-5 text-black  text-center"><button 
+                  onClick={() => addToCart(743)}
+                  style={{
                     backgroundColor: "#416045",
                     color: "white",
                   }}
@@ -236,6 +271,7 @@ const Home: NextPage = () => {
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                   <p className="w-32 m-auto  text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                   <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button
+                  onClick={() => addToCart(744)}
                     style={{
                       backgroundColor: "#416045",
                       color: "white",
