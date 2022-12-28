@@ -101,7 +101,7 @@ const Home: NextPage = () => {
 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      <SmallHero heading={locale === "en" ? "Membership" : "Thành viên"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"} />
+      <SmallHero heading={locale === "en" ? "Membership" : "Thành viên"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/clay-banks-XvS-uKUoUao-unsplash.jpg"} />
       <div className="max-w-[1240px] mx-auto p-4 text-center">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 pt-12">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
