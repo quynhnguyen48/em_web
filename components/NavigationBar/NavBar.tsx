@@ -684,6 +684,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
             zIndex: 999,
             position: "fixed",
             height: "100%",
+            textAlign: "left"
           }}
           className={
             nav
@@ -698,7 +699,9 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
               position: "absolute",
             }}
           onClick={handleNav}><AiOutlineClose size={20}/> </button>
-          <ul>
+          <ul className="h-full p-5">
+          <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+
             <li
               onClick={handleNav}
               className="p-4 text-xl hover:text-gray-500"
@@ -710,27 +713,30 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                 handleNav();
                 handleNav1();
               }}
-              className="p-4 text-xl hover:text-gray-500"
+              className="p-4 text-xl hover:text-gray-500 flex"
             >
               <button>{locale === "en" ? "Services" : "Các Dịch Vụ"}</button>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 svg-icon ml-2" viewBox="0 0 1024 1024" version="1.1"><path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z"/></svg>
             </li>
             <li
               onClick={() => {
                 handleNav();
                 handleNav2();
               }}
-              className="p-4 text-xl hover:text-gray-500"
+              className="p-4 text-xl hover:text-gray-500 flex"
             >
               <button>{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</button>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 svg-icon ml-2" viewBox="0 0 1024 1024" version="1.1"><path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z"/></svg>
             </li>
             <li
               onClick={() => {
                 handleNav();
                 handleNav3();
               }}
-              className="p-4 text-xl hover:text-gray-500"
+              className="p-4 text-xl hover:text-gray-500 flex"
             >
               <button>{locale === "en" ? "Pharmacy" : "Nhà thuốc"}</button>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 svg-icon ml-2" viewBox="0 0 1024 1024" version="1.1"><path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z"/></svg>
             </li>
             <li
               onClick={handleNav}
@@ -782,6 +788,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                       zIndex: 999,
                       position: "fixed",
                       height: "100%",
+                      textAlign: "left"
                     }}
           className={
             nav1
@@ -796,8 +803,10 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
               position: "absolute",
             }}
           onClick={handleNav1}><AiOutlineClose size={20}/> </button>
-          <ul>
-            <p className="text-xl underline">{tranlsate("in_clinic_service", locale)}</p>
+          <ul className="h-full p-5">
+          <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+
+            <p className="text-xl underline mb-5">{tranlsate("in_clinic_service", locale)}</p>
             <div className="mb-2" onClick={handleNav1}>
               <LinkComponent locale="" href={"/packages/cham-soc-phong-ngua"} skipLocaleHandling={false}>
                 {tranlsate("preventive_care", locale)}
@@ -818,7 +827,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                 {tranlsate("wellness", locale)}
               </LinkComponent>
             </div>
-            <p className="text-lg underline mt-10">{tranlsate("home_service", locale)}</p>
+            <p className="text-lg underline mt-10 mb-5">{tranlsate("home_service", locale)}</p>
             <div className="mb-2" onClick={handleNav1}>
               <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tai-nha"}>
                 {tranlsate("home_visits", locale)}
@@ -884,6 +893,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
           zIndex: 999,
           position: "fixed",
           height: "100%",
+          textAlign: "left"
         }}
           className={
             nav2
@@ -898,7 +908,9 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
               position: "absolute",
             }}
           onClick={handleNav2}><AiOutlineClose size={20}/> </button>
-          <ul>
+          <ul className="h-full p-5">
+          <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+
             <div className="mb-2" onClick={handleNav2} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-cham-soc-phong-ngua"}>
                 {tranlsate("preventive_care_packages", locale)}
@@ -984,7 +996,9 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
               position: "absolute",
             }}
           onClick={handleNav3}><AiOutlineClose size={20}/> </button>
-          <ul>
+          <ul className="h-full p-5">
+          <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+
             <p className="underline text-xl my-5">{tranlsate("monthly_packages", locale ? locale : "")}</p>
             <div className="mb-2" onClick={handleNav3} >
               <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60/"}>
