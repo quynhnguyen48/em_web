@@ -95,10 +95,10 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
   const [logged, setLogged] = useState(false);
 
   const addToCart = (id: number) => {
-    if (logged) {
+    if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
-      axios.post('http://3.89.245.84:1337/api/product/addProductToCart', {
-          "product_id": id,
+      axios.post('http://3.89.245.84:1337/api/product/addServiceToCart', {
+          "service_id": id,
         }, {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -119,8 +119,8 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
             toast.error("Thêm vào giỏ hàng thất bại")
           });
         } else {
-          toast.success('Vui lòng đăng nhập.');
-          router.push("/login", "/login", { locale });
+          // toast.success('Vui lòng đăng nhập.');
+          // router.push("/login", "/login", { locale });
         }
   }
 

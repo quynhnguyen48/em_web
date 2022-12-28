@@ -17,6 +17,7 @@ import Accordion from '../../../components/Accordion';
 import Link from "next/link";
 import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
+import axios from 'axios';
 
 import { makeStaticProps, getStaticPathsPackages, getStaticPropsPackage } from '../../../lib/getStatic';
 import { useTranslation } from 'next-i18next'
@@ -92,6 +93,37 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
   const [active, setActive] = useState(-1);
+
+  const addToCart = (id: number) => {
+    if (localStorage.getItem('token')) {
+      const token = localStorage.getItem('token');
+      axios.post('http://3.89.245.84:1337/api/product/addServiceToCart', {
+          "service_id": id,
+        }, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+          .then(function (response) {
+            console.log('success');
+            toast.success('Thêm vào giỏ hàng thành công');
+            router.push("/cart", "/cart", { locale });
+            let el = document.getElementById('num-of-item');
+            if (el) {
+              el.innerText = (parseInt(el.innerText) + 1).toString();;
+            }
+          })
+          .catch(function (error) {
+            console.log('failed');
+            console.log(error);
+            toast.error("Thêm vào giỏ hàng thất bại")
+          });
+        } else {
+          // toast.success('Vui lòng đăng nhập.');
+          // router.push("/login", "/login", { locale });
+        }
+  }
+
   return (
     <>
       <Head>
@@ -136,6 +168,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                       backgroundColor: "#416045",
                       color: "white",
                     }}
+                    onClick={() => addToCart(sv.id)}
                       className='w-auto m-auto inline-block px-5 py-2 text-black  text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200'
                     >{tranlsate("buy_now", locale)}</button></div>}
                     {sv.show_learn_more && 
