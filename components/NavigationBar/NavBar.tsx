@@ -278,7 +278,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
   </div>
 
   <input className="menu-btn hidden" type="checkbox" id="menu-btn"/>
-  <label className="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" htmlFor="menu-btn">
+  <label className="menu-icon block cursor-pointer hidden md:block px-2 py-4 relative select-none" htmlFor="menu-btn">
     <span className="navicon bg-grey-darkest flex items-center relative"></span>
   </label>
 
@@ -562,7 +562,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                  backgroundColor: "#416045",
                  color: "white",
                }}
-             className=" ml-5 inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+             className="inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
                {locale === "en" ? "Contact" : "Liên hệ"}
              </div>
            </LinkComponent>
@@ -573,7 +573,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
              </div>
            </li>}
            <div className="m-auto">
-          <div className="relative group md:block ml-10">
+          <div className="relative group md:block ml-5">
             <button 
             onClick={() => {
               let href = router.asPath;
