@@ -596,36 +596,48 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
 
               location.href = pName;
             }}
-            className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none">
+            className="text-black h-full flex flex-row items-center w-full text-base  text-left bg-white rounded-lg md:w-auto md:inline md:mt-0 focus:outline-none">
               {locale === "vi" ? <div
                 className="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
                   <rect width="30" height="20" fill="#da251d" />
                   <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
                 </svg>
+                <span className="font-semibold m-auto ml-2">VI</span>
               </div> :
                 <div
                   className="flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
-                    <clipPath id="s">
-                      <path d="M0,0 v30 h60 v-30 z" />
-                    </clipPath>
-                    <clipPath id="t">
-                      <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-                    </clipPath>
-                    <g clip-path="url(#s)">
-                      <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-                      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
-                      <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
-                      <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
-                      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
-                    </g>
-                  </svg>
+                  <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 7410 3900">
+<rect width="7410" height="3900" fill="#b22234"/>
+<path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/>
+<rect width="2964" height="2100" fill="#3c3b6e"/>
+<g fill="#fff">
+<g id="s18">
+<g id="s9">
+<g id="s5">
+<g id="s4">
+<path id="s" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/>
+<use xlinkHref="#s" y="420"/>
+<use xlinkHref="#s" y="840"/>
+<use xlinkHref="#s" y="1260"/>
+</g>
+<use xlinkHref="#s" y="1680"/>
+</g>
+<use xlinkHref="#s4" x="247" y="210"/>
+</g>
+<use xlinkHref="#s9" x="494"/>
+</g>
+<use xlinkHref="#s18" x="988"/>
+<use xlinkHref="#s9" x="1976"/>
+<use xlinkHref="#s5" x="2470"/>
+</g>
+</svg>
+                  <span className="font-semibold m-auto ml-2">EN</span>
                 </div>
               }
             </button>
-            <div className="absolute z-10 hidden bg-transparent group-hover:block bg-transparent">
-              <div className="text-black bg-transparent " style={{ width: "100px" }}>
+            <div className="absolute z-10 hidden group-hover:block bg-white">
+              <div className="text-black bg-white" style={{ width: "100px" }}>
                 <div className="flex">
 
                   <button onClick={() => {
@@ -643,21 +655,32 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                   }}>
                     {locale === "vi" ? <div
                       className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
-                        <clipPath id="s">
-                          <path d="M0,0 v30 h60 v-30 z" />
-                        </clipPath>
-                        <clipPath id="t">
-                          <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-                        </clipPath>
-                        <g clip-path="url(#s)">
-                          <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-                          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
-                          <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
-                          <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
-                          <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
-                        </g>
-                      </svg>
+                      <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 7410 3900">
+<rect width="7410" height="3900" fill="#b22234"/>
+<path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/>
+<rect width="2964" height="2100" fill="#3c3b6e"/>
+<g fill="#fff">
+<g id="s18">
+<g id="s9">
+<g id="s5">
+<g id="s4">
+<path id="s" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/>
+<use xlinkHref="#s" y="420"/>
+<use xlinkHref="#s" y="840"/>
+<use xlinkHref="#s" y="1260"/>
+</g>
+<use xlinkHref="#s" y="1680"/>
+</g>
+<use xlinkHref="#s4" x="247" y="210"/>
+</g>
+<use xlinkHref="#s9" x="494"/>
+</g>
+<use xlinkHref="#s18" x="988"/>
+<use xlinkHref="#s9" x="1976"/>
+<use xlinkHref="#s5" x="2470"/>
+</g>
+</svg>
+                      <span className="font-semibold m-auto ml-2">EN</span>
                     </div> :
                       <div
                         className="flex">
@@ -665,6 +688,7 @@ const Icon = () =>  <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/200
                           <rect width="30" height="20" fill="#da251d" />
                           <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
                         </svg>
+                        <span className="font-semibold m-auto ml-2">VI</span>
                       </div>}
                   </button>
                 </div>
