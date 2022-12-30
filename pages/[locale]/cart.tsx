@@ -94,6 +94,28 @@ const Home: NextPage = () => {
     }
   }, []);
 
+  const getVNPayPaymentURL = () => {
+    const toastId = toast.loading('Loading...');
+    const token = localStorage.getItem('token');
+    if (token) {
+      axios.post('http://3.89.245.84:1337/api/orders/createPaymentUrl', {},
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+        .then(function (response) {
+          // console.log('response', response);
+          window?.open(response?.data?.url, '_blank')?.focus();
+        })
+        .catch(function (error) {
+        })
+        .finally(() => {
+          toast.dismiss(toastId);
+        });
+    }
+  }
+
   const createOrder = () => {
     const toastId = toast.loading('Loading...');
     const token = localStorage.getItem('token');
@@ -237,7 +259,7 @@ const Home: NextPage = () => {
             <span>{numberWithCommas(totalPrice)}đ</span>
           </div>
           <button 
-            onClick={createOrder}
+            onClick={getVNPayPaymentURL}
             className="bg-green-200 font-semibold hover:bg-green-300 py-3 text-sm text-black uppercase w-full rounded-full">{locale == "en" ? "Create Order" : "Đặt hàng"}</button>
         </div>
       </div>
@@ -256,7 +278,7 @@ const Home: NextPage = () => {
             <span>{numberWithCommas(totalPrice)}đ</span>
           </div>
           <button 
-            onClick={createOrder}
+            onClick={getVNPayPaymentURL}
             className="bg-green-200 font-semibold hover:bg-green-300 py-3 text-sm text-black uppercase w-full rounded-full">{locale == "en" ? "Create Order" : "Đặt hàng"}</button>
         </div>
       </div>
