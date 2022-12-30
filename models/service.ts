@@ -1,8 +1,8 @@
 export class ServiceApi {
   async getAll() {
-    // var v = await axios.get("http://3.89.245.84:1337" + '/api/services');
+    // var v = await axios.get("https://api.echomedi.me" + '/api/services');
     // var blogs = v.data.data;
-    var v = await fetch("http://3.89.245.84:1337" + '/api/services?pagination[page]=1&pagination[pageSize]=10000')
+    var v = await fetch("https://api.echomedi.me" + '/api/services?pagination[page]=1&pagination[pageSize]=10000')
         .then((response) => response.json());
     var blogs = v.data;
     const result = blogs.map( (d:any) => {
@@ -15,10 +15,10 @@ export class ServiceApi {
   }
 
   async findOne(slug: string) {
-    var v = await fetch("http://3.89.245.84:1337" + '/api/service/findOne/' + slug)
+    var v = await fetch("https://api.echomedi.me" + '/api/service/findOne/' + slug)
     .then((response) => response.json());
     var blogs = v.package;
-    // var v = await axios.get("http://3.89.245.84:1337" + '/api/service/findOne/' + slug);
+    // var v = await axios.get("https://api.echomedi.me" + '/api/service/findOne/' + slug);
     var blogs = v.service;
     var result = new Service();
     if (blogs) {

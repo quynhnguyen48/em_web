@@ -72,7 +72,7 @@ const Home: NextPage = () => {
     const locale = router.query.locale as string || 'en';
 
     const contact = () => {
-        axios.post('http://3.89.245.84:1337' + '/api/packages/contact', {
+        axios.post('https://api.echomedi.me' + '/api/packages/contact', {
             "name": name,
             "email": email,
             "phone_number": phone_number,
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
     const addToCart = (id: number) => {
         if (localStorage.getItem('token')) {
             const token = localStorage.getItem('token');
-            axios.post('http://3.89.245.84:1337/api/product/addServiceToCart', {
+            axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
                 "service_id": id,
             }, {
                 headers: {

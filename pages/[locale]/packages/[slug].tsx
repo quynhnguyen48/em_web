@@ -27,7 +27,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 // const getStaticProps = makeStaticProps(['common', 'footer']);
 export { getStaticPathsPackages as getStaticPaths, getStaticPropsPackage as getStaticProps };
 
-const api_endpoint = "http://3.89.245.84:1337";
+const api_endpoint = "https://api.echomedi.me";
 
 const tranlsate = (s: string, locale: string | undefined) => {
   switch (s) {
@@ -97,7 +97,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
   const addToCart = (id: number) => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
-      axios.post('http://3.89.245.84:1337/api/product/addServiceToCart', {
+      axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
           "service_id": id,
         }, {
           headers: {
@@ -139,7 +139,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                     // marginTop: "100px",
                     objectFit: "cover",
                   }}
-                src={"http://3.89.245.84:1337" + props.image_url}
+                src={"https://api.echomedi.me" + props.image_url}
                 />
                 <p className='text-center text-3xl mt-10 mb-5'>{locale === "en" ? props.en_label : props.label}</p>
       <div className="max-w-[1048px] mx-auto text-left">

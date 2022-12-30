@@ -96,7 +96,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
   const addToCart = (id: number) => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
-      axios.post('http://3.89.245.84:1337/api/product/addServiceToCart', {
+      axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
           "service_id": id,
         }, {
           headers: {
@@ -131,8 +131,8 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
         <link rel="icon" href="/favicon1.png" />
       </Head>
       {/* <Hero heading={locale === "en" ? props.en_label : props.label} message={locale === "en" ? props.en_desc : props.desc} 
-        image_url={"http://3.89.245.84:1337" + props.image_url} 
-        image_placeholder_url={"http://3.89.245.84:1337" + props.placeholder_image_url} /> */}
+        image_url={"https://api.echomedi.me" + props.image_url} 
+        image_placeholder_url={"https://api.echomedi.me" + props.placeholder_image_url} /> */}
       {/* <img 
                   style={{
                     height: "300px",
@@ -140,7 +140,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     // marginTop: "100px",
                     objectFit: "cover",
                   }}
-                src={"http://3.89.245.84:1337" + props.image_url}
+                src={"https://api.echomedi.me" + props.image_url}
                 /> */}
       <div className="max-w-[1048px] mx-auto text-justify p-5">
         <p className='text-3xl'>{locale == "en" ? props.en_label : props.label}</p>

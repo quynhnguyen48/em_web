@@ -72,7 +72,7 @@ const Home: NextPage = () => {
     const locale = router.query.locale as string || 'en';
 
     const contact = () => {
-        axios.post('http://3.89.245.84:1337' + '/api/packages/contact', {
+        axios.post('https://api.echomedi.me' + '/api/packages/contact', {
             "name": name,
             "email": email,
             "phone_number": phone_number,

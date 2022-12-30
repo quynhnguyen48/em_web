@@ -130,7 +130,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
   const addToCart = (id: number) => {
     if (logged) {
       const token = localStorage.getItem('token');
-      axios.post('http://3.89.245.84:1337/api/product/addProductToCart', {
+      axios.post('https://api.echomedi.me/api/product/addProductToCart', {
         "product_id": id,
       }, {
         headers: {
@@ -168,13 +168,13 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         heading={locale === "en" ? props.en_label : props.label} 
         message={locale === "en" ? props.en_desc: props.desc}
         sub_message={props.medicines?.map((m: any) => locale === "en" ? m.en_label: m.label)}
-        image_url={"http://3.89.245.84:1337" + props.image_url} 
-        image_placeholder_url={"http://3.89.245.84:1337" + props.image_placeholder_url} 
+        image_url={"https://api.echomedi.me" + props.image_url} 
+        image_placeholder_url={"https://api.echomedi.me" + props.image_placeholder_url} 
         /> */}
       <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-12 gap-4">
         <div>
           <p className='text-3xl text-left inline'>{props.label}</p>
-          <img className='p-10 pl-0' src={"http://3.89.245.84:1337" + props.image_url}/>
+          <img className='p-10 pl-0' src={"https://api.echomedi.me" + props.image_url}/>
           
         </div>
         <div className='mb-20 justify-center flex flex-col'>
@@ -207,8 +207,8 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
           props.medicines?.map((m: any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 m-auto">
               <LazyLoadImage
-                src={"http://3.89.245.84:1337" + m.image?.url} // use normal <img> attributes as props
-                placeholderSrc={"http://3.89.245.84:1337" + m.image?.formats.thumbnail.url}
+                src={"https://api.echomedi.me" + m.image?.url} // use normal <img> attributes as props
+                placeholderSrc={"https://api.echomedi.me" + m.image?.formats.thumbnail.url}
                 // width={400} 
                 />
             </div>

@@ -76,7 +76,7 @@ const Home: NextPage = () => {
     if (password != confirmPassword) {
       toast.error("Mật khẩu và xác nhận mật khẩu không trùng nhau")
     } else {
-      axios.post('http://3.89.245.84:1337/api/auth/local/register', {
+      axios.post('https://api.echomedi.me/api/auth/local/register', {
         "username": email,
         "email": email,
         "password": password,
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
     } else {
       const toastId = toast.loading('Loading...');
       axios
-        .post('http://3.89.245.84:1337/api/auth/local', {
+        .post('https://api.echomedi.me/api/auth/local', {
           identifier: email,
           password: password,
         })

@@ -61,7 +61,7 @@ const NavBar = () => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       setLogged(true);
-      fetch('http://3.89.245.84:1337/api/product/getCart',
+      fetch('https://api.echomedi.me/api/product/getCart',
         {
           headers: {
             'Authorization': `Bearer ${token}`
