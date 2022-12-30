@@ -256,7 +256,7 @@ const Home: NextPage = () => {
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
                                 <div className=" text-lg mb-2 text-white">
-                                {locale == "en" ? "Sleep" : "Ngủ ngon"}</div>
+                                {locale == "en" ? "Sleep" : "Ngủ Ngon"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -270,7 +270,7 @@ const Home: NextPage = () => {
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Smoking Cessation" : "Cai thuốc lá"}</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Smoking Cessation" : "Cai Thuốc lá"}</div>
                             </div>
                         </div>
                     </LinkComponent>
@@ -284,7 +284,7 @@ const Home: NextPage = () => {
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
                                 }}
                                 className="px-6 py-4 relative z-10 h-[230px]  flex justify-end flex-col">
-                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Weight Loss" : "Giảm cân"}</div>
+                                <div className=" text-lg mb-2 text-white">{locale == "en" ? "Weight Loss" : "Giảm Cân"}</div>
                             </div>
                         </div>
                     </LinkComponent>

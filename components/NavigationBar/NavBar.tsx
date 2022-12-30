@@ -192,7 +192,7 @@ const NavBar = () => {
         case "services":
           return "Các Dịch Vụ";
         case "health_plans":
-          return "Gói chăm sóc";
+          return "Gói Chăm Sóc";
         case "preventive_care_packages":
           return "Gói Chăm Sóc Phòng Ngừa";
         case "primary_care_packages":
@@ -222,11 +222,11 @@ const NavBar = () => {
         case "health_concern":
           return "Vấn Đề Sức Khoẻ";
         case "sleep":
-          return "Ngủ ngon";
+          return "Ngủ Ngon";
         case "smoking_cessation":
-          return "Cai thuốc lá";
+          return "Cai Thuốc lá";
         case "weight_loss":
-          return "Giảm cân";
+          return "Giảm Cân";
         case "skin_care_anti_aging":
           return "Chăm Sóc Da";
         case "hair_nails_treatment":
@@ -333,25 +333,17 @@ const NavBar = () => {
                           {tranlsate("home_visits", locale)}
                         </LinkComponent>
                       </div>
-                      {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                           <LinkComponent href={"/services/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
+                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                              {tranlsate("telemedicine", locale)}
-                           </LinkComponent>
-                         </div> */}
+                         </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent href={"/services/kham-benh-tu-xa-khach-hang-tai-viet-nam"} locale={""} skipLocaleHandling={false}>
-                          {/* {tranlsate("telemedicine", locale)} */}
-
-                          {locale == "en" ? "For Residents in Vietnam" : "Khách Hàng Tại Việt Nam"}
-
+                          * {locale == "en" ? "For Residents in Vietnam" : "Khách Hàng Tại Việt Nam"}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent href={"/services/kham-benh-tu-xa-viet-kieu-o-nuoc-ngoai"} locale={""} skipLocaleHandling={false}>
-                          {/* {tranlsate("telemedicine", locale)} */}
-
-                          {locale == "en" ? " For Non-Residents (Overseas Vietnamese)" : "Việt Kiều Ở Nước Ngoài"}
-
+                          * {locale == "en" ? " For Non-Residents (Overseas Vietnamese)" : "Việt Kiều Ở Nước Ngoài"}
                         </LinkComponent>
                       </div>
                       {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
@@ -432,11 +424,12 @@ const NavBar = () => {
                   <Icon />
                 </button>
               </LinkComponent>
-              <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "800px", marginLeft: "-600px" }}>
+              <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" 
+              style={{ width: "700px", marginLeft: "-600px" }}>
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
-                  <div className="grid grid-cols-3 gap-4 md:grid-cols-3 p-5 text-base">
-                    <div>
-                      <p className="text-sm underline  underline-offset-8 mb-4 text-sm">
+                  <div className="p-5 text-base flex">
+                    <div className="col-span-1">
+                      <p className="pl-2 text-sm underline  underline-offset-8 mb-4 text-sm">
                         {tranlsate("monthly_packages", locale ? locale : "")}
                       </p>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
@@ -471,7 +464,7 @@ const NavBar = () => {
                       </div>
                     </div>
                     <div>
-                      <p className="text-sm underline  underline-offset-8 mb-4 text-sm">
+                      <p className="pl-2 text-sm underline  underline-offset-8 mb-4 text-sm">
                         {tranlsate("health_concern", locale)}
                       </p>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
@@ -506,10 +499,7 @@ const NavBar = () => {
                       </div>
                     </div>
                     <div>
-                      <p className="text-xl underline  underline-offset-8 mb-4 text-sm">
-
-                      </p>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mt-9 mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent href={"/products/goi-suc-khoe-sinh-ly-nam"} locale={""} skipLocaleHandling={false}>
                           {tranlsate("men_sexual_health", locale)}
                         </LinkComponent>
@@ -709,7 +699,7 @@ const NavBar = () => {
             }}
             className="p-4 text-xl hover:text-gray-500 flex"
           >
-            <button>{locale === "en" ? "Health Plans" : "Gói chăm sóc"}</button>
+            <button>{locale === "en" ? "Health Plans" : "Gói Chăm Sóc"}</button>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 svg-icon ml-2" viewBox="0 0 1024 1024" version="1.1"><path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z" /></svg>
           </li>
           <li
