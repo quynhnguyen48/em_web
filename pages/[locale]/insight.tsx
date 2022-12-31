@@ -85,6 +85,17 @@ const Home: NextPage = () => {
       });
   }
 
+  const sendEmailSubscription = () => {
+    axios.post('https://api.echomedi.me' + '/api/packages/subscribeInfo', {
+      "email": email,
+    })
+      .then(function (response) {
+        toast.success('Thành công');
+      })
+      .catch(function (error) {
+      });
+  }
+
   return (
     <>
       <Head>
@@ -107,23 +118,23 @@ const Home: NextPage = () => {
             <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-rodnae-productions-8401909-1024x683.jpg" />
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-          <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Video" : "Video"}</p>
-          <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-pixabay-219932-1024x685.jpg" />
+            <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Video" : "Video"}</p>
+            <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-pixabay-219932-1024x685.jpg" />
 
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-          <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Knowledge" : "Kiến thức y khoa"}</p>
-          <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-lisa-1662145-1024x683.jpg" />
+            <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Knowledge" : "Kiến thức y khoa"}</p>
+            <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-lisa-1662145-1024x683.jpg" />
 
-            </div>
+          </div>
         </div>
-          <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
-            <div className="flex justify-center">
-              <div className="mb-3 w-full">
-                <p>{locale === "en" ? "Newsletter" : "Đăng Ký Nhận Thông Tin"}</p>
-                <input
-                  type="text"
-                  className="
+        <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
+          <div className="flex justify-center">
+            <div className="mb-3 w-full">
+              <p>{locale === "en" ? "Newsletter" : "Đăng Ký Nhận Thông Tin"}</p>
+              <input
+                type="text"
+                className="
                     form-control
                     mt-3
                     mb-3
@@ -142,15 +153,16 @@ const Home: NextPage = () => {
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
-                  id="exampleFormControlInput1"
-                  placeholder={locale === "en" ? "Your Email" : "Email của bạn"}
-                  onChange={(e) => {setName(e.target.value)}}
-                />
+                id="exampleFormControlInput1"
+                placeholder={locale === "en" ? "Your Email" : "Email của bạn"}
+                onChange={(e) => { setEmail(e.target.value) }}
+              />
+              <button onClick={sendEmailSubscription}>
                 <div className="mb-4 inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-emgreen hover:shadow-lg focus:bg-emgreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-emgreen active:shadow-lg transition duration-150 ease-in-out bg-emgreen text-white rounded-full">
-          <LinkComponent href={"/insight"} locale="" skipLocaleHandling={false}>
-            {locale == "en" ? "Subscribe" : "Đăng ký"}</LinkComponent>
-        </div>
-                </div></div></div>
+                  {locale == "en" ? "Subscribe" : "Đăng ký"}
+                </div>
+              </button>
+            </div></div></div>
       </div>
       {/* <Portfolio /> */}
       {/* <Packages /> */}

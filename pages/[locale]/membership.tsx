@@ -72,7 +72,7 @@ const Home: NextPage = () => {
   const locale = router.query.locale as string || 'en';
 
   const contact = () => {
-    axios.post('https://api.echomedi.me' + '/api/packages/contact', {
+    axios.post('https://api.echomedi.me' + '/api/packages/inquiryMembership', {
       "name": name,
       "email": email,
       "phone_number": phone_number,
@@ -388,7 +388,7 @@ const Home: NextPage = () => {
                   "
                 id="exampleFormControlInput1"
                 placeholder={locale === "en" ? "Email" : "Email"}
-                onChange={(e) => { setPhoneNumber(e.target.value) }}
+                onChange={(e) => { setEmail(e.target.value) }}
               />
               <textarea
                 className="
