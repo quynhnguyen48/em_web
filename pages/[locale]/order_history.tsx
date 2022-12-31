@@ -6,6 +6,29 @@ import Contact from '../../components/Contact/Contact';
 import SmallHero from '../../components/Hero/SmallHero';
 import Head from "next/head";
 import LinkComponent from '../../components/Link';
+import { makeStaticProps } from '../../lib/getStatic';
+
+
+const getStaticProps = makeStaticProps(['common', 'footer'])
+const getStaticPaths = () => ({
+  fallback: false,
+  paths: [{
+    params: {
+      locale: 'en',
+      slug: "test",
+      label: "test2",
+    }
+  },
+  {
+    params: {
+      locale: 'vi',
+      slug: "test",
+      label: "test2",
+    }
+  }],
+})
+export { getStaticPaths, getStaticProps }
+
 
 const Order = () => {
   const router = useRouter()
