@@ -17,6 +17,7 @@ const NavBar = () => {
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
   const [logged, setLogged] = useState(false);
+  const [userData, setUserData] = useState({email: ""});
   const [numOfItem, setNumOfItem] = useState(0);
 
   const router = useRouter()
@@ -70,6 +71,7 @@ const NavBar = () => {
         .then((response) => response.json())
         .then(function (response) {
           setNumOfItem(response.user?.cart_lines?.length);
+          setUserData(response?.user.users_permissions_user);
         })
         .catch(function (error) {
           toast.error("Đăng ký thất bại")
@@ -549,6 +551,11 @@ const NavBar = () => {
         {!logged && <li className="py-4 flex">
           <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
             <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Đăng Nhập"}</LinkComponent>
+          </div>
+        </li>}
+        {logged && <li className="py-4 flex">
+          <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+            <LinkComponent href="/profile" locale={""} skipLocaleHandling={false}>{userData?.email}</LinkComponent>
           </div>
         </li>}
         <div className="z-10 bg-transparent group-hover:block bg-transparent flex">

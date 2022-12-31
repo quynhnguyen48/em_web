@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import Contact from '../../components/Contact/Contact';
 import SmallHero from '../../components/Hero/SmallHero';
 import Head from "next/head";
+import LinkComponent from '../../components/Link';
 
 const Order = () => {
   const router = useRouter()
@@ -12,20 +13,22 @@ const Order = () => {
   const [data, setData] = useState({status: ""});
   const locale = router.query.locale as string || 'vi';
   const [cartLines, setCartLines] = useState([]);
+  const token = localStorage.getItem('token');
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    if (code) {
-    axios.get('https://api.echomedi.me' + '/api/orders/getOrderDetailByCode/' + code)
+    axios.get('https://api.echomedi.me' + '/api/orders/getOrderHistory',{
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
             .then(function (response) {
-                console.log('response', response.data.order.cart.cart_lines);
-                setCartLines(response.data.order.cart.cart_lines);
-                toast.success('Thành công');
-                setData(response.data.order);
+                console.log('response', response);
+                setOrders(response.data.orders?.filter((o: any) => o.code))
             })
             .catch(function (error) {
             });
-        }
-  }, [code]);
+  }, [token]);
 
   return <>
   <Head>
@@ -47,18 +50,23 @@ const Order = () => {
       {/* <h2 className="font-semibold text-2xl">3 Items</h2> */}
     </div>
     <div className="flex mt-10 mb-5">
-      <h3 className="font-semibold text-gray-600 text-xs uppercase w-4/5">{locale === "en" ? "Product details" : "Chi tiết đơn hàng"}</h3>
+      <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">{locale === "en" ? "Product Details" : "Chi tiết đơn hàng"}</h3>
+      <h3 className="font-semibold text-gray-600 text-xs uppercase w-1/5">{locale === "en" ? "Create Date" : "Ngày đặt"}</h3>
       {/* <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">{locale === "en" ? "Quantity" : "Số lượng"}</h3> */}
-      <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">{locale === "en" ? "Price" : "Giá"}</h3>
+      <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">{locale === "en" ? "Total amount" : "Tổng cộng"}</h3>
       {/* <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">{locale === "en" ? "Total" : "Tổng cộng"}</h3> */}
     </div>
-    {cartLines.map((line:any) => 
+    {orders.map((line:any) => 
     <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-      <div className="flex w-4/5">
+      <div className="flex w-2/5">
         <div className="flex flex-col justify-between flex-grow">
-          <span className="font-bold text-sm">{line.product? line.product.label : line.service.label}</span>
+          <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/order_detail/?code=" + line.code}>
+          <span className="font-bold text-sm">{line.code}</span>
+          <p className="font-bold text-sm">Số món hàng {line.num_of_prod}</p>
+          </LinkComponent>
         </div>
       </div>
+      <p>{line.publishedAt.substring(0, 10)}</p>
       {/* <div className="flex justify-center w-1/5">
         <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
         </svg>
@@ -72,7 +80,7 @@ const Order = () => {
       {/* {lines.map((line:any) => 
       <span className="text-center w-1/5 font-semibold text-sm">{line.product.price}</span>
         )} */}
-      <span className="text-center w-1/5 font-semibold text-sm">{numberWithCommas(line.product ? line.product.price : line.service.price)}đ</span>
+      {/* <span className="text-center w-1/5 font-semibold text-sm">{numberWithCommas(line.product ? line.product.price : line.service.price)}đ</span> */}
     </div>)}
 
     {/* <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">

@@ -5,27 +5,34 @@ import toast, { Toaster } from 'react-hot-toast';
 import Contact from '../../components/Contact/Contact';
 import SmallHero from '../../components/Hero/SmallHero';
 import Head from "next/head";
+import LinkComponent from '../../components/Link';
 
 const Order = () => {
   const router = useRouter()
   const { code } = router.query;
-  const [data, setData] = useState({status: ""});
+  const [data, setData] = useState({status: "", email: ""});
   const locale = router.query.locale as string || 'vi';
   const [cartLines, setCartLines] = useState([]);
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    if (code) {
-    axios.get('https://api.echomedi.me' + '/api/orders/getOrderDetailByCode/' + code)
-            .then(function (response) {
-                console.log('response', response.data.order.cart.cart_lines);
-                setCartLines(response.data.order.cart.cart_lines);
-                toast.success('Thành công');
-                setData(response.data.order);
-            })
-            .catch(function (error) {
-            });
+    if (token) {
+      axios.get('https://api.echomedi.me' + '/api/user/getMe', {
+        headers: {
+          'Authorization': `Bearer ${token}`
         }
-  }, [code]);
+      })
+              .then(function (response) {
+                  // console.log('response', response.data.order.cart.cart_lines);
+                  // setCartLines(response.data.order.cart.cart_lines);
+                  setData(response.data.user)
+                  toast.success('Thành công');
+                  // setData(response.data.order);
+              })
+              .catch(function (error) {
+              });
+            }
+  }, [token]);
 
   return <>
   <Head>
@@ -43,20 +50,20 @@ const Order = () => {
 <div className="flex shadow-md my-10">
   <div className="w-4/4 sm:w-3/4 bg-white px-10 py-10">
     <div className="flex justify-between border-b pb-8">
-      <p className="font-semibold text-xl">{locale === "en" ? "Order" : "Đơn hàng"} {code} - {getDisplayedStatus(data?.status)}</p>
+      <p className="font-semibold text-xl">{locale === "en" ? "Hello" : "Xin chào"} {data?.email}</p>
       {/* <h2 className="font-semibold text-2xl">3 Items</h2> */}
     </div>
     <div className="flex mt-10 mb-5">
-      <h3 className="font-semibold text-gray-600 text-xs uppercase w-4/5">{locale === "en" ? "Product details" : "Chi tiết đơn hàng"}</h3>
-      {/* <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">{locale === "en" ? "Quantity" : "Số lượng"}</h3> */}
-      <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">{locale === "en" ? "Price" : "Giá"}</h3>
-      {/* <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">{locale === "en" ? "Total" : "Tổng cộng"}</h3> */}
     </div>
     {cartLines.map((line:any) => 
     <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
       <div className="flex w-4/5">
-        <div className="flex flex-col justify-between flex-grow">
+        <div className="w-20">
+          <img className="h-24 object-contain" src={"https://api.echomedi.me" + line.product?.image?.url} alt=""/>
+        </div>
+        <div className="flex flex-col justify-between ml-4 flex-grow">
           <span className="font-bold text-sm">{line.product? line.product.label : line.service.label}</span>
+          <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs">{locale === "en" ? "Remove" : "Xoá"}</a>
         </div>
       </div>
       {/* <div className="flex justify-center w-1/5">
@@ -124,18 +131,9 @@ const Order = () => {
   </div>
 
   <div id="summary" className="w-1/4 px-8 py-10 hidden sm:block">
-    <h1 className="font-semibold text-2xl border-b pb-8">{locale === "en" ? "Order Summary" : "Tóm tắt đơn hàng"}</h1>
-    {/* <div className="py-10">
-      <label for="promo" className="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
-      <input type="text" id="promo" placeholder="Enter your code" className="p-2 text-sm w-full"/>
-    </div>
-    <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button> */}
-    <div className="border-t mt-8">
-      <div className="flex font-semibold justify-between py-6 text-sm uppercase">
-        <span>{locale === "en" ? "TOTAL COST" : "TỔNG CỘNG"}</span>
-        {/* <span>{numberWithCommas(totalPrice)}đ</span> */}
-      </div>
-    </div>
+    <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/order_history"}>
+      <p className='underline'>{locale == "en" ? "Order history" : "Lịch sử đặt hàng"}</p>
+    </LinkComponent>
   </div>
 
 </div>
