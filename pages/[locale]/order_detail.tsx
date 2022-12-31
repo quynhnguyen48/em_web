@@ -6,6 +6,7 @@ import Contact from '../../components/Contact/Contact';
 import SmallHero from '../../components/Hero/SmallHero';
 import Head from "next/head";
 import { makeStaticProps } from '../../lib/getStatic';
+import LinkComponent from '../../components/Link';
 
 
 const getStaticProps = makeStaticProps(['common', 'footer'])
@@ -78,9 +79,11 @@ const Order = () => {
     {cartLines.map((line:any) => 
     <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
       <div className="flex w-4/5">
+        <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={line.product ? ("/products/" + line.product.slug) : ("/services/" + line.service.slug)}>
         <div className="flex flex-col justify-between flex-grow">
           <span className="font-bold text-sm">{line.product? line.product.label : line.service.label}</span>
         </div>
+        </LinkComponent>
       </div>
       {/* <div className="flex justify-center w-1/5">
         <svg className="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
