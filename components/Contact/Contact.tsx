@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from 'next/router';
 import Link from "next/link";
 import LinkComponent from "../Link";
+import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 
 const contact = () => {
-  const router = useRouter()
+  const router = useRouter();
+  const [email, setEmail] = useState("");
   const locale = router.query.locale as string || 'en';
+
+  const sendEmailSubscription = () => {
+    axios.post('https://api.echomedi.me' + '/api/packages/subscribeInfo', {
+      "email": email,
+    })
+      .then(function (response) {
+        toast.success('Thành công');
+      })
+      .catch(function (error) {
+      });
+  }
+
   return (
     <div 
     style={{
@@ -41,18 +56,23 @@ const contact = () => {
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
                 id="exampleFormControlInput1"
+                onChange={(e) => { setEmail(e.target.value) }}
                 placeholder={locale === "en" ? "Your Email" : "Email của bạn"}
               />
             </div></div></div>
-            <div 
+            {/* <div 
               style={{
                 backgroundColor: "#416045",
                 color: "white",
               }}
-            className="w-48 text-center mb-4 inline-block px-6 py-2.5 text-white text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out  text-black rounded">
-          <LinkComponent href={"/insight"} locale="" skipLocaleHandling={false}>
-            {locale == "en" ? "Subscribe" : "Đăng ký"}</LinkComponent>
-        </div>
+            className="w-48 text-center mb-4 inline-block px-6 py-2.5 text-white text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out  text-black rounded"> */}
+          <button onClick={sendEmailSubscription}>
+                <div className="mb-4 px-6 py-2.5 text-white  text-sm leading-tight uppercase rounded-full shadow-md hover:bg-emgreen hover:shadow-lg focus:bg-emgreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-emgreen active:shadow-lg transition duration-150 ease-in-out bg-emgreen text-white rounded">
+                  {locale == "en" ? "Subscribe" : "Đăng ký"}
+                </div>
+              </button>
+            
+        {/* </div> */}
         <div 
           style={{
             backgroundColor: "#416045",

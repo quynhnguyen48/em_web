@@ -543,12 +543,12 @@ const NavBar = () => {
         </li>
         <li className="py-4 flex">
           <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
-            <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Membership" : "Thành viên"}</LinkComponent>
+            <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Membership" : "Thành Viên"}</LinkComponent>
           </div>
         </li>
         {!logged && <li className="py-4 flex">
           <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
-            <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Đăng nhập"}</LinkComponent>
+            <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Đăng Nhập"}</LinkComponent>
           </div>
         </li>}
         <div className="z-10 bg-transparent group-hover:block bg-transparent flex">
@@ -709,7 +709,7 @@ const NavBar = () => {
             }}
             className="p-4 text-xl hover:text-gray-500 flex"
           >
-            <button>{locale === "en" ? "Pharmacy" : "Nhà thuốc"}</button>
+            <button>{locale === "en" ? "Pharmacy" : "Nhà Thuốc"}</button>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 svg-icon ml-2" viewBox="0 0 1024 1024" version="1.1"><path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z" /></svg>
           </li>
           <li
