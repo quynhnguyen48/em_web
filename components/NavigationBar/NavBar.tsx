@@ -17,7 +17,7 @@ const NavBar = () => {
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
   const [logged, setLogged] = useState(false);
-  const [userData, setUserData] = useState({email: ""});
+  const [userData, setUserData] = useState({ email: "" });
   const [numOfItem, setNumOfItem] = useState(0);
 
   const router = useRouter()
@@ -336,8 +336,8 @@ const NavBar = () => {
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                             {tranlsate("telemedicine", locale)}
-                         </div>
+                        {tranlsate("telemedicine", locale)}
+                      </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent href={"/services/kham-benh-tu-xa-khach-hang-tai-viet-nam"} locale={""} skipLocaleHandling={false}>
                           * {locale == "en" ? "For Residents in Vietnam" : "Khách Hàng Tại Việt Nam"}
@@ -426,8 +426,8 @@ const NavBar = () => {
                   <Icon />
                 </button>
               </LinkComponent>
-              <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" 
-              style={{ width: "700px", marginLeft: "-600px" }}>
+              <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen"
+                style={{ width: "700px", marginLeft: "-600px" }}>
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                   <div className="p-5 text-base flex">
                     <div className="col-span-1">
@@ -553,6 +553,19 @@ const NavBar = () => {
             <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Đăng Nhập"}</LinkComponent>
           </div>
         </li>}
+        <li className="py-4 flex mr-4">
+          <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
+            <span
+              onClick={handleNav}
+              style={{
+                backgroundColor: "#416045",
+                color: "white",
+              }}
+              className="inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+              {locale === "en" ? "Contact" : "Liên hệ"}
+            </span>
+          </LinkComponent>
+        </li>
         {logged && <li className="py-4 flex">
           <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
             <LinkComponent href="/profile" locale={""} skipLocaleHandling={false}>{userData?.email}</LinkComponent>
@@ -640,49 +653,49 @@ const NavBar = () => {
         <ul className="h-full p-5">
           <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
           <div className="text-black bg-transparent m-auto ml-5">
-              <div className="flex">
+            <div className="flex">
 
-                <button onClick={() => {
-                  let href = router.asPath;
-                  let pName = router.pathname;
-                  Object.keys(router.query).forEach((k) => {
-                    if (k === 'locale') {
-                      pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
-                      return
-                    }
-                    pName = pName.replace(`[${k}]`, router.query[k] as string);
-                  })
+              <button onClick={() => {
+                let href = router.asPath;
+                let pName = router.pathname;
+                Object.keys(router.query).forEach((k) => {
+                  if (k === 'locale') {
+                    pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
+                    return
+                  }
+                  pName = pName.replace(`[${k}]`, router.query[k] as string);
+                })
 
-                  location.href = pName;
-                }}>
-                  {locale === "en" ? <div
+                location.href = pName;
+              }}>
+                {locale === "en" ? <div
+                  className="flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
+                    <clipPath id="s">
+                      <path d="M0,0 v30 h60 v-30 z" />
+                    </clipPath>
+                    <clipPath id="t">
+                      <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                    </clipPath>
+                    <g clip-path="url(#s)">
+                      <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+                      <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
+                      <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+                      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+                    </g>
+                  </svg>
+                </div> :
+                  <div
                     className="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
-                      <clipPath id="s">
-                        <path d="M0,0 v30 h60 v-30 z" />
-                      </clipPath>
-                      <clipPath id="t">
-                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-                      </clipPath>
-                      <g clip-path="url(#s)">
-                        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
-                        <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
-                        <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
-                        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
-                      </g>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
+                      <rect width="30" height="20" fill="#da251d" />
+                      <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
                     </svg>
-                  </div> :
-                    <div
-                      className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
-                        <rect width="30" height="20" fill="#da251d" />
-                        <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
-                      </svg>
-                    </div>}
-                </button>
-              </div>
+                  </div>}
+              </button>
             </div>
+          </div>
           <li
             onClick={handleNav}
             className="p-4 text-xl hover:text-gray-500"
@@ -726,7 +739,7 @@ const NavBar = () => {
             <LinkComponent href={"/membership"} locale="" skipLocaleHandling={false}>{locale === "en" ? "Membership" : "Thành viên"}</LinkComponent>
           </li>
           <div className="w-full z-10 bg-transparent group-hover:block bg-transparent flex absolute bottom-4 right-4 left-0">
-          <div className="flex space-x-2 justify-center m-auto">
+            <div className="flex space-x-2 justify-center m-auto">
               <LinkComponent href="/login" skipLocaleHandling={false} locale={""}>
                 <div
                   onClick={handleNav}
@@ -752,7 +765,7 @@ const NavBar = () => {
                 </div>
               </LinkComponent>
             </div>
-            
+
           </div>
         </ul>
       </div>
