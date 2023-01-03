@@ -553,7 +553,7 @@ const NavBar = () => {
             <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Đăng Nhập"}</LinkComponent>
           </div>
         </li>}
-        <li className="py-4 flex mr-4">
+        <li className="py-4 flex mr-2">
           <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
             <span
               onClick={handleNav}
@@ -561,13 +561,13 @@ const NavBar = () => {
                 backgroundColor: "#416045",
                 color: "white",
               }}
-              className="inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+              className="mt-1 inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
               {locale === "en" ? "Contact" : "Liên hệ"}
             </span>
           </LinkComponent>
         </li>
         {logged && <li className="py-4 flex">
-          <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+          <div className="m-auto  text-sm hover:bg-green-100 px-3 py-3 hover:cursor-pointer rounded">
             <LinkComponent href="/profile" locale={""} skipLocaleHandling={false}>{userData?.email}</LinkComponent>
           </div>
         </li>}
