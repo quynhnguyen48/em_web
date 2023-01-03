@@ -14,8 +14,11 @@ import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import SmallHero from "../../components/Hero/SmallHero";
 import { makeStaticProps } from '../../lib/getStatic';
-import Accordion from "../../components/Accordion";
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import LinkComponent from "../../components/Link";
+import SwiperCore, { Autoplay } from 'swiper';
+import SliderGift from "../../components/Slider/SliderGift";
+
 const notify = () => {
     toast.success('Thành công');
 }
@@ -39,6 +42,8 @@ const getStaticPaths = () => ({
     }],
 })
 export { getStaticPaths, getStaticProps }
+
+SwiperCore.use([Autoplay]);
 
 const tranlsate = (term: string, locale: string) => {
     if (locale === "en") {
@@ -70,6 +75,7 @@ const Home: NextPage = () => {
     const [option, setOption] = useState("1");
     const router = useRouter()
     const locale = router.query.locale as string || 'en';
+    const swiper = useSwiper();
 
     const contact = () => {
         axios.post('https://api.echomedi.me' + '/api/packages/contact', {
@@ -106,14 +112,15 @@ const Home: NextPage = () => {
                         <p className='text-center text-green-800 text-2xl font-medium mb-4'>{locale === "en" ? "Wellness Delivered" : "Tặng Sức Khỏe"}</p>
                         <p className='text-center text-xl font-medium mb-4'>{locale === "en" ? "Members receive on-demand access to a full spectrum of concierge medical services" : "Thành viên được tiếp cận đầy đủ các dịch vụ trợ giúp y tế đặc biệt, phù hợp với yêu cầu từng cá nhân"}</p>
                         <div className="flex space-x-2 justify-center">
-                            <button
+                            <a
+                            href="#send-gift"
                             style={{
                                 backgroundColor: "#416045",
                                 color: "white",
                               }}
-                                onClick={contact}
+                                // onClick={contact}
                                 type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded-full shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
-                                {locale === "en" ? "Send gift" : "Gửi quà"}</button>
+                                {locale === "en" ? "Send gift" : "Gửi quà"}</a>
                         </div>
                     </div>
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
@@ -121,20 +128,8 @@ const Home: NextPage = () => {
 
                     </div>
                 </div>
-                <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 pt-12">
-                    <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 text-left">
-                        <p className="text-xl mb-2 hover:underline">{locale == "en" ? "For Dad/ Grandpa" : "Dành Tặng Bố/ Ông"}</p>
-                        <p className="text-xl mb-2 hover:underline">{locale == "en" ? "For Mom/ Grandma" : "Dành Tặng Mẹ/ Bà"}</p>
-                        <p className="text-xl mb-2 hover:underline">{locale == "en" ? "For Siblings/ Relatives" : "Dành Tặng Anh, Chị, Em / Họ Hàng"}</p>
-                        <p className="text-xl mb-2 hover:underline">{locale == "en" ? "For Corporate/ Employees" : "Dành Tặng Doanh Nghiệp/ Nhân Viên"}</p>
-                        <p className="text-xl mb-2 hover:underline">{locale == "en" ? "For Membership" : "Dành Tặng Thành Viên"}</p>
-                    </div>
-                    <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-                        <img src="https://echomedi.com/wp-content/uploads/2022/09/Untitled-design-10.jpg" />
-                        
-                    </div>
-                </div>
-                <div className="pt-10">
+                <SliderGift slides={SliderData} />
+                <div className="pt-10" id="send-gift">
                     <div className="p-10 bg-green-100 max-w-[500px] m-auto">
                         <p className="text-3xl mt-10 ">{locale === "en" ? "Give a Gift" : "Trao món quà"}</p>
                         <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
