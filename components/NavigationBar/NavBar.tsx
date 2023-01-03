@@ -1,13 +1,12 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import IgImg3 from "../../assets/uk.png";
 import IgImg4 from "../../assets/vietnam.png";
 // import Image from "next/image";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import LinkComponent from "../Link";
-
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -20,61 +19,60 @@ const NavBar = () => {
   const [userData, setUserData] = useState({ email: "" });
   const [numOfItem, setNumOfItem] = useState(0);
 
-  const router = useRouter()
-  const locale = router.query.locale as string || 'en';
+  const router = useRouter();
+  const locale = (router.query.locale as string) || "en";
 
-
-  const Icon = () => <svg className="w-3 h-3 inline" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#000000" height="10px" width="10px" version="1.1" id="Layer_1" viewBox="0 0 330.002 330.002" xmlSpace="preserve">
-    <path id="XMLID_23_" d="M329.155,100.036c-2.108-6.011-7.784-10.035-14.154-10.035h-300c-6.371,0-12.046,4.024-14.154,10.035  c-2.109,6.011-0.19,12.699,4.784,16.678l150.004,120c2.739,2.191,6.055,3.287,9.37,3.287c3.316,0,6.631-1.096,9.371-3.287  l149.996-120C329.346,112.734,331.264,106.047,329.155,100.036z" />
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-    <g>
-    </g>
-  </svg>;
+  const Icon = () => (
+    <svg
+      className="w-3 h-3 inline"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      fill="#000000"
+      height="10px"
+      width="10px"
+      version="1.1"
+      id="Layer_1"
+      viewBox="0 0 330.002 330.002"
+      xmlSpace="preserve"
+    >
+      <path
+        id="XMLID_23_"
+        d="M329.155,100.036c-2.108-6.011-7.784-10.035-14.154-10.035h-300c-6.371,0-12.046,4.024-14.154,10.035  c-2.109,6.011-0.19,12.699,4.784,16.678l150.004,120c2.739,2.191,6.055,3.287,9.37,3.287c3.316,0,6.631-1.096,9.371-3.287  l149.996-120C329.346,112.734,331.264,106.047,329.155,100.036z"
+      />
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+    </svg>
+  );
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      const token = localStorage.getItem('token');
+    if (localStorage.getItem("token")) {
+      const token = localStorage.getItem("token");
       setLogged(true);
-      fetch('https://api.echomedi.me/api/product/getCart',
-        {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        })
+      fetch("https://api.echomedi.me/api/product/getCart", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
         .then((response) => response.json())
         .then(function (response) {
           setNumOfItem(response.user?.cart_lines?.length);
           setUserData(response?.user.users_permissions_user);
         })
         .catch(function (error) {
-          toast.error("Đăng ký thất bại")
+          toast.error("Đăng ký thất bại");
         });
     }
   }, []);
@@ -133,7 +131,7 @@ const NavBar = () => {
         case "monthly_packages":
           return "Monthly Packages";
         case "elderly":
-          return "Elderly (60+)"
+          return "Elderly (60+)";
         case "middle_aged_man":
           return "Middle-aged Man (45+)";
         case "middle_aged_woman":
@@ -210,7 +208,7 @@ const NavBar = () => {
         case "monthly_packages":
           return "Gói Chăm Sóc Tháng";
         case "elderly":
-          return "Người Lớn Tuổi (Trên 60 Tuổi)"
+          return "Người Lớn Tuổi (Trên 60 Tuổi)";
         case "middle_aged_man":
           return "Nam Trung Niên (Trên 45 tuổi)";
         case "middle_aged_woman":
@@ -252,7 +250,7 @@ const NavBar = () => {
       }
     }
     return term;
-  }
+  };
 
   useEffect(() => {
     setColor("#ffffff");
@@ -275,18 +273,30 @@ const NavBar = () => {
     <nav className="nav flex flex-wrap items-center justify-between px-4">
       <div className="flex flex-no-shrink items-center mr-6 text-grey-darkest">
         <LinkComponent href={"/"} locale={""} skipLocaleHandling={false}>
-          <img className="w-[200px] sm:28" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /></LinkComponent>
+          <img
+            className="w-[200px] sm:28"
+            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+          />
+        </LinkComponent>
       </div>
 
       <input className="menu-btn hidden" type="checkbox" id="menu-btn" />
-      <label className="menu-icon block cursor-pointer hidden md:block px-2 py-4 relative select-none" htmlFor="menu-btn">
+      <label
+        className="menu-icon block cursor-pointer hidden md:block px-2 py-4 relative select-none"
+        htmlFor="menu-btn"
+      >
         <span className="navicon bg-grey-darkest flex items-center relative"></span>
       </label>
 
-      <ul style={{ color: `${textColor}` }} className="hidden md:flex sm:ml-20 ml-0">
+      <ul
+        style={{ color: `${textColor}` }}
+        className="hidden md:flex sm:ml-20 ml-0"
+      >
         <li className="py-4 flex">
           <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
-            <LinkComponent locale={""} skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
+            <LinkComponent locale={""} skipLocaleHandling={false} href="/about">
+              {locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}
+            </LinkComponent>
           </div>
         </li>
         <li className="py-4">
@@ -295,10 +305,15 @@ const NavBar = () => {
             {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
             <div className="relative group ">
               <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
-                <span className="mr-2 text-sm">{tranlsate("services", locale)}</span>
+                <span className="mr-2 text-sm">
+                  {tranlsate("services", locale)}
+                </span>
                 <Icon />
               </button>
-              <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "500px" }}>
+              <div
+                className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen"
+                style={{ width: "500px" }}
+              >
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg text-black bg-white border border-black">
                   <div className="grid grid-cols-2 gap-4 md:grid-cols-2 p-5 text-base">
                     <div>
@@ -306,22 +321,38 @@ const NavBar = () => {
                         {tranlsate("in_clinic_service", locale ? locale : "")}
                       </p>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                        <LinkComponent href={"/packages/cham-soc-phong-ngua"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/cham-soc-phong-ngua"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("preventive_care", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                        <LinkComponent href={"/packages/dieu-tri-ban-dau"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/dieu-tri-ban-dau"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("primary_care", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                        <LinkComponent href={"/packages/quan-ly-benh-man-tinh"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/quan-ly-benh-man-tinh"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("on_going_care", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                        <LinkComponent href={"/packages/suc-khoe-toan-dien"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/suc-khoe-toan-dien"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("wellness", locale)}
                         </LinkComponent>
                       </div>
@@ -331,7 +362,11 @@ const NavBar = () => {
                         {tranlsate("home_service", locale)}
                       </p>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                        <LinkComponent href={"/packages/cham-soc-tai-nha"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/cham-soc-tai-nha"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("home_visits", locale)}
                         </LinkComponent>
                       </div>
@@ -339,13 +374,31 @@ const NavBar = () => {
                         {tranlsate("telemedicine", locale)}
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                        <LinkComponent href={"/services/kham-benh-tu-xa-khach-hang-tai-viet-nam"} locale={""} skipLocaleHandling={false}>
-                          * {locale == "en" ? "For Residents in Vietnam" : "Khách Hàng Tại Việt Nam"}
+                        <LinkComponent
+                          href={
+                            "/services/kham-benh-tu-xa-khach-hang-tai-viet-nam"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
+                          *{" "}
+                          {locale == "en"
+                            ? "For Residents in Vietnam"
+                            : "Khách Hàng Tại Việt Nam"}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
-                        <LinkComponent href={"/services/kham-benh-tu-xa-viet-kieu-o-nuoc-ngoai"} locale={""} skipLocaleHandling={false}>
-                          * {locale == "en" ? " For Non-Residents (Overseas Vietnamese)" : "Việt Kiều Ở Nước Ngoài"}
+                        <LinkComponent
+                          href={
+                            "/services/kham-benh-tu-xa-viet-kieu-o-nuoc-ngoai"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
+                          *{" "}
+                          {locale == "en"
+                            ? " For Non-Residents (Overseas Vietnamese)"
+                            : "Việt Kiều Ở Nước Ngoài"}
                         </LinkComponent>
                       </div>
                       {/* <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
@@ -372,36 +425,62 @@ const NavBar = () => {
             <div className="relative group ">
               <button
                 style={{ height: "40px" }}
-                className="hover:bg-green-100 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
-                <span className="mr-2 text-sm">{tranlsate("health_plans", locale)}</span>
+                className="hover:bg-green-100 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none"
+              >
+                <span className="mr-2 text-sm">
+                  {tranlsate("health_plans", locale)}
+                </span>
                 <Icon />
               </button>
-              <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen" style={{ width: "300px" }}>
+              <div
+                className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen"
+                style={{ width: "300px" }}
+              >
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-1 p-5 text-base">
                     <div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/packages/goi-cham-soc-phong-ngua"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/goi-cham-soc-phong-ngua"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("preventive_care_packages", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/packages/goi-dieu-tri-ban-dau"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/goi-dieu-tri-ban-dau"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("primary_care_packages", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/packages/goi-quan-ly-benh-man-tinh"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/goi-quan-ly-benh-man-tinh"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("on_going_care_packages", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/packages/goi-suc-khoe-toan-dien"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/goi-suc-khoe-toan-dien"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("wellness_packages", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/packages/goi-xet-nghiem-di-truyen"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/packages/goi-xet-nghiem-di-truyen"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("gene_examination_packages", locale)}
                         </LinkComponent>
                       </div>
@@ -419,15 +498,22 @@ const NavBar = () => {
           <div className="flex">
             {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
             <div className="relative group ">
-              <LinkComponent href={"/store"} locale={""} skipLocaleHandling={false}>
-                <button
-                  className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
-                  <span className="mr-2 text-sm">{tranlsate("pharmacy", locale)}</span>
+              <LinkComponent
+                href={"/store"}
+                locale={""}
+                skipLocaleHandling={false}
+              >
+                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
+                  <span className="mr-2 text-sm">
+                    {tranlsate("pharmacy", locale)}
+                  </span>
                   <Icon />
                 </button>
               </LinkComponent>
-              <div className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen"
-                style={{ width: "700px", marginLeft: "-600px" }}>
+              <div
+                className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen"
+                style={{ width: "700px", marginLeft: "-600px" }}
+              >
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                   <div className="p-5 text-base flex">
                     <div className="col-span-1">
@@ -435,32 +521,68 @@ const NavBar = () => {
                         {tranlsate("monthly_packages", locale ? locale : "")}
                       </p>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={
+                            "/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("elderly", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={
+                            "/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("middle_aged_man", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={
+                            "/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("middle_aged_woman", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={
+                            "/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("adult", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={
+                            "/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("teenager", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={
+                            "/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("child", locale)}
                         </LinkComponent>
                       </div>
@@ -470,69 +592,125 @@ const NavBar = () => {
                         {tranlsate("health_concern", locale)}
                       </p>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-ho-tro-giac-ngu"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-ho-tro-giac-ngu"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("sleep", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-ho-tro-cai-thuoc-la"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-ho-tro-cai-thuoc-la"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("smoking_cessation", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-ho-tro-giam-can"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-ho-tro-giam-can"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("weight_loss", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={
+                            "/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("skin_care_anti_aging", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("hair_nails_treatment", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={
+                            "/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"
+                          }
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("pregnancy_care", locale)}
                         </LinkComponent>
                       </div>
                     </div>
                     <div>
                       <div className="mt-9 mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-suc-khoe-sinh-ly-nam"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-suc-khoe-sinh-ly-nam"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("men_sexual_health", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-suc-khoe-sinh-ly-nu"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-suc-khoe-sinh-ly-nu"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("women_sexual_health", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-ho-tro-suc-khoe-tim-mach"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-ho-tro-suc-khoe-tim-mach"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("heart_blood_circulation", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-ho-tro-tieu-hoa"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-ho-tro-tieu-hoa"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("digestive_system", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-phong-ngua-benh-xuong-khop"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-phong-ngua-benh-xuong-khop"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("bone_joint_health", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-tang-suc-de-khoang-va-mien-dich"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-tang-suc-de-khoang-va-mien-dich"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("immune_system", locale)}
                         </LinkComponent>
                       </div>
                       <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
-                        <LinkComponent href={"/products/goi-cai-thien-tri-nao"} locale={""} skipLocaleHandling={false}>
+                        <LinkComponent
+                          href={"/products/goi-cai-thien-tri-nao"}
+                          locale={""}
+                          skipLocaleHandling={false}
+                        >
                           {tranlsate("brain_health", locale)}
                         </LinkComponent>
                       </div>
@@ -545,14 +723,39 @@ const NavBar = () => {
         </li>
         <li className="py-4 flex">
           <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
-            <LinkComponent href="/membership" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Membership" : "Thành Viên"}</LinkComponent>
+            <LinkComponent
+              href="/membership"
+              locale={""}
+              skipLocaleHandling={false}
+            >
+              {locale === "en" ? "Membership" : "Thành Viên"}
+            </LinkComponent>
           </div>
         </li>
-        {!logged && <li className="py-4 flex">
+        <li className="py-4 flex">
           <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
-            <LinkComponent href="/login" locale={""} skipLocaleHandling={false}>{locale === "en" ? "Member login" : "Đăng Nhập"}</LinkComponent>
+            <LinkComponent
+              href="/booking"
+              locale={""}
+              skipLocaleHandling={false}
+            >
+              {locale === "en" ? "Booking" : "Đặt lịch khám"}
+            </LinkComponent>
           </div>
-        </li>}
+        </li>
+        {!logged && (
+          <li className="py-4 flex">
+            <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+              <LinkComponent
+                href="/login"
+                locale={""}
+                skipLocaleHandling={false}
+              >
+                {locale === "en" ? "Member login" : "Đăng Nhập"}
+              </LinkComponent>
+            </div>
+          </li>
+        )}
         <li className="py-4 flex mr-2">
           <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
             <span
@@ -561,73 +764,112 @@ const NavBar = () => {
                 backgroundColor: "#416045",
                 color: "white",
               }}
-              className="mt-1 inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+              className="mt-1 inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200"
+            >
               {locale === "en" ? "Contact" : "Liên hệ"}
             </span>
           </LinkComponent>
         </li>
-        {logged && <li className="py-4 flex">
-          <div className="m-auto  text-sm hover:bg-green-100 px-3 py-3 hover:cursor-pointer rounded">
-            <LinkComponent href="/profile" locale={""} skipLocaleHandling={false}>{userData?.email}</LinkComponent>
-          </div>
-        </li>}
+        {logged && (
+          <li className="py-4 flex">
+            <div className="m-auto  text-sm hover:bg-green-100 px-3 py-3 hover:cursor-pointer rounded">
+              <LinkComponent
+                href="/profile"
+                locale={""}
+                skipLocaleHandling={false}
+              >
+                {userData?.email}
+              </LinkComponent>
+            </div>
+          </li>
+        )}
         <div className="z-10 bg-transparent group-hover:block bg-transparent flex">
           <div className="text-black bg-transparent m-auto">
             <div className="flex">
+              <button
+                onClick={() => {
+                  let href = router.asPath;
+                  let pName = router.pathname;
+                  Object.keys(router.query).forEach((k) => {
+                    if (k === "locale") {
+                      pName = pName.replace(
+                        `[${k}]`,
+                        locale == "en" ? "vi" : "en"
+                      );
+                      return;
+                    }
+                    pName = pName.replace(`[${k}]`, router.query[k] as string);
+                  });
 
-              <button onClick={() => {
-                let href = router.asPath;
-                let pName = router.pathname;
-                Object.keys(router.query).forEach((k) => {
-                  if (k === 'locale') {
-                    pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
-                    return
-                  }
-                  pName = pName.replace(`[${k}]`, router.query[k] as string);
-                })
-
-                location.href = pName;
-              }}>
-                {locale === "en" ? <div
-                  className="flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
-                    <clipPath id="s">
-                      <path d="M0,0 v30 h60 v-30 z" />
-                    </clipPath>
-                    <clipPath id="t">
-                      <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-                    </clipPath>
-                    <g clip-path="url(#s)">
-                      <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-                      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
-                      <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
-                      <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
-                      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
-                    </g>
-                  </svg>
-                </div> :
-                  <div
-                    className="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
-                      <rect width="30" height="20" fill="#da251d" />
-                      <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
+                  location.href = pName;
+                }}
+              >
+                {locale === "en" ? (
+                  <div className="flex">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 60 30"
+                      width="40"
+                      height="40"
+                    >
+                      <clipPath id="s">
+                        <path d="M0,0 v30 h60 v-30 z" />
+                      </clipPath>
+                      <clipPath id="t">
+                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                      </clipPath>
+                      <g clip-path="url(#s)">
+                        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                        <path
+                          d="M0,0 L60,30 M60,0 L0,30"
+                          stroke="#fff"
+                          stroke-width="6"
+                        />
+                        <path
+                          d="M0,0 L60,30 M60,0 L0,30"
+                          clip-path="url(#t)"
+                          stroke="#C8102E"
+                          stroke-width="4"
+                        />
+                        <path
+                          d="M30,0 v30 M0,15 h60"
+                          stroke="#fff"
+                          stroke-width="10"
+                        />
+                        <path
+                          d="M30,0 v30 M0,15 h60"
+                          stroke="#C8102E"
+                          stroke-width="6"
+                        />
+                      </g>
                     </svg>
-                  </div>}
+                  </div>
+                ) : (
+                  <div className="flex">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 30 20"
+                      version="1.1"
+                    >
+                      <rect width="30" height="20" fill="#da251d" />
+                      <polygon
+                        points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85"
+                        fill="#ff0"
+                      />
+                    </svg>
+                  </div>
+                )}
               </button>
             </div>
           </div>
         </div>
       </ul>
 
-
       {/* Mobile Button */}
       <div onClick={handleNav} className="block sm:hidden z-10 text-black">
-        {nav ? (
-          <AiOutlineClose size={20} />
-        ) : (
-          <AiOutlineMenu size={20} />
-        )}
-
+        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
       <div
         style={{
@@ -635,7 +877,7 @@ const NavBar = () => {
           zIndex: 999,
           position: "fixed",
           height: "100%",
-          textAlign: "left"
+          textAlign: "left",
         }}
         className={
           nav
@@ -649,58 +891,99 @@ const NavBar = () => {
             top: "20px",
             position: "absolute",
           }}
-          onClick={handleNav}><AiOutlineClose size={20} /> </button>
+          onClick={handleNav}
+        >
+          <AiOutlineClose size={20} />{" "}
+        </button>
         <ul className="h-full p-5">
-          <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+          <img
+            className=""
+            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+          />
           <div className="text-black bg-transparent m-auto ml-5">
             <div className="flex">
+              <button
+                onClick={() => {
+                  let href = router.asPath;
+                  let pName = router.pathname;
+                  Object.keys(router.query).forEach((k) => {
+                    if (k === "locale") {
+                      pName = pName.replace(
+                        `[${k}]`,
+                        locale == "en" ? "vi" : "en"
+                      );
+                      return;
+                    }
+                    pName = pName.replace(`[${k}]`, router.query[k] as string);
+                  });
 
-              <button onClick={() => {
-                let href = router.asPath;
-                let pName = router.pathname;
-                Object.keys(router.query).forEach((k) => {
-                  if (k === 'locale') {
-                    pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
-                    return
-                  }
-                  pName = pName.replace(`[${k}]`, router.query[k] as string);
-                })
-
-                location.href = pName;
-              }}>
-                {locale === "en" ? <div
-                  className="flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
-                    <clipPath id="s">
-                      <path d="M0,0 v30 h60 v-30 z" />
-                    </clipPath>
-                    <clipPath id="t">
-                      <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-                    </clipPath>
-                    <g clip-path="url(#s)">
-                      <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-                      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
-                      <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
-                      <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
-                      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
-                    </g>
-                  </svg>
-                </div> :
-                  <div
-                    className="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
-                      <rect width="30" height="20" fill="#da251d" />
-                      <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
+                  location.href = pName;
+                }}
+              >
+                {locale === "en" ? (
+                  <div className="flex">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 60 30"
+                      width="40"
+                      height="40"
+                    >
+                      <clipPath id="s">
+                        <path d="M0,0 v30 h60 v-30 z" />
+                      </clipPath>
+                      <clipPath id="t">
+                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                      </clipPath>
+                      <g clip-path="url(#s)">
+                        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                        <path
+                          d="M0,0 L60,30 M60,0 L0,30"
+                          stroke="#fff"
+                          stroke-width="6"
+                        />
+                        <path
+                          d="M0,0 L60,30 M60,0 L0,30"
+                          clip-path="url(#t)"
+                          stroke="#C8102E"
+                          stroke-width="4"
+                        />
+                        <path
+                          d="M30,0 v30 M0,15 h60"
+                          stroke="#fff"
+                          stroke-width="10"
+                        />
+                        <path
+                          d="M30,0 v30 M0,15 h60"
+                          stroke="#C8102E"
+                          stroke-width="6"
+                        />
+                      </g>
                     </svg>
-                  </div>}
+                  </div>
+                ) : (
+                  <div className="flex">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 30 20"
+                      version="1.1"
+                    >
+                      <rect width="30" height="20" fill="#da251d" />
+                      <polygon
+                        points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85"
+                        fill="#ff0"
+                      />
+                    </svg>
+                  </div>
+                )}
               </button>
             </div>
           </div>
-          <li
-            onClick={handleNav}
-            className="p-4 text-xl hover:text-gray-500"
-          >
-            <LinkComponent locale="" skipLocaleHandling={false} href="/about">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</LinkComponent>
+          <li onClick={handleNav} className="p-4 text-xl hover:text-gray-500">
+            <LinkComponent locale="" skipLocaleHandling={false} href="/about">
+              {locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}
+            </LinkComponent>
           </li>
           <li
             onClick={() => {
@@ -710,7 +993,14 @@ const NavBar = () => {
             className="p-4 text-xl hover:text-gray-500 flex"
           >
             <button>{locale === "en" ? "Services" : "Các Dịch Vụ"}</button>
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 svg-icon ml-2" viewBox="0 0 1024 1024" version="1.1"><path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 svg-icon ml-2"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+            >
+              <path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z" />
+            </svg>
           </li>
           <li
             onClick={() => {
@@ -720,7 +1010,14 @@ const NavBar = () => {
             className="p-4 text-xl hover:text-gray-500 flex"
           >
             <button>{locale === "en" ? "Health Plans" : "Gói Chăm Sóc"}</button>
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 svg-icon ml-2" viewBox="0 0 1024 1024" version="1.1"><path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 svg-icon ml-2"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+            >
+              <path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z" />
+            </svg>
           </li>
           <li
             onClick={() => {
@@ -730,42 +1027,70 @@ const NavBar = () => {
             className="p-4 text-xl hover:text-gray-500 flex"
           >
             <button>{locale === "en" ? "Pharmacy" : "Nhà Thuốc"}</button>
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 svg-icon ml-2" viewBox="0 0 1024 1024" version="1.1"><path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 svg-icon ml-2"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+            >
+              <path d="M64.704 455.808h682.368L426.496 142.656l78.592-77.568 452.928 446.656-453.824 446.976-77.184-76.864 319.872-317.76H64.704V455.808z" />
+            </svg>
           </li>
-          <li
-            onClick={handleNav}
-            className="p-4 text-xl hover:text-gray-500"
-          >
-            <LinkComponent href={"/membership"} locale="" skipLocaleHandling={false}>{locale === "en" ? "Membership" : "Thành viên"}</LinkComponent>
+          <li onClick={handleNav} className="p-4 text-xl hover:text-gray-500">
+            <LinkComponent
+              href={"/membership"}
+              locale=""
+              skipLocaleHandling={false}
+            >
+              {locale === "en" ? "Membership" : "Thành viên"}
+            </LinkComponent>
+          </li>
+          <li onClick={handleNav} className="p-4 text-xl hover:text-gray-500">
+            <LinkComponent
+              href={"/booking"}
+              locale=""
+              skipLocaleHandling={false}
+            >
+              {locale === "en" ? "Booking" : "Đặt lịch khám"}
+            </LinkComponent>
           </li>
           <div className="w-full z-10 bg-transparent group-hover:block bg-transparent flex absolute bottom-4 right-4 left-0">
             <div className="flex space-x-2 justify-center m-auto">
-              <LinkComponent href="/login" skipLocaleHandling={false} locale={""}>
+              <LinkComponent
+                href="/login"
+                skipLocaleHandling={false}
+                locale={""}
+              >
                 <div
                   onClick={handleNav}
                   style={{
                     backgroundColor: "#416045",
                     color: "white",
                   }}
-                  className="inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+                  className="inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200"
+                >
                   {locale === "en" ? "Member Login" : "Tài khoản"}
                 </div>
               </LinkComponent>
             </div>
             <div className="flex space-x-2 justify-center m-auto">
-              <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
+              <LinkComponent
+                href="/contact"
+                skipLocaleHandling={false}
+                locale={""}
+              >
                 <div
                   onClick={handleNav}
                   style={{
                     backgroundColor: "#416045",
                     color: "white",
                   }}
-                  className="inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">
+                  className="inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200"
+                >
                   {locale === "en" ? "Contact" : "Liên hệ"}
                 </div>
               </LinkComponent>
             </div>
-
           </div>
         </ul>
       </div>
@@ -775,7 +1100,7 @@ const NavBar = () => {
           zIndex: 999,
           position: "fixed",
           height: "100%",
-          textAlign: "left"
+          textAlign: "left",
         }}
         className={
           nav1
@@ -789,34 +1114,64 @@ const NavBar = () => {
             top: "20px",
             position: "absolute",
           }}
-          onClick={handleNav1}><AiOutlineClose size={20} /> </button>
+          onClick={handleNav1}
+        >
+          <AiOutlineClose size={20} />{" "}
+        </button>
         <ul className="h-full p-5">
-          <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+          <img
+            className=""
+            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+          />
 
-          <p className="text-xl underline mb-5">{tranlsate("in_clinic_service", locale)}</p>
+          <p className="text-xl underline mb-5">
+            {tranlsate("in_clinic_service", locale)}
+          </p>
           <div className="mb-2" onClick={handleNav1}>
-            <LinkComponent locale="" href={"/packages/cham-soc-phong-ngua"} skipLocaleHandling={false}>
+            <LinkComponent
+              locale=""
+              href={"/packages/cham-soc-phong-ngua"}
+              skipLocaleHandling={false}
+            >
               {tranlsate("preventive_care", locale)}
             </LinkComponent>
           </div>
           <div className="mb-2" onClick={handleNav1}>
-            <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/goi-dieu-tri-ban-dau"}>
+            <LinkComponent
+              locale=""
+              skipLocaleHandling={false}
+              href={"/packages/goi-dieu-tri-ban-dau"}
+            >
               {tranlsate("primary_care", locale)}
             </LinkComponent>
           </div>
           <div className="mb-2" onClick={handleNav1}>
-            <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/goi-quan-ly-benh-man-tinh"}>
+            <LinkComponent
+              locale=""
+              skipLocaleHandling={false}
+              href={"/packages/goi-quan-ly-benh-man-tinh"}
+            >
               {tranlsate("on_going_care", locale)}
             </LinkComponent>
           </div>
           <div className="mb-2" onClick={handleNav1}>
-            <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/goi-suc-khoe-toan-dien"}>
+            <LinkComponent
+              locale=""
+              skipLocaleHandling={false}
+              href={"/packages/goi-suc-khoe-toan-dien"}
+            >
               {tranlsate("wellness", locale)}
             </LinkComponent>
           </div>
-          <p className="text-lg underline mt-10 mb-5">{tranlsate("home_service", locale)}</p>
+          <p className="text-lg underline mt-10 mb-5">
+            {tranlsate("home_service", locale)}
+          </p>
           <div className="mb-2" onClick={handleNav1}>
-            <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tai-nha"}>
+            <LinkComponent
+              locale=""
+              skipLocaleHandling={false}
+              href={"/packages/cham-soc-tai-nha"}
+            >
               {tranlsate("home_visits", locale)}
             </LinkComponent>
           </div>
@@ -826,27 +1181,39 @@ const NavBar = () => {
               </LinkComponent>
             </div> */}
           <div className="mb-2" onClick={handleNav1}>
-            <LinkComponent locale="" skipLocaleHandling={false} href={"/services/kham-benh-tu-xa-khach-hang-tai-viet-nam/"}>
-              {locale == "en" ? "For Residents in Vietnam" : "Khách Hàng Tại Việt Nam"}
-
+            <LinkComponent
+              locale=""
+              skipLocaleHandling={false}
+              href={"/services/kham-benh-tu-xa-khach-hang-tai-viet-nam/"}
+            >
+              {locale == "en"
+                ? "For Residents in Vietnam"
+                : "Khách Hàng Tại Việt Nam"}
             </LinkComponent>
           </div>
           <div className="mb-2" onClick={handleNav1}>
-            <LinkComponent locale="" skipLocaleHandling={false} href={"/services/kham-benh-tu-xa-viet-kieu-o-nuoc-ngoai/"}>
-              {locale == "en" ? " For Non-Residents (Overseas Vietnamese)" : "Việt Kiều Ở Nước Ngoài"}
+            <LinkComponent
+              locale=""
+              skipLocaleHandling={false}
+              href={"/services/kham-benh-tu-xa-viet-kieu-o-nuoc-ngoai/"}
+            >
+              {locale == "en"
+                ? " For Non-Residents (Overseas Vietnamese)"
+                : "Việt Kiều Ở Nước Ngoài"}
             </LinkComponent>
           </div>
           <div className="m-auto">
-            <div>
-            </div>
+            <div></div>
             <ul className="flex">
-              <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-                const router = useRouter()
+              <li
+                className="inline mr-2 cursor-pointer relative"
+                onClick={() => {
+                  const router = useRouter();
 
-                let href = router.asPath
-                let pName = router.pathname
-
-              }}>
+                  let href = router.asPath;
+                  let pName = router.pathname;
+                }}
+              >
                 {/* <Image
                     src={IgImg3}
                     alt="/"
@@ -854,13 +1221,15 @@ const NavBar = () => {
                     height={25}
                   /> */}
               </li>
-              <li className="inline cursor-pointer" onClick={() => {
-                const router = useRouter()
+              <li
+                className="inline cursor-pointer"
+                onClick={() => {
+                  const router = useRouter();
 
-                let href = router.asPath
-                let pName = router.pathname
-
-              }}>
+                  let href = router.asPath;
+                  let pName = router.pathname;
+                }}
+              >
                 {/* <Image
                     src={IgImg4}
                     alt="/"
@@ -878,7 +1247,7 @@ const NavBar = () => {
           zIndex: 999,
           position: "fixed",
           height: "100%",
-          textAlign: "left"
+          textAlign: "left",
         }}
         className={
           nav2
@@ -892,46 +1261,73 @@ const NavBar = () => {
             top: "20px",
             position: "absolute",
           }}
-          onClick={handleNav2}><AiOutlineClose size={20} /> </button>
+          onClick={handleNav2}
+        >
+          <AiOutlineClose size={20} />{" "}
+        </button>
         <ul className="h-full p-5">
-          <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+          <img
+            className=""
+            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+          />
 
-          <div className="mb-2" onClick={handleNav2} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-cham-soc-phong-ngua"}>
+          <div className="mb-2" onClick={handleNav2}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/packages/goi-cham-soc-phong-ngua"}
+            >
               {tranlsate("preventive_care_packages", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav2} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-dieu-tri-ban-dau"}>
+          <div className="mb-2" onClick={handleNav2}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/packages/goi-dieu-tri-ban-dau"}
+            >
               {tranlsate("primary_care_packages", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav2} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-quan-ly-benh-man-tinh"}>
+          <div className="mb-2" onClick={handleNav2}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/packages/goi-quan-ly-benh-man-tinh"}
+            >
               {tranlsate("on_going_care_packages", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav2} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-suc-khoe-toan-dien"}>
+          <div className="mb-2" onClick={handleNav2}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/packages/goi-suc-khoe-toan-dien"}
+            >
               {tranlsate("wellness_packages", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav2} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/packages/goi-xet-nghiem-di-truyen"}>
+          <div className="mb-2" onClick={handleNav2}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/packages/goi-xet-nghiem-di-truyen"}
+            >
               {tranlsate("gene_examination_packages", locale)}
             </LinkComponent>
           </div>
           <div className="m-auto">
-            <div>
-            </div>
+            <div></div>
             <ul className="flex">
-              <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-                const router = useRouter()
+              <li
+                className="inline mr-2 cursor-pointer relative"
+                onClick={() => {
+                  const router = useRouter();
 
-                let href = router.asPath
-                let pName = router.pathname
-
-              }}>
+                  let href = router.asPath;
+                  let pName = router.pathname;
+                }}
+              >
                 {/* <Image
                     src={IgImg3}
                     alt="/"
@@ -939,13 +1335,15 @@ const NavBar = () => {
                     height={25}
                   /> */}
               </li>
-              <li className="inline cursor-pointer" onClick={() => {
-                const router = useRouter()
+              <li
+                className="inline cursor-pointer"
+                onClick={() => {
+                  const router = useRouter();
 
-                let href = router.asPath
-                let pName = router.pathname
-
-              }}>
+                  let href = router.asPath;
+                  let pName = router.pathname;
+                }}
+              >
                 {/* <Image
                     src={IgImg4}
                     alt="/"
@@ -955,7 +1353,6 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-
         </ul>
       </div>
       <div
@@ -978,159 +1375,294 @@ const NavBar = () => {
             top: "20px",
             position: "absolute",
           }}
-          onClick={handleNav3}><AiOutlineClose size={20} /> </button>
+          onClick={handleNav3}
+        >
+          <AiOutlineClose size={20} />{" "}
+        </button>
         <ul className="h-full p-5 overflow-auto">
-          <img className="" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
+          <img
+            className=""
+            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+          />
 
-          <p className="underline text-xl my-5">{tranlsate("monthly_packages", locale ? locale : "")}</p>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60/"}>
+          <p className="underline text-xl my-5">
+            {tranlsate("monthly_packages", locale ? locale : "")}
+          </p>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={
+                "/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60/"
+              }
+            >
               {tranlsate("elderly", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={
+                "/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"
+              }
+            >
               {tranlsate("middle_aged_man", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={
+                "/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45/"
+              }
+            >
               {tranlsate("middle_aged_woman", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={
+                "/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45/"
+              }
+            >
               {tranlsate("adult", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={
+                "/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19/"
+              }
+            >
               {tranlsate("teenager", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <p className="underline text-xl my-5">{tranlsate("health_concern", locale ? locale : "")}</p>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-giac-ngu/"}>
+          <p className="underline text-xl my-5">
+            {tranlsate("health_concern", locale ? locale : "")}
+          </p>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-ho-tro-giac-ngu/"}
+            >
               {tranlsate("sleep", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-cai-thuoc-la/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-ho-tro-cai-thuoc-la/"}
+            >
               {tranlsate("smoking_cessation", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-giam-can/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-ho-tro-giam-can/"}
+            >
               {tranlsate("weight_loss", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa/"}
+            >
               {tranlsate("skin_care_anti_aging", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong/"}
+            >
               {tranlsate("hair_nails_treatment", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai/"}
+            >
               {tranlsate("pregnancy_care", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-suc-khoe-sinh-ly-nam/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-suc-khoe-sinh-ly-nam/"}
+            >
               {tranlsate("men_sexual_health", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-suc-khoe-sinh-ly-nu/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-suc-khoe-sinh-ly-nu/"}
+            >
               {tranlsate("women_sexual_health", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-suc-khoe-tim-mach/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-ho-tro-suc-khoe-tim-mach/"}
+            >
               {tranlsate("heart_blood_circulation", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-ho-tro-tieu-hoa/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-ho-tro-tieu-hoa/"}
+            >
               {tranlsate("digestive_system", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-phong-ngua-benh-xuong-khop/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-phong-ngua-benh-xuong-khop/"}
+            >
               {tranlsate("bone_joint_health", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-tang-suc-de-khoang-va-mien-dich/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-tang-suc-de-khoang-va-mien-dich/"}
+            >
               {tranlsate("immune_system", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3} >
-            <LinkComponent skipLocaleHandling={false} locale="" href={"/products/goi-cai-thien-tri-nao/"}>
+          <div className="mb-2" onClick={handleNav3}>
+            <LinkComponent
+              skipLocaleHandling={false}
+              locale=""
+              href={"/products/goi-cai-thien-tri-nao/"}
+            >
               {tranlsate("brain_health", locale ? locale : "")}
             </LinkComponent>
           </div>
           <div className="absolute z-10 hidden bg-transparent group-hover:block bg-transparent">
-            <div className="text-black bg-transparent " style={{ width: "100px" }}>
+            <div
+              className="text-black bg-transparent "
+              style={{ width: "100px" }}
+            >
               <div className="flex">
+                <button
+                  onClick={() => {
+                    let href = router.asPath;
+                    let pName = router.pathname;
+                    Object.keys(router.query).forEach((k) => {
+                      if (k === "locale") {
+                        pName = pName.replace(
+                          `[${k}]`,
+                          locale == "en" ? "vi" : "en"
+                        );
+                        return;
+                      }
+                      pName = pName.replace(
+                        `[${k}]`,
+                        router.query[k] as string
+                      );
+                    });
 
-                <button onClick={() => {
-                  let href = router.asPath;
-                  let pName = router.pathname;
-                  Object.keys(router.query).forEach((k) => {
-                    if (k === 'locale') {
-                      pName = pName.replace(`[${k}]`, locale == "en" ? "vi" : "en")
-                      return
-                    }
-                    pName = pName.replace(`[${k}]`, router.query[k] as string);
-                  })
-
-                  location.href = pName;
-                }}>
-                  {locale === "vi" ? <div
-                    className="flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="40">
-                      <clipPath id="s">
-                        <path d="M0,0 v30 h60 v-30 z" />
-                      </clipPath>
-                      <clipPath id="t">
-                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-                      </clipPath>
-                      <g clip-path="url(#s)">
-                        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
-                        <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4" />
-                        <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
-                        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
-                      </g>
-                    </svg>
-                  </div> :
-                    <div
-                      className="flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 30 20" version="1.1">
-                        <rect width="30" height="20" fill="#da251d" />
-                        <polygon points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85" fill="#ff0" />
+                    location.href = pName;
+                  }}
+                >
+                  {locale === "vi" ? (
+                    <div className="flex">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 60 30"
+                        width="40"
+                        height="40"
+                      >
+                        <clipPath id="s">
+                          <path d="M0,0 v30 h60 v-30 z" />
+                        </clipPath>
+                        <clipPath id="t">
+                          <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+                        </clipPath>
+                        <g clip-path="url(#s)">
+                          <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+                          <path
+                            d="M0,0 L60,30 M60,0 L0,30"
+                            stroke="#fff"
+                            stroke-width="6"
+                          />
+                          <path
+                            d="M0,0 L60,30 M60,0 L0,30"
+                            clip-path="url(#t)"
+                            stroke="#C8102E"
+                            stroke-width="4"
+                          />
+                          <path
+                            d="M30,0 v30 M0,15 h60"
+                            stroke="#fff"
+                            stroke-width="10"
+                          />
+                          <path
+                            d="M30,0 v30 M0,15 h60"
+                            stroke="#C8102E"
+                            stroke-width="6"
+                          />
+                        </g>
                       </svg>
-                    </div>}
+                    </div>
+                  ) : (
+                    <div className="flex">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 30 20"
+                        version="1.1"
+                      >
+                        <rect width="30" height="20" fill="#da251d" />
+                        <polygon
+                          points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85"
+                          fill="#ff0"
+                        />
+                      </svg>
+                    </div>
+                  )}
                 </button>
               </div>
             </div>
           </div>
           <div className="m-auto">
-            <div>
-            </div>
+            <div></div>
             <ul className="flex">
-              <li className="inline mr-2 cursor-pointer relative" onClick={() => {
-                const router = useRouter()
+              <li
+                className="inline mr-2 cursor-pointer relative"
+                onClick={() => {
+                  const router = useRouter();
 
-                let href = router.asPath
-                let pName = router.pathname
-
-              }}>
+                  let href = router.asPath;
+                  let pName = router.pathname;
+                }}
+              >
                 {/* <Image
                     src={IgImg3}
                     alt="/"
@@ -1138,13 +1670,15 @@ const NavBar = () => {
                     height={25}
                   /> */}
               </li>
-              <li className="inline cursor-pointer" onClick={() => {
-                const router = useRouter()
+              <li
+                className="inline cursor-pointer"
+                onClick={() => {
+                  const router = useRouter();
 
-                let href = router.asPath
-                let pName = router.pathname
-
-              }}>
+                  let href = router.asPath;
+                  let pName = router.pathname;
+                }}
+              >
                 {/* <Image
                     src={IgImg4}
                     alt="/"
@@ -1154,64 +1688,61 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-
         </ul>
       </div>
-      {logged && numOfItem > 0 && <div
-        className="cart"
-        style={{
-          position: "fixed",
-          right: "20px",
-          bottom: "20px",
-          background: "rgb(158 169 154)",
-          borderRadius: "50%",
-          zIndex: 123,
-          margin: 'auto',
-          padding: '10px',
-        }}
-      ><LinkComponent href={"/cart"} skipLocaleHandling={false} locale={""}>
-          <div className="flex text-green-800 m-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="white" version="1.1" id="Capa_1" width="30px" height="30px" viewBox="0 0 902.86 902.86" xmlSpace="preserve">
-              <g>
+      {logged && numOfItem > 0 && (
+        <div
+          className="cart"
+          style={{
+            position: "fixed",
+            right: "20px",
+            bottom: "20px",
+            background: "rgb(158 169 154)",
+            borderRadius: "50%",
+            zIndex: 123,
+            margin: "auto",
+            padding: "10px",
+          }}
+        >
+          <LinkComponent href={"/cart"} skipLocaleHandling={false} locale={""}>
+            <div className="flex text-green-800 m-auto">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                fill="white"
+                version="1.1"
+                id="Capa_1"
+                width="30px"
+                height="30px"
+                viewBox="0 0 902.86 902.86"
+                xmlSpace="preserve"
+              >
                 <g>
-                  <path d="M671.504,577.829l110.485-432.609H902.86v-68H729.174L703.128,179.2L0,178.697l74.753,399.129h596.751V577.829z     M685.766,247.188l-67.077,262.64H131.199L81.928,246.756L685.766,247.188z" />
-                  <path d="M578.418,825.641c59.961,0,108.743-48.783,108.743-108.744s-48.782-108.742-108.743-108.742H168.717    c-59.961,0-108.744,48.781-108.744,108.742s48.782,108.744,108.744,108.744c59.962,0,108.743-48.783,108.743-108.744    c0-14.4-2.821-28.152-7.927-40.742h208.069c-5.107,12.59-7.928,26.342-7.928,40.742    C469.675,776.858,518.457,825.641,578.418,825.641z M209.46,716.897c0,22.467-18.277,40.744-40.743,40.744    c-22.466,0-40.744-18.277-40.744-40.744c0-22.465,18.277-40.742,40.744-40.742C191.183,676.155,209.46,694.432,209.46,716.897z     M619.162,716.897c0,22.467-18.277,40.744-40.743,40.744s-40.743-18.277-40.743-40.744c0-22.465,18.277-40.742,40.743-40.742    S619.162,694.432,619.162,716.897z" />
+                  <g>
+                    <path d="M671.504,577.829l110.485-432.609H902.86v-68H729.174L703.128,179.2L0,178.697l74.753,399.129h596.751V577.829z     M685.766,247.188l-67.077,262.64H131.199L81.928,246.756L685.766,247.188z" />
+                    <path d="M578.418,825.641c59.961,0,108.743-48.783,108.743-108.744s-48.782-108.742-108.743-108.742H168.717    c-59.961,0-108.744,48.781-108.744,108.742s48.782,108.744,108.744,108.744c59.962,0,108.743-48.783,108.743-108.744    c0-14.4-2.821-28.152-7.927-40.742h208.069c-5.107,12.59-7.928,26.342-7.928,40.742    C469.675,776.858,518.457,825.641,578.418,825.641z M209.46,716.897c0,22.467-18.277,40.744-40.743,40.744    c-22.466,0-40.744-18.277-40.744-40.744c0-22.465,18.277-40.742,40.744-40.742C191.183,676.155,209.46,694.432,209.46,716.897z     M619.162,716.897c0,22.467-18.277,40.744-40.743,40.744s-40.743-18.277-40.743-40.744c0-22.465,18.277-40.742,40.743-40.742    S619.162,694.432,619.162,716.897z" />
+                  </g>
                 </g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-            </svg>
-          </div>
-        </LinkComponent>
-      </div>}
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+              </svg>
+            </div>
+          </LinkComponent>
+        </div>
+      )}
     </nav>
     //     <div
     //       style={{ backgroundColor: `${color}` }}
@@ -1513,7 +2044,7 @@ const NavBar = () => {
     //         </div>} */}
     //         <div className="flex space-x-2 justify-center m-auto">
     //           <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
-    //             <div 
+    //             <div
     //               style={{
     //                 backgroundColor: "#416045",
     //                 color: "white",
