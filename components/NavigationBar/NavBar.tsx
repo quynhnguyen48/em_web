@@ -732,7 +732,7 @@ const NavBar = () => {
             </LinkComponent>
           </div>
         </li>
-        <li className="py-4 flex">
+        {/* <li className="py-4 flex">
           <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
             <LinkComponent
               href="/booking"
@@ -742,7 +742,7 @@ const NavBar = () => {
               {locale === "en" ? "Booking" : "Đặt lịch khám"}
             </LinkComponent>
           </div>
-        </li>
+        </li> */}
         {!logged && (
           <li className="py-4 flex">
             <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
