@@ -69,10 +69,10 @@ const contact = () => {
   const handleBooking = () => {
     const payload = {data: {
       createNewPatient: true,
-      name,
+      full_name: name,
       gender,
       email,
-      phone_number,
+      phone: phone_number,
       message,
       birthday: dayjs(birthday).toISOString(),
       address: {
