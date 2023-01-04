@@ -93,7 +93,8 @@ const contact = () => {
   };
 
   return (
-    <div 
+    <div
+      id="booking"
       style={{
         backgroundColor: "#ecf5ed"
       }}
