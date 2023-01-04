@@ -75,7 +75,9 @@ const contact = () => {
       phone_number,
       message,
       birthday: dayjs(birthday).toISOString(),
-      address,
+      address: {
+        address
+      },
       job,
       bookingDate: timeSlot,
     }};
