@@ -42,6 +42,7 @@ const Booking: NextPage = () => {
   const [address, setAddress] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [branch, setBranch] = useState("q7");
   const router = useRouter();
   const locale = (router.query.locale as string) || "en";
 
@@ -169,7 +170,6 @@ const Booking: NextPage = () => {
             >
               <option value="male">Nam</option>
               <option value="female">Nữ</option>
-              <option value="other">Khác</option>
             </select>
           </div>
           <div>
@@ -253,6 +253,18 @@ const Booking: NextPage = () => {
             </div>
           </div>
         </div>
+        <div>
+            <label>{locale === "en" ? "Gender" : "Giới tính"}</label>
+            <select
+              className={inputClassName}
+              name="gender"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value="male">Nam</option>
+              <option value="female">Nữ</option>
+            </select>
+          </div>
         <div className="flex space-x-2 justify-center">
           <button
             onClick={handleBooking}

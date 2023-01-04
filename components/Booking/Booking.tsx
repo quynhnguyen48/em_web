@@ -37,6 +37,8 @@ const contact = () => {
   const [address, setAddress] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [branch, setBranch] = useState("q7");
+
   const router = useRouter();
   const locale = (router.query.locale as string) || "en";
   const bookingSlots = useMemo(() => {
@@ -79,6 +81,7 @@ const contact = () => {
         address
       },
       job,
+      branch,
       bookingDate: timeSlot,
     }};
     console.log("🚀 ~ file: booking.tsx:78 ~ contact ~ payload", payload);
@@ -135,7 +138,6 @@ const contact = () => {
             >
               <option value="male">Nam</option>
               <option value="female">Nữ</option>
-              <option value="other">Khác</option>
             </select>
           </div>
           <div>
@@ -219,6 +221,19 @@ const contact = () => {
             </div>
           </div>
         </div>
+        <div>
+            <label>{locale === "en" ? "Location" : "Chi nhánh khám"}</label>
+            <select
+              className={inputClassName}
+              name="branch"
+              value={branch}
+              onChange={(e) => setBranch(e.target.value)}
+            >
+              <option value="q7">{locale == "en" ? "1026 Nguyen Van Linh, Tan Phong Ward, District 7" : "1026 Nguyễn Văn Linh, P. Tân Phong, Quận 7"}</option>
+              <option value="q2">{locale == "en" ? "46 Nguyen Thi Dinh, An Phu Ward, District 2" : "46 Nguyễn Thị Định, P. An Phú, Quận 2"}</option>
+              <option value="binhduong">{locale == "en" ? "Canary Plaza, 5 Binh Duong Highway, Thuan Giao, Thuan An City, Binh Duong" : "Canary Plaza, số 5 Đại lộ Bình Dương, Thuận Giao, Tp. Thuận An, Bình Dương"}</option>
+            </select>
+          </div>
         <div className="flex space-x-2 justify-center">
           <button
             onClick={handleBooking}
