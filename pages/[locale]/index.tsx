@@ -12,6 +12,7 @@ import Link from "next/link";
 import { makeStaticProps } from '../../lib/getStatic';
 import { useTranslation } from 'next-i18next'
 import LinkComponent from "../../components/Link";
+import Booking from "../../components/Booking/Booking"
 
 const getStaticProps = makeStaticProps(['common', 'footer'])
 const getStaticPaths = () => ({
@@ -136,6 +137,7 @@ const Home: NextPage = () => {
 
         </div>
       </div>
+      <Booking />
       <div className="grid grid-rows-none md:grid-cols-4 grid-cols-2 p-4 gap-4 mb-8">
         <div className="md:col-span-1 row-span-2 flex flex-col	items-center">
           <LinkComponent href={"/packages/cham-soc-phong-ngua/"} skipLocaleHandling={false} locale={""}>

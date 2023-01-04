@@ -1,37 +1,32 @@
+import React, { useState, useMemo } from "react";
+import { useRouter } from 'next/router';
+import Link from "next/link";
+import LinkComponent from "../Link";
 import axios from "axios";
-import type { NextPage } from "next";
-import Head from "next/head";
-import { useRouter } from "next/router";
-import { useMemo, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast, { Toaster } from 'react-hot-toast';
 import dayjs from "dayjs";
-import Contact from "../../components/Contact/Contact";
-import SmallHero from "../../components/Hero/SmallHero";
-import { makeStaticProps } from "../../lib/getStatic";
 
-const getStaticProps = makeStaticProps(["common", "footer"]);
-const getStaticPaths = () => ({
-  fallback: false,
-  paths: [
-    {
-      params: {
-        locale: "en",
-        slug: "test",
-        label: "test2",
-      },
-    },
-    {
-      params: {
-        locale: "vi",
-        slug: "test",
-        label: "test2",
-      },
-    },
-  ],
-});
-export { getStaticPaths, getStaticProps };
+const inputClassName = `
+form-control
+mt-1
+mb-3
+block
+w-full
+px-3
+py-1.5
+text-base
+font-normal
+text-gray-700
+bg-white bg-clip-padding
+border border-solid border-gray-300
+rounded
+transition
+ease-in-out
+m-0
+focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+`;
 
-const Booking: NextPage = () => {
+const contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
@@ -44,51 +39,6 @@ const Booking: NextPage = () => {
   const [message, setMessage] = useState("");
   const router = useRouter();
   const locale = (router.query.locale as string) || "en";
-
-  const inputClassName = `
-  form-control
-  mt-1
-  mb-3
-  block
-  w-full
-  px-3
-  py-1.5
-  text-base
-  font-normal
-  text-gray-700
-  bg-white bg-clip-padding
-  border border-solid border-gray-300
-  rounded
-  transition
-  ease-in-out
-  m-0
-  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-  `;
-
-  const handleBooking = () => {
-    const payload = {
-      name,
-      gender,
-      email,
-      phone_number,
-      message,
-      birthday,
-      address,
-      job,
-      bookingDate,
-      timeSlot,
-    };
-    console.log("🚀 ~ file: booking.tsx:78 ~ contact ~ payload", payload);
-
-    axios
-      .post("http://localhost:1337" + 
-      "/api/bookings/createBookingFromWeb", payload)
-      .then(function (response) {
-        toast.success("Thành công");
-      })
-      .catch(function (error) {});
-  };
-
   const bookingSlots = useMemo(() => {
     let slots = [];
     // working hours: 7h - 21h
@@ -115,27 +65,40 @@ const Booking: NextPage = () => {
     return slots;
   }, [bookingDate]);
 
-  return (
-    <>
-      <Head>
-        <title>ECHO MEDI</title>
-        <meta name="ECHO MEDI" content="ECHO MEDI" />
-        <link rel="icon" href="/favicon1.png" />
-      </Head>
 
-      {/* <Slider slides={SliderData} />
-      <Instagram /> */}
-      <SmallHero
-        heading={
-          locale === "en" ? "MAKE A DOCTOR’S APPOINTMENT" : "ĐĂNG KÝ KHÁM BỆNH"
-        }
-        message={""}
-        sub_message={[]}
-        image_url={
-          "https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"
-        }
-      />
-      <div className="max-w-[1048px] mx-auto p-4 text-left">
+  const handleBooking = () => {
+    const payload = {data: {
+      createNewPatient: true,
+      name,
+      gender,
+      email,
+      phone_number,
+      message,
+      birthday: dayjs(birthday).toISOString(),
+      address,
+      job,
+      bookingDate: timeSlot,
+    }};
+    console.log("🚀 ~ file: booking.tsx:78 ~ contact ~ payload", payload);
+
+    axios
+    .post("http://localhost:1337" + 
+      "/api/bookings/createBookingFromWeb", payload)
+      .then(function (response) {
+        toast.success("Thành công");
+      })
+      .catch(function (error) {});
+  };
+
+  return (
+    <div 
+      style={{
+        backgroundColor: "#ecf5ed"
+      }}
+    className="max-w-[568px] mx-auto p-4 text-left mb-4">
+      <p className="text-3xl text-center mb-4 underline">
+        {locale == "en" ? "Booking" : "Đặt lịch khám"}
+      </p>
         <div className="mb-3 w-full flex flex-col md:grid md:grid-cols-2 gap-4">
           <div>
             <label>{locale === "en" ? "Your name" : "Tên của bạn"}</label>
@@ -267,12 +230,7 @@ const Booking: NextPage = () => {
           </button>
         </div>
       </div>
-      {/* <Portfolio /> */}
-      {/* <Packages /> */}
-      <Contact />
-      <Toaster position="bottom-center" />
-    </>
   );
 };
 
-export default Booking;
+export default contact;
