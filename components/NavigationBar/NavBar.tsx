@@ -806,43 +806,31 @@ const NavBar = () => {
               >
                 {locale === "en" ? (
                   <div className="flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 60 30"
-                      width="40"
-                      height="40"
-                    >
-                      <clipPath id="s">
-                        <path d="M0,0 v30 h60 v-30 z" />
-                      </clipPath>
-                      <clipPath id="t">
-                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-                      </clipPath>
-                      <g clip-path="url(#s)">
-                        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-                        <path
-                          d="M0,0 L60,30 M60,0 L0,30"
-                          stroke="#fff"
-                          stroke-width="6"
-                        />
-                        <path
-                          d="M0,0 L60,30 M60,0 L0,30"
-                          clip-path="url(#t)"
-                          stroke="#C8102E"
-                          stroke-width="4"
-                        />
-                        <path
-                          d="M30,0 v30 M0,15 h60"
-                          stroke="#fff"
-                          stroke-width="10"
-                        />
-                        <path
-                          d="M30,0 v30 M0,15 h60"
-                          stroke="#C8102E"
-                          stroke-width="6"
-                        />
-                      </g>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 7410 3900">
+<rect width="7410" height="3900" fill="#b22234"/>
+<path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/>
+<rect width="2964" height="2100" fill="#3c3b6e"/>
+<g fill="#fff">
+<g id="s17">
+<g id="s9">
+<g id="s8">
+<path id="s" d="M202,130 L272.53423,347.08204 L87.873218,212.917961 L316.126782,212.917961 L131.46577,347.08204z"/>
+<use xlinkHref="#s" x="320"/>
+<use xlinkHref="#s" x="640"/>
+<use xlinkHref="#s" x="960"/>
+<use xlinkHref="#s" x="1280"/>
+<use xlinkHref="#s" x="1600"/>
+<use xlinkHref="#s" x="1920"/>
+<use xlinkHref="#s" x="2240"/>
+</g>
+<use xlinkHref="#s" x="2560"/>
+</g>
+<use xlinkHref="#s8" x="150" y="320"/>
+</g>
+<use xlinkHref="#s17" y="640"/>
+<use xlinkHref="#s17" y="1280"/>
+</g>
+</svg>
                   </div>
                 ) : (
                   <div className="flex">
@@ -922,43 +910,31 @@ const NavBar = () => {
               >
                 {locale === "en" ? (
                   <div className="flex">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 60 30"
-                      width="40"
-                      height="40"
-                    >
-                      <clipPath id="s">
-                        <path d="M0,0 v30 h60 v-30 z" />
-                      </clipPath>
-                      <clipPath id="t">
-                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
-                      </clipPath>
-                      <g clip-path="url(#s)">
-                        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
-                        <path
-                          d="M0,0 L60,30 M60,0 L0,30"
-                          stroke="#fff"
-                          stroke-width="6"
-                        />
-                        <path
-                          d="M0,0 L60,30 M60,0 L0,30"
-                          clip-path="url(#t)"
-                          stroke="#C8102E"
-                          stroke-width="4"
-                        />
-                        <path
-                          d="M30,0 v30 M0,15 h60"
-                          stroke="#fff"
-                          stroke-width="10"
-                        />
-                        <path
-                          d="M30,0 v30 M0,15 h60"
-                          stroke="#C8102E"
-                          stroke-width="6"
-                        />
-                      </g>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 7410 3900">
+<rect width="7410" height="3900" fill="#b22234"/>
+<path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/>
+<rect width="2964" height="2100" fill="#3c3b6e"/>
+<g fill="#fff">
+<g id="s17">
+<g id="s9">
+<g id="s8">
+<path id="s" d="M202,130 L272.53423,347.08204 L87.873218,212.917961 L316.126782,212.917961 L131.46577,347.08204z"/>
+<use xlinkHref="#s" x="320"/>
+<use xlinkHref="#s" x="640"/>
+<use xlinkHref="#s" x="960"/>
+<use xlinkHref="#s" x="1280"/>
+<use xlinkHref="#s" x="1600"/>
+<use xlinkHref="#s" x="1920"/>
+<use xlinkHref="#s" x="2240"/>
+</g>
+<use xlinkHref="#s" x="2560"/>
+</g>
+<use xlinkHref="#s8" x="150" y="320"/>
+</g>
+<use xlinkHref="#s17" y="640"/>
+<use xlinkHref="#s17" y="1280"/>
+</g>
+</svg>
                   </div>
                 ) : (
                   <div className="flex">

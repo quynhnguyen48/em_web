@@ -208,12 +208,14 @@ html {
 .fold .fold_content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 400ms ease;
+  transition: max-height 1200ms ease;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
 }
 .fold .fold_content.open {
   max-height: 400px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
 }
 
 .cart {
