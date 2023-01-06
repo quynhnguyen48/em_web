@@ -77,7 +77,7 @@ const Home: NextPage = () => {
       <img style={{
         // marginBottom: "-200px"
       }} src={"https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg"}
-        className="w-full mb-[-50px] sm:mb-[-200px]" />
+        className="w-full mb-[-50px] sm:mb-[-350px]" />
       <div>
         <div style={{
           transform: "rotate(180deg)",
