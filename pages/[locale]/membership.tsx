@@ -89,27 +89,27 @@ const Home: NextPage = () => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
-          "service_id": id,
-        }, {
-          headers: {
-            'Authorization': `Bearer ${token}`
+        "service_id": id,
+      }, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+        .then(function (response) {
+          toast.success('Thêm vào giỏ hàng thành công');
+          router.push("/cart", "/cart", { locale });
+          let el = document.getElementById('num-of-item');
+          if (el) {
+            el.innerText = (parseInt(el.innerText) + 1).toString();;
           }
         })
-          .then(function (response) {
-            toast.success('Thêm vào giỏ hàng thành công');
-            router.push("/cart", "/cart", { locale });
-            let el = document.getElementById('num-of-item');
-            if (el) {
-              el.innerText = (parseInt(el.innerText) + 1).toString();;
-            }
-          })
-          .catch(function (error) {
-            toast.error("Thêm vào giỏ hàng thất bại")
-          });
-        } else {
-          toast.success('Vui lòng đăng nhập.');
-          router.push("/login", "/login", { locale });
-        }
+        .catch(function (error) {
+          toast.error("Thêm vào giỏ hàng thất bại")
+        });
+    } else {
+      toast.success('Vui lòng đăng nhập.');
+      router.push("/login", "/login", { locale });
+    }
   }
 
   return (
@@ -139,7 +139,7 @@ const Home: NextPage = () => {
                   locale == "en" ? "Silver membership is a basic health care package for members that includes benefits such as free unlimited online consultations 24/7, free medical examinations at clinic and telemedicine once a month, and discounts while utilizing clinic services and purchasing medications. Join as a Silver member for a low, set yearly price." :
                     "Gói thành viên bạc là gói chăm sóc sức khỏe cơ bản cho thành viên với các đặc quyền như: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh tại phòng khám và khám bệnh từ xa mỗi tháng, và nhận được các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên bạc với mức chi phí tiết kiệm và cố định hằng năm."
                 }</p>
-                <div className='columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
+                <div className='mb-4 columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
                   <p className="w-32 m-auto  text-center">6,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                   <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button
                     onClick={() => addToCart(739)}
@@ -161,10 +161,10 @@ const Home: NextPage = () => {
                   {locale === "en" ?
                     "Gold membership is an enhanced health care package for members that includes benefits such as free unlimited online consultations 24/7, free clinic check-ups and telemedicine examinations twice a month, and discounts while utilizing clinic services and purchasing medications. Join as a Gold member for a low, set yearly price.		" :
                     "Gói thành viên vàng là gói chăm sóc sức khỏe nâng cao cho thành viên với các đặc quyền như: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh tại phòng khám và khám bệnh từ xa 2 lần mỗi tháng, và nhận được các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên vàng với mức chi phí tiết kiệm và cố định hằng năm."}</p>
-                                <div className='columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
+                <div className='mb-4 columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
                   <p className="w-32 m-auto  text-center">12,000,000/năm<span className="underline"></span></p>
                   <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button
-                  onClick={() => addToCart(740)}
+                    onClick={() => addToCart(740)}
                     style={{
                       backgroundColor: "#416045",
                       color: "white",
@@ -186,7 +186,7 @@ const Home: NextPage = () => {
                     "Gói thành viên bạch kim là gói chăm sóc sức khỏe toàn diện với các đặc quyền: Miễn phí không giới hạn tư vấn online, miễn phí không giới hạn khám tại phòng khám và khám bệnh từ xa, miễn phí kiểm tra sức khỏe tổng quát 6 tháng/lần, kèm các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên bạch kim với chi phí tiết kiệm và cố định hàng năm."}
 
                 </p>
-                <div className='columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
+                <div className='mb-4 columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
                   <p className="w-32 m-auto  text-center">18,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                   <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button
                     onClick={() => addToCart(741)}
@@ -213,8 +213,8 @@ const Home: NextPage = () => {
                 </p>
                 <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                   <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
-                  <a href="#ask-more-form">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</a>
-                    </div>
+                    <a href="#ask-more-form">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</a>
+                  </div>
                 </div>
               </div>
             } />
@@ -245,14 +245,14 @@ const Home: NextPage = () => {
                   }
 
                 </p>
-                <div className='columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
+                <div className='mb-4 columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
                   <p className="w-32 m-auto  text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
-                  <div className="sm:mt-0 mt-5 text-black  text-center"><button 
-                  onClick={() => addToCart(743)}
-                  style={{
-                    backgroundColor: "#416045",
-                    color: "white",
-                  }}
+                  <div className="sm:mt-0 mt-5 text-black  text-center"><button
+                    onClick={() => addToCart(743)}
+                    style={{
+                      backgroundColor: "#416045",
+                      color: "white",
+                    }}
                     className=" inline-block px-5 py-2 text-black  text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200">{locale == "en" ? "Buy now" : "Mua ngay"}</button></div>
                   <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center"><LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
@@ -267,10 +267,10 @@ const Home: NextPage = () => {
                 }
 
                 </p>
-                <div className='columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
+                <div className='mb-4 columns-1 sm:columns-3 flex justify-around items-center mt-5 flex-col sm:flex-row'>
                   <p className="w-32 m-auto  text-center">10,000,000/{locale == "en" ? "year" : "năm"}<span className="underline"></span></p>
                   <div className="w-32 m-auto sm:mt-0 mt-5  text-black text-center"><button
-                  onClick={() => addToCart(744)}
+                    onClick={() => addToCart(744)}
                     style={{
                       backgroundColor: "#416045",
                       color: "white",
