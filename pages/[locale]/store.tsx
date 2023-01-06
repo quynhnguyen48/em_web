@@ -139,7 +139,7 @@ const Home: NextPage = () => {
 
             <div className="max-w-[1048px] mx-auto p-4 text-center">
 
-                <div className="grid grid-rows-none md:grid-cols-1 p-4 gap-4">
+                <div className="">
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 text-justify">
                         <p>{locale == "en" ? "ECHO MEDI offers products and services that help support each person’s unique health journey. Through face-to-face counseling, our pharmacists help drive medication adherence, close gaps in care, and recommend more cost-effective drug therapies." : "ECHO MEDI cung cấp các sản phẩm và dịch vụ phù hợp với nhu cầu sức khỏe riêng biệt của mỗi người. Thông qua tư vấn trực tiếp, các dược sĩ của chúng tôi sẽ đảm bảo thuốc được sử dụng an toàn, hợp lý và hiệu quả, rút ngắn quá trình điều trị và đưa ra nhiều sự lựa chọn thuốc hiệu quả, hợp túi tiền."}</p>
                         <p>{locale == "en" ? "Our standalone pharmacy offer customers convenience and value across a wide assortment of health, wellness, personal care and beauty products, as well as a broader selection of wellness products." : "Nhà thuốc ECHO MEDI không chỉ mang đến cho bạn sự tiện lợi thông qua giá trị gói sản phẩm chăm sóc sức khỏe mà còn cung cấp đa dạng sản phẩm làm đẹp, thực phẩm chức năng và chăm sóc sức khoẻ toàn diện."}</p>
@@ -149,7 +149,7 @@ const Home: NextPage = () => {
 
                 <div className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 pt-12">
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12/"}>
-                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px]">
+                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
                             <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/TreEm-scaled.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
@@ -164,7 +164,7 @@ const Home: NextPage = () => {
                         </div>
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19/"}>
-                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px]">
+                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
                             <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/group-asia-young-creative-people-smart-casual-wear-smiling-arms-crossed-creative-office-workplace-scaled.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
@@ -179,7 +179,7 @@ const Home: NextPage = () => {
                         </div>
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19/"}>
-                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px]">
+                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
                             <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-08-19T101515.001.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
@@ -195,7 +195,7 @@ const Home: NextPage = () => {
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45/"}>
 
-                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px]">
+                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
                             <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/NuTrungNien-scaled.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
@@ -211,7 +211,7 @@ const Home: NextPage = () => {
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45/"}>
 
-                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px]">
+                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
                             <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/NamTrungNien-scaled.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
@@ -227,7 +227,7 @@ const Home: NextPage = () => {
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60/"}>
 
-                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px]">
+                        <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
                             <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-08-19T101659.998.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
