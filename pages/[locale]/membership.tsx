@@ -135,7 +135,7 @@ const Home: NextPage = () => {
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <Accordion active={active} setActive={setActive} id={1} title={locale == "en" ? "Silver Membership" : "Thành viên bạc"} content={
               <div>
-                <p className='font-medium text-justify' >{
+                <p className='pt-4 font-medium text-justify' >{
                   locale == "en" ? "Silver membership is a basic health care package for members that includes benefits such as free unlimited online consultations 24/7, free medical examinations at clinic and telemedicine once a month, and discounts while utilizing clinic services and purchasing medications. Join as a Silver member for a low, set yearly price." :
                     "Gói thành viên bạc là gói chăm sóc sức khỏe cơ bản cho thành viên với các đặc quyền như: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh tại phòng khám và khám bệnh từ xa mỗi tháng, và nhận được các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên bạc với mức chi phí tiết kiệm và cố định hằng năm."
                 }</p>
@@ -157,7 +157,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={2} title={locale == "en" ? "Gold Membership" : "Thành viên vàng"} content={
               <div>
-                <p className='font-medium text-justify'>
+                <p className=' pt-4 font-medium text-justify'>
                   {locale === "en" ?
                     "Gold membership is an enhanced health care package for members that includes benefits such as free unlimited online consultations 24/7, free clinic check-ups and telemedicine examinations twice a month, and discounts while utilizing clinic services and purchasing medications. Join as a Gold member for a low, set yearly price.		" :
                     "Gói thành viên vàng là gói chăm sóc sức khỏe nâng cao cho thành viên với các đặc quyền như: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh tại phòng khám và khám bệnh từ xa 2 lần mỗi tháng, và nhận được các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên vàng với mức chi phí tiết kiệm và cố định hằng năm."}</p>
@@ -180,7 +180,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={3} title={locale == "en" ? "Platinum Membership" : "Thành viên bạch kim"} content={
               <div>
-                <p className='font-medium text-justify' >
+                <p className='pt-4 font-medium text-justify' >
                   {locale === "en" ?
                     "Platinum membership is a comprehensive health care package that includes the following benefits: free unlimited online consultation, free unlimited clinic and telemedicine examination, free general health check every 6 months, and discounts for using the service and purchasing medicine at the clinic. Join as a Platinum member for a low, set yearly price.		" :
                     "Gói thành viên bạch kim là gói chăm sóc sức khỏe toàn diện với các đặc quyền: Miễn phí không giới hạn tư vấn online, miễn phí không giới hạn khám tại phòng khám và khám bệnh từ xa, miễn phí kiểm tra sức khỏe tổng quát 6 tháng/lần, kèm các ưu đãi khi sử dụng dịch vụ và mua thuốc tại phòng khám. Hãy trở thành thành viên bạch kim với chi phí tiết kiệm và cố định hàng năm."}
@@ -205,7 +205,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={4} title={locale == "en" ? "Family Package Deal" : "Gói gia đình"} content={
               <div>
-                <p className='font-medium text-justify' >{
+                <p className='pt-4 font-medium text-justify' >{
                   locale === "en" ?
                     "Additional 10% discount on membership fee for a minimum of 3 members from the same family." :
                     "Nhận được thêm 10% ưu đãi khi đăng ký gói thành viên cho ít nhất 3 thành viên trong gia đình"}
@@ -220,7 +220,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={5} title={locale == "en" ? "Corporate Package Deal" : "Gói doanh nghiệp"} content={
               <div>
-                <p className='font-medium text-justify' >
+                <p className='pt-4 font-medium text-justify' >
                   {
                     locale === "en" ?
                       "Package for the corporate members will change depending on the needs of each company. Please contact us directly for more information to purchase the most suitable offer for your company." :
@@ -237,7 +237,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={6} title={locale == "en" ? "Non-Resident (Vietnamese abroad) Membership" : "Thành viên ngoại kiều"} content={
               <div>
-                <p className='font-medium text-justify' >
+                <p className='pt-4 font-medium text-justify' >
                   {
                     locale === "en" ?
                       "Echo Medi offers membership for non resident including Overseas Vietnamese and Vietnamese living and working abroad. By becoming a member of Echo Medi, customers can enjoy benefits such as free and unlimited consultation with medical personnel, free telemedicine once a week, and free unlimited Covid-19 Rapid test upon returning to Vietnam." :
@@ -260,7 +260,7 @@ const Home: NextPage = () => {
             } />
             <Accordion active={active} setActive={setActive} id={7} title={locale == "en" ? "Foreigner short term (2-week) membership" : "Thành viên ngoại kiều ngắn hạn (2 tuần)"} content={
               <div>
-                <p className='font-medium text-justify' >{
+                <p className='pt-4 font-medium text-justify' >{
                   locale === "en" ?
                     "Foreigner short term membership is a 2-week health care and monitoring package for foreigners including Overseas Vietnamese visiting Viet Nam. Customers who purchase the membership will receive the following benefits: free unlimited consultation 24/7, free telemedicine or clinic examination once a week, free Covid-19 fast test, free general health examination, and other additional incentives when using clinic services." :
                     "Thành viên Ngoại Kiều ngắn hạn là gói chăm sóc và theo dõi sức khỏe trong 2 tuần dành cho các Việt Kiều khi trở về nước.  Khi tham gia gói, khách hàng sẽ nhận được các đặc quyền: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh từ xa hoặc khám tại phòng khám 1 lần/tuần, miễn phí test nhanh Covid-19, miễn phí khám sức khỏe tổng quát, và ưu đãi khác khi sử dụng dịch vụ tại phòng khám."
