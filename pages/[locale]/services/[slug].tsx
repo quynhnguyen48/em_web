@@ -143,8 +143,11 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                 src={"https://api.echomedi.me" + props.image_url}
                 /> */}
       <div className="max-w-[1048px] mx-auto text-justify p-5">
-        <p className='text-3xl'>{locale == "en" ? props.en_label : props.label}</p>
-      {props.show_buy_btn && <div className='flex justify-center mb-10'>
+        <p className='text-3xl mb-8'>{locale == "en" ? props.en_label : props.label}</p>
+      
+        
+          <div className='markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } /></div>
+          {props.show_buy_btn && <div className='flex justify-center mb-10'>
       <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
           <button
@@ -157,9 +160,6 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
           className='inline bg-green-200 p-4 rounded sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
           </div>
         </div>  }
-        
-          <div className='markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } /></div>
-
           {props.show_booking_btn && <div className="flex space-x-2 justify-center mb-3 mt-10">
                   <button 
                   style={{
