@@ -512,7 +512,7 @@ const NavBar = () => {
               </LinkComponent>
               <div
                 className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen"
-                style={{ width: "700px", marginLeft: "-600px" }}
+                style={{ width: "800px", marginLeft: "-500px" }}
               >
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                   <div className="p-5 text-base flex">
@@ -705,7 +705,10 @@ const NavBar = () => {
                           {tranlsate("immune_system", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      
+                    </div>
+                    <div>
+                    <div className="mt-9 mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-cai-thien-tri-nao"}
                           locale={""}
