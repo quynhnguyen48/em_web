@@ -211,7 +211,7 @@ const Home: NextPage = () => {
                     "Nhận được thêm 10% ưu đãi khi đăng ký gói thành viên cho ít nhất 3 thành viên trong gia đình"}
 
                 </p>
-                <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
+                <div className='mb-4 columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                   <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
                     <a href="#ask-more-form">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</a>
                   </div>
@@ -227,7 +227,7 @@ const Home: NextPage = () => {
                       "Gói thành viên cho doanh nghiệp sẽ thay đổi phụ thuộc vào nhu cầu của từng doanh nghiệp. Hãy liên hệ trực tiếp với chúng tôi để được tư vấn và nhận ưu đãi phù hợp nhất dành cho doanh nghiệp của bạn."}
 
                 </p>
-                <div className='columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
+                <div className='mb-4 columns-1 sm:columns-3 sm:flex block  justify-around items-center mt-5'>
                   <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
                     {/* <LinkComponent skipLocaleHandling={false} href="/services/goi-doanh-nghiep" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent> */}
                     <a href="#ask-more-form">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</a>
