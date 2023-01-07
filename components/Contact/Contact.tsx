@@ -67,7 +67,7 @@ const contact = () => {
               }}
             className="w-48 text-center mb-4 inline-block px-6 py-2.5 text-white text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out  text-black rounded"> */}
           <button onClick={sendEmailSubscription}>
-                <div className="mb-4 px-6 py-2.5 text-white  text-sm leading-tight uppercase rounded-full shadow-md hover:bg-emgreen hover:shadow-lg focus:bg-emgreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-emgreen active:shadow-lg transition duration-150 ease-in-out bg-emgreen text-white rounded">
+                <div className="mb-4 px-6 py-2.5 text-white  text-sm leading-tight uppercase rounded shadow-md hover:bg-emgreen hover:shadow-lg focus:bg-emgreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-emgreen active:shadow-lg transition duration-150 ease-in-out bg-emgreen text-white rounded">
                   {locale == "en" ? "Subscribe" : "Đăng ký"}
                 </div>
               </button>
