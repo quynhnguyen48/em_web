@@ -29,7 +29,7 @@ const Slider = ({ slides }: Props) => {
   // SwiperCore.use([Autoplay]);
 
   return (
-    <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 pt-12">
+    <div className="">
       
       <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 text-left">
         <p
@@ -63,7 +63,7 @@ const Slider = ({ slides }: Props) => {
               <img src={"https://api.echomedi.me/uploads/Untitled_design_9_4fc1bfc2be.jpg?updated_at=2023-01-07T04:12:51.809Z"} className="w-full absolute  darkened-image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={"https://admin.echomedi.me/uploads/Untitled_design_11_0a48d0d9f7.jpg?updated_at=2023-01-07T04:13:21.680Z"} className="w-full absolute  darkened-image" />
+              <img src={"https://api.echomedi.me/uploads/Untitled_design_11_0a48d0d9f7.jpg?updated_at=2023-01-07T04:13:21.680Z"} className="w-full absolute  darkened-image" />
             </SwiperSlide>
             <SwiperSlide>
               <img src={"https://api.echomedi.me/uploads/Untitled_design_7_24962e0c2a.jpg?updated_at=2023-01-07T04:13:45.086Z"} className="w-full absolute  darkened-image" />

@@ -14,14 +14,10 @@ import React, { useState, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import SmallHero from "../../components/Hero/SmallHero";
 import { makeStaticProps } from '../../lib/getStatic';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { useSwiper } from 'swiper/react';
 import LinkComponent from "../../components/Link";
 import SwiperCore, { Autoplay } from 'swiper';
 import SliderGift from "../../components/Slider/SliderGift";
-
-const notify = () => {
-    toast.success('Thành công');
-}
 
 const getStaticProps = makeStaticProps(['common', 'footer'])
 const getStaticPaths = () => ({
@@ -45,51 +41,15 @@ export { getStaticPaths, getStaticProps }
 
 SwiperCore.use([Autoplay]);
 
-const tranlsate = (term: string, locale: string) => {
-    if (locale === "en") {
-        switch (term) {
-            case "contact_info":
-                return "Contact Information";
-            case "become_a_member":
-                return "Become a member";
-            case "gifting":
-                return "Gifting";
-        }
-    } else {
-        switch (term) {
-            case "contact_info":
-                return "Thông Tin Liên Hệ";
-            case "become_a_member":
-                return "Trở Thành Thành Viên";
-            case "gifting":
-                return "Quà tặng";
-        }
-    }
-}
-
 const Home: NextPage = () => {
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [o1, setO1] = useState(-1);
+    const [o2, setO2] = useState(-1);
     const [phone_number, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
     const [option, setOption] = useState("1");
     const router = useRouter()
     const locale = router.query.locale as string || 'en';
-    const swiper = useSwiper();
-
-    const contact = () => {
-        axios.post('https://api.echomedi.me' + '/api/packages/contact', {
-            "name": name,
-            "email": email,
-            "phone_number": phone_number,
-            "message": message
-        })
-            .then(function (response) {
-                toast.success('Thành công');
-            })
-            .catch(function (error) {
-            });
-    }
 
     return (
         <>
@@ -292,73 +252,73 @@ const Home: NextPage = () => {
               </div>
                                     <p className="font-semibold">{locale == "en" ? "Choose your Gifting packages" : "Chọn gói khám muốn dành tặng"}</p>
                                     {(option == "1" || option == "2" || option == "3" || option == "4") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>
+                                        <input checked={o1 == 1} onClick={e => setO1(1)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>
                                             {locale == "en" ? "General Healthcare" :"Gói Khám Sức Khỏe Tổng Quát"}
                                         </span>
                                     </div>}
                                     {(option == "1" || option == "3") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>
+                                        <input checked={o1 == 2} onClick={e => setO1(2)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>
                                             {locale == "en" ? "Men's Health Care" :"Gói Khám Sức Khỏe Tổng Quát Dành Cho Nam Giới"}
                                             </span>
                                     </div>}
                                     {(option == "2" || option == "3") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>
+                                        <input checked={o1 == 3} onClick={e => setO1(3)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>
                                             {locale == "en" ? "Women's Health Care" :" Gói Khám Sức Khỏe Tổng Quát Dành Cho Phụ Nữ"}
                                             </span>
                                     </div>}
                                     {(option == "1" || option == "2") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
+                                        <input checked={o1 == 4} onClick={e => setO1(4)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
                                             {locale == "en" ? "Hypertension Management" :"Gói Quản Lý Ngoại Trú Bệnh Tăng Huyết Áp"}
                                             </span>
                                     </div>}
                                     {(option == "1" || option == "2") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
+                                        <input checked={o1 == 5} onClick={e => setO1(5)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
                                             {locale == "en" ? "Diabetes" :"Gói Quản Lý Ngoại Trú Bệnh Đái Tháo Đường"}
                                             </span>
                                     </div>}
                                     {(option == "3") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
+                                        <input checked={o1 == 6} onClick={e => setO1(6)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
                                             {locale == "en" ? "Reproductive Health Screening" :" Tầm Soát Sức Khỏe Sinh Sản"}
                                             </span>
                                     </div>}
                                     {(option == "4") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
+                                        <input checked={o1 == 7} onClick={e => setO1(7)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
                                             {locale == "en" ? "Post COVID-19" :"Gói Khám Sức Khỏe Hậu COVID-19"}
                                             </span>
                                     </div>}
                                     {(option == "4") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
+                                        <input checked={o1 == 8} onClick={e => setO1(8)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
                                             {locale == "en" ? "Musculoskeletal Screening" :"Tầm Soát Bệnh Lý Cơ Xương Khớp"}
                                             </span>
                                     </div>}
                                     <p className="font-semibold mt-5">
                                         {locale == "en" ? "Add-on package" : "Gói khám bổ sung"}</p>
                                     {(option == "1" || option == "4") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
+                                        <input checked={o2 == 1} onClick={e => setO2(1)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
                                            {locale =="en" ? " Smoking Cessation Program" : "Chương Trình Cai Thuốc Lá"}</span>
                                     </div>}
                                     {(option == "2" || option == "4") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
+                                        <input checked={o2 == 2} onClick={e => setO2(2)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
                                            {locale =="en" ? "Mental Wellbeing" : "Sức Khỏe Tinh Thần"}</span>
                                     </div>}
                                     {(option == "1" || option == "2" || option == "3" || option == "4") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
+                                        <input checked={o2 == 3} onClick={e => setO2(3)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span> 
                                             {locale == "en" ? "Weight Management" : "Quản Lý Cân Nặng"}</span>
                                     </div>}
                                     {(option == "1") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>  
+                                        <input checked={o2 == 4} onClick={e => setO2(4)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>  
                                         {locale == "en" ? "Heart Health Program" : "Chương Trình Sức Khỏe Tim Mạch"}</span>
                                     </div>}
                                     {(option == "2") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>  
+                                        <input checked={o2 == 5} onClick={e => setO2(5)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>  
                                         {locale == "en" ? "Hormonal Health" : "Sức Khỏe Nội Tiết Tố"}</span>
                                     </div>}
                                     {(option == "3") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>  
+                                        <input checked={o2 == 6} onClick={e => setO1(6)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>  
                                         {locale == "en" ? "Metabolism And Heart Health" : "Khả Năng Trao Đổi Chất Và Sức Khỏe Tim Mạch"}</span>
                                     </div>}
                                     {(option == "3") && <div>
-                                        <input type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>  
+                                        <input checked={o2 == 7} onClick={e => setO1(7)} type="checkbox" className="mr-2 inline border-gray-300 rounded h-4 w-4" /><span>  
                                         {locale == "en" ? "Skincare And Anti-aging Therapy" : "Chăm Sóc Da Và Ngăn Ngừa Lão Hóa"}</span>
                                     </div>}
                                     <div className="mt-5">
