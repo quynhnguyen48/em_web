@@ -82,7 +82,7 @@ const Booking: NextPage = () => {
     console.log("🚀 ~ file: booking.tsx:78 ~ contact ~ payload", payload);
 
     axios
-      .post("http://localhost:1337" + 
+      .post("https://api.echomedi.me" + 
       "/api/bookings/createBookingFromWeb", payload)
       .then(function (response) {
         toast.success("Thành công");
