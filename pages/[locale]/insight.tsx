@@ -115,18 +115,18 @@ const Home: NextPage = () => {
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "ECHO MEDI News" : "Tin tức ECHO MEDI"}</p>
             {/* <p>{locale === "en" ? "ECHO MEDI offers a variety of memberships designed to fit the unique requirements of our members. Our team works hand-in-hand with you to identify the optimal membership for your health needs." : "ECHO MEDI cung cấp những gói thành viên khác nhau, được tạo ra nhằm đáp ứng nhu cầu đặc biệt của mỗi cá nhân. Đội ngũ của chúng tôi sẽ sát cánh với bạn trong việc chọn lựa gói thành viên thích hợp với tình trạng sức khỏe."}</p> */}
-            <img src="https://admin.echomedi.me/uploads/pexels_rodnae_productions_8401909_1024x683_94ceb57669.jpg?updated_at=2023-01-07T04:18:02.545Z" />
+            <img src="https://api.echomedi.me/uploads/pexels_rodnae_productions_8401909_1024x683_94ceb57669.jpg?updated_at=2023-01-07T04:18:02.545Z" />
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Video" : "Video"}</p>
-            <img src="https://admin.echomedi.me/uploads/pexels_pixabay_219932_1024x685_010403ae94.jpg?updated_at=2023-01-07T04:18:23.316Z" />
+            <img src="https://api.echomedi.me/uploads/pexels_pixabay_219932_1024x685_010403ae94.jpg?updated_at=2023-01-07T04:18:23.316Z" />
 
           </div>
           
           <LinkComponent skipLocaleHandling={undefined} locale={""} href={"/knowledge"}>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Knowledge" : "Kiến thức y khoa"}</p>
-            <img src="https://admin.echomedi.me/uploads/pexels_lisa_1662145_1024x683_f693c344fd.jpg?updated_at=2023-01-07T04:18:46.400Z" />
+            <img src="https://api.echomedi.me/uploads/pexels_lisa_1662145_1024x683_f693c344fd.jpg?updated_at=2023-01-07T04:18:46.400Z" />
 
           </div>
           </LinkComponent>

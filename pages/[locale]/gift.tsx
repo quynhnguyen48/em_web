@@ -124,7 +124,7 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-                        <img src="https://admin.echomedi.me/uploads/Untitled_design_2022_08_08_T073025_967_scaled_8560afaf92.jpg?updated_at=2023-01-07T04:17:40.670Z" />
+                        <img src="https://api.echomedi.me/uploads/Untitled_design_2022_08_08_T073025_967_scaled_8560afaf92.jpg?updated_at=2023-01-07T04:17:40.670Z" />
 
                     </div>
                 </div>

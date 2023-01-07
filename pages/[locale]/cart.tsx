@@ -158,7 +158,7 @@ const Home: NextPage = () => {
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       <SmallHero heading={locale === "en" ? "Cart" : "Giỏ hàng"} 
-      image_url="https://admin.echomedi.me/uploads/dat_lich_kham_5246f10577.jpg?updated_at=2023-01-07T01:43:41.793Z" message={""} sub_message={[]}/>
+      image_url="https://api.echomedi.me/uploads/dat_lich_kham_5246f10577.jpg?updated_at=2023-01-07T01:43:41.793Z" message={""} sub_message={[]}/>
       <div className="container mx-auto mt-10">
     <div className="flex shadow-md my-10">
       <div className="w-4/4 sm:w-3/4 bg-white px-10 py-10">
