@@ -6,8 +6,7 @@ export class BlogApi {
     '/api/blogs?pagination[page]=1&pagination[pageSize]=10000')
         .then((response) => response.json());
     var blogs = v.data;
-    console.log('blogs', blogs)
-    const result = blogs.map( (d:any) => {
+    const result = blogs?.map( (d:any) => {
       let v = new Blog();
       v.slug = d.attributes.slug;
       v.article = d.attributes.article;
