@@ -54,19 +54,19 @@ const Slider = ({ slides }: Props) => {
         <div className="relative flex justify-center h-[350px] md:h-[450px]">
         <Swiper className="mySwiper" onSwiper={(s) => swiper = s}>
             <SwiperSlide>
-              <img src={"https://echomedi.com/wp-content/uploads/2022/09/Untitled-design-10.jpg"} className="w-full absolute darkened-image" />
+              <img src={"https://api.echomedi.me/uploads/Untitled_design_10_56244bd5cc.jpg?updated_at=2023-01-07T04:11:28.422Z"} className="w-full absolute darkened-image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={"https://echomedi.com/wp-content/uploads/2022/09/Untitled-design-8.jpg"} className="w-full absolute darkened-image" />
+              <img src={"https://api.echomedi.me/uploads/Untitled_design_8_9f3bbfdf76.jpg?updated_at=2023-01-07T04:12:19.085Z"} className="w-full absolute darkened-image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={"https://echomedi.com/wp-content/uploads/2022/09/Untitled-design-9.jpg"} className="w-full absolute  darkened-image" />
+              <img src={"https://api.echomedi.me/uploads/Untitled_design_9_4fc1bfc2be.jpg?updated_at=2023-01-07T04:12:51.809Z"} className="w-full absolute  darkened-image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={"https://echomedi.com/wp-content/uploads/2022/09/Untitled-design-11.jpg"} className="w-full absolute  darkened-image" />
+              <img src={"https://admin.echomedi.me/uploads/Untitled_design_11_0a48d0d9f7.jpg?updated_at=2023-01-07T04:13:21.680Z"} className="w-full absolute  darkened-image" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src={"https://echomedi.com/wp-content/uploads/2022/09/Untitled-design-7.jpg"} className="w-full absolute  darkened-image" />
+              <img src={"https://api.echomedi.me/uploads/Untitled_design_7_24962e0c2a.jpg?updated_at=2023-01-07T04:13:45.086Z"} className="w-full absolute  darkened-image" />
             </SwiperSlide>
             </Swiper>
         </div>

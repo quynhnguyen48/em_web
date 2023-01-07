@@ -69,15 +69,13 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon1.png" />
             </Head>
 
-            {/* <Slider slides={SliderData} />
-      <Instagram /> */}
-            {/* <SmallHero heading={locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"} image_url="https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg" message={""} sub_message={[]}/> */}
             <div 
     className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 p-10">
             <LinkComponent skipLocaleHandling={false} locale={undefined} href={"/blogs/6-cach-giup-phong-ngua-suy-yeu-co-tim/"}>
             <div className="max-w-[1240px] mx-auto p-4 text-left">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img className="w-full" src="https://echomedi.com/wp-content/uploads/2022/11/woman-taking-online-yoga-lesso-5392-7817-1667899804.jpg" alt="Sunset in the mountains" />
+                    <img className="w-full" 
+                    src="https://api.echomedi.me/uploads/thumbnail_woman_taking_online_yoga_lesso_5392_7817_1667899804_0dd83d3c0d_a8177b490f.jpg?updated_at=2023-01-07T02:40:04.271Z" alt="Sunset in the mountains" />
                     <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2">6 Cách Giúp Phòng Ngừa Suy Yếu Cơ Tim</div>
                         <p className="text-gray-700 text-base">

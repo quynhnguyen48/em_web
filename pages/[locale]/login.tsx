@@ -130,8 +130,8 @@ const Home: NextPage = () => {
 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      {/* <Hero heading={locale === "en" ? "Login" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"}/> */}
-      <SmallHero heading={locale === "en" ? "Login" : "Đăng nhập"} message={""} sub_message={[]} image_url={"https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"} />
+      {/* <Hero heading={locale === "en" ? "Login" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"}/> */}
+      <SmallHero heading={locale === "en" ? "Login" : "Đăng nhập"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"} />
       <div className="max-w-[1240px] mx-auto p-4 text-left mt-4">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">

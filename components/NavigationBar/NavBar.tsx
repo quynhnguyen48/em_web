@@ -889,7 +889,7 @@ const NavBar = () => {
         <ul className="h-full p-5">
           <img
             className=""
-            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
           <div className="text-black bg-transparent m-auto ml-5">
             <div className="flex">
@@ -1100,7 +1100,7 @@ const NavBar = () => {
         <ul className="h-full p-5">
           <img
             className=""
-            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
 
           <p className="text-xl underline mb-5">
@@ -1247,7 +1247,7 @@ const NavBar = () => {
         <ul className="h-full p-5">
           <img
             className=""
-            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
 
           <div className="mb-2" onClick={handleNav2}>
@@ -1361,7 +1361,7 @@ const NavBar = () => {
         <ul className="h-full p-5 overflow-auto">
           <img
             className=""
-            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
 
           <p className="underline text-xl my-5">
@@ -1732,8 +1732,8 @@ const NavBar = () => {
     //           {/* <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
     //             EC<span style={{ color: "#77b17d" }}>HO ME</span>DI
     //           </h1> */}
-    //           <img className="w-32 sm:28" src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" />
-    //           {/* <img style={{width: "200px"}} src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png" /> */}
+    //           <img className="w-32 sm:28" src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z" />
+    //           {/* <img style={{width: "200px"}} src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z" /> */}
     //         </LinkComponent></div>}
     //         <ul style={{ color: `${textColor}` }} className="hidden md:flex sm:ml-20 ml-0">
     //           <li className="py-4 flex">

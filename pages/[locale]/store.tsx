@@ -133,7 +133,7 @@ const Home: NextPage = () => {
                     // marginTop: "100px",
                     objectFit: "cover",
                 }}
-                src={"https://echomedi.com/wp-content/uploads/2022/07/pexels-pixabay-161688-1.jpg"}
+                src={"https://admin.echomedi.me/uploads/Untitled_design_7_24962e0c2a.jpg?updated_at=2023-01-07T04:13:45.086Z"}
             />
             <p className="text-3xl mt-5 text-center">{locale == "en" ? "Pharmacy" : "Nhà thuốc"}</p>
 
@@ -150,7 +150,8 @@ const Home: NextPage = () => {
                 <div className="grid grid-rows-none md:grid-cols-3 p-4 gap-4 pt-12">
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12/"}>
                         <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
-                            <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/TreEm-scaled.jpg" alt="Sunset in the mountains" />
+                            <img className="h-full w-full absolute object-cover" 
+                            src="https://admin.echomedi.me/uploads/Tre_Em_scaled_1_52d1b92214.jpg?updated_at=2023-01-07T04:22:37.067Z" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
@@ -165,7 +166,7 @@ const Home: NextPage = () => {
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19/"}>
                         <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
-                            <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/group-asia-young-creative-people-smart-casual-wear-smiling-arms-crossed-creative-office-workplace-scaled.jpg" alt="Sunset in the mountains" />
+                            <img className="h-full w-full absolute object-cover" src="https://admin.echomedi.me/uploads/group_asia_young_creative_people_smart_casual_wear_smiling_arms_crossed_creative_office_workplace_scaled_db80cdeb97.jpg?updated_at=2023-01-07T04:23:04.101Z" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",
@@ -180,7 +181,8 @@ const Home: NextPage = () => {
                     </LinkComponent>
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined} href={"/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19/"}>
                         <div className="max-w-sm rounded-[50px] overflow-hidden shadow-lg relative h-[300px] m-auto">
-                            <img className="h-full w-full absolute object-cover" src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-08-19T101515.001.jpg" alt="Sunset in the mountains" />
+                            <img className="h-full w-full absolute object-cover" 
+                            src="https://echomedi.com/wp-content/uploads/2022/07/Untitled-design-2022-08-19T101515.001.jpg" alt="Sunset in the mountains" />
                             <div
                                 style={{
                                     backgroundImage: "linear-gradient(180deg, #FFFFFF00 0%, #426045 100%)",

@@ -68,9 +68,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon1.png" />
       </Head>
 
-      {/* <Slider slides={SliderData} />
-      <Instagram /> */}
-      {/* <SmallHero heading={locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"} image_url="https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg" message={""} sub_message={[]}/> */}
       <img 
                   style={{
                     height: "300px",
@@ -78,7 +75,7 @@ const Home: NextPage = () => {
                     // marginTop: "100px",
                     objectFit: "cover",
                   }}
-                src={"https://echomedi.com/wp-content/uploads/2022/07/riccardo-pelati-_-Cg7vTw3bs-unsplash.jpg"}
+                src={"https://api.echomedi.me/uploads/riccardo_pelati_Cg7v_Tw3bs_unsplash_2_ffbfb79f45.jpg?updated_at=2023-01-07T04:14:27.305Z"}
                 />
       <div className="max-w-[1240px] mx-auto p-4 text-left">
         <p className="text-3xl text-center mt-4">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</p>
@@ -94,7 +91,7 @@ const Home: NextPage = () => {
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
             <div className="flex justify-center">
-              <img src={"https://echomedi.com/wp-content/uploads/2022/07/ce0e70088ab449ea10a5.jpg"} />
+              <img src={"https://api.echomedi.me/uploads/ce0e70088ab449ea10a5_e95c71e5ec.jpg?updated_at=2023-01-07T04:14:56.849Z"} />
             </div>
           </div>
         </div>

@@ -133,7 +133,7 @@ const Booking: NextPage = () => {
         message={""}
         sub_message={[]}
         image_url={
-          "https://echomedi.com/wp-content/uploads/2022/07/pexels-antoni-shkraba-5214952-2.jpg"
+          "https://admin.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"
         }
       />
       <div className="max-w-[1048px] mx-auto p-4 text-left">
