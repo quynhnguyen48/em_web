@@ -76,7 +76,7 @@ const Home: NextPage = () => {
       <Instagram />
       <img style={{
         // marginBottom: "-200px"
-      }} src={"https://echomedi.com/wp-content/uploads/2022/09/ChungToiMangLaiGi-scaled.jpg"}
+      }} src={"https://api.echomedi.me/uploads/dat_lich_kham_5246f10577.jpg"}
         className="w-full mb-[-50px] sm:mb-[-350px]" />
       <div>
         <div style={{
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
           {locale === "en" ? "Expert Professionals - Intimate Environment - Tailored Treatments" : "Chuyên gia ưu tú – Môi trường thân thiện – Chăm sóc riêng biệt"}</p>
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 p-8">
-            <img src={"https://echomedi.com/wp-content/uploads/2022/07/pexels-karolina-grabowska-4386467-scaled.jpg"} />
+            <img src={"https://api.echomedi.me/uploads/pexels_karolina_grabowska_4386467_scaled_e1614020420439_f1bf3309a4.jpg?updated_at=2023-01-07T01:51:37.885Z"} />
 
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">

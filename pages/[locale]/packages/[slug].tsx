@@ -55,39 +55,6 @@ type IBlogUrl = {
   show_additional_fee: any;
 };
 
-
-// export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
-//   const json = await new PackagesApi().getAll();
-//   const blogs = json;
-//   return {
-//     paths: blogs.map((v: any) => ({
-//       params: { slug: v.slug, label: v ? v.label : "" },
-//     })),
-//     fallback: true,
-//   };
-// };
-
-
-// export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
-//   params,
-//   locale,
-// }) => {
-//   let slug = params!.slug;
-//   if (locale == "en") {
-//     slug = slug + "-en";
-//   }
-//   const data = await new PackagesApi().findOne(slug);
-//   return {
-//     props: {
-//       slug: data!.slug,
-//       label: data!.label,
-//       sub_packages: data.sub_packages,
-//       desc: data.desc,
-//       image_url: data.image_url,
-//     },
-//   };
-// }
-
 const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
   // let { locale } = useRouter();
   const router = useRouter()

@@ -1,49 +1,78 @@
-export class ProductApi {
+export class BlogApi {
   async getAll() {
-
-    // var v = await axios.get('https://api.echomedi.me/api/products');
-    var v = await fetch('https://api.echomedi.me/api/products?pagination[page]=1&pagination[pageSize]=10000')
+    var v = await fetch(
+      // "https://api.echomedi.me" + 
+      "http://localhost:1337" +
+    '/api/blogs?pagination[page]=1&pagination[pageSize]=10000')
         .then((response) => response.json());
-
     var blogs = v.data;
-
+    console.log('blogs', blogs)
     const result = blogs.map( (d:any) => {
-      let v = new Product();
+      let v = new Blog();
       v.slug = d.attributes.slug;
+      v.article = d.attributes.article;
+      // v.label = d.attributes.label;
       return v;
     })
     return result;
   }
 
   async findOne(slug: string) {
-    var v = await fetch("https://api.echomedi.me" + '/api/product/findOne/' + slug)
-        .then((response) => response.json());
-    // var v2 = await axios.get("https://api.echomedi.me" + '/api/product/findOne/' + slug);
-    var product = v.product;
-    var result = new Product();
-    result.label = product.label;
-    result.en_label = product.en_label;
-    result.slug = product.slug;
-    result.desc = product.desc;
-    result.en_desc = product.en_desc;
-    result.price = product.price;
-    result.image_url = product.image ? product.image.url : '';
-    result.image_placeholder_url = product.image ? product.image.formats.thumbnail.url : "";
-    result.medicines = product.medicines;
-    result.id = product.id;
+    var v = await fetch(
+      // "https://api.echomedi.me" + 
+      "http://localhost:1337" +
+      '/api/blog/findOne/' + slug)
+      .then((response) => response.json());
+    var blogs = v.blog;
+    var result = new Blog();
+    console.log('blogs', blogs)
+    if (blogs) {
+      // result.id = blogs.id;
+      result.label = blogs.label;
+      // result.en_label = blogs.en_label;
+      // result.en_desc = blogs.en_desc;
+      // result.en_detail = blogs.en_detail;
+      result.slug = blogs.slug;
+      // result.desc = blogs.desc;
+      result.article = blogs.article;
+      result.image_url = blogs.image ? blogs.image.url : '';
+      // result.placeholder_image_url = blogs.image ? blogs.image.formats.thumbnail.url : '';
+      // result.price = blogs.price ?? 0;
+      // result.show_buy_btn = blogs.show_buy_btn;
+      // result.show_inquiry_form = blogs.show_inquiry_form;
+      // result.show_booking_btn = blogs.show_booking_btn;
+    } else {
+      // result.id = "";
+      result.label = "";
+      result.slug = "";
+      // result.desc = "";
+      result.article = "";
+      // result.en_label = "";
+      // result.en_detail = "";
+      // result.en_desc = "";
+      result.image_url = "";
+      // result.placeholder_image_url = "";
+      // result.price = "";
+      // result.show_booking_btn = "";
+      // result.show_inquiry_form = "";
+    }
     return result;
   }
 }
 
-class Product {
-  id!: string;
+class Blog {
+  // id!: string;
   label!: string;
-  en_label!: string;
+  // en_label!: string;
   slug!: string;
-  desc!: string;
-  en_desc!: string;
+  // desc!: string;
+  // en_desc!: string;
+  // price!: any;
+  article!: string;
+  // en_detail!: string;
   image_url!: string;
-  image_placeholder_url!: string;
-  price!: number;
-  medicines: any;
+  // placeholder_image_url!: string;
+  // show_buy_btn: any;
+  // show_booking_btn: any;
+  // show_inquiry_form: any;
 }

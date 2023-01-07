@@ -275,7 +275,7 @@ const NavBar = () => {
         <LinkComponent href={"/"} locale={""} skipLocaleHandling={false}>
           <img
             className="w-[200px] sm:28"
-            src="https://echomedi.com/wp-content/uploads/2022/08/cropped-LOGO-ECHOMEDI-01.png"
+            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
         </LinkComponent>
       </div>

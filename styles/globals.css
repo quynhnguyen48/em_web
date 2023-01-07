@@ -225,3 +225,11 @@ html {
 .markdown-container table {
   margin-left: -18px;
 }
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 30px;
+}

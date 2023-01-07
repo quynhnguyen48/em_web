@@ -14,14 +14,13 @@ import Packages from "../../../components/Packages/Packages";
 import { useRouter } from 'next/router'
 import { PackagesApi } from '../../../models/package';
 import ReactMarkdown from "react-markdown";
-import { ProductApi } from '../../../models/blog';
+import { ProductApi } from '../../../models/product';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import React, { useEffect, useState } from "react";
 import { makeStaticProps, getStaticPathsProducts, getStaticPropsProduct } from '../../../lib/getStatic';
 
-// const getStaticProps = makeStaticProps(['common', 'footer']);
 export { getStaticPathsProducts as getStaticPaths, getStaticPropsProduct as getStaticProps };
 
 type IBlogUrl = {
@@ -36,84 +35,6 @@ type IBlogUrl = {
   medicines: any;
   price: any;
 };
-
-// export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
-//   const json = await new ProductApi().getAll();
-//   const blogs = json;
-//   return {
-//     paths: blogs.map((v: any) => ({
-//       params: { slug: v.slug, label: v ? v.label : "", locale: "en" },
-//     })),
-//     fallback: true,
-//   };
-// };
-
-
-// export const getServerSideProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
-//   params,
-//   locale,
-// }) => {
-//   let slug = params!.slug;
-//   if (locale == "en") {
-//     slug = slug + "-en";
-//   }
-//   const data = await new ProductApi().findOne(slug);
-//   return {
-//     props: data ? {
-//       id: data.id,
-//       slug: data.slug,
-//       label: data.label,
-//       desc: data.desc,
-//       image_url: data.image_url,
-//       medicines: data.medicines,
-//       price: data.price,
-//       image_placeholder_url: data.image_placeholder_url,
-//     } :
-//     {
-//       id: "",
-//       slug: "",
-//       label: "",
-//       desc: "",
-//       image_url: "",
-//       medicines: [],
-//       price: 0,
-//       image_placeholder_url: "",
-//     },
-//   };
-// }
-
-// export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
-//   params,
-//   locale,
-// }) => {
-//   let slug = params!.slug;
-//   if (locale == "en") {
-//     slug = slug + "-en";
-//   }
-//   const data = await new ProductApi().findOne(slug);
-//   return {
-//     props: data ? {
-//       id: data.id,
-//       slug: data.slug,
-//       label: data.label,
-//       desc: data.desc,
-//       image_url: data.image_url,
-//       medicines: data.medicines,
-//       price: data.price,
-//       image_placeholder_url: data.image_placeholder_url,
-//     } :
-//     {
-//       id: "",
-//       slug: "",
-//       label: "",
-//       desc: "",
-//       image_url: "",
-//       medicines: [],
-//       price: 0,
-//       image_placeholder_url: "",
-//     },
-//   };
-// }
 
 const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) => {
   const router = useRouter()
@@ -173,7 +94,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         /> */}
       <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-12 gap-4">
         <div>
-          <p className='text-3xl text-left inline'>{props.label}</p>
+          <p className='text-3xl text-left inline'>{locale === "en" ? props.en_label : props.label}</p>
           <img className='p-10 pl-0' src={"https://api.echomedi.me" + props.image_url}/>
           
         </div>

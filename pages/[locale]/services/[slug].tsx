@@ -41,54 +41,6 @@ type IBlogUrl = {
   show_buy_btn: any;
 };
 
-// export const getStaticPaths: GetStaticPaths<IBlogUrl> = async () => {
-//   const json = await new ServiceApi().getAll();
-//   const blogs = json;
-//   return {
-//     paths: blogs.map((v: any) => ({
-//       params: { 
-//         slug: v.slug, 
-//         label: v ? v.label : "", locale: "en" },
-//     })),
-//     fallback: true,
-//   };
-// };
-
-// export const getStaticProps: GetStaticProps<IBlogUrl, IBlogUrl> = async ({
-//   params,
-//   locale,
-// }) => {
-//   let slug = params!.slug;
-//   if (locale == "en") {
-//     slug = slug + "-en";
-//   }
-//   const data = await new ServiceApi().findOne(slug);
-//   return {
-//     props: data ? {
-//       id: data.id,
-//       slug: data.slug,
-//       label: data.label,
-//       desc: data.desc,
-//       detail: data.detail,
-//       image_url: data.image_url,
-//       placeholder_image_url: data.placeholder_image_url,
-//       price: data.price,
-//       show_buy_btn: data.show_buy_btn ?? false,
-//     } :
-//     {
-//       id: "",
-//       slug: "",
-//       label: "",
-//       desc: "",
-//       detail: "",
-//       image_url: "",
-//       placeholder_image_url: "",
-//       price: "",
-//       show_buy_btn: false,
-//     },
-//   };
-// };
-
 const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
@@ -97,27 +49,27 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
       axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
-          "service_id": id,
-        }, {
-          headers: {
-            'Authorization': `Bearer ${token}`
+        "service_id": id,
+      }, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+        .then(function (response) {
+          toast.success('Thêm vào giỏ hàng thành công');
+          router.push("/cart", "/cart", { locale });
+          let el = document.getElementById('num-of-item');
+          if (el) {
+            el.innerText = (parseInt(el.innerText) + 1).toString();;
           }
         })
-          .then(function (response) {
-            toast.success('Thêm vào giỏ hàng thành công');
-            router.push("/cart", "/cart", { locale });
-            let el = document.getElementById('num-of-item');
-            if (el) {
-              el.innerText = (parseInt(el.innerText) + 1).toString();;
-            }
-          })
-          .catch(function (error) {
-            toast.error("Thêm vào giỏ hàng thất bại")
-          });
-        } else {
-          toast.success('Vui lòng đăng nhập.');
-          router.push("/login", "/login", { locale });
-        }
+        .catch(function (error) {
+          toast.error("Thêm vào giỏ hàng thất bại")
+        });
+    } else {
+      toast.success('Vui lòng đăng nhập.');
+      router.push("/login", "/login", { locale });
+    }
   }
 
   return (
@@ -144,39 +96,39 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                 /> */}
       <div className="max-w-[1048px] mx-auto text-justify p-5">
         <p className='text-3xl mb-8'>{locale == "en" ? props.en_label : props.label}</p>
-      
-        
-          <div className='markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks] } /></div>
-          {props.show_buy_btn && <div className='flex justify-center mb-10'>
-      <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
-          <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
-          <button
-            
-            onClick={() => {addToCart(parseInt(props.id))}}
-          ><div style={{
-            backgroundColor: "#416045",
-            color: "white",
-          }}
-          className='inline bg-green-200 p-4 rounded sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
+
+
+        <div className='markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks]} /></div>
+        {props.show_buy_btn && <div className='flex justify-center mb-10'>
+          <div className="mt-4 grid grid-rows-none md:grid-cols-2 p-4 gap-4">
+            <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
+            <button
+
+              onClick={() => { addToCart(parseInt(props.id)) }}
+            ><div style={{
+              backgroundColor: "#416045",
+              color: "white",
+            }}
+              className='inline bg-green-200 p-4 rounded sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
           </div>
-        </div>  }
-          {props.show_booking_btn && <div className="flex space-x-2 justify-center mb-3 mt-10">
-                  <button 
-                  style={{
-                    backgroundColor: "#416045",
-                    color: "white",
-                  }}
-                    // onClick={contact}
-                  type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
-                    {locale === "en" ? "Book Now" : "Đặt Lịch Hẹn"}</button>
-                </div>}
-          {props.show_inquiry_form && <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
-            <div className="flex justify-center">
-              <div className="mb-3 w-full">
-                <p>{locale === "en" ? "Inquiry" : "Gửi"}</p>
-                <input
-                  type="text"
-                  className="
+        </div>}
+        {props.show_booking_btn && <div className="flex space-x-2 justify-center mb-3 mt-10">
+          <button
+            style={{
+              backgroundColor: "#416045",
+              color: "white",
+            }}
+            // onClick={contact}
+            type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
+            {locale === "en" ? "Book Now" : "Đặt Lịch Hẹn"}</button>
+        </div>}
+        {props.show_inquiry_form && <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
+          <div className="flex justify-center">
+            <div className="mb-3 w-full">
+              <p>{locale === "en" ? "Inquiry" : "Gửi"}</p>
+              <input
+                type="text"
+                className="
                     form-control
                     mt-3
                     mb-3
@@ -195,13 +147,13 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
-                  id="exampleFormControlInput1"
-                  placeholder={locale === "en" ? "Your name" : "Tên của bạn"}
-                  // onChange={(e) => {setName(e.target.value)}}
-                />
-                <input
-                  type="text"
-                  className="
+                id="exampleFormControlInput1"
+                placeholder={locale === "en" ? "Your name" : "Tên của bạn"}
+              // onChange={(e) => {setName(e.target.value)}}
+              />
+              <input
+                type="text"
+                className="
                     form-control
                     mb-3
                     block
@@ -219,13 +171,13 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
-                  id="exampleFormControlInput1"
-                  placeholder="Chọn gói"
-                  // onChange={(e) => {setEmail(e.target.value)}}
-                />
-                <input
-                  type="text"
-                  className="
+                id="exampleFormControlInput1"
+                placeholder="Chọn gói"
+              // onChange={(e) => {setEmail(e.target.value)}}
+              />
+              <input
+                type="text"
+                className="
                     form-control
                     mb-3
                     block
@@ -243,12 +195,12 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
-                  id="exampleFormControlInput1"
-                  placeholder={locale === "en" ? "Email" : "Email"}
-                  // onChange={(e) => {setPhoneNumber(e.target.value)}}
-                />
-                <textarea
-                  className="
+                id="exampleFormControlInput1"
+                placeholder={locale === "en" ? "Email" : "Email"}
+              // onChange={(e) => {setPhoneNumber(e.target.value)}}
+              />
+              <textarea
+                className="
                     form-control
                     mb-3
                     block
@@ -266,23 +218,23 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
-                  id="exampleFormControlInput1"
-                  // onChange={(e) => {setMessage(e.target.value)}}
-                  placeholder={locale === "en" ? "Message" : "Lời nhắn"}
-                />
-                <div className="flex space-x-2 justify-center">
-                  <button 
+                id="exampleFormControlInput1"
+                // onChange={(e) => {setMessage(e.target.value)}}
+                placeholder={locale === "en" ? "Message" : "Lời nhắn"}
+              />
+              <div className="flex space-x-2 justify-center">
+                <button
                   style={{
                     backgroundColor: "#416045",
                     color: "white",
                   }}
-                    // onClick={contact}
+                  // onClick={contact}
                   type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
-                    {locale === "en" ? "SEND" : "Gửi"}</button>
-                </div>
+                  {locale === "en" ? "SEND" : "Gửi"}</button>
               </div>
             </div>
-          </div>}
+          </div>
+        </div>}
       </div>
       <Contact />
     </>

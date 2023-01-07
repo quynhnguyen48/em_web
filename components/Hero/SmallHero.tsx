@@ -40,8 +40,8 @@ const SmallHero = ({ heading, message, image_url, sub_message, image_placeholder
                 src={image_url}
                 />
       <div className="p-5 text-black z-[2] max-w-[1048px] text-center m-auto">
-        <h2 className="text-5xl ">{heading}</h2>
-        <p className="py-5 text-xl sm:text-lg">{message}</p>
+        {heading && <h2 className="text-5xl ">{heading}</h2>}
+        {message && <p className="py-5 text-xl sm:text-lg">{message}</p>}
         {sub_message && sub_message.map((s => <p>- {s}</p>))}
       </div>
     </div>

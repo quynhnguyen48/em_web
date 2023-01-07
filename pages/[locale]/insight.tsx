@@ -122,11 +122,14 @@ const Home: NextPage = () => {
             <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-pixabay-219932-1024x685.jpg" />
 
           </div>
+          
+          <LinkComponent skipLocaleHandling={undefined} locale={""} href={"/knowledge"}>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className='text-center text-2xl font-medium mb-4'>{locale === "en" ? "Knowledge" : "Kiến thức y khoa"}</p>
             <img src="https://echomedi.com/wp-content/uploads/2022/07/pexels-lisa-1662145-1024x683.jpg" />
 
           </div>
+          </LinkComponent>
         </div>
         <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
           <div className="flex justify-center">
