@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu, AiOutlineArrowLeft } from "react-icons/ai";
 import { useRouter } from "next/router";
 import IgImg3 from "../../assets/uk.png";
 import IgImg4 from "../../assets/vietnam.png";
@@ -320,7 +320,7 @@ const NavBar = () => {
                       <p className="text-sm underline underline-offset-8 mb-4 px-2">
                         {tranlsate("in_clinic_service", locale ? locale : "")}
                       </p>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent
                           href={"/packages/cham-soc-phong-ngua"}
                           locale={""}
@@ -329,7 +329,7 @@ const NavBar = () => {
                           {tranlsate("preventive_care", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent
                           href={"/packages/dieu-tri-ban-dau"}
                           locale={""}
@@ -338,7 +338,7 @@ const NavBar = () => {
                           {tranlsate("primary_care", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent
                           href={"/packages/quan-ly-benh-man-tinh"}
                           locale={""}
@@ -347,7 +347,7 @@ const NavBar = () => {
                           {tranlsate("on_going_care", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent
                           href={"/packages/suc-khoe-toan-dien"}
                           locale={""}
@@ -361,7 +361,7 @@ const NavBar = () => {
                       <p className="text-sm underline  underline-offset-8 mb-4 text-sm px-2">
                         {tranlsate("home_service", locale)}
                       </p>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent
                           href={"/packages/cham-soc-tai-nha"}
                           locale={""}
@@ -370,10 +370,10 @@ const NavBar = () => {
                           {tranlsate("home_visits", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         {tranlsate("telemedicine", locale)}
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent
                           href={
                             "/services/kham-benh-tu-xa-khach-hang-tai-viet-nam"
@@ -387,7 +387,7 @@ const NavBar = () => {
                             : "Khách Hàng Tại Việt Nam"}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1 px-2 py-1">
                         <LinkComponent
                           href={
                             "/services/kham-benh-tu-xa-viet-kieu-o-nuoc-ngoai"
@@ -439,7 +439,7 @@ const NavBar = () => {
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-1 p-5 text-base">
                     <div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/packages/goi-cham-soc-phong-ngua"}
                           locale={""}
@@ -448,7 +448,7 @@ const NavBar = () => {
                           {tranlsate("preventive_care_packages", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/packages/goi-dieu-tri-ban-dau"}
                           locale={""}
@@ -457,7 +457,7 @@ const NavBar = () => {
                           {tranlsate("primary_care_packages", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/packages/goi-quan-ly-benh-man-tinh"}
                           locale={""}
@@ -466,7 +466,7 @@ const NavBar = () => {
                           {tranlsate("on_going_care_packages", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/packages/goi-suc-khoe-toan-dien"}
                           locale={""}
@@ -475,7 +475,7 @@ const NavBar = () => {
                           {tranlsate("wellness_packages", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/packages/goi-xet-nghiem-di-truyen"}
                           locale={""}
@@ -520,7 +520,7 @@ const NavBar = () => {
                       <p className="pl-2 text-sm underline  underline-offset-8 mb-4 text-sm">
                         {tranlsate("monthly_packages", locale ? locale : "")}
                       </p>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={
                             "/products/goi-cham-soc-suc-khoe-cho-nguoi-lon-tuoi-tuoi-60"
@@ -531,7 +531,7 @@ const NavBar = () => {
                           {tranlsate("elderly", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={
                             "/products/goi-cham-soc-suc-khoe-cho-nam-gioi-do-tuoi-trung-nien-tuoi-45"
@@ -542,7 +542,7 @@ const NavBar = () => {
                           {tranlsate("middle_aged_man", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={
                             "/products/goi-cham-soc-suc-khoe-cho-nu-gioi-do-tuoi-trung-nien-tuoi-45"
@@ -553,7 +553,7 @@ const NavBar = () => {
                           {tranlsate("middle_aged_woman", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={
                             "/products/goi-cham-soc-suc-khoe-cho-nguoi-truong-thanh-tuoi-18-45"
@@ -564,7 +564,7 @@ const NavBar = () => {
                           {tranlsate("adult", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={
                             "/products/goi-cham-soc-suc-khoe-cho-thanh-thieu-nien-tuoi-13-19"
@@ -575,7 +575,7 @@ const NavBar = () => {
                           {tranlsate("teenager", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={
                             "/products/goi-cham-soc-suc-khoe-cho-tre-em-tuoi-6-12"
@@ -591,7 +591,7 @@ const NavBar = () => {
                       <p className="pl-2 text-sm underline  underline-offset-8 mb-4 text-sm">
                         {tranlsate("health_concern", locale)}
                       </p>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-ho-tro-giac-ngu"}
                           locale={""}
@@ -600,7 +600,7 @@ const NavBar = () => {
                           {tranlsate("sleep", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-ho-tro-cai-thuoc-la"}
                           locale={""}
@@ -609,7 +609,7 @@ const NavBar = () => {
                           {tranlsate("smoking_cessation", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-ho-tro-giam-can"}
                           locale={""}
@@ -618,7 +618,7 @@ const NavBar = () => {
                           {tranlsate("weight_loss", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={
                             "/products/goi-cham-soc-da-va-ngan-ngua-lao-hoa"
@@ -629,7 +629,7 @@ const NavBar = () => {
                           {tranlsate("skin_care_anti_aging", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-cham-soc-va-phuc-hoi-toc-mong"}
                           locale={""}
@@ -638,7 +638,7 @@ const NavBar = () => {
                           {tranlsate("hair_nails_treatment", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={
                             "/products/goi-cham-soc-suc-khoe-cho-phu-nu-mang-thai"
@@ -651,7 +651,7 @@ const NavBar = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="mt-9 mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mt-9 mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-suc-khoe-sinh-ly-nam"}
                           locale={""}
@@ -660,7 +660,7 @@ const NavBar = () => {
                           {tranlsate("men_sexual_health", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-suc-khoe-sinh-ly-nu"}
                           locale={""}
@@ -669,7 +669,7 @@ const NavBar = () => {
                           {tranlsate("women_sexual_health", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-ho-tro-suc-khoe-tim-mach"}
                           locale={""}
@@ -678,7 +678,7 @@ const NavBar = () => {
                           {tranlsate("heart_blood_circulation", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-ho-tro-tieu-hoa"}
                           locale={""}
@@ -687,7 +687,7 @@ const NavBar = () => {
                           {tranlsate("digestive_system", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-phong-ngua-benh-xuong-khop"}
                           locale={""}
@@ -696,7 +696,7 @@ const NavBar = () => {
                           {tranlsate("bone_joint_health", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                      <div className="mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-tang-suc-de-khoang-va-mien-dich"}
                           locale={""}
@@ -708,7 +708,7 @@ const NavBar = () => {
                       
                     </div>
                     <div>
-                    <div className="mt-9 mb-2 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
+                    <div className="mt-9 mb-4 text-sm hover:bg-green-100 hover:underline rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-cai-thien-tri-nao"}
                           locale={""}
@@ -1097,6 +1097,19 @@ const NavBar = () => {
         >
           <AiOutlineClose size={20} />{" "}
         </button>
+        <button
+          style={{
+            left: "20px",
+            top: "20px",
+            position: "absolute",
+          }}
+          onClick={() => {
+            handleNav1();
+            handleNav();
+          }}
+        >
+          <AiOutlineArrowLeft size={20} />{" "}
+        </button>
         <ul className="h-full p-5">
           <img
             className=""
@@ -1106,7 +1119,7 @@ const NavBar = () => {
           <p className="text-xl underline mb-5">
             {tranlsate("in_clinic_service", locale)}
           </p>
-          <div className="mb-2" onClick={handleNav1}>
+          <div className="mb-4 text-lg" onClick={handleNav1}>
             <LinkComponent
               locale=""
               href={"/packages/cham-soc-phong-ngua"}
@@ -1115,7 +1128,7 @@ const NavBar = () => {
               {tranlsate("preventive_care", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav1}>
+          <div className="mb-4 text-lg" onClick={handleNav1}>
             <LinkComponent
               locale=""
               skipLocaleHandling={false}
@@ -1124,7 +1137,7 @@ const NavBar = () => {
               {tranlsate("primary_care", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav1}>
+          <div className="mb-4 text-lg" onClick={handleNav1}>
             <LinkComponent
               locale=""
               skipLocaleHandling={false}
@@ -1133,7 +1146,7 @@ const NavBar = () => {
               {tranlsate("on_going_care", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav1}>
+          <div className="mb-4 text-lg" onClick={handleNav1}>
             <LinkComponent
               locale=""
               skipLocaleHandling={false}
@@ -1145,7 +1158,7 @@ const NavBar = () => {
           <p className="text-lg underline mt-10 mb-5">
             {tranlsate("home_service", locale)}
           </p>
-          <div className="mb-2" onClick={handleNav1}>
+          <div className="mb-4 text-lg" onClick={handleNav1}>
             <LinkComponent
               locale=""
               skipLocaleHandling={false}
@@ -1154,12 +1167,12 @@ const NavBar = () => {
               {tranlsate("home_visits", locale)}
             </LinkComponent>
           </div>
-          {/* <div className="mb-2" onClick={handleNav1}>
+          {/* <div className="mb-4 text-lg" onClick={handleNav1}>
               <LinkComponent locale="" skipLocaleHandling={false} href={"/packages/cham-soc-tu-xa"}>
                 {tranlsate("telemedicine", locale)}
               </LinkComponent>
             </div> */}
-          <div className="mb-2" onClick={handleNav1}>
+          <div className="mb-4 text-lg" onClick={handleNav1}>
             <LinkComponent
               locale=""
               skipLocaleHandling={false}
@@ -1170,7 +1183,7 @@ const NavBar = () => {
                 : "Khách Hàng Tại Việt Nam"}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav1}>
+          <div className="mb-4 text-lg" onClick={handleNav1}>
             <LinkComponent
               locale=""
               skipLocaleHandling={false}
@@ -1244,13 +1257,26 @@ const NavBar = () => {
         >
           <AiOutlineClose size={20} />{" "}
         </button>
+        <button
+          style={{
+            left: "20px",
+            top: "20px",
+            position: "absolute",
+          }}
+          onClick={() => {
+            handleNav2();
+            handleNav();
+          }}
+        >
+          <AiOutlineArrowLeft size={20} />{" "}
+        </button>
         <ul className="h-full p-5">
           <img
             className=""
             src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
 
-          <div className="mb-2" onClick={handleNav2}>
+          <div className="mb-4 text-lg" onClick={handleNav2}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1259,7 +1285,7 @@ const NavBar = () => {
               {tranlsate("preventive_care_packages", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav2}>
+          <div className="mb-4 text-lg" onClick={handleNav2}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1268,7 +1294,7 @@ const NavBar = () => {
               {tranlsate("primary_care_packages", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav2}>
+          <div className="mb-4 text-lg" onClick={handleNav2}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1277,7 +1303,7 @@ const NavBar = () => {
               {tranlsate("on_going_care_packages", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav2}>
+          <div className="mb-4 text-lg" onClick={handleNav2}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1286,7 +1312,7 @@ const NavBar = () => {
               {tranlsate("wellness_packages", locale)}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav2}>
+          <div className="mb-4 text-lg" onClick={handleNav2}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1358,6 +1384,19 @@ const NavBar = () => {
         >
           <AiOutlineClose size={20} />{" "}
         </button>
+        <button
+          style={{
+            left: "20px",
+            top: "20px",
+            position: "absolute",
+          }}
+          onClick={() => {
+            handleNav3();
+            handleNav();
+          }}
+        >
+          <AiOutlineArrowLeft size={20} />{" "}
+        </button>
         <ul className="h-full p-5 overflow-auto">
           <img
             className=""
@@ -1367,7 +1406,7 @@ const NavBar = () => {
           <p className="underline text-xl my-5">
             {tranlsate("monthly_packages", locale ? locale : "")}
           </p>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1378,7 +1417,7 @@ const NavBar = () => {
               {tranlsate("elderly", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1389,7 +1428,7 @@ const NavBar = () => {
               {tranlsate("middle_aged_man", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1400,7 +1439,7 @@ const NavBar = () => {
               {tranlsate("middle_aged_woman", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1411,7 +1450,7 @@ const NavBar = () => {
               {tranlsate("adult", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1425,7 +1464,7 @@ const NavBar = () => {
           <p className="underline text-xl my-5">
             {tranlsate("health_concern", locale ? locale : "")}
           </p>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1434,7 +1473,7 @@ const NavBar = () => {
               {tranlsate("sleep", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1443,7 +1482,7 @@ const NavBar = () => {
               {tranlsate("smoking_cessation", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1452,7 +1491,7 @@ const NavBar = () => {
               {tranlsate("weight_loss", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1461,7 +1500,7 @@ const NavBar = () => {
               {tranlsate("skin_care_anti_aging", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1470,7 +1509,7 @@ const NavBar = () => {
               {tranlsate("hair_nails_treatment", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1479,7 +1518,7 @@ const NavBar = () => {
               {tranlsate("pregnancy_care", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1488,7 +1527,7 @@ const NavBar = () => {
               {tranlsate("men_sexual_health", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1497,7 +1536,7 @@ const NavBar = () => {
               {tranlsate("women_sexual_health", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1506,7 +1545,7 @@ const NavBar = () => {
               {tranlsate("heart_blood_circulation", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1515,7 +1554,7 @@ const NavBar = () => {
               {tranlsate("digestive_system", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1524,7 +1563,7 @@ const NavBar = () => {
               {tranlsate("bone_joint_health", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
@@ -1533,7 +1572,7 @@ const NavBar = () => {
               {tranlsate("immune_system", locale ? locale : "")}
             </LinkComponent>
           </div>
-          <div className="mb-2" onClick={handleNav3}>
+          <div className="mb-4 text-lg" onClick={handleNav3}>
             <LinkComponent
               skipLocaleHandling={false}
               locale=""
