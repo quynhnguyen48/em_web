@@ -759,7 +759,7 @@ const NavBar = () => {
             </div>
           </li>
         )}
-        <li className="py-4 flex mr-2">
+        <li className="py-4 flex mr-4">
           <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
             <span
               onClick={handleNav}

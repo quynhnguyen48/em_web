@@ -36,28 +36,6 @@ const getStaticPaths = () => ({
 
 export { getStaticPaths, getStaticProps }
 
-const tranlsate = (term: string, locale: string) => {
-  if (locale === "en") {
-    switch (term) {
-      case "contact_info":
-        return "Contact Information";
-      case "become_a_member":
-        return "Become a member";
-      case "gifting":
-        return "Gifting";
-    }
-  } else {
-    switch (term) {
-      case "contact_info":
-        return "Thông Tin Liên Hệ";
-      case "become_a_member":
-        return "Trở Thành Thành Viên";
-      case "gifting":
-        return "Quà tặng";
-    }
-  }
-}
-
 const Home: NextPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -131,11 +109,11 @@ const Home: NextPage = () => {
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       {/* <Hero heading={locale === "en" ? "Login" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"}/> */}
-      <SmallHero heading={locale === "en" ? "Login" : "Đăng nhập"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"} />
+      <SmallHero heading={""} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"} />
       <div className="max-w-[1240px] mx-auto p-4 text-left mt-4">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <p className="text-2xl font-bold mb-4">{locale == "vi" ? "Đăng nhập" : "Login"}</p>
+            <p className="text-2xl mb-4">{locale == "vi" ? "Đăng nhập" : "Login"}</p>
             <div className="flex justify-center">
               <div className="mb-3 w-full">
                 <input
@@ -196,7 +174,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-            <p className="text-2xl font-bold mb-4">{locale === "en" ? "Register" : "Đăng ký"}</p>
+            <p className="text-2xl mb-4">{locale === "en" ? "Register" : "Đăng ký"}</p>
             <div className="flex justify-center">
               <div className="mb-3 w-full">
                 <input
