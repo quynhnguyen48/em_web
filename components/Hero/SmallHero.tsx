@@ -31,11 +31,11 @@ const SmallHero = ({ heading, message, image_url, sub_message, image_placeholder
     >
       <img 
                   style={{
-                    height: "200px",
+                    height: "350px",
                     width: "100%",
                     // marginTop: "100px",
                     objectFit: "cover",
-                    objectPosition: "center"
+                    objectPosition: "top"
                   }}
                 src={image_url}
                 />
