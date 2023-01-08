@@ -92,13 +92,16 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         image_url={"https://api.echomedi.me" + props.image_url} 
         image_placeholder_url={"https://api.echomedi.me" + props.image_placeholder_url} 
         /> */}
-      <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-12 gap-4">
-        <div>
+        <div className="px-4 mt-10 mx-auto max-w-[1048px] text-center">
           <p className='text-3xl text-left inline'>{locale === "en" ? props.en_label : props.label}</p>
-          <img className='p-10 pl-0' src={"https://api.echomedi.me" + props.image_url}/>
+        </div>
+      <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-12 gap-4">
+
+        <div>
+          <img className='pl-0 p-4' src={"https://api.echomedi.me" + props.image_url}/>
           
         </div>
-        <div className='mb-20 justify-center flex flex-col'>
+        <div className='mb-20 justify-center flex flex-col p-4'>
           <ul className='list-disc ml-5'>
             {
               props.medicines?.map((m: any) => <li className=''>{locale === "en" ? m.en_label : m.label}</li>)
