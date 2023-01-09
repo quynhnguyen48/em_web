@@ -50,6 +50,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
       const token = localStorage.getItem('token');
       axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
         "service_id": id,
+        "quantity" : 1,
       }, {
         headers: {
           'Authorization': `Bearer ${token}`

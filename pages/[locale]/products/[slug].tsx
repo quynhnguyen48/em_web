@@ -40,6 +40,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
   const [logged, setLogged] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
@@ -53,6 +54,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
       const token = localStorage.getItem('token');
       axios.post('https://api.echomedi.me/api/product/addProductToCart', {
         "product_id": id,
+        "quantity": quantity
       }, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -108,7 +110,11 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
             }
           </ul>
           <p className='mt-5 text-justify'>{props.desc}</p>
-          <p className='mt-10 font-semibold'>{numberWithCommas(props.price)}đ</p>
+          <p className='mt-10 font-semibold mb-2'>{numberWithCommas(props.price)}đ</p>
+          <div className='flex'>
+            <label className='mr-4'>{locale == "en" ? "Quantity" : "Số lượng"}</label>
+            <input onChange={e => setQuantity(parseInt(e.target.value))} value={quantity} className='border border-1 w-12 text-center' type="number" id="quantity" name="quantity"/>
+          </div>
           <button
             
             className='mt-10'

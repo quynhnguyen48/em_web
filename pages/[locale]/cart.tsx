@@ -81,7 +81,7 @@ const Home: NextPage = () => {
           let total = 0;
           let lines = response.data.user.cart_lines ?? [];
           lines.forEach((l:any) => {
-            total += l.product ? l.product.price :  parseInt(l.service.price);
+            total += (l.product ? l.product.price :  parseInt(l.service.price)) * l.quantity;
           })
           setTotalPrice(total);
           setCartLines(lines);
@@ -105,8 +105,8 @@ const Home: NextPage = () => {
           }
         })
         .then(function (response) {
-          // console.log('response', response);
           window?.open(response?.data?.url, '_blank')?.focus();
+          location.href= "/order_detail/?code=" + response?.data?.code;
         })
         .catch(function (error) {
         })
@@ -179,8 +179,9 @@ const Home: NextPage = () => {
               <img className="h-24 object-contain" src={"https://api.echomedi.me" + line.product?.image?.url} alt=""/>
             </div>
             <div className="flex flex-col justify-between ml-4 flex-grow">
-              <span className="font-bold text-sm">{line.product? line.product.label : line.service.label}</span>
-              <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs">{locale === "en" ? "Remove" : "Xoá"}</a>
+              <span className="font-bold text-sm">{(line.product? line.product.label : line.service.label)}</span>
+              <span className="font-bold text-sm">{locale =="en" ? "Quantity" : "Số lượng"} {line.quantity}</span>
+              {/* <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs">{locale === "en" ? "Remove" : "Xoá"}</a> */}
             </div>
           </div>
           {/* <div className="flex justify-center w-1/5">
@@ -196,7 +197,7 @@ const Home: NextPage = () => {
           {/* {lines.map((line:any) => 
           <span className="text-center w-1/5 font-semibold text-sm">{line.product.price}</span>
             )} */}
-          <span className="text-center w-1/5 font-semibold text-sm">{numberWithCommas(line.product ? line.product.price : line.service.price)}đ</span>
+          <span className="text-center w-1/5 font-semibold text-sm">{numberWithCommas((line.product ? line.product.price : line.service.price) * line.quantity)}đ</span>
         </div>)}
 
         {/* <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
