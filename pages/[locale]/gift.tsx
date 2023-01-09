@@ -64,7 +64,7 @@ const Home: NextPage = () => {
 
             {/* <Slider slides={SliderData} />
       <Instagram /> */}
-            <SmallHero heading={locale === "en" ? "Gifting" : "Gửi quà"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"} />
+            <SmallHero heading={locale === "en" ? "Gifting" : "Gửi quà"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/101534_ecdac8cf7e.jpg?updated_at=2023-01-09T03:01:38.756Z"} />
             <div className="max-w-[1240px] mx-auto p-4 text-center">
                 <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 pt-12">
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
