@@ -46,7 +46,6 @@ const Order = () => {
       }
     })
             .then(function (response) {
-                console.log('response', response);
                 setOrders(response.data.orders?.filter((o: any) => o.code))
             })
             .catch(function (error) {

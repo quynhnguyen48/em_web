@@ -41,7 +41,6 @@ const Order = () => {
     if (code) {
     axios.get('https://api.echomedi.me' + '/api/orders/getOrderDetailByCode/' + code)
             .then(function (response) {
-                console.log('response', response.data.order.cart.cart_lines);
                 setCartLines(response.data.order.cart.cart_lines);
                 toast.success('Thành công');
                 setData(response.data.order);

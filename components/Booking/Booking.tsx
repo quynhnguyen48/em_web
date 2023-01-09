@@ -84,7 +84,6 @@ const contact = () => {
       branch,
       bookingDate: timeSlot,
     }};
-    console.log("🚀 ~ file: booking.tsx:78 ~ contact ~ payload", payload);
 
     axios
     .post("https://api.echomedi.me" + 

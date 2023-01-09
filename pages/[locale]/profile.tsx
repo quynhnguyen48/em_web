@@ -46,11 +46,8 @@ const Order = () => {
         }
       })
               .then(function (response) {
-                  // console.log('response', response.data.order.cart.cart_lines);
-                  // setCartLines(response.data.order.cart.cart_lines);
                   setData(response.data.user)
                   toast.success('Thành công');
-                  // setData(response.data.order);
               })
               .catch(function (error) {
               });

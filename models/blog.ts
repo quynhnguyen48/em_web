@@ -24,7 +24,6 @@ export class BlogApi {
       .then((response) => response.json());
     var blogs = v.blog;
     var result = new Blog();
-    console.log('blogs', blogs)
     if (blogs) {
       // result.id = blogs.id;
       result.label = blogs.label;
