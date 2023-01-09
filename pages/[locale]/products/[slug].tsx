@@ -94,14 +94,18 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         image_url={"https://api.echomedi.me" + props.image_url} 
         image_placeholder_url={"https://api.echomedi.me" + props.image_placeholder_url} 
         /> */}
-        <div className="px-4 mt-10 mx-auto max-w-[1048px] text-center">
-          <p className='text-3xl text-left inline'>{locale === "en" ? props.en_label : props.label}</p>
-        </div>
+      <div className="px-4 mt-10 mx-auto max-w-[1048px] text-center">
+        <p className='text-3xl text-left inline'>{locale === "en" ? props.en_label : props.label}</p>
+      </div>
       <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-12 gap-4">
 
         <div>
-          <img className='pl-0 p-4' src={"https://api.echomedi.me" + props.image_url}/>
-          
+          {/* <img className='pl-0 p-4' src={"https://api.echomedi.me" + props.image_url} /> */}
+          <LazyLoadImage
+                src={"https://api.echomedi.me" + props.image_url} // use normal <img> attributes as props
+                placeholderSrc={"https://api.echomedi.me" + props.image_placeholder_url}
+              // width={400} 
+              />
         </div>
         <div className='mb-20 justify-center flex flex-col p-4'>
           <ul className='list-disc ml-5'>
@@ -113,34 +117,34 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
           <p className='mt-10 font-semibold mb-2'>{numberWithCommas(props.price)}đ</p>
           <div className='flex'>
             <label className='mr-4'>{locale == "en" ? "Quantity" : "Số lượng"}</label>
-            <input onChange={e => setQuantity(parseInt(e.target.value))} value={quantity} className='border border-1 w-12 text-center' type="number" id="quantity" name="quantity"/>
+            <input onChange={e => setQuantity(parseInt(e.target.value))} value={quantity} className='border border-1 w-12 text-center' type="number" id="quantity" name="quantity" />
           </div>
           <button
-            
+
             className='mt-10'
             onClick={() => { addToCart(parseInt(props.id)) }}
-          ><div 
-          style={{
-            backgroundColor: "#416045",
-            color: "white",
-          }}
-          className='mt-10 inline bg-green-200 p-4 rounded mt-20 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
+          ><div
+            style={{
+              backgroundColor: "#416045",
+              color: "white",
+            }}
+            className='mt-10 inline bg-green-200 p-4 rounded mt-20 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
         </div>
         {/* <button
             onClick={() => {addToCart(parseInt(props.id))}}
           ><div className='inline bg-green-200 p-4 rounded-full sm:ml-5 ml-0 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button> */}
       </div>
 
-<div className="max-w-[1048px] mx-auto py-16 text-left">
-        
+      <div className="max-w-[1048px] mx-auto py-16 text-left">
+
         {
           props.medicines?.map((m: any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 m-auto">
               <LazyLoadImage
                 src={"https://api.echomedi.me" + m.image?.url} // use normal <img> attributes as props
                 placeholderSrc={"https://api.echomedi.me" + m.image?.formats.thumbnail.url}
-                // width={400} 
-                />
+              // width={400} 
+              />
             </div>
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col justify-center">
               <p className='font-bold text-xl mb-2'>{locale === "en" ? m.en_label : m.label}</p>
@@ -148,7 +152,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
             </div>
           </div>)
         }
-      </div> 
+      </div>
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       {/* <Portfolio /> */}
