@@ -121,7 +121,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
 
         <div className='markdown-container'>
           {/* <ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks]} /> */}
-          {parse(locale == "en" ? props.en_detail : props.detail)}
+          {parse(locale == "en" ? (props.en_detail ?? "") : (props.detail ?? ""))}
           </div>
         {props.show_buy_btn && <div className='flex justify-center mb-10'>
           <div className="mt-4 grid grid-rows-none md:grid-cols-2 p-4 gap-4">
