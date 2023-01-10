@@ -303,7 +303,7 @@ const Home: NextPage = () => {
                   </button></div>
                   <div className="w-auto m-auto sm:mt-0 mt-5 hover:underlinetext-center bg-transparent hover:bg-emgreen text-emgreen  hover:text-white py-2 px-4 border border-green-500 hover:border-transparent hover:text-white rounded bg-emgreen border-emgreen text-center">
 
-                    <LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
+                    <LinkComponent skipLocaleHandling={false} href="/services/thanh-vien-ngoai-kieu-ngan-han-2-tuan" locale="">{locale == "en" ? "Learn more" : "Tìm hiểu thêm"}</LinkComponent></div>
                 </div>
               </div>
             } />
