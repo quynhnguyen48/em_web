@@ -44,6 +44,10 @@ type IBlogUrl = {
 const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone_number, setPhoneNumber] = useState("");
+  const [message, setMessage] = useState("");
 
   const addToCart = (id: number) => {
     if (localStorage.getItem('token')) {
@@ -71,6 +75,21 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
       toast.success('Vui lòng đăng nhập.');
       router.push("/login", "/login", { locale });
     }
+  }
+
+  const contact = () => {
+    axios.post('https://api.echomedi.me' + '/api/packages/inquiryService', {
+      "name": name,
+      "email": email,
+      "phone_number": phone_number,
+      "message": message,
+      "email_title": props.label,
+    })
+      .then(function (response) {
+        toast.success('Thành công');
+      })
+      .catch(function (error) {
+      });
   }
 
   return (
@@ -126,7 +145,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
         {props.show_inquiry_form && <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
           <div className="flex justify-center">
             <div className="mb-3 w-full">
-              <p>{locale === "en" ? "Inquiry" : "Gửi"}</p>
+              <p className='text-3xl text-center mb-4'>{locale === "en" ? "Inquiry" : "Hỏi thêm"}</p>
               <input
                 type="text"
                 className="
@@ -150,9 +169,9 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                   "
                 id="exampleFormControlInput1"
                 placeholder={locale === "en" ? "Your name" : "Tên của bạn"}
-              // onChange={(e) => {setName(e.target.value)}}
+              onChange={(e) => {setName(e.target.value)}}
               />
-              <input
+              {/* <input
                 type="text"
                 className="
                     form-control
@@ -175,7 +194,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                 id="exampleFormControlInput1"
                 placeholder="Chọn gói"
               // onChange={(e) => {setEmail(e.target.value)}}
-              />
+              /> */}
               <input
                 type="text"
                 className="
@@ -198,7 +217,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                   "
                 id="exampleFormControlInput1"
                 placeholder={locale === "en" ? "Email" : "Email"}
-              // onChange={(e) => {setPhoneNumber(e.target.value)}}
+              onChange={(e) => {setEmail(e.target.value)}}
               />
               <textarea
                 className="
@@ -220,7 +239,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
                 id="exampleFormControlInput1"
-                // onChange={(e) => {setMessage(e.target.value)}}
+                onChange={(e) => {setMessage(e.target.value)}}
                 placeholder={locale === "en" ? "Message" : "Lời nhắn"}
               />
               <div className="flex space-x-2 justify-center">
@@ -229,7 +248,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     backgroundColor: "#416045",
                     color: "white",
                   }}
-                  // onClick={contact}
+                  onClick={contact}
                   type="button" className="inline-block px-6 py-2.5 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-300 active:shadow-lg transition duration-150 ease-in-out bg-green-200 text-black rounded-full">
                   {locale === "en" ? "SEND" : "Gửi"}</button>
               </div>
