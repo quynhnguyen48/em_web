@@ -70,13 +70,34 @@ const Home: NextPage = () => {
   const [active, setActive] = useState(-1);
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
+  const [option, setOption] = useState("");
+
+  const getPackage = () => {
+    switch (option) {
+      case "Option 1":
+        return "Thành viên bạc";
+      case "Option 2":
+        return "Thành viên vàng";
+      case "Option 3":
+        return "Thành viên bạch kim";
+      case "Option 4":
+        return "Gói gia đình";
+      case "Option 5":
+        return "Gói doanh nghiệp";
+      case "Option 6":
+        return "Thành viên ngoại kiều";
+      case "Option 7":
+        return "Thành viên ngoại kiều ngắn hạn (2 tuần)";
+    }
+  }
 
   const contact = () => {
     axios.post('https://api.echomedi.me' + '/api/packages/inquiryMembership', {
       "name": name,
       "email": email,
       "phone_number": phone_number,
-      "message": message
+      "message": message,
+      "option": getPackage(),
     })
       .then(function (response) {
         toast.success('Thành công');
@@ -356,16 +377,21 @@ const Home: NextPage = () => {
                     ease-in-out
                     m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
-                <select className="px-3 w-full
+                <select 
+                  onChange={e => {
+                    setOption(e.target.value);
+                    console.log('eee', e.target.value);
+                  }}
+                className="px-3 w-full
                     py-1.5">
-                  <option value="Option 1">Chọn gói</option>
+                  <option value="Option 0">Chọn gói</option>
                   <option value="Option 1">Thành viên bạc</option>
                   <option value="Option 2">Thành viên vàng</option>
                   <option value="Option 3">Thành viên bạch kim</option>
-                  <option value="Option 3">Gói gia đình</option>
-                  <option value="Option 3">Gói doanh nghiệp</option>
-                  <option value="Option 3">Thành viên ngoại kiều</option>
-                  <option value="Option 3">Thành viên ngoại kiều ngắn hạn (2 tuần)</option>
+                  <option value="Option 4">Gói gia đình</option>
+                  <option value="Option 5">Gói doanh nghiệp</option>
+                  <option value="Option 6">Thành viên ngoại kiều</option>
+                  <option value="Option 7">Thành viên ngoại kiều ngắn hạn (2 tuần)</option>
                 </select>
               </div>
               <input
