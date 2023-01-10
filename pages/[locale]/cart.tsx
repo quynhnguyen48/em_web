@@ -181,7 +181,20 @@ const Home: NextPage = () => {
             <div className="flex flex-col justify-between ml-4 flex-grow">
               <span className="font-bold text-sm">{(line.product? line.product.label : line.service.label)}</span>
               <span className="font-bold text-sm">{locale =="en" ? "Quantity" : "Số lượng"} {line.quantity}</span>
-              {/* <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs">{locale === "en" ? "Remove" : "Xoá"}</a> */}
+              <button 
+                onClick={() => {
+                  axios.delete('https://api.echomedi.me/api/cart-lines/' + line.id, {},
+                  )
+                  .then(function (response) {
+                    location.reload();
+                  })
+                  .catch(function (error) {
+                  })
+                  .finally(() => {
+                    // toast.dismiss(toastId);
+                  });
+                }}
+              className="block-inline w-10 font-semibold hover:text-red-500 text-gray-500 text-xs">{locale === "en" ? "Remove" : "Xoá"}</button>
             </div>
           </div>
           {/* <div className="flex justify-center w-1/5">
