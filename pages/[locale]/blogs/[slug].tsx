@@ -60,7 +60,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsBlog>) => {
       <div className="p-4 mx-auto max-w-[864px] mb-10">
         <h1 className='mb-8 text-center text-3xl'>{props.label}</h1>
         <div className='markdown-container'>
-          {parse(props.article)}
+          {parse(props.article ?? "")}
         </div>
       </div>
 

@@ -116,7 +116,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                 src={"https://api.echomedi.me" + props.image_url}
                 /> */}
       <div className="max-w-[1048px] mx-auto text-justify p-5">
-        <p className='text-3xl mb-8 border-b border-black'>{locale == "en" ? props.en_label : props.label}</p>
+        <p className='text-3xl mb-8 border-b border-black'>{locale == "en" ? (props.en_label ?? "") : (props.label ?? "")}</p>
 
 
         <div className='markdown-container'>
