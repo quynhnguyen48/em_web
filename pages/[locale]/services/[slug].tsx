@@ -20,6 +20,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import React, { useEffect, useState } from "react";
 import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks';
+import parse from 'html-react-parser';
 
 import { makeStaticProps, getStaticPathsServices, getStaticPropsService } from '../../../lib/getStatic';
 import SmallHero from '../../../components/Hero/SmallHero';
@@ -118,7 +119,10 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
         <p className='text-3xl mb-8 border-b border-black'>{locale == "en" ? props.en_label : props.label}</p>
 
 
-        <div className='markdown-container'><ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks]} /></div>
+        <div className='markdown-container'>
+          {/* <ReactMarkdown children={locale === "en" ? props.en_detail : props.detail} remarkPlugins={[remarkGfm, remarkBreaks]} /> */}
+          {parse(locale == "en" ? props.en_detail : props.detail)}
+          </div>
         {props.show_buy_btn && <div className='flex justify-center mb-10'>
           <div className="mt-4 grid grid-rows-none md:grid-cols-2 p-4 gap-4">
             <p className='text-3xl text-left inline'>{numberWithCommas(props.price)}đ</p>
