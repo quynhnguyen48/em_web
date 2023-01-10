@@ -293,18 +293,18 @@ const NavBar = () => {
         className="hidden md:flex sm:ml-20 ml-0"
       >
         <li className="py-4 flex">
-          <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
-            <LinkComponent locale={""} skipLocaleHandling={false} href="/about">
+        <LinkComponent locale={""} skipLocaleHandling={false} href="/about">
+          <div className="h-full flex items-center m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
               {locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}
-            </LinkComponent>
           </div>
+          </LinkComponent>
         </li>
-        <li className="py-4">
+        <li className="py-4 flex">
           {/* <Link href="#services">{locale ==="en" ? "Services" :"Các Dịch Vụ"}</Link> */}
-          <div className="flex">
+          <div className="m-auto text-sm hover:bg-green-100 hover:cursor-pointer rounded">
             {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
             <div className="relative group ">
-              <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
+              <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-5 py-3  mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                 <span className="mr-2 text-sm">
                   {tranlsate("services", locale)}
                 </span>
@@ -312,7 +312,7 @@ const NavBar = () => {
               </button>
               <div
                 className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen"
-                style={{ width: "500px" }}
+                style={{ width: "500px", marginLeft: "-150px" }}
               >
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg text-black bg-white border border-black">
                   <div className="grid grid-cols-2 gap-4 md:grid-cols-2 p-5 text-base">
@@ -421,20 +421,16 @@ const NavBar = () => {
         </li>
         <li className="py-4 flex">
           <div className="flex">
-            {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
-            <div className="relative group ">
-              <button
-                style={{ height: "40px" }}
-                className="hover:bg-green-100 text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none"
-              >
+          <div className="relative group ">
+              <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-5 py-3  mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                 <span className="mr-2 text-sm">
-                  {tranlsate("health_plans", locale)}
+                  {tranlsate("services", locale)}
                 </span>
                 <Icon />
               </button>
               <div
                 className="absolute z-10 hidden bg-grey-200 group-hover:block bg-emgreen"
-                style={{ width: "300px" }}
+                style={{ width: "280px", marginLeft: "-70px" }}
               >
                 <div className="px-1 pt-1 pb-1 bg-regal-blue shadow-lg  text-black bg-white border border-black">
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-1 p-5 text-base">
@@ -495,7 +491,7 @@ const NavBar = () => {
           {/* <div className="m-auto ">
                <Link href="/#contact">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
              </div> */}
-          <div className="flex">
+            <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
             {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
             <div className="relative group ">
               <LinkComponent
@@ -503,7 +499,7 @@ const NavBar = () => {
                 locale={""}
                 skipLocaleHandling={false}
               >
-                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-4 py-2 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
+              <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full p-0 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                   <span className="mr-2 text-sm">
                     {tranlsate("pharmacy", locale)}
                   </span>
@@ -725,7 +721,7 @@ const NavBar = () => {
           </div>
         </li>
         <li className="py-4 flex">
-          <div className="m-auto  text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+        <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
             <LinkComponent
               href="/membership"
               locale={""}
@@ -759,20 +755,7 @@ const NavBar = () => {
             </div>
           </li>
         )}
-        <li className="py-4 flex mr-4">
-          <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
-            <span
-              onClick={handleNav}
-              style={{
-                backgroundColor: "#416045",
-                color: "white",
-              }}
-              className="mt-1 inline-block px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200"
-            >
-              {locale === "en" ? "Contact" : "Liên hệ"}
-            </span>
-          </LinkComponent>
-        </li>
+        
         {logged && (
           <li className="py-4 flex">
             <div className="m-auto  text-sm hover:bg-green-100 px-3 py-3 hover:cursor-pointer rounded">
@@ -781,12 +764,27 @@ const NavBar = () => {
                 locale={""}
                 skipLocaleHandling={false}
               >
-                {userData?.email}
+                <svg xmlns="http://www.w3.org/2000/svg" height={"30px"} viewBox="0 0 1024 1024" version="1.1"><path d="M512 597.994667q108.010667 0 225.002667 46.997333t116.992 123.008l0 85.994667-684.010667 0 0-85.994667q0-76.010667 116.992-123.008t225.002667-46.997333zM512 512q-69.994667 0-120-50.005333t-50.005333-120 50.005333-121.002667 120-51.008 120 51.008 50.005333 121.002667-50.005333 120-120 50.005333z"/></svg>
               </LinkComponent>
             </div>
           </li>
         )}
-        <div className="z-10 bg-transparent group-hover:block bg-transparent flex">
+        <li className="py-4 flex">
+          <LinkComponent href="/contact" skipLocaleHandling={false} locale={""}>
+            <span
+              onClick={handleNav}
+              style={{
+                backgroundColor: "#416045",
+                color: "white",
+                marginTop: "9px",
+              }}
+              className="mt-1 flex px-6 py-2.5 text-black text-xs leading-tight uppercase rounded shadow-md hover:bg-green-300 hover:shadow-lg focus:bg-green-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-200 active:shadow-lg transition duration-150 ease-in-out bg-green-200"
+            >
+              {locale === "en" ? "Contact" : "Liên hệ"}
+            </span>
+          </LinkComponent>
+        </li>
+        <div className="z-10 bg-transparent group-hover:block bg-transparent flex ml-2">
           <div className="text-black bg-transparent m-auto">
             <div className="flex">
               <button
