@@ -127,6 +127,9 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
             style={{
               backgroundColor: "#416045",
               color: "white",
+              margin: 0,
+              display: "block",
+              width: "200px",
             }}
             className='mt-10 inline bg-green-200 p-4 rounded mt-20 text-black hover:bg-green-300'>{locale === "en" ? "Add to cart" : "Thêm vào giỏ hàng"}</div></button>
         </div>
