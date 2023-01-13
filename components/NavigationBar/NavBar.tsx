@@ -270,7 +270,16 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className="nav flex flex-wrap items-center justify-between px-4">
+    <nav 
+    style={{
+      position: "sticky",
+      top: 0,
+      width: "100%",
+      zIndex: 99,
+      background: "white",
+    }}
+    className="nav flex flex-wrap items-center justify-between px-4">
+      
       <div className="flex flex-no-shrink items-center mr-6 text-grey-darkest">
         <LinkComponent href={"/"} locale={""} skipLocaleHandling={false}>
           <img
