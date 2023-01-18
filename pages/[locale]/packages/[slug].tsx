@@ -86,7 +86,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
           });
         } else {
           toast.success('Vui lòng đăng nhập.');
-          router.push("/login", "/login", { locale });
+          router.push("/" + locale + "/login", "/" + locale + "/login", { locale });
         }
   }
 
