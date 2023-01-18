@@ -102,7 +102,7 @@ const contact = () => {
         <p>{locale === "en" ? " - District 7" : "– Quận 7"}</p>
         <p>{locale === "en" ? " + 1026 Nguyen Van Linh, Tan Phong Ward, District 7." : "+ 1026 Nguyễn Văn Linh, P. Tân Phong, Quận 7."}</p>
         <p>{locale === "en" ? " - District 2" : "– Quận 2"}</p>
-        <p>{locale === "en" ? " + 46 Nguyen Thi Dinh, An Phu Ward, District 2." : "+ 46 Nguyễn Thị Định, P. An Phú, Quận 2."}</p>
+        <p>{locale === "en" ? " + 46 Nguyen Thi Dinh, An Phu Ward, District 2, Thu Duc City" : "+ 46 Nguyễn Thị Định, P.An Phú, Quận 2, TP.Thủ Đức"}</p>
 
         <p className="font-bold mt-4">{locale === "en" ? "Binh Duong" : "Bình Dương"}</p>
         <p>{locale === "en" ? " + Canary Plaza, 5 Binh Duong Highway, Thuan Giao, Thuan An City." : "+ Canary Plaza, số 5 Đại lộ Bình Dương, Thuận Giao, Tp. Thuận An."}</p>

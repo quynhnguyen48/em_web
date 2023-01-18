@@ -384,14 +384,14 @@ const Home: NextPage = () => {
                   }}
                 className="px-3 w-full
                     py-1.5">
-                  <option value="Option 0">Chọn gói</option>
-                  <option value="Option 1">Thành viên bạc</option>
-                  <option value="Option 2">Thành viên vàng</option>
-                  <option value="Option 3">Thành viên bạch kim</option>
-                  <option value="Option 4">Gói gia đình</option>
-                  <option value="Option 5">Gói doanh nghiệp</option>
-                  <option value="Option 6">Thành viên ngoại kiều</option>
-                  <option value="Option 7">Thành viên ngoại kiều ngắn hạn (2 tuần)</option>
+                  <option value="Option 0">{locale == "en" ? "Select Package" : "Chọn gói"}</option>
+                  <option value="Option 1">{locale == "en" ? "Silver Membership" : "Thành viên bạc"}</option>
+                  <option value="Option 2">{locale == "en" ? "Gold Membership" : "Thành viên vàng"}</option>
+                  <option value="Option 3">{locale == "en" ? "Platinum Membership" : "Thành viên bạch kim"}</option>
+                  <option value="Option 4">{locale == "en" ? "Family Package Membership" : "Gói gia đình"}</option>
+                  <option value="Option 5">{locale == "en" ? "Corporate Package Membership" : "Gói doanh nghiệp"}</option>
+                  <option value="Option 6">{locale == "en" ? "Non-Resident Membership" : "Thành viên ngoại kiều"}</option>
+                  <option value="Option 7">{locale == "en" ? "Foreigner Short Term (2-week) Membership" : "Thành viên ngoại kiều ngắn hạn (2 tuần)"}</option>
                 </select>
               </div>
               <input

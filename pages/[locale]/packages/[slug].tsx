@@ -23,6 +23,7 @@ import { makeStaticProps, getStaticPathsPackages, getStaticPropsPackage } from '
 import { useTranslation } from 'next-i18next'
 import LinkComponent from '../../../components/Link';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import parse from 'html-react-parser';
 
 // const getStaticProps = makeStaticProps(['common', 'footer']);
 export { getStaticPathsPackages as getStaticPaths, getStaticPropsPackage as getStaticProps };
@@ -110,6 +111,9 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                 src={"https://api.echomedi.me" + props.image_url}
                 />
                 <p className='text-center text-3xl mt-10 mb-5'>{locale === "en" ? props.en_label : props.label}</p>
+                {props.en_desc && <div className="max-w-[1048px] mx-auto text-left px-10">
+                  {parse(locale == "en" ? (props.en_desc ?? "") : (props.desc ?? ""))}
+                </div>}
       <div className="max-w-[1048px] mx-auto text-left">
       {props.sub_packages?.map((sp: any, id: any) =>
         <div className="max-w-[1240px] mx-auto p-4 text-center">
