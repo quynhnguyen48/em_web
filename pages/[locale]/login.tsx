@@ -109,7 +109,23 @@ const Home: NextPage = () => {
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       {/* <Hero heading={locale === "en" ? "Login" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"}/> */}
-      <SmallHero heading={""} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"} />
+      {/* <SmallHero heading={""} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"} /> */}
+      <div className=""
+      // style={{backgroundImage: "url(" + image_url + ")"}}
+      // style={{backgroundImage: `url(${loaded ||  image_placeholder_url})`}}
+    >
+      <img 
+                  style={{
+                    height: "350px",
+                    width: "100%",
+                    // marginTop: "100px",
+                    objectFit: "cover",
+                    // objectPosition: "top"
+                  }}
+                src={"https://api.echomedi.me/uploads/contact_5df089b37b.jpg?updated_at=2023-01-08T05:53:39.539Z"}
+                />
+      
+    </div>
       <div className="max-w-[1240px] mx-auto p-4 text-left mt-4">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
