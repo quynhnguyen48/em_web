@@ -433,7 +433,7 @@ const NavBar = () => {
           <div className="relative group ">
               <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-5 py-3  mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                 <span className="mr-2 text-sm">
-                  {tranlsate("services", locale)}
+                  {tranlsate("health_plans", locale)}
                 </span>
                 <Icon />
               </button>
