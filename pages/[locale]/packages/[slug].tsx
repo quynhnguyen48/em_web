@@ -75,7 +75,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
         })
           .then(function (response) {
             toast.success('Thêm vào giỏ hàng thành công');
-            router.push("/cart", "/cart", { locale });
+            router.push("/" + locale + "/cart", "/" + locale + "/cart", { locale });
             let el = document.getElementById('num-of-item');
             if (el) {
               el.innerText = (parseInt(el.innerText) + 1).toString();;

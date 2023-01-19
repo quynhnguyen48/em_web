@@ -63,7 +63,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
       })
         .then(function (response) {
           toast.success('Thêm vào giỏ hàng thành công');
-          router.push("/cart", "/cart", { locale });
+          router.push("/" + locale + "/cart", "/" + locale + "/cart", { locale });
           let el = document.getElementById('num-of-item');
           if (el) {
             el.innerText = (parseInt(el.innerText) + 1).toString();;
@@ -74,7 +74,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
         });
     } else {
       toast.success('Vui lòng đăng nhập.');
-      router.push("/login", "/login", { locale });
+      router.push("/" + locale + "/login", "/" + locale + "/login", { locale });
     }
   }
 
