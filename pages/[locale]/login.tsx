@@ -177,7 +177,8 @@ const Home: NextPage = () => {
                   "
                   type="password"
                   id="exampleFormControlInput1"
-                  placeholder="Password"
+                  // placeholder="Password"
+                  placeholder={locale === "en" ? "Password" : "Mật khẩu"}
                   onChange={(e) => { setPassword(e.target.value) }}
                 />
                 <div className="flex space-x-2 justify-center mt-8">
@@ -238,7 +239,8 @@ const Home: NextPage = () => {
                   "
                   type="password"
                   id="exampleFormControlInput1"
-                  placeholder="Password"
+                  // placeholder="Password"
+                  placeholder={locale === "en" ? "Password" : "Mật khẩu"}
                   onChange={(e) => { setPassword(e.target.value) }}
                 />
                 <input
@@ -262,7 +264,7 @@ const Home: NextPage = () => {
                   "
                   type="password"
                   id="exampleFormControlInput1"
-                  placeholder={locale === "en" ? "Confirm password" : "Confirm password"}
+                  placeholder={locale === "en" ? "Confirm password" : "Nhập lại mật khẩu"}
                   onChange={(e) => { setConfirmPassword(e.target.value) }}
                 />
                 <p>{
