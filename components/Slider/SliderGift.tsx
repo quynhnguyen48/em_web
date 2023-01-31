@@ -193,9 +193,9 @@ const Slider = ({ slides }: Props) => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
                   </button>
                 </div>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl mb-4 underline">Dành tặng Mẹ/Bà</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl mb-4">Dành tặng Mẹ/Bà</p>
                 <p>ECHO MEDI cung cấp 4 loại gói sức khoẻ trong phần Quà Tặng này, hãy chọn 1 gói cho người bạn muốn tặng. Với mỗi gói sẽ được tặng kèm thêm một gói quản lý sức khỏe. Hãy lựa chọn và tuỳ chỉnh món quà để dành tặng những người thân yêu của mình.</p>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4 underline">Gói Khám</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4">Gói Khám</p>
                 <div className="grid grid-rows-none p-4 gap-4">
                   <ul className="list-disc	">
                     <li>Gói khám sức khoẻ tổng quát</li>
@@ -204,7 +204,7 @@ const Slider = ({ slides }: Props) => {
                     <li>Gói quản lý ngoại trú bệnh đái tháo đường</li>
                   </ul>
                 </div>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4 underline">Gói Khám Bổ Sung</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4">Gói Khám Bổ Sung</p>
                 <div className="grid grid-rows-none p-4 gap-4">
 
                   <ul className="list-disc	">
@@ -233,9 +233,9 @@ const Slider = ({ slides }: Props) => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
                   </button>
                 </div>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl mb-4 underline">Dành tặng Mẹ/Bà</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl mb-4">Dành tặng Mẹ/Bà</p>
                 <p>ECHO MEDI cung cấp 4 loại gói sức khoẻ trong phần Quà Tặng này, hãy chọn 1 gói cho người bạn muốn tặng. Với mỗi gói sẽ được tặng kèm thêm một gói quản lý sức khỏe. Hãy lựa chọn và tuỳ chỉnh món quà để dành tặng những người thân yêu của mình.</p>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4 underline">Gói Khám</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4">Gói Khám</p>
                 <div className="grid grid-rows-none p-4 gap-4">
                   <ul className="list-disc	">
                     <li>Gói khám sức khoẻ tổng quát</li>
@@ -244,7 +244,7 @@ const Slider = ({ slides }: Props) => {
                     <li>Gói quản lý ngoại trú bệnh đái tháo đường</li>
                   </ul>
                 </div>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4 underline">Gói Khám Bổ Sung</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4">Gói Khám Bổ Sung</p>
                 <div className="grid grid-rows-none p-4 gap-4">
 
                   <ul className="list-disc	">
@@ -273,9 +273,9 @@ const Slider = ({ slides }: Props) => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
                   </button>
                 </div>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl mb-4 underline">Dành Tặng Doanh Nghiệp/ Nhân Viên</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl mb-4">Dành Tặng Doanh Nghiệp/ Nhân Viên</p>
                 <p>ECHO MEDI cung cấp 3 loại gói sức khoẻ trong phần Quà Tặng này, hãy chọn 1 gói cho người bạn muốn tặng. Với mỗi gói sẽ được tặng kèm thêm một gói quản lý sức khỏe. Hãy lựa chọn và tuỳ chỉnh món quà để dành tặng những người thân yêu của mình.</p>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4 underline">Gói Khám</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4">Gói Khám</p>
                 <div className="grid grid-rows-none p-4 gap-4">
                   <ul className="list-disc	">
                     <li>Gói khám sức khoẻ tổng quát</li>
@@ -283,7 +283,7 @@ const Slider = ({ slides }: Props) => {
                     <li>Tầm soát bệnh lý cơ xương khớp</li>
                   </ul>
                 </div>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4 underline">Gói Khám Bổ Sung</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4">Gói Khám Bổ Sung</p>
                 <div className="grid grid-rows-none p-4 gap-4">
 
                   <ul className="list-disc	">
@@ -312,9 +312,9 @@ const Slider = ({ slides }: Props) => {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
                   </button>
                 </div>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl mb-4 underline">Dành Tặng Doanh Nghiệp/ Nhân Viên</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl mb-4">Dành Tặng Doanh Nghiệp/ Nhân Viên</p>
                 <p>ECHO MEDI cung cấp 3 loại gói sức khoẻ trong phần Quà Tặng này, hãy chọn 1 gói cho người bạn muốn tặng. Với mỗi gói sẽ được tặng kèm thêm một gói quản lý sức khỏe. Hãy lựa chọn và tuỳ chỉnh món quà để dành tặng những người thân yêu của mình.</p>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4 underline">Gói Khám</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4">Gói Khám</p>
                 <div className="grid grid-rows-none p-4 gap-4">
                   <ul className="list-disc	">
                     <li>Gói khám sức khoẻ tổng quát</li>
@@ -322,7 +322,7 @@ const Slider = ({ slides }: Props) => {
                     <li>Tầm soát bệnh lý cơ xương khớp</li>
                   </ul>
                 </div>
-                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4 underline">Gói Khám Bổ Sung</p>
+                <p style={{ backgroundColor: "rgb(220 252 231" }} className="text-center text-2xl my-4">Gói Khám Bổ Sung</p>
                 <div className="grid grid-rows-none p-4 gap-4">
 
                   <ul className="list-disc	">
