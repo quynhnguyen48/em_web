@@ -193,7 +193,7 @@ const Home: NextPage = () => {
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
                                         id="exampleFormControlInput1"
-                                        placeholder={locale === "en" ? "Your name" : "Tên của bạn"}
+                                        placeholder={locale === "en" ? "Your name" : "Tên người thân của bạn"}
                                         onChange={(e) => { setName(e.target.value) }}
                                     />
                                     <input
