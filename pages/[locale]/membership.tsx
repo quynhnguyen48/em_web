@@ -263,8 +263,8 @@ const Home: NextPage = () => {
                 <p className='pt-4 font-medium text-justify' >
                   {
                     locale === "en" ?
-                      "Echo Medi offers membership for non resident including Overseas Vietnamese and Vietnamese living and working abroad. By becoming a member of Echo Medi, customers can enjoy benefits such as free and unlimited consultation with medical personnel, free telemedicine once a week, and free unlimited Covid-19 Rapid test upon returning to Vietnam." :
-                      "Echo Medi cung câp gói thành viên cho các Ngoại Kiều đang sinh sống và làm việc tại nước ngoài. Khi trở thành thành viên của Echo Medi, Ngoại Kiều có thể nhận được các ưu đãi bao gồm: Miễn phí không giới hạn tư vấn với nhân viên y tế, miễn phí khám bệnh từ xa 1 tuần/lần và miễn phí không giới hạn test nhanh covid-19 khi về Việt Nam."
+                      "ECHO MEDI offers membership for non resident including Overseas Vietnamese and Vietnamese living and working abroad. By becoming a member of ECHO MEDI, customers can enjoy benefits such as free and unlimited consultation with medical personnel, free telemedicine once a week, and free unlimited COVID-19 Rapid test upon returning to Vietnam." :
+                      "ECHO MEDI cung câp gói thành viên cho các Ngoại Kiều đang sinh sống và làm việc tại nước ngoài. Khi trở thành thành viên của ECHO MEDI, Ngoại Kiều có thể nhận được các ưu đãi bao gồm: Miễn phí không giới hạn tư vấn với nhân viên y tế, miễn phí khám bệnh từ xa 1 tuần/lần và miễn phí không giới hạn test nhanh COVID-19 khi về Việt Nam."
                   }
 
                 </p>
@@ -285,8 +285,8 @@ const Home: NextPage = () => {
               <div>
                 <p className='pt-4 font-medium text-justify' >{
                   locale === "en" ?
-                    "Foreigner short term membership is a 2-week health care and monitoring package for foreigners including Overseas Vietnamese visiting Viet Nam. Customers who purchase the membership will receive the following benefits: free unlimited consultation 24/7, free telemedicine or clinic examination once a week, free Covid-19 fast test, free general health examination, and other additional incentives when using clinic services." :
-                    "Thành viên Ngoại Kiều ngắn hạn là gói chăm sóc và theo dõi sức khỏe trong 2 tuần dành cho các Việt Kiều khi trở về nước.  Khi tham gia gói, khách hàng sẽ nhận được các đặc quyền: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh từ xa hoặc khám tại phòng khám 1 lần/tuần, miễn phí test nhanh Covid-19, miễn phí khám sức khỏe tổng quát, và ưu đãi khác khi sử dụng dịch vụ tại phòng khám."
+                    "Foreigner short term membership is a 2-week health care and monitoring package for foreigners including Overseas Vietnamese visiting Viet Nam. Customers who purchase the membership will receive the following benefits: free unlimited consultation 24/7, free telemedicine or clinic examination once a week, free COVID-19 fast test, free general health examination, and other additional incentives when using clinic services." :
+                    "Thành viên Ngoại Kiều ngắn hạn là gói chăm sóc và theo dõi sức khỏe trong 2 tuần dành cho các Việt Kiều khi trở về nước.  Khi tham gia gói, khách hàng sẽ nhận được các đặc quyền: Miễn phí không giới hạn tư vấn 24/7, miễn phí khám bệnh từ xa hoặc khám tại phòng khám 1 lần/tuần, miễn phí test nhanh COVID-19, miễn phí khám sức khỏe tổng quát, và ưu đãi khác khi sử dụng dịch vụ tại phòng khám."
                 }
 
                 </p>
@@ -417,6 +417,30 @@ const Home: NextPage = () => {
                 id="exampleFormControlInput1"
                 placeholder={locale === "en" ? "Email" : "Email"}
                 onChange={(e) => { setEmail(e.target.value) }}
+              />
+              <input
+                type="text"
+                className="
+                    form-control
+                    mb-3
+                    block
+                    w-full
+                    px-3
+                    py-1.5
+                    text-base
+                    font-normal
+                    text-gray-700
+                    bg-white bg-clip-padding
+                    border border-solid border-gray-300
+                    rounded
+                    transition
+                    ease-in-out
+                    m-0
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                  "
+                id="exampleFormControlInput1"
+                placeholder={locale === "en" ? "Phone number" : "Số điện thoại"}
+                onChange={(e) => {}}
               />
               <textarea
                 className="
