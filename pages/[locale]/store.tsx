@@ -136,7 +136,9 @@ const Home: NextPage = () => {
                 }}
                 src={"https://api.echomedi.me/uploads/Untitled_design_7_24962e0c2a.jpg?updated_at=2023-01-07T04:13:45.086Z"}
             />
-            <p className="text-3xl mt-5 text-center">{locale == "en" ? "Pharmacy" : "Nhà thuốc"}</p>
+            {/* <p className="text-3xl mt-5 text-center">{locale == "en" ? "Pharmacy" : "Nhà thuốc"}</p> */}
+            <p className="text-3xl text-center mt-8">{locale === "en" ? "PHARMACY" : "NHÀ THUỐC"}</p>
+        {locale === "vi" && <p className="mb-4 text-center mt-4 font-bold text-xl text-green-800">ECHO MEDI – Hệ thống Phòng khám + Nhà thuốc cung cấp dịch vụ Bác sĩ gia đình</p>}
 
             <div className="max-w-[1048px] mx-auto p-4 text-center">
 
@@ -383,7 +385,7 @@ const Home: NextPage = () => {
                     </LinkComponent>
 
                     <LinkComponent skipLocaleHandling={undefined} locale={undefined}
-                        href={"/products/goi-suc-khoe-sinh-ly-nam/"}>
+                        href={"/products/goi-ho-tro-tieu-hoa/"}>
                         <div className="max-w-sm rounded-full overflow-hidden shadow-lg relative h-[230px]">
                             <img className="h-full w-full absolute object-cover" 
                             src="https://api.echomedi.me/uploads/Tieu_Hoa_scaled_pvzpor68xeupt7w5qwz4e4qqvuojag3ycvtkkl11eg_952c000f7b.jpg?updated_at=2023-01-07T04:32:16.881Z" alt="Sunset in the mountains" />

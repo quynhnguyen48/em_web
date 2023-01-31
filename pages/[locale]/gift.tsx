@@ -92,6 +92,7 @@ const Home: NextPage = () => {
                 <div className="pt-10" id="send-gift">
                     <div className="p-10 bg-green-100 max-w-[500px] m-auto">
                         <p className="text-3xl">{locale === "en" ? "Give a Gift" : "Trao món quà"}</p>
+                        <p className="mt-4">{locale === "en" ? "Give a Gift" : "Đăng ký gửi quà để được ECHO MEDI tư vấn cụ thể."}</p>
                         <div className="max-w-[500px] h-full col-span-2 md:col-span-1 row-span-2 pt-10 m-auto">
                             <div className="flex justify-center">
                                 <div className="mb-3 w-full text-left">
