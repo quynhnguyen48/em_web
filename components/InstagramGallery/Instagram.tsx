@@ -19,7 +19,7 @@ const Instagram = () => {
       </p>
       <p className="text-white text-lg text-left">{
       locale === "en" ? "ECHO MEDI members have immediate access to our healthcare professionals and wellness care team, allowing us to deliver the ultimate wellbeing to members whom we know personally and to whom we hold ourselves accountable to every single member, so members can rest assure to entrust their health to us." :     
-      "Đồng hành cùng một đội ngũ y tế lành nghề gồm các y bác sĩ, dược sĩ, điều dưỡng và chuyên gia dinh dưỡng, khách hàng sẽ được chăm sóc sức khoẻ toàn diện với phương châm “Phòng bệnh hơn chữa bệnh”."}.</p>
+      "Đồng hành cùng một đội ngũ y tế lành nghề gồm các y bác sĩ, dược sĩ, điều dưỡng và chuyên gia dinh dưỡng, khách hàng sẽ được chăm sóc sức khoẻ toàn diện với phương châm “Phòng bệnh hơn chữa bệnh”."}</p>
       </div>
     </div>
   );
