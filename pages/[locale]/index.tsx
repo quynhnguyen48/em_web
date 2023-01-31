@@ -47,7 +47,7 @@ const tranlsate = (term: string, locale: string) => {
   } else {
     switch (term) {
       case "what_we_offer":
-        return "Chúng tôi mang lại gì?";
+        return "Có mặt cùng thành viên 24/7";
       case "become_a_member":
         return "Trở Thành Thành Viên";
       case "gifting":
@@ -92,11 +92,11 @@ const Home: NextPage = () => {
         </div>
         <div className="w-full mx-auto text-center p-2 bg-emgreen relative" style={{ backgroundColor: "#ECF5ED" }}>
           <div className="max-w-[768px] m-auto">
-            <p className="text-2xl text-green-900 text-3xl font-semibold mb-4 mt-4">
+            <p className="text-2xl text-green-900 text-xl font-semibold mb-4 mt-4">
               {tranlsate("what_we_offer", locale)}</p>
             <p className="pb-4 text-green-900 text-lg">
               {locale === "en" ? "Members receive on-demand access to a full spectrum of concierge medical services, as convenient as having a team of doctors, pharmacists, and wellness care experts with you 24/7."
-                : "Các thành viên của ECHO MEDI sẽ luôn được tiếp cận tất cả dịch vụ y tế và trợ giúp đặc biệt theo nhu cầu. Đồng nghĩa với việc luôn có một đội ngũ bác sĩ, dược sĩ và chuyên gia chăm sóc sức khỏe đồng hành với bạn 24/7"}
+                : "Thành viên đồng hành cùng đội ngũ y bác sỹ sẽ được theo sát và thiết kế dịch vụ chăm sóc sức khoẻ tối ưu theo nhu cầu suốt 24/7"}
             </p>
           </div>
           <div className="grid grid-rows-none md:grid-cols-2 gap-4 text-white p-4">
@@ -116,9 +116,10 @@ const Home: NextPage = () => {
       </div>
       <div id="" className="max-w-[1240px] mx-auto text-center pt-4">
         <svg className="m-auto" xmlns="http://www.w3.org/2000/svg" width="75" height="88" viewBox="0 0 111 88" fill="none"><path d="M2.40002 54.0035L17.4496 48.3261C26.2432 44.9899 36.0402 45.3411 44.5978 49.3796L68.6771 60.6759C71.569 62.0221 72.8083 65.4753 71.5099 68.3433C70.2706 71.0356 67.2016 72.3818 64.3688 71.4453L42.8863 64.8314" stroke="#426045" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2.40002 84.2636L11.5478 78.0009C17.3315 74.0209 24.7088 73.2015 31.2007 75.7183L54.8079 84.7904C59.6473 86.6633 65.136 85.9025 69.2082 82.7419L105.976 54.7062C108.927 52.482 109.458 48.3264 107.216 45.4C105.091 42.6491 101.196 42.0053 98.3041 43.8782L70.2115 61.7883" stroke="#426045" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M72.6611 4.89057C71.6696 3.89839 70.4923 3.11133 69.1965 2.57434C67.9007 2.03735 66.5118 1.76096 65.1092 1.76096C63.7066 1.76096 62.3178 2.03735 61.022 2.57434C59.7262 3.11133 58.5489 3.89839 57.5573 4.89057L55.4995 6.94873L53.4417 4.89057C51.4388 2.88738 48.7223 1.762 45.8898 1.762C43.0573 1.762 40.3408 2.88738 38.3379 4.89057C36.335 6.89377 35.2098 9.61068 35.2098 12.4436C35.2098 15.2766 36.335 17.9935 38.3379 19.9967L40.3957 22.0548L55.4995 37.161L70.6033 22.0548L72.6611 19.9967C73.6532 19.005 74.4401 17.8275 74.977 16.5315C75.5139 15.2355 75.7903 13.8465 75.7903 12.4436C75.7903 11.0408 75.5139 9.65172 74.977 8.35575C74.4401 7.05977 73.6532 5.88229 72.6611 4.89057V4.89057Z" stroke="#426045" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        <h1 className="text-3xl p-4">{locale !== "en" ? "THÀNH VIÊN LÀ TRÊN HẾT" : "MEMBER FIRST PHILOSOPHY"}</h1>
+        <h1 className="text-2xl p-4">{locale !== "en" ? "Phòng bệnh hơn chữa bệnh" : "MEMBER FIRST PHILOSOPHY"}</h1>
         <p className="text-lg mb-4">
-          {locale === "en" ? "Expert Professionals - Intimate Environment - Tailored Treatments" : "Chuyên gia ưu tú – Môi trường thân thiện – Chăm sóc riêng biệt"}</p>
+          {locale === "en" ? "Expert Professionals - Intimate Environment - Tailored Treatments" : 
+          "Sức khoẻ chính là chìa khoá quyết định"}</p>
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 p-8">
             <img src={"https://api.echomedi.me/uploads/pexels_karolina_grabowska_4386467_scaled_e1614020420439_f1bf3309a4.jpg?updated_at=2023-01-07T01:51:37.885Z"} />
