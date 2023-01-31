@@ -92,7 +92,7 @@ const Home: NextPage = () => {
         </div>
         <div className="w-full mx-auto text-center p-2 bg-emgreen relative" style={{ backgroundColor: "#ECF5ED" }}>
           <div className="max-w-[768px] m-auto">
-            <p className="text-2xl text-green-900 text-xl font-semibold mb-4 mt-4">
+            <p className="text-2xl text-green-900 text-2xl font-semibold mb-4 mt-4">
               {tranlsate("what_we_offer", locale)}</p>
             <p className="pb-4 text-green-900 text-lg">
               {locale === "en" ? "Members receive on-demand access to a full spectrum of concierge medical services, as convenient as having a team of doctors, pharmacists, and wellness care experts with you 24/7."
