@@ -94,9 +94,10 @@ const Home: NextPage = () => {
           <div className="max-w-[768px] m-auto">
             <p className="text-2xl text-green-900 text-2xl font-semibold mb-4 mt-4">
               {tranlsate("what_we_offer", locale)}</p>
+              <p className="text-xl text-green-900 text-lg italic mb-4 mt-4">Chuyên gia ưu tú – Môi trường thân thiện – Chăm sóc riêng biệt</p>
             <p className="pb-4 text-green-900 text-lg">
               {locale === "en" ? "Members receive on-demand access to a full spectrum of concierge medical services, as convenient as having a team of doctors, pharmacists, and wellness care experts with you 24/7."
-                : "Thành viên đồng hành cùng đội ngũ y bác sỹ sẽ được theo sát và thiết kế dịch vụ chăm sóc sức khoẻ tối ưu theo nhu cầu suốt 24/7"}
+                : "Thành viên đồng hành cùng đội ngũ y bác sỹ sẽ được theo sát và thiết kế dịch vụ chăm sóc sức khoẻ tối ưu theo nhu cầu suốt 24/7."}
             </p>
           </div>
           <div className="grid grid-rows-none md:grid-cols-2 gap-4 text-white p-4">
@@ -117,9 +118,9 @@ const Home: NextPage = () => {
       <div id="" className="max-w-[1240px] mx-auto text-center pt-4">
         <svg className="m-auto" xmlns="http://www.w3.org/2000/svg" width="75" height="88" viewBox="0 0 111 88" fill="none"><path d="M2.40002 54.0035L17.4496 48.3261C26.2432 44.9899 36.0402 45.3411 44.5978 49.3796L68.6771 60.6759C71.569 62.0221 72.8083 65.4753 71.5099 68.3433C70.2706 71.0356 67.2016 72.3818 64.3688 71.4453L42.8863 64.8314" stroke="#426045" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2.40002 84.2636L11.5478 78.0009C17.3315 74.0209 24.7088 73.2015 31.2007 75.7183L54.8079 84.7904C59.6473 86.6633 65.136 85.9025 69.2082 82.7419L105.976 54.7062C108.927 52.482 109.458 48.3264 107.216 45.4C105.091 42.6491 101.196 42.0053 98.3041 43.8782L70.2115 61.7883" stroke="#426045" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M72.6611 4.89057C71.6696 3.89839 70.4923 3.11133 69.1965 2.57434C67.9007 2.03735 66.5118 1.76096 65.1092 1.76096C63.7066 1.76096 62.3178 2.03735 61.022 2.57434C59.7262 3.11133 58.5489 3.89839 57.5573 4.89057L55.4995 6.94873L53.4417 4.89057C51.4388 2.88738 48.7223 1.762 45.8898 1.762C43.0573 1.762 40.3408 2.88738 38.3379 4.89057C36.335 6.89377 35.2098 9.61068 35.2098 12.4436C35.2098 15.2766 36.335 17.9935 38.3379 19.9967L40.3957 22.0548L55.4995 37.161L70.6033 22.0548L72.6611 19.9967C73.6532 19.005 74.4401 17.8275 74.977 16.5315C75.5139 15.2355 75.7903 13.8465 75.7903 12.4436C75.7903 11.0408 75.5139 9.65172 74.977 8.35575C74.4401 7.05977 73.6532 5.88229 72.6611 4.89057V4.89057Z" stroke="#426045" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         <h1 className="text-2xl p-4">{locale !== "en" ? "Phòng bệnh hơn chữa bệnh" : "MEMBER FIRST PHILOSOPHY"}</h1>
-        <p className="text-lg mb-4">
+        <p className="text-xl text-lg italic">
           {locale === "en" ? "Expert Professionals - Intimate Environment - Tailored Treatments" : 
-          "Sức khoẻ chính là chìa khoá quyết định"}</p>
+          "Sức khoẻ chính là chìa khoá quyết định chất lượng cuộc sống"}</p>
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 p-8">
             <img src={"https://api.echomedi.me/uploads/pexels_karolina_grabowska_4386467_scaled_e1614020420439_f1bf3309a4.jpg?updated_at=2023-01-07T01:51:37.885Z"} />
@@ -127,13 +128,17 @@ const Home: NextPage = () => {
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className="text-lg p-5 text-justify">
-              {locale === "en" ? "To date the approach to healthcare has been driven by the urgent need to treat illness and injuries. The healthcare delivery has been substantially centered on institutional infrastructure. It has been based on “crisis care”. The focus must shift to wellness. Healthcare must devolve into the community and into the home. Better connected healthcare will evolve at a lower cost." : "Hiện nay, chúng ta chỉ nghĩ tới các dịch vụ chăm sóc sức khỏe khi cần điều trị bệnh hoặc phục hồi chấn thương. Phần lớn các dịch vụ này đang được cung cấp bởi những cơ sở y tế truyền thống. Nói cách khác, chúng ta đang chỉ chú tâm vào “chăm sóc khủng hoảng” – chữa bệnh thay vì phòng bệnh. Tư duy này cần phải được thay đổi. Trọng tâm nên là sức khỏe toàn diện, tức sức khỏe cả về thể chất lẫn tinh thần. Việc chăm sóc sức khỏe nên bắt đầu từ cộng đồng, với nền tảng là mỗi gia đình. Đây chính là tiền đề để xây dựng một hệ thống chăm sóc sức khỏe được kết nối chặt chẽ, bệnh viện kết nối với cộng đồng, cộng đồng kết nối với cá nhân. Qua đó, ta sẽ giảm đi gánh nặng của chi phí điều trị lâu dài."}</p>
+              {locale === "en" ? "To date the approach to healthcare has been driven by the urgent need to treat illness and injuries. The healthcare delivery has been substantially centered on institutional infrastructure. It has been based on “crisis care”. The focus must shift to wellness. Healthcare must devolve into the community and into the home. Better connected healthcare will evolve at a lower cost." : 
+              "“Chăm sóc khủng hoảng” – chữa bệnh thay vì phòng bệnh thôi vẫn chưa đủ. Chìa khóa để đạt được một cuộc sống đủ đầy chính là xây dựng sức khỏe toàn diện, tức sức khỏe cả về thể chất lẫn tinh thần. "}</p>
             <p className="text-lg p-5 text-justify">
-              {locale === "en" ? "This reactive response must change. We must develop a thorough understanding of our health. This will allow us to monitor and maintain our wellness. It will allow us to develop preventive strategies to keep us healthy. Patients must be more thoroughly informed about their health and treatment. This will allow them to be directly involved in their own care." : "Cách tiếp cận của chúng ta đối với vấn đề chăm sóc sức khỏe đã cũ và cần phải thay đổi. Mỗi người cần trang bị kiến thức vững chắc nhằm tự theo dõi và duy trì sức khỏe của bản thân. Người bệnh phải được thông báo chi tiết hơn về tình trạng sức khỏe và kế hoạch điều trị để họ có thể theo sát quá trình điều trị của mình. Từ đó có thể xây dựng các biện pháp phòng ngừa và giữ cho cơ thể luôn khỏe mạnh."}</p>
+              {locale === "en" ? "This reactive response must change. We must develop a thorough understanding of our health. This will allow us to monitor and maintain our wellness. It will allow us to develop preventive strategies to keep us healthy. Patients must be more thoroughly informed about their health and treatment. This will allow them to be directly involved in their own care." : 
+              "ECHO MEDI thấu hiểu những vấn đề đó và mong muốn trở thành một nhân tố tích cực trong hành trình chăm sóc sức khỏe của người Việt Nam."}</p>
+            {/* <p className="text-lg p-5 text-justify">
+              {locale === "en" ? "The quality of our living is significantly determined by the state of our health. We must be vigilant in the responsive maintenance of all facets of our health." : 
+              "Sức khỏe chính là chìa khóa quyết định chất lượng cuộc sống của mỗi người. Chúng ta nên chú trọng việc chăm sóc và duy trì một cơ thể khỏe mạnh toàn diện."}</p>
             <p className="text-lg p-5 text-justify">
-              {locale === "en" ? "The quality of our living is significantly determined by the state of our health. We must be vigilant in the responsive maintenance of all facets of our health." : "Sức khỏe chính là chìa khóa quyết định chất lượng cuộc sống của mỗi người. Chúng ta nên chú trọng việc chăm sóc và duy trì một cơ thể khỏe mạnh toàn diện."}</p>
-            <p className="text-lg p-5 text-justify">
-              {locale === "en" ? "ECHO MEDI seeks to be an active part of this crucial realignment." : "ECHO MEDI thấu hiểu và hướng tới việc trở thành một nhân tố tích cực trong hành trình định nghĩa lại cách tiếp cận vấn đề sức khỏe này."}</p>
+              {locale === "en" ? "ECHO MEDI seeks to be an active part of this crucial realignment." : 
+              "ECHO MEDI thấu hiểu và hướng tới việc trở thành một nhân tố tích cực trong hành trình định nghĩa lại cách tiếp cận vấn đề sức khỏe này."}</p> */}
           </div>
 
         </div>

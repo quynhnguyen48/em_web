@@ -79,9 +79,11 @@ const Home: NextPage = () => {
                 />
       <div className="max-w-[1240px] mx-auto p-4 text-left">
         <p className="text-3xl text-center mt-4">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</p>
+        {locale === "vi" && <p className="mb-4 text-center mt-4 font-bold text-xl text-green-800">ECHO MEDI – Hệ thống Phòng khám + Nhà thuốc cung cấp dịch vụ Bác sĩ gia đình</p>}
+
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10 text-justify">
-            {locale === "vi" && <p className="mb-4">ECHO MEDI – Hệ thống Phòng khám + Nhà thuốc cung cấp dịch vụ Bác sĩ gia đình</p>}
+          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-4 text-justify">
+            {/* {locale === "vi" && <p className="mb-4">ECHO MEDI – Hệ thống Phòng khám + Nhà thuốc cung cấp dịch vụ Bác sĩ gia đình</p>} */}
             {locale === "vi" && <p className="mb-4">ECHO MEDI có mục tiêu chăm sóc sức khỏe khách hàng dựa trên bốn nền tảng: chăm sóc phòng ngừa, điều trị ban đầu, quản lý bệnh mạn tính và sức khoẻ toàn diện.</p>}
             {locale === "vi" && <p className="mb-4">Điểm bứt phá của ECHO MEDI chính là sự cải tiến, mang cả đội ngũ gồm y bác sĩ, dược sĩ, điều dưỡng đồng hành cùng khách hàng.</p>}
             <p className="mb-4">
