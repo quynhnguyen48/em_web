@@ -101,7 +101,7 @@ const contact = () => {
         backgroundColor: "#ecf5ed"
       }}
     className="max-w-[568px] mx-auto p-4 text-left mb-4">
-      <p className="text-2xl text-center mb-4 underline">
+      <p className="text-2xl text-center mb-4">
         {locale == "en" ? "Booking" : "Đặt lịch khám"}
       </p>
         <div className="mb-3 w-full flex flex-col md:grid md:grid-cols-2 gap-4">
