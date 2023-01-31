@@ -379,7 +379,7 @@ const NavBar = () => {
                           {tranlsate("home_visits", locale)}
                         </LinkComponent>
                       </div>
-                      <div className="mb-4 text-sm hover:bg-green-100 rounded px-2 py-1 px-2 py-1">
+                      <div className="mb-4 text-sm rounded px-2 py-1 px-2 py-1">
                         {tranlsate("telemedicine", locale)}
                       </div>
                       <div className="mb-4 text-sm hover:bg-green-100 rounded px-2 py-1 px-2 py-1">
