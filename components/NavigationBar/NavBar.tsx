@@ -270,16 +270,16 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav 
-    style={{
-      position: "sticky",
-      top: 0,
-      width: "100%",
-      zIndex: 99,
-      background: "white",
-    }}
-    className="nav flex flex-wrap items-center justify-between px-4">
-      
+    <nav
+      style={{
+        position: "sticky",
+        top: 0,
+        width: "100%",
+        zIndex: 99,
+        background: "white",
+      }}
+      className="nav flex flex-wrap items-center justify-between px-4">
+
       <div className="flex flex-no-shrink items-center mr-6 text-grey-darkest">
         <LinkComponent href={"/"} locale={""} skipLocaleHandling={false}>
           <img
@@ -302,10 +302,10 @@ const NavBar = () => {
         className="hidden md:flex sm:ml-20 ml-0"
       >
         <li className="py-4 flex">
-        <LinkComponent locale={""} skipLocaleHandling={false} href="/about">
-          <div className="h-full flex items-center m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+          <LinkComponent locale={""} skipLocaleHandling={false} href="/about">
+            <div className="h-full flex items-center m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
               {locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}
-          </div>
+            </div>
           </LinkComponent>
         </li>
         <li className="py-4 flex">
@@ -430,7 +430,7 @@ const NavBar = () => {
         </li>
         <li className="py-4 flex">
           <div className="flex">
-          <div className="relative group ">
+            <div className="relative group ">
               <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full px-5 py-3  mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                 <span className="mr-2 text-sm">
                   {tranlsate("health_plans", locale)}
@@ -500,7 +500,7 @@ const NavBar = () => {
           {/* <div className="m-auto ">
                <Link href="/#contact">{locale ==="en" ? "Pharmacy" :"Nhà thuốc"}</Link>
              </div> */}
-            <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+          <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
             {/* <li className="p-5 text-black" key={0}>Các dịch vụ</li> */}
             <div className="relative group ">
               <LinkComponent
@@ -508,7 +508,7 @@ const NavBar = () => {
                 locale={""}
                 skipLocaleHandling={false}
               >
-              <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full p-0 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
+                <button className="hover:bg-green-100	text-black h-full flex flex-row items-center w-full p-0 mt-2 text-base  text-left bg-transparent rounded md:w-auto md:inline md:mt-0 focus:outline-none">
                   <span className="mr-2 text-sm">
                     {tranlsate("pharmacy", locale)}
                   </span>
@@ -710,10 +710,10 @@ const NavBar = () => {
                           {tranlsate("immune_system", locale)}
                         </LinkComponent>
                       </div>
-                      
+
                     </div>
                     <div>
-                    <div className="mt-9 mb-4 text-sm hover:bg-green-100 rounded px-2 py-1">
+                      <div className="mt-9 mb-4 text-sm hover:bg-green-100 rounded px-2 py-1">
                         <LinkComponent
                           href={"/products/goi-cai-thien-tri-nao"}
                           locale={""}
@@ -730,7 +730,7 @@ const NavBar = () => {
           </div>
         </li>
         <li className="py-4 flex">
-        <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
+          <div className="m-auto text-sm hover:bg-green-100 px-5 py-3 hover:cursor-pointer rounded">
             <LinkComponent
               href="/membership"
               locale={""}
@@ -764,7 +764,7 @@ const NavBar = () => {
             </div>
           </li>
         )}
-        
+
         {logged && (
           <li className="py-4 flex">
             <div className="m-auto  text-sm hover:bg-green-100 px-3 py-3 hover:cursor-pointer rounded">
@@ -773,7 +773,7 @@ const NavBar = () => {
                 locale={""}
                 skipLocaleHandling={false}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" height={"30px"} viewBox="0 0 1024 1024" version="1.1"><path d="M512 597.994667q108.010667 0 225.002667 46.997333t116.992 123.008l0 85.994667-684.010667 0 0-85.994667q0-76.010667 116.992-123.008t225.002667-46.997333zM512 512q-69.994667 0-120-50.005333t-50.005333-120 50.005333-121.002667 120-51.008 120 51.008 50.005333 121.002667-50.005333 120-120 50.005333z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height={"30px"} viewBox="0 0 1024 1024" version="1.1"><path d="M512 597.994667q108.010667 0 225.002667 46.997333t116.992 123.008l0 85.994667-684.010667 0 0-85.994667q0-76.010667 116.992-123.008t225.002667-46.997333zM512 512q-69.994667 0-120-50.005333t-50.005333-120 50.005333-121.002667 120-51.008 120 51.008 50.005333 121.002667-50.005333 120-120 50.005333z" /></svg>
               </LinkComponent>
             </div>
           </li>
@@ -796,7 +796,7 @@ const NavBar = () => {
         <div className="z-10 bg-transparent group-hover:block bg-transparent flex ml-2">
           <div className="text-black bg-transparent m-auto">
             <div className="flex">
-              <button
+              {/* <button
                 onClick={() => {
                   let href = router.asPath;
                   let pName = router.pathname;
@@ -817,30 +817,30 @@ const NavBar = () => {
                 {locale === "en" ? (
                   <div className="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 7410 3900">
-<rect width="7410" height="3900" fill="#b22234"/>
-<path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/>
-<rect width="2964" height="2100" fill="#3c3b6e"/>
-<g fill="#fff">
-<g id="s17">
-<g id="s9">
-<g id="s8">
-<path id="s" d="M202,130 L272.53423,347.08204 L87.873218,212.917961 L316.126782,212.917961 L131.46577,347.08204z"/>
-<use xlinkHref="#s" x="320"/>
-<use xlinkHref="#s" x="640"/>
-<use xlinkHref="#s" x="960"/>
-<use xlinkHref="#s" x="1280"/>
-<use xlinkHref="#s" x="1600"/>
-<use xlinkHref="#s" x="1920"/>
-<use xlinkHref="#s" x="2240"/>
-</g>
-<use xlinkHref="#s" x="2560"/>
-</g>
-<use xlinkHref="#s8" x="150" y="320"/>
-</g>
-<use xlinkHref="#s17" y="640"/>
-<use xlinkHref="#s17" y="1280"/>
-</g>
-</svg>
+                      <rect width="7410" height="3900" fill="#b22234" />
+                      <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300" />
+                      <rect width="2964" height="2100" fill="#3c3b6e" />
+                      <g fill="#fff">
+                        <g id="s17">
+                          <g id="s9">
+                            <g id="s8">
+                              <path id="s" d="M202,130 L272.53423,347.08204 L87.873218,212.917961 L316.126782,212.917961 L131.46577,347.08204z" />
+                              <use xlinkHref="#s" x="320" />
+                              <use xlinkHref="#s" x="640" />
+                              <use xlinkHref="#s" x="960" />
+                              <use xlinkHref="#s" x="1280" />
+                              <use xlinkHref="#s" x="1600" />
+                              <use xlinkHref="#s" x="1920" />
+                              <use xlinkHref="#s" x="2240" />
+                            </g>
+                            <use xlinkHref="#s" x="2560" />
+                          </g>
+                          <use xlinkHref="#s8" x="150" y="320" />
+                        </g>
+                        <use xlinkHref="#s17" y="640" />
+                        <use xlinkHref="#s17" y="1280" />
+                      </g>
+                    </svg>
                   </div>
                 ) : (
                   <div className="flex">
@@ -859,7 +859,112 @@ const NavBar = () => {
                     </svg>
                   </div>
                 )}
-              </button>
+              </button> */}
+              <div className="mt-2">
+                <div className="group inline-block relative">
+                  <button
+                    className="font-semibold rounded inline-flex items-center"
+                  >
+                    {locale == "vi" ? <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 30 20"
+                      version="1.1"
+                    >
+                      <rect width="30" height="20" fill="#da251d" />
+                      <polygon
+                        points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85"
+                        fill="#ff0"
+                      />
+                    </svg> : 
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 7410 3900">
+                    <rect width="7410" height="3900" fill="#b22234" />
+                    <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300" />
+                    <rect width="2964" height="2100" fill="#3c3b6e" />
+                    <g fill="#fff">
+                      <g id="s17">
+                        <g id="s9">
+                          <g id="s8">
+                            <path id="s" d="M202,130 L272.53423,347.08204 L87.873218,212.917961 L316.126782,212.917961 L131.46577,347.08204z" />
+                            <use xlinkHref="#s" x="320" />
+                            <use xlinkHref="#s" x="640" />
+                            <use xlinkHref="#s" x="960" />
+                            <use xlinkHref="#s" x="1280" />
+                            <use xlinkHref="#s" x="1600" />
+                            <use xlinkHref="#s" x="1920" />
+                            <use xlinkHref="#s" x="2240" />
+                          </g>
+                          <use xlinkHref="#s" x="2560" />
+                        </g>
+                        <use xlinkHref="#s8" x="150" y="320" />
+                      </g>
+                      <use xlinkHref="#s17" y="640" />
+                      <use xlinkHref="#s17" y="1280" />
+                    </g>
+                  </svg>
+                    }
+                  </button>
+                  <ul className="absolute hidden text-gray-700 group-hover:block -mt-4">
+                    <li className="">
+                      <button onClick={() => {
+                        let href = router.asPath;
+                        let pName = router.pathname;
+                        Object.keys(router.query).forEach((k) => {
+                          if (k === "locale") {
+                            pName = pName.replace(
+                              `[${k}]`,
+                              locale == "en" ? "vi" : "en"
+                            );
+                            return;
+                          }
+                          pName = pName.replace(`[${k}]`, router.query[k] as string);
+                        });
+      
+                        location.href = pName;
+                      }}>
+                      {locale == "vi" ? <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 7410 3900">
+                        <rect width="7410" height="3900" fill="#b22234" />
+                        <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300" />
+                        <rect width="2964" height="2100" fill="#3c3b6e" />
+                        <g fill="#fff">
+                          <g id="s17">
+                            <g id="s9">
+                              <g id="s8">
+                                <path id="s" d="M202,130 L272.53423,347.08204 L87.873218,212.917961 L316.126782,212.917961 L131.46577,347.08204z" />
+                                <use xlinkHref="#s" x="320" />
+                                <use xlinkHref="#s" x="640" />
+                                <use xlinkHref="#s" x="960" />
+                                <use xlinkHref="#s" x="1280" />
+                                <use xlinkHref="#s" x="1600" />
+                                <use xlinkHref="#s" x="1920" />
+                                <use xlinkHref="#s" x="2240" />
+                              </g>
+                              <use xlinkHref="#s" x="2560" />
+                            </g>
+                            <use xlinkHref="#s8" x="150" y="320" />
+                          </g>
+                          <use xlinkHref="#s17" y="640" />
+                          <use xlinkHref="#s17" y="1280" />
+                        </g>
+                      </svg> : <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 30 20"
+                      version="1.1"
+                    >
+                      <rect width="30" height="20" fill="#da251d" />
+                      <polygon
+                        points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85"
+                        fill="#ff0"
+                      />
+                    </svg>}
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -921,30 +1026,30 @@ const NavBar = () => {
                 {locale === "en" ? (
                   <div className="flex">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 7410 3900">
-<rect width="7410" height="3900" fill="#b22234"/>
-<path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300"/>
-<rect width="2964" height="2100" fill="#3c3b6e"/>
-<g fill="#fff">
-<g id="s17">
-<g id="s9">
-<g id="s8">
-<path id="s" d="M202,130 L272.53423,347.08204 L87.873218,212.917961 L316.126782,212.917961 L131.46577,347.08204z"/>
-<use xlinkHref="#s" x="320"/>
-<use xlinkHref="#s" x="640"/>
-<use xlinkHref="#s" x="960"/>
-<use xlinkHref="#s" x="1280"/>
-<use xlinkHref="#s" x="1600"/>
-<use xlinkHref="#s" x="1920"/>
-<use xlinkHref="#s" x="2240"/>
-</g>
-<use xlinkHref="#s" x="2560"/>
-</g>
-<use xlinkHref="#s8" x="150" y="320"/>
-</g>
-<use xlinkHref="#s17" y="640"/>
-<use xlinkHref="#s17" y="1280"/>
-</g>
-</svg>
+                      <rect width="7410" height="3900" fill="#b22234" />
+                      <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" stroke-width="300" />
+                      <rect width="2964" height="2100" fill="#3c3b6e" />
+                      <g fill="#fff">
+                        <g id="s17">
+                          <g id="s9">
+                            <g id="s8">
+                              <path id="s" d="M202,130 L272.53423,347.08204 L87.873218,212.917961 L316.126782,212.917961 L131.46577,347.08204z" />
+                              <use xlinkHref="#s" x="320" />
+                              <use xlinkHref="#s" x="640" />
+                              <use xlinkHref="#s" x="960" />
+                              <use xlinkHref="#s" x="1280" />
+                              <use xlinkHref="#s" x="1600" />
+                              <use xlinkHref="#s" x="1920" />
+                              <use xlinkHref="#s" x="2240" />
+                            </g>
+                            <use xlinkHref="#s" x="2560" />
+                          </g>
+                          <use xlinkHref="#s8" x="150" y="320" />
+                        </g>
+                        <use xlinkHref="#s17" y="640" />
+                        <use xlinkHref="#s17" y="1280" />
+                      </g>
+                    </svg>
                   </div>
                 ) : (
                   <div className="flex">
