@@ -92,7 +92,7 @@ const Home: NextPage = () => {
   }
 
   const contact = () => {
-    axios.post('https://api.echomedi.me' + '/api/packages/inquiryMembership', {
+    axios.post('https://api.echomedi.com' + '/api/packages/inquiryMembership', {
       "name": name,
       "email": email,
       "phone_number": phone_number,
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
   const addToCart = (id: number) => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
-      axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
+      axios.post('https://api.echomedi.com/api/product/addServiceToCart', {
         "service_id": id,
         "quantity" : 1,
       }, {
@@ -148,7 +148,7 @@ const Home: NextPage = () => {
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       <SmallHero heading={locale === "en" ? "Membership" : "Thành viên"} message={""} sub_message={[]} 
-      image_url={"https://api.echomedi.me/uploads/Untitled_design_11_0a48d0d9f7.jpg?updated_at=2023-01-07T04:13:21.680Z"} />
+      image_url={"https://api.echomedi.com/uploads/Untitled_design_11_0a48d0d9f7.jpg?updated_at=2023-01-07T04:13:21.680Z"} />
       <div className="max-w-[1240px] mx-auto p-4 text-center">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 pt-12">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">

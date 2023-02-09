@@ -11,7 +11,7 @@ const contact = () => {
   const locale = router.query.locale as string || 'en';
 
   const sendEmailSubscription = () => {
-    axios.post('https://api.echomedi.me' + '/api/packages/subscribeInfo', {
+    axios.post('https://api.echomedi.com' + '/api/packages/subscribeInfo', {
       "email": email,
     })
       .then(function (response) {
@@ -83,7 +83,7 @@ const contact = () => {
             {locale == "en" ? "Insight" : "Tổng quan"}</LinkComponent>
         </div>
         <p className="mb-4 text-lg">{locale === "en" ? "Download Apps" : "Tải Ứng Dụng Ngay"}</p>
-        <img width={150} height={100} src="https://api.echomedi.me/uploads/google_play_store_icon_download_28_f86db33675.png?updated_at=2023-01-07T04:08:13.959Z" />
+        <img width={150} height={100} src="https://api.echomedi.com/uploads/google_play_store_icon_download_28_f86db33675.png?updated_at=2023-01-07T04:08:13.959Z" />
         
       </div>
       <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">

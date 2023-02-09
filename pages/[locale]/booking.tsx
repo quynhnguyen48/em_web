@@ -81,7 +81,7 @@ const Booking: NextPage = () => {
     };
 
     axios
-      .post("https://api.echomedi.me" + 
+      .post("https://api.echomedi.com" + 
       "/api/bookings/createBookingFromWeb", payload)
       .then(function (response) {
         toast.success("Thành công");
@@ -132,7 +132,7 @@ const Booking: NextPage = () => {
         message={""}
         sub_message={[]}
         image_url={
-          "https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"
+          "https://api.echomedi.com/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"
         }
       />
       <div className="max-w-[1048px] mx-auto p-4 text-left">

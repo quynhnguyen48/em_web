@@ -56,7 +56,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsBlog>) => {
         />
         <link rel="icon" href="/favicon1.png" />
       </Head>
-      <SmallHero heading={""} message={""} sub_message={[]} image_url={"https://api.echomedi.me" + props.image_url} />
+      <SmallHero heading={""} message={""} sub_message={[]} image_url={"https://api.echomedi.com" + props.image_url} />
       <div className="p-4 mx-auto max-w-[864px] mb-10">
         <h1 className='mb-8 text-center text-3xl'>{props.label}</h1>
         <div className='markdown-container'>

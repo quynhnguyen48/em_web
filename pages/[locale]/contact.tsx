@@ -69,7 +69,7 @@ const Home: NextPage = () => {
   const locale = router.query.locale as string || 'en';
 
   const contact = () => {
-    axios.post('https://api.echomedi.me' + '/api/packages/contact', {
+    axios.post('https://api.echomedi.com' + '/api/packages/contact', {
       "name": name,
       "email": email,
       "phone_number": phone_number,
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
       <SmallHero heading={locale === "en" ? "Contact" : "Liên hệ"} message={""} sub_message={[]} 
-      image_url={"https://api.echomedi.me/uploads/contact_5df089b37b.jpg?updated_at=2023-01-08T05:53:39.539Z"}/>
+      image_url={"https://api.echomedi.com/uploads/contact_5df089b37b.jpg?updated_at=2023-01-08T05:53:39.539Z"}/>
       <div className="max-w-[1048px] mx-auto p-4 text-left">
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">

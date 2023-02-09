@@ -52,7 +52,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
   const addToCart = (id: number) => {
     if (logged) {
       const token = localStorage.getItem('token');
-      axios.post('https://api.echomedi.me/api/product/addProductToCart', {
+      axios.post('https://api.echomedi.com/api/product/addProductToCart', {
         "product_id": id,
         "quantity": quantity
       }, {
@@ -91,8 +91,8 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
         heading={locale === "en" ? props.en_label : props.label} 
         message={locale === "en" ? props.en_desc: props.desc}
         sub_message={props.medicines?.map((m: any) => locale === "en" ? m.en_label: m.label)}
-        image_url={"https://api.echomedi.me" + props.image_url} 
-        image_placeholder_url={"https://api.echomedi.me" + props.image_placeholder_url} 
+        image_url={"https://api.echomedi.com" + props.image_url} 
+        image_placeholder_url={"https://api.echomedi.com" + props.image_placeholder_url} 
         /> */}
       <div className="px-4 mt-10 mx-auto max-w-[1048px] text-center">
         <p className='text-3xl text-left inline'>{locale === "en" ? props.en_label : props.label}</p>
@@ -100,10 +100,10 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
       <div className="px-4 mx-auto max-w-[1048px] grid grid-rows-none md:grid-cols-2 mt-12 gap-4">
 
         <div>
-          {/* <img className='pl-0 p-4' src={"https://api.echomedi.me" + props.image_url} /> */}
+          {/* <img className='pl-0 p-4' src={"https://api.echomedi.com" + props.image_url} /> */}
           <LazyLoadImage
-                src={"https://api.echomedi.me" + props.image_url} // use normal <img> attributes as props
-                placeholderSrc={"https://api.echomedi.me" + props.image_placeholder_url}
+                src={"https://api.echomedi.com" + props.image_url} // use normal <img> attributes as props
+                placeholderSrc={"https://api.echomedi.com" + props.image_placeholder_url}
               // width={400} 
               />
         </div>
@@ -144,8 +144,8 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
           props.medicines?.map((m: any) => <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 m-auto">
               <LazyLoadImage
-                src={"https://api.echomedi.me" + m.image?.url} // use normal <img> attributes as props
-                placeholderSrc={"https://api.echomedi.me" + m.image?.formats.thumbnail.url}
+                src={"https://api.echomedi.com" + m.image?.url} // use normal <img> attributes as props
+                placeholderSrc={"https://api.echomedi.com" + m.image?.formats.thumbnail.url}
               // width={400} 
               />
             </div>

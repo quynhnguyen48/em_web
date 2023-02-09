@@ -40,7 +40,7 @@ const Order = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.echomedi.me' + '/api/orders/getOrderHistory',{
+    axios.get('https://api.echomedi.com' + '/api/orders/getOrderHistory',{
       headers: {
         'Authorization': `Bearer ${token}`
       }

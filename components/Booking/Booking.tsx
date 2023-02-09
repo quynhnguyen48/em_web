@@ -86,7 +86,7 @@ const contact = () => {
     }};
 
     axios
-    .post("https://api.echomedi.me" + 
+    .post("https://api.echomedi.com" + 
       "/api/bookings/createBookingFromWeb", payload)
       .then(function (response) {
         toast.success("Thành công");

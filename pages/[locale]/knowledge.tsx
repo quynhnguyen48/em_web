@@ -45,7 +45,7 @@ const Home: NextPage = () => {
             <div className="max-w-[1240px] mx-auto p-4 text-left">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
                     <img className="w-full h-[200px]" 
-                    src="https://api.echomedi.me/uploads/thumbnail_woman_taking_online_yoga_lesso_5392_7817_1667899804_0dd83d3c0d_a8177b490f.jpg?updated_at=2023-01-07T02:40:04.271Z" alt="Sunset in the mountains" />
+                    src="https://api.echomedi.com/uploads/thumbnail_woman_taking_online_yoga_lesso_5392_7817_1667899804_0dd83d3c0d_a8177b490f.jpg?updated_at=2023-01-07T02:40:04.271Z" alt="Sunset in the mountains" />
                     <div className="px-6 py-4">
                         <div className="font-semibold text-xl mb-2">6 Cách Giúp Phòng Ngừa Suy Yếu Cơ Tim</div>
                         <p className="text-gray-700 text-base">
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
             <LinkComponent skipLocaleHandling={false} locale={undefined} href={"/blogs/dau-lung-ve-dem/"}>
             <div className="max-w-[1240px] mx-auto p-4 text-left">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img className="w-full h-[200px]" src="https://api.echomedi.me/uploads/dau_lung1_2607_1667897495_5b37eef623.png" alt="Sunset in the mountains" />
+                    <img className="w-full h-[200px]" src="https://api.echomedi.com/uploads/dau_lung1_2607_1667897495_5b37eef623.png" alt="Sunset in the mountains" />
                     <div className="px-6 py-4">
                         <div className="font-semibold text-xl mb-2">Đau Lưng Về Đêm</div>
                         <p className="text-gray-700 text-base">
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
             <LinkComponent skipLocaleHandling={false} locale={undefined} href={"/blogs/dau-lung-ve-dem/"}>
             <div className="max-w-[1240px] mx-auto p-4 text-left">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img className="w-full h-[200px]" src="https://api.echomedi.me/uploads/medicine_2749_1667909810_1_1_25f7bf89c5.jpg" alt="Sunset in the mountains" />
+                    <img className="w-full h-[200px]" src="https://api.echomedi.com/uploads/medicine_2749_1667909810_1_1_25f7bf89c5.jpg" alt="Sunset in the mountains" />
                     <div className="px-6 py-4">
                         <div className="font-semibold text-xl mb-2">7 Yếu Tố Khiến Gan Tổn Thương</div>
                         <p className="text-gray-700 text-base">
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
             <LinkComponent skipLocaleHandling={false} locale={undefined} href={"/blogs/dau-lung-ve-dem/"}>
             <div className="max-w-[1240px] mx-auto p-4 text-left">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img className="w-full h-[200px]" src="https://api.echomedi.me/uploads/viem_tuyen_tien_liet_6111_1667898866_405223075d.png" alt="Sunset in the mountains" />
+                    <img className="w-full h-[200px]" src="https://api.echomedi.com/uploads/viem_tuyen_tien_liet_6111_1667898866_405223075d.png" alt="Sunset in the mountains" />
                     <div className="px-6 py-4">
                         <div className="font-semibold text-xl mb-2">Viêm Tuyến Tiền Liệt Có Chữa Được Không?
 </div>
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
             <LinkComponent skipLocaleHandling={false} locale={undefined} href={"/blogs/dau-lung-ve-dem/"}>
             <div className="max-w-[1240px] mx-auto p-4 text-left">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img className="w-full h-[200px]" src="https://api.echomedi.me/uploads/Screen_Shot_2022_11_07_at_19_4_7266_3759_1667825349_652de06fc8.png" alt="Sunset in the mountains" />
+                    <img className="w-full h-[200px]" src="https://api.echomedi.com/uploads/Screen_Shot_2022_11_07_at_19_4_7266_3759_1667825349_652de06fc8.png" alt="Sunset in the mountains" />
                     <div className="px-6 py-4">
                         <div className="font-semibold text-xl mb-2">5 Bệnh Lý Buồng Trứng Dễ Gây Vô Sinh Nữ
 </div>
@@ -119,7 +119,7 @@ BS.CKII Vũ Nhật Khang, Trung tâm Hỗ trợ sinh sản BVĐK Tâm Anh TP HCM
             <LinkComponent skipLocaleHandling={false} locale={undefined} href={"/blogs/dau-lung-ve-dem/"}>
             <div className="max-w-[1240px] mx-auto p-4 text-left">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                    <img className="w-full h-[200px]" src="https://api.echomedi.me/uploads/mat_dep_3802_1667794310_d7449924fc.jpg" alt="Sunset in the mountains" />
+                    <img className="w-full h-[200px]" src="https://api.echomedi.com/uploads/mat_dep_3802_1667794310_d7449924fc.jpg" alt="Sunset in the mountains" />
                     <div className="px-6 py-4">
                         <div className="font-semibold text-xl mb-2">7 Cách Giúp Ngăn Ngừa Võng Mạc Tiểu Đường
 </div>

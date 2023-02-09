@@ -28,7 +28,7 @@ import parse from 'html-react-parser';
 // const getStaticProps = makeStaticProps(['common', 'footer']);
 export { getStaticPathsPackages as getStaticPaths, getStaticPropsPackage as getStaticProps };
 
-const api_endpoint = "https://api.echomedi.me";
+const api_endpoint = "https://api.echomedi.com";
 
 const tranlsate = (s: string, locale: string | undefined) => {
   switch (s) {
@@ -65,7 +65,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
   const addToCart = (id: number) => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
-      axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
+      axios.post('https://api.echomedi.com/api/product/addServiceToCart', {
           "service_id": id,
           "quantity" : 1,
         }, {
@@ -108,7 +108,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsPackage>) => {
                     // marginTop: "100px",
                     objectFit: "cover",
                   }}
-                src={"https://api.echomedi.me" + props.image_url}
+                src={"https://api.echomedi.com" + props.image_url}
                 />
                 <p className='text-center text-3xl mt-10 mb-5'>{locale === "en" ? props.en_label : props.label}</p>
                 {props.en_desc && <div className="max-w-[1048px] mx-auto text-left px-10">

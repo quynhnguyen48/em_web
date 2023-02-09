@@ -1,6 +1,6 @@
 export class PackagesApi {
   async getAll() {
-    var v = await fetch("https://api.echomedi.me" + '/api/packages?pagination[page]=1&pagination[pageSize]=10000')
+    var v = await fetch("https://api.echomedi.com" + '/api/packages?pagination[page]=1&pagination[pageSize]=10000')
         .then((response) => response.json());
     var blogs = v.data;
     const result = blogs.map( (d:any) => {
@@ -12,7 +12,7 @@ export class PackagesApi {
   }
 
   async findOne(slug: string) {
-    var v = await fetch("https://api.echomedi.me" + '/api/package/findOne/' + slug)
+    var v = await fetch("https://api.echomedi.com" + '/api/package/findOne/' + slug)
     .then((response) => response.json());
     var blogs = v.package;
     var result = new Package();

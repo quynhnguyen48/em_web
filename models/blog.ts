@@ -1,7 +1,7 @@
 export class BlogApi {
   async getAll() {
     var v = await fetch(
-      "https://api.echomedi.me" + 
+      "https://api.echomedi.com" + 
       // "http://localhost:1337" +
     '/api/blogs?pagination[page]=1&pagination[pageSize]=10000')
         .then((response) => response.json());
@@ -18,7 +18,7 @@ export class BlogApi {
 
   async findOne(slug: string) {
     var v = await fetch(
-      "https://api.echomedi.me" + 
+      "https://api.echomedi.com" + 
       // "http://localhost:1337" +
       '/api/blog/findOne/' + slug)
       .then((response) => response.json());

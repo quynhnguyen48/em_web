@@ -53,7 +53,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
   const addToCart = (id: number) => {
     if (localStorage.getItem('token')) {
       const token = localStorage.getItem('token');
-      axios.post('https://api.echomedi.me/api/product/addServiceToCart', {
+      axios.post('https://api.echomedi.com/api/product/addServiceToCart', {
         "service_id": id,
         "quantity" : 1,
       }, {
@@ -79,7 +79,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
   }
 
   const contact = () => {
-    axios.post('https://api.echomedi.me' + '/api/packages/inquiryService', {
+    axios.post('https://api.echomedi.com' + '/api/packages/inquiryService', {
       "name": name,
       "email": email,
       "phone_number": phone_number,
@@ -104,8 +104,8 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
         <link rel="icon" href="/favicon1.png" />
       </Head>
       {/* <Hero heading={locale === "en" ? props.en_label : props.label} message={locale === "en" ? props.en_desc : props.desc} 
-        image_url={"https://api.echomedi.me" + props.image_url} 
-        image_placeholder_url={"https://api.echomedi.me" + props.placeholder_image_url} /> */}
+        image_url={"https://api.echomedi.com" + props.image_url} 
+        image_placeholder_url={"https://api.echomedi.com" + props.placeholder_image_url} /> */}
       {/* <img 
                   style={{
                     height: "300px",
@@ -113,7 +113,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     // marginTop: "100px",
                     objectFit: "cover",
                   }}
-                src={"https://api.echomedi.me" + props.image_url}
+                src={"https://api.echomedi.com" + props.image_url}
                 /> */}
       <div className="max-w-[1048px] mx-auto text-justify p-5">
         <p className='text-3xl mb-8 border-b border-black'>{locale == "en" ? (props.en_label ?? "") : (props.label ?? "")}</p>

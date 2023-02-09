@@ -76,7 +76,7 @@ const Home: NextPage = () => {
       <Instagram />
       <img style={{
         // marginBottom: "-200px"
-      }} src={"https://api.echomedi.me/uploads/dat_lich_kham_5246f10577.jpg"}
+      }} src={"https://api.echomedi.com/uploads/dat_lich_kham_5246f10577.jpg"}
         className="w-full mb-[-50px] sm:mb-[-350px]" />
       <div>
         <div style={{
@@ -123,7 +123,7 @@ const Home: NextPage = () => {
           "Sức khoẻ chính là chìa khoá quyết định chất lượng cuộc sống"}</p>
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 p-8">
-            <img src={"https://api.echomedi.me/uploads/pexels_karolina_grabowska_4386467_scaled_e1614020420439_f1bf3309a4.jpg?updated_at=2023-01-07T01:51:37.885Z"} />
+            <img src={"https://api.echomedi.com/uploads/pexels_karolina_grabowska_4386467_scaled_e1614020420439_f1bf3309a4.jpg?updated_at=2023-01-07T01:51:37.885Z"} />
 
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">

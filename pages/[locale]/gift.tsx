@@ -64,7 +64,7 @@ const Home: NextPage = () => {
 
             {/* <Slider slides={SliderData} />
       <Instagram /> */}
-            <SmallHero heading={locale === "en" ? "Gifting" : "Gửi quà"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/101534_ecdac8cf7e.jpg?updated_at=2023-01-09T03:01:38.756Z"} />
+            <SmallHero heading={locale === "en" ? "Gifting" : "Gửi quà"} message={""} sub_message={[]} image_url={"https://api.echomedi.com/uploads/101534_ecdac8cf7e.jpg?updated_at=2023-01-09T03:01:38.756Z"} />
             <div className="max-w-[1240px] mx-auto p-4 text-center">
                 <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4 pt-12">
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                     <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
-                        <img src="https://api.echomedi.me/uploads/Untitled_design_2022_08_08_T073025_967_scaled_8560afaf92.jpg?updated_at=2023-01-07T04:17:40.670Z" />
+                        <img src="https://api.echomedi.com/uploads/Untitled_design_2022_08_08_T073025_967_scaled_8560afaf92.jpg?updated_at=2023-01-07T04:17:40.670Z" />
 
                     </div>
                 </div>

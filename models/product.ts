@@ -1,8 +1,8 @@
 export class ProductApi {
   async getAll() {
 
-    // var v = await axios.get('https://api.echomedi.me/api/products');
-    var v = await fetch('https://api.echomedi.me/api/products?pagination[page]=1&pagination[pageSize]=10000')
+    // var v = await axios.get('https://api.echomedi.com/api/products');
+    var v = await fetch('https://api.echomedi.com/api/products?pagination[page]=1&pagination[pageSize]=10000')
         .then((response) => response.json());
 
     var blogs = v.data;
@@ -16,9 +16,9 @@ export class ProductApi {
   }
 
   async findOne(slug: string) {
-    var v = await fetch("https://api.echomedi.me" + '/api/product/findOne/' + slug)
+    var v = await fetch("https://api.echomedi.com" + '/api/product/findOne/' + slug)
         .then((response) => response.json());
-    // var v2 = await axios.get("https://api.echomedi.me" + '/api/product/findOne/' + slug);
+    // var v2 = await axios.get("https://api.echomedi.com" + '/api/product/findOne/' + slug);
     var product = v.product;
     var result = new Product();
     result.label = product.label;

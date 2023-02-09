@@ -39,7 +39,7 @@ const Order = () => {
 
   useEffect(() => {
     if (code) {
-    axios.get('https://api.echomedi.me' + '/api/orders/getOrderDetailByCode/' + code)
+    axios.get('https://api.echomedi.com' + '/api/orders/getOrderDetailByCode/' + code)
             .then(function (response) {
                 setCartLines(response.data.order.cart.cart_lines);
                 toast.success('Thành công');

@@ -54,7 +54,7 @@ const Home: NextPage = () => {
     if (password != confirmPassword) {
       toast.error("Mật khẩu và xác nhận mật khẩu không trùng nhau")
     } else {
-      axios.post('https://api.echomedi.me/api/auth/local/register', {
+      axios.post('https://api.echomedi.com/api/auth/local/register', {
         "username": email,
         "email": email,
         "password": password,
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
     } else {
       const toastId = toast.loading('Loading...');
       axios
-        .post('https://api.echomedi.me/api/auth/local', {
+        .post('https://api.echomedi.com/api/auth/local', {
           identifier: email,
           password: password,
         })
@@ -108,8 +108,8 @@ const Home: NextPage = () => {
 
       {/* <Slider slides={SliderData} />
       <Instagram /> */}
-      {/* <Hero heading={locale === "en" ? "Login" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"}/> */}
-      {/* <SmallHero heading={""} message={""} sub_message={[]} image_url={"https://api.echomedi.me/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"} /> */}
+      {/* <Hero heading={locale === "en" ? "Login" : "Liên hệ"} message={""} sub_message={[]} image_url={"https://api.echomedi.com/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"}/> */}
+      {/* <SmallHero heading={""} message={""} sub_message={[]} image_url={"https://api.echomedi.com/uploads/pexels_antoni_shkraba_5214952_2_836c5784e8.jpg?updated_at=2023-01-07T04:15:21.739Z"} /> */}
       <div className=""
       // style={{backgroundImage: "url(" + image_url + ")"}}
       // style={{backgroundImage: `url(${loaded ||  image_placeholder_url})`}}
@@ -122,7 +122,7 @@ const Home: NextPage = () => {
                     objectFit: "cover",
                     // objectPosition: "top"
                   }}
-                src={"https://api.echomedi.me/uploads/contact_5df089b37b.jpg?updated_at=2023-01-08T05:53:39.539Z"}
+                src={"https://api.echomedi.com/uploads/contact_5df089b37b.jpg?updated_at=2023-01-08T05:53:39.539Z"}
                 />
       
     </div>

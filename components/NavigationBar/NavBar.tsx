@@ -61,7 +61,7 @@ const NavBar = () => {
     if (localStorage.getItem("token")) {
       const token = localStorage.getItem("token");
       setLogged(true);
-      fetch("https://api.echomedi.me/api/product/getCart", {
+      fetch("https://api.echomedi.com/api/product/getCart", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -284,7 +284,7 @@ const NavBar = () => {
         <LinkComponent href={"/"} locale={""} skipLocaleHandling={false}>
           <img
             className="w-[200px] sm:28"
-            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
+            src="https://api.echomedi.com/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
         </LinkComponent>
       </div>
@@ -1001,7 +1001,7 @@ const NavBar = () => {
         <ul className="h-full p-5">
           <img
             className=""
-            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
+            src="https://api.echomedi.com/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
           <div className="text-black bg-transparent m-auto ml-5">
             <div className="flex">
@@ -1225,7 +1225,7 @@ const NavBar = () => {
         <ul className="h-full p-5">
           <img
             className=""
-            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
+            src="https://api.echomedi.com/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
 
           <p className="text-xl underline mb-5">
@@ -1385,7 +1385,7 @@ const NavBar = () => {
         <ul className="h-full p-5">
           <img
             className=""
-            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
+            src="https://api.echomedi.com/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
 
           <div className="mb-4 text-lg" onClick={handleNav2}>
@@ -1512,7 +1512,7 @@ const NavBar = () => {
         <ul className="h-full p-5 overflow-auto">
           <img
             className=""
-            src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
+            src="https://api.echomedi.com/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z"
           />
 
           <p className="underline text-xl my-5">
@@ -1883,8 +1883,8 @@ const NavBar = () => {
     //           {/* <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
     //             EC<span style={{ color: "#77b17d" }}>HO ME</span>DI
     //           </h1> */}
-    //           <img className="w-32 sm:28" src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z" />
-    //           {/* <img style={{width: "200px"}} src="https://api.echomedi.me/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z" /> */}
+    //           <img className="w-32 sm:28" src="https://api.echomedi.com/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z" />
+    //           {/* <img style={{width: "200px"}} src="https://api.echomedi.com/uploads/download_009f376226.png?updated_at=2023-01-07T02:04:58.128Z" /> */}
     //         </LinkComponent></div>}
     //         <ul style={{ color: `${textColor}` }} className="hidden md:flex sm:ml-20 ml-0">
     //           <li className="py-4 flex">
