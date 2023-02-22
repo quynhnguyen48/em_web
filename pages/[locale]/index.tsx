@@ -129,10 +129,10 @@ const Home: NextPage = () => {
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2">
             <p className="text-lg p-5 text-justify">
               {locale === "en" ? "To date the approach to healthcare has been driven by the urgent need to treat illness and injuries. The healthcare delivery has been substantially centered on institutional infrastructure. It has been based on “crisis care”. The focus must shift to wellness. Healthcare must devolve into the community and into the home. Better connected healthcare will evolve at a lower cost." : 
-              "“Chăm sóc khủng hoảng” – chữa bệnh thay vì phòng bệnh thôi vẫn chưa đủ. Chìa khóa để đạt được một cuộc sống đủ đầy chính là xây dựng sức khỏe toàn diện, tức sức khỏe cả về thể chất lẫn tinh thần. "}</p>
-            <p className="text-lg p-5 text-justify">
+              "Chữa bệnh thay vì phòng bệnh thôi vẫn chưa đủ. Chìa khóa để đạt được một cuộc sống đủ đầy chính là xây dựng sức khỏe toàn diện, tức sức khỏe thể chất lẫn tinh thần. ECHO MEDI thấu hiểu những vấn đề đó và mong muốn trở thành một nhân tố tích cực trong hành trình chăm sóc sức khỏe của người Việt Nam."}</p>
+            {/* <p className="text-lg p-5 text-justify">
               {locale === "en" ? "This reactive response must change. We must develop a thorough understanding of our health. This will allow us to monitor and maintain our wellness. It will allow us to develop preventive strategies to keep us healthy. Patients must be more thoroughly informed about their health and treatment. This will allow them to be directly involved in their own care." : 
-              "ECHO MEDI thấu hiểu những vấn đề đó và mong muốn trở thành một nhân tố tích cực trong hành trình chăm sóc sức khỏe của người Việt Nam."}</p>
+              "ECHO MEDI thấu hiểu những vấn đề đó và mong muốn trở thành một nhân tố tích cực trong hành trình chăm sóc sức khỏe của người Việt Nam."}</p> */}
             {/* <p className="text-lg p-5 text-justify">
               {locale === "en" ? "The quality of our living is significantly determined by the state of our health. We must be vigilant in the responsive maintenance of all facets of our health." : 
               "Sức khỏe chính là chìa khóa quyết định chất lượng cuộc sống của mỗi người. Chúng ta nên chú trọng việc chăm sóc và duy trì một cơ thể khỏe mạnh toàn diện."}</p>
