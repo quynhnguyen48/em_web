@@ -63,55 +63,8 @@ const tranlsate = (term: string, locale: string) => {
 }
 
 const Home: NextPage = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone_number, setPhoneNumber] = useState("");
-    const [message, setMessage] = useState("");
-    const [active, setActive] = useState(-1);
     const router = useRouter()
     const locale = router.query.locale as string || 'en';
-
-    const contact = () => {
-        axios.post('https://api.echomedi.com' + '/api/packages/contact', {
-            "name": name,
-            "email": email,
-            "phone_number": phone_number,
-            "message": message
-        })
-            .then(function (response) {
-                toast.success('Thành công');
-            })
-            .catch(function (error) {
-            });
-    }
-
-    const addToCart = (id: number) => {
-        if (localStorage.getItem('token')) {
-            const token = localStorage.getItem('token');
-            axios.post('https://api.echomedi.com/api/product/addServiceToCart', {
-                "service_id": id,
-                "quantity" : 1,
-            }, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-                .then(function (response) {
-                    toast.success('Thêm vào giỏ hàng thành công');
-                    router.push("/" + locale + "/cart", "/" + locale + "/cart", { locale });
-                    let el = document.getElementById('num-of-item');
-                    if (el) {
-                        el.innerText = (parseInt(el.innerText) + 1).toString();;
-                    }
-                })
-                .catch(function (error) {
-                    toast.error("Thêm vào giỏ hàng thất bại")
-                });
-        } else {
-            toast.success('Vui lòng đăng nhập.');
-            router.push("/" + locale + "/login", "/" + locale + "/login", { locale });
-        }
-    }
 
     return (
         <>

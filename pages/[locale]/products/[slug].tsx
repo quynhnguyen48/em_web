@@ -20,6 +20,7 @@ import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import React, { useEffect, useState } from "react";
 import { makeStaticProps, getStaticPathsProducts, getStaticPropsProduct } from '../../../lib/getStatic';
+import parse from 'html-react-parser';
 
 export { getStaticPathsProducts as getStaticPaths, getStaticPropsProduct as getStaticProps };
 
@@ -150,8 +151,9 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
               />
             </div>
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex flex-col justify-center">
-              <p className='font-bold text-xl mb-2'>{locale === "en" ? m.en_label : m.label}</p>
-              <p className='text-justify'>{locale === "en" ? m.en_desc : m.desc}</p>
+              {/* <p className='font-bold text-xl mb-2'>{locale === "en" ? m.en_label : m.label}</p>
+              <p className='text-justify'>{locale === "en" ? m.en_desc : m.desc}</p> */}
+              {parse(locale == "en" ? (m.en_desc ?? "") : (m.desc ?? ""))}
             </div>
           </div>)
         }
