@@ -85,7 +85,7 @@ const Home: NextPage = () => {
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-4 text-justify">
             {/* {locale === "vi" && <p className="mb-4">ECHO MEDI – Hệ thống Phòng khám + Nhà thuốc cung cấp dịch vụ Bác sĩ gia đình</p>} */}
             {locale === "vi" && <p className="mb-4">ECHO MEDI có mục tiêu chăm sóc sức khỏe khách hàng dựa trên bốn nền tảng: chăm sóc phòng ngừa, điều trị ban đầu, quản lý bệnh mạn tính và sức khoẻ toàn diện.</p>}
-            {locale === "vi" && <p className="mb-4">Điểm bứt phá của ECHO MEDI chính là sự cải tiến, mang cả đội ngũ gồm y bác sĩ, dược sĩ, điều dưỡng đồng hành cùng khách hàng.</p>}
+            {locale === "vi" && <p className="mb-4">Điểm bứt phá của ECHO MEDI chính là sự cải tiến, mang cả đội ngũ gồm bác sĩ, dược sĩ, điều dưỡng đồng hành cùng khách hàng.</p>}
             <p className="mb-4">
               {locale === "en" ? "ECHO MEDI’s healthcare system supplements to the current healthcare crisis management." : 
               "Khách hàng trở thành thành viên của ECHO MEDI sẽ được thông báo chi tiết về tình trạng sức khỏe và kế hoạch điều trị, cũng như trang bị kiến thức vững chắc nhằm tự theo dõi và duy trì sức khỏe của bản thân. Từ đó, thành viên có thể xây dựng các biện pháp phòng ngừa cùng các chuyên gia y tế để giữ cơ thể luôn khỏe mạnh."}</p>

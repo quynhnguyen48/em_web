@@ -97,7 +97,7 @@ const Home: NextPage = () => {
               <p className="text-xl text-green-900 text-lg italic mb-4 mt-4">Chuyên gia ưu tú – Môi trường thân thiện – Chăm sóc riêng biệt</p>
             <p className="pb-4 text-green-900 text-lg">
               {locale === "en" ? "Members receive on-demand access to a full spectrum of concierge medical services, as convenient as having a team of doctors, pharmacists, and wellness care experts with you 24/7."
-                : "Thành viên đồng hành cùng đội ngũ y bác sỹ sẽ được theo sát và thiết kế dịch vụ chăm sóc sức khoẻ tối ưu theo nhu cầu suốt 24/7."}
+                : "Thành viên đồng hành cùng đội ngũ bác sĩ sẽ được theo sát và thiết kế dịch vụ chăm sóc sức khoẻ tối ưu theo nhu cầu suốt 24/7."}
             </p>
           </div>
           <div className="grid grid-rows-none md:grid-cols-2 gap-4 text-white p-4">
@@ -143,7 +143,7 @@ const Home: NextPage = () => {
 
         </div>
       </div>
-      <Booking />
+      
       <div className="grid grid-rows-none md:grid-cols-4 grid-cols-2 p-4 gap-4 mb-8">
         <div className="md:col-span-1 row-span-2 flex flex-col	items-center">
           <LinkComponent href={"/packages/cham-soc-phong-ngua/"} skipLocaleHandling={false} locale={""}>
@@ -186,6 +186,7 @@ const Home: NextPage = () => {
           </LinkComponent>
         </div>
       </div>
+      <Booking />
       {/* <Portfolio /> */}
       {/* <Packages /> */}
       <Contact />

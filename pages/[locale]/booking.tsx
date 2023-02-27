@@ -171,17 +171,6 @@ const Booking: NextPage = () => {
               <option value="female">Nữ</option>
             </select>
           </div>
-          <div>
-            <label>{locale === "en" ? "Job" : "Nghề nghiệp"}</label>
-            <input
-              type="text"
-              name="job"
-              className={inputClassName}
-              onChange={(e) => {
-                setJob(e.target.value);
-              }}
-            />
-          </div>
           <div className="col-span-2">
             <label>{locale === "en" ? "Address" : "Địa chỉ"}</label>
             <input

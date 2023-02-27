@@ -9,7 +9,7 @@ import dayjs from "dayjs";
 const inputClassName = `
 form-control
 mt-1
-mb-3
+mb-0
 block
 w-full
 px-3
@@ -104,7 +104,7 @@ const contact = () => {
       <p className="text-2xl text-center mb-4">
         {locale == "en" ? "Booking" : "Đặt lịch khám"}
       </p>
-        <div className="mb-3 w-full flex flex-col md:grid md:grid-cols-2 gap-4">
+        <div className="mb-3 w-full flex flex-col md:grid md:grid-cols-2 gap-4 gap-y-2">
           <div>
             <label>{locale === "en" ? "Your name" : "Tên của bạn"}</label>
             <input
@@ -140,6 +140,17 @@ const contact = () => {
             </select>
           </div>
           <div>
+            <label>{locale === "en" ? "Phone number" : "Số điện thoại"}</label>
+            <input
+              type="text"
+              name="phone"
+              className={inputClassName}
+              onChange={(e) => {
+                setPhoneNumber(e.target.value);
+              }}
+            />
+          </div>
+          {/* <div>
             <label>{locale === "en" ? "Job" : "Nghề nghiệp"}</label>
             <input
               type="text"
@@ -149,7 +160,7 @@ const contact = () => {
                 setJob(e.target.value);
               }}
             />
-          </div>
+          </div> */}
           <div className="col-span-2">
             <label>{locale === "en" ? "Address" : "Địa chỉ"}</label>
             <input
@@ -161,17 +172,7 @@ const contact = () => {
               }}
             />
           </div>
-          <div>
-            <label>{locale === "en" ? "Phone number" : "Số điện thoại"}</label>
-            <input
-              type="text"
-              name="phone"
-              className={inputClassName}
-              onChange={(e) => {
-                setPhoneNumber(e.target.value);
-              }}
-            />
-          </div>
+          
           <div>
             <label>Email</label>
             <input
@@ -233,7 +234,7 @@ const contact = () => {
               <option value="binhduong">{locale == "en" ? "Canary Plaza, 5 Binh Duong Highway, Thuan Giao, Thuan An City, Binh Duong" : "Canary Plaza, số 5 Đại lộ Bình Dương, Thuận Giao, Tp. Thuận An, Bình Dương"}</option>
             </select>
           </div>
-        <div className="flex space-x-2 justify-center">
+        <div className="flex space-x-2 justify-center mt-4">
           <button
             onClick={handleBooking}
             style={{
