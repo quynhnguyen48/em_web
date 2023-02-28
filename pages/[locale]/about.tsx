@@ -79,7 +79,7 @@ const Home: NextPage = () => {
                 />
       <div className="max-w-[1240px] mx-auto p-4 text-left">
         <p className="text-3xl text-center mt-4">{locale === "en" ? "About ECHO MEDI" : "Về ECHO MEDI"}</p>
-        {locale === "vi" && <p className="mb-4 text-center mt-4 font-bold text-xl text-green-800">ECHO MEDI - Hệ thống Y tế toàn diện cho bạn và gia đình</p>}
+        {locale === "vi" && <p className="mb-4 text-center mt-4 font-bold text-xl text-green-800">ECHO MEDI - Hệ thống y tế toàn diện cho bạn và gia đình</p>}
 
         <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-4 text-justify">

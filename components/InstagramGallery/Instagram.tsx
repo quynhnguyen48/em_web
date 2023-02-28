@@ -14,7 +14,7 @@ const Instagram = () => {
       <div className="max-w-[1240px] mx-auto text-center">
       <p className="text-xl text-white mb-5 text-center">
         {locale === "en" ? "ECHO MEDI provides its members with a first-class, on-demand, comprehensive healthcare and wellbeing experience, anytime, anywhere.": 
-        "ECHO MEDI - Hệ thống Y tế toàn diện cho bạn và gia đình"
+        "ECHO MEDI - Hệ thống y tế toàn diện cho bạn và gia đình"
         }
       </p>
       <p className="text-white text-lg text-left">{

@@ -91,7 +91,7 @@ const Home: NextPage = () => {
             />
             {/* <p className="text-3xl mt-5 text-center">{locale == "en" ? "Pharmacy" : "Nhà thuốc"}</p> */}
             <p className="text-3xl text-center mt-8">{locale === "en" ? "PHARMACY" : "NHÀ THUỐC"}</p>
-        {locale === "vi" && <p className="mb-4 text-center mt-4 font-bold text-xl text-green-800">ECHO MEDI - Hệ thống Y tế toàn diện cho bạn và gia đình</p>}
+        {locale === "vi" && <p className="mb-4 text-center mt-4 font-bold text-xl text-green-800">ECHO MEDI - Hệ thống y tế toàn diện cho bạn và gia đình</p>}
 
             <div className="max-w-[1048px] mx-auto p-4 text-center">
 
