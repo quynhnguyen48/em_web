@@ -85,7 +85,7 @@ const Home: NextPage = () => {
       <img style={{
         // marginBottom: "-200px"
       }} src={"https://api.echomedi.com/uploads/dat_lich_kham_5246f10577.jpg"}
-        className="w-full mb-[-50px] sm:mb-[-350px]" />
+        className="w-full mb-[-50px] sm:mb-[-270px]" />
       <div>
         <div style={{
           transform: "rotate(180deg)",
