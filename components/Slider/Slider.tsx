@@ -28,7 +28,7 @@ const Slider = ({ slides }: Props) => {
   SwiperCore.use([Autoplay]);
 
   return (
-    <div id="gallery" className="w-full mx-auto">
+    <div id="gallery" className="max-w-[1024px] mx-auto">
       <div className="relative flex justify-center h-[350px] md:h-[450px]">
         <Swiper className="mySwiper" autoplay={true}>
           <SwiperSlide>

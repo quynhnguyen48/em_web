@@ -1138,7 +1138,7 @@ const NavBar = () => {
           </li>
           <li onClick={handleNav} className="p-4 text-xl hover:text-gray-500">
             <LinkComponent
-              href={"/#booking"}
+              href={"/booking"}
               locale=""
               skipLocaleHandling={false}
             >
