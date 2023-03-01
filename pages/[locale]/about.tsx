@@ -126,7 +126,7 @@ enhance their quality of life and sense of wellbeing.</p>}
 nurses coming from leading domestic and foreign training institutions, for example,
 Milwaukee-Wisconsin Medical University, Ho Chi Minh City University of Medicine
 and Pharmacy, Pham Ngoc Thach Medical University, Ton Duc Thang University.</p>
-<p className="mb-4">ECHO MEDI – Integrated Family Medicine and Pharmaceutical Provider for
+<p className="mb-4 font-bold">ECHO MEDI – Integrated Family Medicine and Pharmaceutical Provider for
 You and Your Loved Ones</p>
 <p className="mb-4">ECHO MEDI is an integrated healthcare provider. We have evolved the traditional
 &quot;Family Doctor&quot; model by bringing together in one place, both online and offline, a
