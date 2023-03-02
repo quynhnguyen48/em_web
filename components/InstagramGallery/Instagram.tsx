@@ -10,7 +10,7 @@ const Instagram = () => {
       style={{
         backgroundColor: "#9EA99A",
       }}
-    className="max-w-[1024px] mx-auto text-center p-6">
+    className="full-w mx-auto text-center p-6">
       <div className="max-w-[1240px] mx-auto text-center">
       <p className="text-2xl text-white mb-5 text-center">
         {locale === "en" ? "ECHO MEDI provides its members with a first-class, on-demand, comprehensive healthcare and wellbeing experience, anytime, anywhere.": 
