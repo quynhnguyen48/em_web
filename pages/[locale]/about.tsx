@@ -103,7 +103,7 @@ const Home: NextPage = () => {
             <p className="mb-4">
               {"ECHO MEDI tự hào với đội ngũ chuyên gia, bác sĩ, dược sĩ và điều dưỡng được đào tạo và làm việc tại các đơn vị hàng đầu trong và ngoài nước: Đại Học Y Khoa Wisconsin (Hoa Kỳ), Đại Học Y Dược TP Hồ Chí Minh, Đại Học Y Khoa Phạm Ngọc Thạch… Bệnh Viện USC (Hoa Kỳ), Bệnh Viện Chợ Rẫy, Bệnh Viện Thống Nhất, Bệnh Viện Nhiệt Đới, Bệnh Viện 115…"}</p>
           </div>
-          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
+          <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-4">
             <div className="flex justify-center">
               <img src={"https://api.echomedi.com/uploads/ce0e70088ab449ea10a5_e95c71e5ec.jpg?updated_at=2023-01-07T04:14:56.849Z"} />
             </div>
@@ -112,41 +112,13 @@ const Home: NextPage = () => {
           <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
             <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-4 text-justify">
               {/* {locale === "vi" && <p className="mb-4">ECHO MEDI – Hệ thống Phòng khám + Nhà thuốc cung cấp dịch vụ Bác sĩ gia đình</p>} */}
-              {locale === "vi" && <p className="mb-4">ECHO MEDI’s healthcare system supplements to the current healthcare crisis management.</p>}
-              {locale === "vi" && <p className="mb-4">ECHO MEDI’s four pillars of healthcare system is to utilize a pathogenic and reactive
-approach, focusing on causes, consequences, diagnosis and treatment of diseases and
-injuries. We focus proactively on prevention as well as maximizing our members
-vitality, adopting attitudes and lifestyles that prevent disease, improve health, and
-enhance their quality of life and sense of wellbeing.</p>}
+              {<p className="mb-4">ECHO MEDI’s healthcare system supplements to the current healthcare crisis management.</p>}
+              {<p className="mb-4">ECHO MEDI’s four pillars of healthcare system,  Preventive Care, Primary Care, Chronic Disease Management, and Comprehensive Wellness Care, is to utilize a pathogenic and reactive approach, focusing on causes, consequences, diagnosis and treatment of diseases and injuries. We focus proactively on prevention as well as maximizing our members vitality, adopting attitudes and lifestyles that prevent disease, improve health, and enhance their quality of life and sense of wellbeing.</p>}
               <p className="mb-4">
-              Besides, ECHO MEDI is proud to have a team of experts, doctors, pharmacists and
-nurses coming from leading domestic and foreign training institutions, for example,
-Milwaukee-Wisconsin Medical University, Ho Chi Minh City University of Medicine
-and Pharmacy, Pham Ngoc Thach Medical University, Ton Duc Thang University.</p>
-<p className="mb-4 font-bold">ECHO MEDI – Integrated Family Medicine and Pharmaceutical Provider for
-You and Your Loved Ones</p>
-<p className="mb-4">ECHO MEDI is an integrated healthcare provider. We have evolved the traditional
-&quot;Family Doctor&quot; model by bringing together in one place, both online and offline, a
-team of healthcare professionals including doctors, pharmacists, nurses, and
-nutritionists, trained domestically and abroad to care for, monitor, and improve your
-health to enhance your quality of life and sense of wellbeing.</p>
-<p className="mb-4">Our philosophy is &quot;Prevention is better than cure&quot;! ECHO MEDI will accompany you
-in your healthcare journey.</p>
-<p className="mb-4">ECHO MEDI utilises a pathogenic and reactive approach, focusing on causes,
-consequences, diagnosis and treatment of diseases and injuries.</p>
-<p className="mb-4">To achieve this, ECHO MEDI focus proactively on: preventive care, primary care,
-chronic disease management, comprehensive wellness care.</p>
-<p className="mb-4">ECHO MEDI’s integrated pharmacy ensures adequate supply of not only medicines
-but also beauty products, functional food and nutraceuticals and comprehensive health
-care products with clear origins. Our pharmacists will provide advice and guidance to
-you on safe, reasonable, and effective medication use, tailored to your individual
-health condition.</p>
-<p className="mb-4">Visit ECHO MEDI today to manage your health more effectively. ECHO MEDI’s
-healthcare professionals will accompany you 24/7, online and offline to take care of
-your health and wellbeing.</p>
-              
+              Additionally, ECHO MEDI’s integrated pharmacy ensures adequate supply of not only medicines but also beauty products, functional food and nutraceuticals. Our pharmacists will provide advice and guidance to you on safe, reasonable, and effective medication use, personalized to your individual health condition.</p>
+<p className="mb-4">As an integrated healthcare provider, we have evolved the traditional "Family Doctor" model by bringing together in one place, both online and offline, a team of healthcare professionals including doctors, pharmacists, nurses, and nutritionists, trained domestically and abroad to care for, monitor, and improve your health to enhance your quality of life and sense of wellbeing.</p>
             </div>
-            <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-10">
+            <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-4">
             <div className="flex justify-center">
               <img src={"https://api.echomedi.com/uploads/ce0e70088ab449ea10a5_e95c71e5ec.jpg?updated_at=2023-01-07T04:14:56.849Z"} />
             </div>
