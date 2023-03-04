@@ -240,19 +240,19 @@ const Home: NextPage = () => {
         showCloseButton
         visibleModal={showModal}
         wrapperClassName="!w-[350px]"
-        contentClassName="!min-h-[0]" onClose={undefined}      >
-        <p className="text-2xl font-bold text-center mb-4">Đặt khám ngay</p>
-        <p className="text-24 text-center">Vui lòng lựa chọn phương thức khám tại nhà hoặc phòng khám</p>
+        contentClassName="!min-h-[0]" onClose={() => setShowModal(false)}      >
+        <p className="text-2xl font-bold text-center mb-4">{locale === "en" ? "Book an Appointment" : "Đặt khám ngay"}</p>
+        <p className="text-24 text-center">{locale === "en" ? "Please indicate whether you'd like to book home visit or clinic visit" : "Vui lòng lựa chọn phương thức khám tại nhà hoặc phòng khám"}</p>
         <div className="flex flex-col justify-center gap-x-40 mt-4">
         <LinkComponent href={"/booking/"} skipLocaleHandling={false} locale={""}>
-        <Button btnType="primary" onClick={() => {}} className="mb-2 m-auto" type={undefined} icon={undefined}>Đặt lịch tại phòng khám</Button>
+        <Button btnType="primary" onClick={() => {}} className="mb-2 m-auto" type={undefined} icon={undefined}>{locale == "en" ? "Book Clinic Visit" : "Đặt lịch tại phòng khám"}</Button>
         </LinkComponent>
-        <p className="text-center mb-2">Hoặc</p>
+        <p className="text-center mb-2">{locale == "en" ? "OR" : "Hoặc"}</p>
         <LinkComponent href={"/booking/"} skipLocaleHandling={false} locale={""}>
-        <Button btnType="primary" onClick={() => {}} className="mb-2 m-auto" type={undefined} icon={undefined}>Đặt lịch khám tại nhà</Button>
+        <Button btnType="primary" onClick={() => {}} className="mb-2 m-auto" type={undefined} icon={undefined}>{locale == "en" ? "Book Home Visit" : "Đặt lịch khám tại nhà"}</Button>
         </LinkComponent>
-        <p className="text-center mb-2">Hoặc</p>
-        <p className="text-center">Liên hệ 1900 638 408</p>
+        <p className="text-center mb-2">{locale == "en" ? "OR" : "Hoặc"}</p>
+        <p className="text-center">{locale == "en" ? "Contact" : "Liên hệ"} 1900 638 408</p>
         </div>
       </Modal>
     </>

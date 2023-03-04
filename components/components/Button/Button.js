@@ -7,7 +7,7 @@ const TYPES = {
   primary:
     "flex items-center justify-center bg-green-900 text-white font-bold hover:opacity-80",
   outline:
-    "flex items-center justify-center border-1 border-primary text-primary hover:opacity-80",
+    "flex items-center justify-center border-2 border-green-900 text-primary hover:opacity-80",
   text: "",
 }
 
@@ -40,7 +40,7 @@ const Button = (
     return (
       <Loading
         className={classNames({
-          "!border-primary": btnType === "outline",
+          "!border-green-900": btnType === "outline",
           "!w-4 !h-4": btnSize === "small",
         })}
       />

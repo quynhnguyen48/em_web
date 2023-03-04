@@ -12,9 +12,9 @@ import Input from "./components/Input"
 import Datepicker from "./components/Datepicker"
 // import { CUSTOMER_TAG, GENDER } from "constants/Customer"
 // import { REGION_DATA } from "constants/Regions"
-// import { createNewUser, getListUsers, updateUser } from "services/api/users"
+import { createNewUser, getListUsers, updateUser } from "../services/api/users"
 // import { randomPassword } from "utils/string"
-// import { getErrorMessage } from "utils/error"
+import { getErrorMessage } from "../utils/error";
 
 const CustomersForm = ({ data, fromCheckIn, onUpdateGuestUserCheckin, onCloseModal }) => {
   // const navigate = useNavigate()
@@ -47,8 +47,6 @@ const CustomersForm = ({ data, fromCheckIn, onUpdateGuestUserCheckin, onCloseMod
     // customerTag: yup.string().required().typeError("Customer Tag is required"),
     // referral: yup.object().nullable(),
   })
-
-  console.log('data', data)
 
   const {
     handleSubmit,
@@ -152,10 +150,10 @@ const CustomersForm = ({ data, fromCheckIn, onUpdateGuestUserCheckin, onCloseMod
       setLoading(true)
       const payload = {
         ...formData,
-        username: formData.email,
+        // username: formData.email,
         referral: formData?.referral?.value,
-        customerTag: formData.customerTag === CUSTOMER_TAG.REFERRAL ? "referral" : "new",
       }
+      console.log('asd', data);
       if (data?.id) {
         await updateUser(data?.id, payload)
         toast.success("Customer updated successfully")
@@ -178,12 +176,10 @@ const CustomersForm = ({ data, fromCheckIn, onUpdateGuestUserCheckin, onCloseMod
     }
   }
 
-  console.log('email', data.email, getValues('email'))
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="space-y-6">
-        <div className="grid grid-cols-4 gap-6">
+      <div className="space-y-6 p-4 bg-green-100">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-4">
           <Controller
             name="email"
             control={control}
@@ -463,16 +459,16 @@ const CustomersForm = ({ data, fromCheckIn, onUpdateGuestUserCheckin, onCloseMod
         </div> */}
       </div>
       
-      <div className="flex gap-x-4 mt-10">
+      <div className="flex gap-x-4 mt-10 p-4">
         <Button btnType="outline" className="fill" type="submit" loading={loading}>
-          Save
+          Lưu
         </Button>
         <Button
           btnType="outline"
           type="reset"
           onClick={() => (fromCheckIn ? onCloseModal() : navigate(-1))}
         >
-          Cancel
+          Huỷ
         </Button>
       </div>
     </form>

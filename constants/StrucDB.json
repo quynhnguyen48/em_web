@@ -1,0 +1,237 @@
+{
+  "USER": {
+    "code": "string", // #CUS.ABC123
+    "email": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "gender": "string", //male || female
+    "dateOfBirth": "Date",
+    "phone": "string",
+    "address": {
+      "city": {
+        "id": "number",
+        "name": "string"
+      },
+      "district": {
+        "id": "number",
+        "name": "string"
+      },
+      "ward": {
+        "id": "number",
+        "name": "string"
+      },
+      "address": "string"
+    },
+    "customerTag": "string", // new-customer || referral
+    "referral": "USER"
+  },
+
+  "BOOKINGS": {
+    "code": "string", // #BOOK.ABC123
+    "customer": "USER",
+    "treatment": "TREATMENT",
+    "date": "Date",
+    "timeSession": "string", // 10:00 - 10:40
+    "note": "string",
+    "staff": "STAFF"
+  },
+
+  "ORDERS": {
+    "code": "string", // #ORD.ABC123
+    "customer": "USER",
+    "products": ["PRODUCT"],
+    "paymentMethod": "string" // cash-on-delivery || Momo
+    "receiver": "STAFF",
+    "phone": "string",
+    "address": {
+      "city": {
+        "id": "number",
+        "name": "string"
+      },
+      "district": {
+        "id": "number",
+        "name": "string"
+      },
+      "ward": {
+        "id": "number",
+        "name": "string"
+      },
+      "address": "string"
+    },
+    "billing": {
+      "subTotal": "number",
+      "promotion": "number",
+      "tax": "number",
+      "shippingFee": "number",
+      "total": "number"
+    }
+  },
+
+  "PRODUCT": {
+    "code": "string", // #PROD.ABC123
+    "inventory": "number",
+    "title": "string",
+    "category": "PRODUCT_CATEGORY",
+    "brand": "PRODUCT_BRAND",
+    "shorDescription": "string",
+    "benefits": "string",
+    "descriptions": "string",
+    "ingredients": "string",
+    "variants": [
+      {
+        "size": "number",
+        "price": "number",
+        "discountPrice": "number",
+        "inventor": "number",
+        "unit": "string"
+      }
+    ],
+    "images": ["string"]
+  },
+
+  "PRODUCT_CATEGORY": {
+    "slug": "string",
+    "title": {
+      "en": "string",
+      "vi": "string"
+    },
+    "pushing": "boolean",
+    "image": "string"
+  },
+
+  "PRODUCT_BRAND": {
+    "slug": "string",
+    "title": "string",
+    "pushing": "boolean",
+    "image": "string"
+  },
+
+  "TREATMENT": {
+    "code": "string", // #TREAT.ABC123
+    "slug": "string",
+    "category": "TREATMENT_CATEGORY",
+    "name": "string",
+    "title": {
+      "en": "string",
+      "vi": "string"
+    },
+    "unit": "string", // lần, gói, liệu trình
+    "price": "number",
+    "utilities": {
+      "isSpecial": "boolean",
+      "isHighTechnology": "boolean",
+      "haveAreasTreatment": "boolean"
+    },
+    "areasImage": "string",
+    "highLight": [
+      {
+        "icon": "string",
+        "title": {
+          "en": "string",
+          "vi": "string"
+        }
+      }
+    ],
+    "procedure": [
+      {
+        "title": {
+          "en": "string",
+          "vi": "string"
+        },
+        "image": "string"
+      }
+    ],
+    "timeSession": {
+      "date": ["string"],
+      "time": ["string"],
+      "settings": {
+        "dayTime": {
+          "from": "string",
+          "to": "string"
+        },
+        "nightTime": {
+          "from": "string",
+          "to": "string"
+        },
+        "duration": "string"
+      }
+    },
+    "results": {
+      "isBeforeAfterSlider": "boolean",
+      "sliderImages": [
+        {
+          "id": "string",
+          "title": {
+            "en": "string",
+            "vi": "string"
+          },
+          "images": ["string"]
+        }
+      ]
+    }
+  },
+
+  "TREATMENT_HISTORY": {
+    "code": "string", // #HIST.ABC123
+    "customer": "USER",
+    "treatment": "TREATMENT",
+    "progressTimes": "number",
+    "history": [
+      {
+        "title": "string",
+        "images": ["string"],
+        "note": "string"
+      }
+    ]
+  },
+
+  "BLOG": {
+    "code": "string", // #BLOG.ABC123
+    "category": "BLOG_CATEGORY",
+    "title": {
+      "en": "string",
+      "vi": "string"
+    },
+    "content": {
+      "en": "HTML",
+      "vi": "HTML"
+    },
+    "thumbnail": "string"
+  },
+
+  "BLOG_CATEGORY": {
+    "slug": "string",
+    "title": {
+      "en": "string",
+      "vi": "string"
+    }
+  },
+
+  "STAFF": {
+    "code": "string", // #STAFF.ABC123
+    "email": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "gender": "string",
+    "dateOfBirth": "Date",
+    "phone": "string",
+    "role": "USER_ROLE",
+    "identityNumber": "number",
+    "address": {
+      "city": {
+        "id": "number",
+        "name": "string"
+      },
+      "district": {
+        "id": "number",
+        "name": "string"
+      },
+      "ward": {
+        "id": "number",
+        "name": "string"
+      },
+      "address": "string"
+    },
+    "isBlock": "boolean"
+  }
+}
