@@ -1,6 +1,6 @@
 import classNames from "classnames"
 import PropTypes from "prop-types"
-import Loading from "../../components/Loading"
+import Loading from "../Loading"
 
 
 const TYPES = {
