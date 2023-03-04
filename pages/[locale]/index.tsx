@@ -13,7 +13,9 @@ import { makeStaticProps } from '../../lib/getStatic';
 import { useTranslation } from 'next-i18next'
 import LinkComponent from "../../components/Link";
 import Booking from "../../components/Booking/Booking"
-
+import Modal from "../../components/components/Modal";
+import Button from "../../components/components/Button";
+import { useEffect, useState } from "react";
 const getStaticProps = makeStaticProps(['common', 'footer'])
 const getStaticPaths = () => ({
   fallback: false,
@@ -64,6 +66,7 @@ const Home: NextPage = () => {
   const router = useRouter()
   const locale = router.query.locale as string || 'en';
   const { t } = useTranslation('common');
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -199,7 +202,7 @@ const Home: NextPage = () => {
       <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 flex justify-center mb-10 rounded-2xl">
         <div className="w-60 py-2 px-8 inline bg-green-100 text-black text-center rounded-2xl">
 
-          <LinkComponent locale={""} skipLocaleHandling={false} href="/booking">
+          {/* <LinkComponent locale={""} skipLocaleHandling={false} href="/booking">
             <svg className="m-auto mb-4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height="40px" width="40px" version="1.1" id="Capa_1" viewBox="0 0 29.237 29.237" xmlSpace="preserve">
               <g>
                 <g>
@@ -212,13 +215,46 @@ const Home: NextPage = () => {
                 </g>
               </g>
             </svg>
-            {tranlsate("book_now", locale)}</LinkComponent>
+            {tranlsate("book_now", locale)}</LinkComponent> */}
+            <button onClick={e => setShowModal(true)}>
+            <svg className="m-auto mb-4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height="40px" width="40px" version="1.1" id="Capa_1" viewBox="0 0 29.237 29.237" xmlSpace="preserve">
+              <g>
+                <g>
+                  <path d="M7.685,24.819H8.28v-2.131h3.688v2.131h0.596v-2.131h3.862v2.131h0.597v-2.131h4.109v2.131h0.595    v-2.131h3.417v-0.594h-3.417v-3.861h3.417v-0.596h-3.417v-3.519h3.417v-0.594h-3.417v-2.377h-0.595v2.377h-4.109v-2.377h-0.597    v2.377h-3.862v-2.377h-0.596v2.377H8.279v-2.377H7.685v2.377H3.747v0.594h3.938v3.519H3.747v0.596h3.938v3.861H3.747v0.594h3.938    V24.819z M12.563,22.094v-3.861h3.862v3.861H12.563z M21.132,22.094h-4.109v-3.861h4.109V22.094z M21.132,14.118v3.519h-4.109    v-3.519C17.023,14.119,21.132,14.119,21.132,14.118z M16.426,14.118v3.519h-3.862v-3.519    C12.564,14.119,16.426,14.119,16.426,14.118z M8.279,14.118h3.688v3.519H8.279V14.118z M8.279,18.233h3.688v3.861H8.279V18.233z" />
+                  <path d="M29.207,2.504l-4.129,0.004L24.475,2.51v2.448c0,0.653-0.534,1.187-1.188,1.187h-1.388    c-0.656,0-1.188-0.533-1.188-1.187V2.514l-1.583,0.002v2.442c0,0.653-0.535,1.187-1.191,1.187h-1.388    c-0.655,0-1.188-0.533-1.188-1.187V2.517l-1.682,0.004v2.438c0,0.653-0.534,1.187-1.189,1.187h-1.389    c-0.653,0-1.188-0.533-1.188-1.187V2.525H8.181v2.434c0,0.653-0.533,1.187-1.188,1.187H5.605c-0.656,0-1.189-0.533-1.189-1.187    V2.53L0,2.534v26.153h2.09h25.06l2.087-0.006L29.207,2.504z M27.15,26.606H2.09V9.897h25.06V26.606z" />
+                  <path d="M5.605,5.303h1.388c0.163,0,0.296-0.133,0.296-0.297v-4.16c0-0.165-0.133-0.297-0.296-0.297H5.605    c-0.165,0-0.298,0.132-0.298,0.297v4.16C5.307,5.17,5.44,5.303,5.605,5.303z" />
+                  <path d="M11.101,5.303h1.389c0.164,0,0.297-0.133,0.297-0.297v-4.16c-0.001-0.165-0.134-0.297-0.298-0.297    H11.1c-0.163,0-0.296,0.132-0.296,0.297v4.16C10.805,5.17,10.938,5.303,11.101,5.303z" />
+                  <path d="M16.549,5.303h1.388c0.166,0,0.299-0.133,0.299-0.297v-4.16c-0.001-0.165-0.133-0.297-0.299-0.297    h-1.388c-0.164,0-0.297,0.132-0.297,0.297v4.16C16.252,5.17,16.385,5.303,16.549,5.303z" />
+                  <path d="M21.899,5.303h1.388c0.164,0,0.296-0.133,0.296-0.297v-4.16c0-0.165-0.132-0.297-0.296-0.297    h-1.388c-0.164,0-0.297,0.132-0.297,0.297v4.16C21.603,5.17,21.735,5.303,21.899,5.303z" />
+                </g>
+              </g>
+            </svg>
+            {tranlsate("book_now", locale)}</button>
         </div>
       </div>
       {/* <Booking /> */}
       {/* <Portfolio /> */}
       {/* <Packages /> */}
       <Contact />
+      <Modal
+        showCloseButton
+        visibleModal={showModal}
+        wrapperClassName="w-[388px]"
+        contentClassName="!min-h-[0]" onClose={undefined}      >
+        <p className="text-2xl font-bold text-center mb-4">Đặt khám ngay</p>
+        <p className="text-24 text-center">Vui lòng lựa chọn phương thức khám tại nhà hoặc phòng khám</p>
+        <div className="flex flex-col justify-center gap-x-40 mt-4">
+        <LinkComponent href={"/booking/"} skipLocaleHandling={false} locale={""}>
+        <Button btnType="primary" onClick={() => {}} className="mb-2 m-auto" type={undefined} icon={undefined}>Đặt lịch tại phòng khám</Button>
+        </LinkComponent>
+        <p className="text-center mb-2">Hoặc</p>
+        <LinkComponent href={"/booking/"} skipLocaleHandling={false} locale={""}>
+        <Button btnType="primary" onClick={() => {}} className="mb-2 m-auto" type={undefined} icon={undefined}>Đặt lịch khám tại nhà</Button>
+        </LinkComponent>
+        <p className="text-center mb-2">Hoặc</p>
+        <p className="text-center">Liên hệ 1900 638 408</p>
+        </div>
+      </Modal>
     </>
   );
 };
