@@ -239,7 +239,7 @@ const Home: NextPage = () => {
       <Modal
         showCloseButton
         visibleModal={showModal}
-        wrapperClassName="w-[388px]"
+        wrapperClassName="w-[350px]"
         contentClassName="!min-h-[0]" onClose={undefined}      >
         <p className="text-2xl font-bold text-center mb-4">Đặt khám ngay</p>
         <p className="text-24 text-center">Vui lòng lựa chọn phương thức khám tại nhà hoặc phòng khám</p>
