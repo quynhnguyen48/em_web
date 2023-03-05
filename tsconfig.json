@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/components/AddNewAssetDrawer/index.js", "components/components/Button/Button.js"],
   "exclude": ["node_modules"]
 }

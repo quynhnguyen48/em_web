@@ -62,9 +62,9 @@ const Order = () => {
 
   {/* <Slider slides={SliderData} />
   <Instagram /> */}
-  <div className="container mx-auto mt-10">
+  <div className="container mx-auto mt-10 bg-green-100">
 <div className="flex shadow-md my-10">
-  <div className="w-4/4 sm:w-3/4 bg-white px-10 py-10">
+  <div className="w-4/4 sm:w-3/4 px-10 py-10">
     <div className="flex justify-between border-b pb-8">
       <p className="font-semibold text-xl">{locale === "en" ? "Order" : "Đơn hàng"} {code} - {getDisplayedStatus(data?.status)}</p>
       {/* <h2 className="font-semibold text-2xl">3 Items</h2> */}

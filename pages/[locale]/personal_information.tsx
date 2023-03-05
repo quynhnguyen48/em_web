@@ -69,10 +69,10 @@ const PersonalInformation = () => {
 
     {/* <Slider slides={SliderData} />
   <Instagram /> */}
-  <div className="flex flex-col sm:flex-row flex-wrap my-8 max-w-[1024px] m-auto">
-  <p className='text-2xl'>Thông tin cá nhân</p>
-  {data && <CustomerForm data={data} fromCheckIn={undefined} onUpdateGuestUserCheckin={undefined} onCloseModal={undefined} />}
-  </div>
+    <div className="my-8 max-w-[1024px] m-auto">
+      <p className='text-2xl mb-4 text-center'>Thông tin cá nhân</p>
+      {data && <CustomerForm data={data} fromCheckIn={undefined} onUpdateGuestUserCheckin={undefined} onCloseModal={undefined} />}
+    </div>
     <Contact />
   </>
 }

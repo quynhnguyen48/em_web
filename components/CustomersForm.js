@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import classNames from "classnames"
 import { toast } from "react-toastify"
-
+import LinkComponent from '../components/Link';
 import Button from "./components/Button"
 import Input from "./components/Input"
 // import Select from "./components/Select"
@@ -109,41 +109,10 @@ const CustomersForm = ({ data, fromCheckIn, onUpdateGuestUserCheckin, onCloseMod
     }
   }, [data?.address?.district, districtList])
 
-  const provinceFormatted = () => {
-    return provincesList.map((province) => ({
-      value: province.id,
-      label: province.name,
-    }))
+  const logout = () => {
+    localStorage.removeItem('token');
+    location.href = "/";
   }
-
-  const handleSearchCustomer = useCallback((value) => {
-    if (!value) return
-    setLoadingCustomers(true)
-    getListUsers(
-      { pageSize: 1000 },
-      {
-        $or: [
-          { firstName: { $containsi: value } },
-          { lastName: { $containsi: value } },
-          { code: { $containsi: value } },
-        ],
-      }
-    )
-      .then((res) => {
-        if (res.data) {
-          setCustomersData(
-            res.data?.map((customer) => ({
-              value: customer?.id,
-              label: `${customer?.firstName} ${customer?.lastName} (${customer?.code})`,
-            }))
-          )
-        }
-        setLoadingCustomers(false)
-      })
-      .catch(() => {
-        setLoadingCustomers(false)
-      })
-  }, [])
 
   const onSubmit = async (formData) => {
     try {
@@ -282,105 +251,6 @@ const CustomersForm = ({ data, fromCheckIn, onUpdateGuestUserCheckin, onCloseMod
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-x-6">
-          <div className="w-full">
-            {/* <Controller
-              name="address.province"
-              control={control}
-              render={({ field: { value, ref } }) => (
-                <Select
-                  placeholder="Chọn thành phố"
-                  label="Thành phố"
-                  name="address.province"
-                  onChange={(e) => {
-                    setValue(
-                      "address.province",
-                      { id: e.value, name: e.label },
-                      { shouldDirty: true, shouldValidate: true }
-                    )
-                    let chosenProvince = provincesList?.find((item) => item.id === e.value)
-
-                    setDistrictList(
-                      chosenProvince?.level2s?.map((district) => {
-                        return {
-                          value: district.id,
-                          label: district.name,
-                          ...district,
-                        }
-                      })
-                    )
-
-                    setValue("address.district", null, { shouldDirty: true })
-                    setValue("address.ward", null, { shouldDirty: true })
-                  }}
-                  value={value && { value: value?.id, label: value?.name }}
-                  options={provinceFormatted()}
-                  errors={errors?.address?.province?.message}
-                />
-              )}
-            /> */}
-          </div>
-          {/* <div className="w-full">
-            <Controller
-              name="address.district"
-              control={control}
-              render={({ field: { value, ref } }) => (
-                <Select
-                  isDisabled={!getValues("address.province")}
-                  placeholder="Chọn quận"
-                  label="Quận"
-                  name="address.district"
-                  onChange={(e) => {
-                    setValue(
-                      "address.district",
-                      { id: e.value, name: e.label },
-                      { shouldDirty: true, shouldValidate: true }
-                    )
-                    let chosenDistrict = districtList.filter(
-                      (districtItem) => districtItem.id === e.value
-                    )
-
-                    setWardList(
-                      chosenDistrict[0]?.level3s?.map((ward) => {
-                        return { value: ward.name, label: ward.name }
-                      })
-                    )
-
-                    setValue("address.ward", null)
-                  }}
-                  value={value && { value: value?.id, label: value?.name }}
-                  options={districtList}
-                  errors={errors?.address?.district?.message}
-                />
-              )}
-            />
-          </div> */}
-          {/* <div className="w-full">
-            <Controller
-              name="address.ward"
-              control={control}
-              render={({ field: { value, ref } }) => (
-                <Select
-                  isDisabled={!getValues("address.district")}
-                  placeholder="Chọn phường"
-                  label="Phường"
-                  name="address.ward"
-                  onChange={(e) => {
-                    setValue(
-                      "address.ward",
-                      { id: e.value, name: e.label },
-                      { shouldDirty: true, shouldValidate: true }
-                    )
-                  }}
-                  value={value && { value: value?.id, label: value?.name }}
-                  options={wardList}
-                  errors={errors?.address?.ward?.message}
-                />
-              )}
-            />
-          </div> */}
-        </div>
-
         <Controller
           name="address.address"
           control={control}
@@ -395,70 +265,15 @@ const CustomersForm = ({ data, fromCheckIn, onUpdateGuestUserCheckin, onCloseMod
             />
           )}
         />
-
-        {/* <div className="grid grid-cols-2 gap-x-6">
-          <div className="space-y-2">
-            <label className="font-16 font-bold">Customer Tag</label>
-            <div className="grid grid-cols-2 gap-x-6">
-              <Controller
-                name="customerTag"
-                control={control}
-                render={({ field: { value } }) => (
-                  <>
-                    {[CUSTOMER_TAG.NEW_CUSTOMER, CUSTOMER_TAG.REFERRAL]?.map((tag) => (
-                      <Button
-                        key={tag}
-                        onChange={onchange}
-                        type="button"
-                        className={classNames("w-full h-14 pl-6 !justify-start capitalize", {
-                          "bg-primary text-white font-bold": value === tag,
-                          "bg-primary/10 text-primary font-normal": value !== tag,
-                        })}
-                        onClick={() =>
-                          setValue("customerTag", tag, {
-                            shouldDirty: true,
-                            shouldValidate: true,
-                          })
-                        }
-                      >
-                        {tag}
-                      </Button>
-                    ))}
-                    {errors?.customerTag?.message && (
-                      <p className="text-12 text-error mt-1">{errors?.customerTag?.message}</p>
-                    )}
-                  </>
-                )}
-              />
-            </div>
-          </div>
-          {getValues("customerTag") === CUSTOMER_TAG.REFERRAL && (
-            <Controller
-              name="referral"
-              control={control}
-              render={({ field: { value } }) => (
-                <Select
-                  onChange={(e) => {
-                    setValue("referral", e, {
-                      shouldValidate: true,
-                      shouldDirty: true,
-                    })
-                  }}
-                  onInputChange={handleSearchCustomer}
-                  value={value}
-                  name="referral"
-                  label="Referral"
-                  placeholder="Select Referral"
-                  isLoading={loadingCustomers}
-                  options={customersData}
-                  errors={errors?.referral?.message}
-                />
-              )}
-            />
-          )}
-        </div> */}
       </div>
-      
+      <div className="mt-4 underline flex px-4">
+      <LinkComponent href={"/change_password"} locale={""} skipLocaleHandling={false}>
+      Đổi mật khẩu
+    </LinkComponent>
+    <Button btnType="" className="fill text-[red]" type="button" loading={loading} onClick={logout}>
+          Đăng xuất
+        </Button>
+    </div>
       <div className="flex gap-x-4 mt-10 p-4">
         <Button btnType="outline" className="fill" type="submit" loading={loading}>
           Lưu

@@ -66,7 +66,7 @@ const Order = () => {
 
     {/* <Slider slides={SliderData} />
   <Instagram /> */}
-    <div className="flex flex-col sm:flex-row flex-wrap my-8 max-w-[1024px] m-auto">
+    <div className="flex flex-col sm:flex-row flex-wrap my-8 max-w-[1024px] m-auto bg-green-100">
       {/* <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8   hover:transform-scale-subtle transition-normal hover:show-child">
         <LinkComponent href={"/personal_information"} locale={""} skipLocaleHandling={false}>
           <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64  border-rhover:transform-scale-subtle transition-normal hover:show-child">
@@ -82,7 +82,7 @@ const Order = () => {
         </LinkComponent>
       </div> */}
 
-      <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  bg-white hover:transform-scale-subtle transition-normal hover:show-child">
+      <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8 hover:transform-scale-subtle transition-normal hover:show-child">
         <LinkComponent href={"/personal_information"} locale={""} skipLocaleHandling={false}>
           <div className='flex flex-col items-center justify-center'>
             <div className="w-12 h-12 rounded-full">
@@ -106,15 +106,19 @@ const Order = () => {
         <h3 className="mt-4 mb-1">{locale == "en" ? "Test results" : "Kết quả xét nghiệm"}</h3>
         <p className="mt-4 text-center text-gray-700 leading-normal hidden hover:block">Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.</p>
       </div> */}
-      <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  hover:transform-scale-subtle transition-normal hover:show-child">
-        <div className="w-12 h-12 rounded-full">
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 40 40" fill="none">
+
+      <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8   hover:transform-scale-subtle transition-normal hover:show-child">
+        <LinkComponent href={"/past_medical_record"} locale={""} skipLocaleHandling={false}>
+          <div className='flex flex-col items-center justify-center'>
+            <div className="w-12 h-12 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="20" fill="#F2F8FB" />
             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.01 14V11C21.01 10.45 20.56 10 20.01 10C19.46 10 19.01 10.45 19.01 11V14H21.01ZM22.01 12H25.01C26.1 12 27.01 12.9 27.01 14V28C27.01 29.1 26.1 30 25.01 30H15.01C13.92 30 13.01 29.1 13.01 28V14C13.01 12.9 13.92 12 15.01 12H18.01V15H22.01V12ZM15.01 14V28H25.01V14H24.01V16C24.01 16.55 23.56 17 23.01 17H17.01C16.46 17 16.01 16.55 16.01 16V14H15.01ZM20.01 22C21.1146 22 22.01 21.1046 22.01 20C22.01 18.8954 21.1146 18 20.01 18C18.9054 18 18.01 18.8954 18.01 20C18.01 21.1046 18.9054 22 20.01 22ZM24.01 26V25.25C24.01 23.6 22.66 23 21.01 23H19.01C17.36 23 16.01 23.6 16.01 25.25V26H24.01Z" fill="#003B71" />
           </svg>
-        </div>
-        <h3 className="mt-4 mb-1">{locale == "en" ? "Past visit information" : "Lịch sử khám bệnh"}</h3>
-        <p className="mt-4 text-center text-gray-700 leading-normal hidden hover:block">Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.</p>
+            </div>
+            <h3 className="mt-4 mb-1">{locale == "en" ? "Past visit information" : "Lịch sử khám bệnh"}</h3>
+          </div>
+        </LinkComponent>
       </div>
 
       <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8   hover:transform-scale-subtle transition-normal hover:show-child">
@@ -130,7 +134,7 @@ const Order = () => {
           </div>
         </LinkComponent>
       </div>
-      <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8   hover:transform-scale-subtle transition-normal hover:show-child">
+      {/* <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8   hover:transform-scale-subtle transition-normal hover:show-child">
         <div className="w-12 h-12 rounded-full">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 40 40" fill="none">
             <circle cx="20" cy="20" r="20" fill="#F2F8FB" />
@@ -139,7 +143,7 @@ const Order = () => {
         </div>
         <h3 className="mt-4 mb-1">{locale == "en" ? "Payment method" : "Hình thức thanh toán"}</h3>
         <p className="mt-4 text-center text-gray-700 leading-normal hidden hover:block">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-      </div>
+      </div> */}
       {/* <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  border-gray-300 hover:transform-scale-subtle transition-normal hover:show-child">
       <div className="w-12 h-12 rounded-full bg-gray-300" alt=""></div>
       <h3 className="mt-4 mb-1">Design</h3>
