@@ -5,6 +5,7 @@ import Router from "next/router";
 import toast, { Toaster } from 'react-hot-toast';
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/router'
+import Script from 'next/script';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -38,6 +39,19 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <NavBar />
       <Component {...pageProps} />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-7JR7J71T35"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7JR7J71T35');
+        `}
+      </Script>
       <Toaster
         position="bottom-center"
       />
