@@ -114,7 +114,7 @@ const Product = (props: InferGetStaticPropsType<typeof getStaticPropsProduct>) =
               props.medicines?.map((m: any) => <li className=''>{locale === "en" ? m.en_label : m.label}</li>)
             }
           </ul>
-          <p className='mt-5 text-justify'>{props.desc}</p>
+          <p className='mt-5 text-justify'>{parse(locale === "en" ? props.en_desc : props.desc)}</p>
           <p className='mt-10 font-semibold mb-2'>{numberWithCommas(props.price)}đ</p>
           <div className='flex'>
             <label className='mr-4'>{locale == "en" ? "Quantity" : "Số lượng"}</label>

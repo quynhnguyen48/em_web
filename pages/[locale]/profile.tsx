@@ -46,7 +46,8 @@ const Order = () => {
         }
       })
         .then(function (response) {
-          setData(response.data.user)
+          setData(response.data);
+          localStorage.setItem('user', JSON.stringify(response.data));
           toast.success('Thành công');
         })
         .catch(function (error) {
