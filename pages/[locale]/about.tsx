@@ -83,10 +83,15 @@ const Home: NextPage = () => {
 
         {locale === "vi" ? <div className="grid grid-rows-none md:grid-cols-2 p-4 gap-4">
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-4 text-justify">
-            {/* {locale === "vi" && <p className="mb-4">ECHO MEDI – Hệ thống Phòng khám + Nhà thuốc cung cấp dịch vụ Bác sĩ gia đình</p>} */}
-            {locale === "vi" && <p className="mb-4">Chữa bệnh thay vì phòng bệnh thôi vẫn chưa đủ. Chìa khóa để đạt được một cuộc sống đủ đầy chính là xây dựng sức khỏe toàn diện, tức sức khỏe thể chất lẫn tinh thần. ECHO MEDI thấu hiểu những vấn đề đó và mong muốn trở thành một nhân tố tích cực trong hành trình chăm sóc sức khỏe của người Việt Nam.
+            {locale === "vi" && <p className="mb-4">ECHO MEDI là hệ thống y tế toàn diện cho bạn và gia đình. Chúng tôi đi đầu tại Việt Nam trong việc nâng cấp mô hình “Bác sĩ gia đình” của các nước tiên tiến trên thế giới. ECHO MEDI tập hợp một đội ngũ các bác sĩ, dược sĩ, điều dưỡng và chuyên gia dinh dưỡng được đào tạo trong và ngoài nước để cùng chăm sóc, theo dõi và nâng cao sức khỏe của mọi khách hàng.</p>}
 
-</p>}
+            {locale === "vi" && <p className="mb-4">Phương châm của chúng tôi là “Phòng bệnh hơn chữa bệnh”! ECHO MEDI mong muốn trở thành một nhân tố tích cực trong hành trình chăm sóc sức khỏe của người Việt Nam.</p>}
+
+            {locale === "vi" && <p className="mb-4">Để thực hiện được mục tiêu trên, hệ thống y tế ECHO MEDI xây dựng các dịch vụ chăm sóc sức khỏe dựa trên bốn nền tảng: chăm sóc phòng ngừa, điều trị ban đầu, quản lý bệnh mạn tính, chăm sóc sức khỏe toàn diện.</p>}
+
+            {locale === "vi" && <p className="mb-4">Nhà thuốc ECHO MEDI đảm bảo cung ứng đầy đủ thuốc điều trị, đa dạng sản phẩm làm đẹp, thực phẩm chức năng và chăm sóc sức khỏe toàn diện với nguồn gốc rõ ràng. Các dược sĩ của chúng tôi luôn tư vấn trực tiếp và hướng dẫn khách hàng dùng thuốc an toàn, hợp lý và hiệu quả, đúng với tình trạng sức khỏe của mỗi cá nhân.</p>}
+
+            {locale === "vi" && <p className="mb-4">Đến ECHO MEDI ngay hôm nay để quản lý sức khỏe của bạn hiệu quả hơn. Các chuyên gia y tế của ECHO MEDI sẽ đồng hành với bạn 24/7, bất cứ đâu để chăm sóc sức khỏe của bạn.</p>}
             
           </div>
           <div className="w-full h-full col-span-2 md:col-span-1 row-span-2 pt-4">
