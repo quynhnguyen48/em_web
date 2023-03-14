@@ -196,7 +196,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
                 id="exampleFormControlInput1"
-                placeholder="Địa chỉ"
+                placeholder={locale == "en" ? "Address" : "Địa chỉ"}
               // onChange={(e) => {setEmail(e.target.value)}}
               />
               <input
@@ -220,7 +220,7 @@ const Blog = (props: InferGetStaticPropsType<typeof getStaticPropsService>) => {
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                   "
                 id="exampleFormControlInput1"
-                placeholder="Số điện thoại"
+                placeholder={locale == "en" ? "Phone number" : "Số điện thoại"}
               // onChange={(e) => {setEmail(e.target.value)}}
               />
               <input
